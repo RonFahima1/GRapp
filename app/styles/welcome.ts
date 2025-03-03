@@ -127,27 +127,6 @@ const styles = StyleSheet.create({
     fontSize: 14,
   },
 
-  buttonText: {
-    color: colors.white,
-    fontSize: 16,
-    fontWeight: '600',
-  },
-  loginContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
-    marginTop: 20,
-    gap: 8,
-  },
-  loginText: {
-    fontSize: 14,
-    color: colors.textSecondary,
-  },
-  loginLink: {
-    fontSize: 14,
-    color: colors.primary,
-    fontWeight: '600',
-  },
 });
 
 export default styles;
