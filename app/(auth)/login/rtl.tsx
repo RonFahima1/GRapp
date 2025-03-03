@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
-import { View, Text, Image } from 'react-native';
+import { View, Text, Image, TextInput, TouchableOpacity } from 'react-native';
+import { Ionicons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
 import { useTranslation } from '../../../context/I18nContext';
 import { LanguageToggle } from '../../../components/LanguageToggle';
 import { PhoneInput } from '../../../components/welcome/PhoneInput';
+import { PasswordInput } from '../../../components/welcome/PasswordInput';
 import { ContinueButton } from '../../../components/welcome/ContinueButton';
 import { isValidPhoneNumber } from 'libphonenumber-js';
 import styles from './styles';
@@ -12,12 +14,19 @@ export default function RTLLogin() {
   const router = useRouter();
   const { t } = useTranslation();
   const [phoneNumber, setPhoneNumber] = useState('');
+  const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
 
   const handleLogin = () => {
     setError('');
     
+    if (!phoneNumber || !password) {
+      setError(t('login_error_fields', 'Please fill in all fields'));
+      return;
+    }
+
     // Validate phone number
     const digits = phoneNumber.replace(/\D/g, '');
     if (!digits.match(/^[05]/)) {
@@ -43,7 +52,7 @@ export default function RTLLogin() {
   };
 
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, styles.rtlContainer]}>
       <LanguageToggle />
       <View style={styles.content}>
         <Image 
@@ -51,18 +60,41 @@ export default function RTLLogin() {
           style={styles.logo}
           resizeMode="contain"
         />
-        <Text style={styles.title}>{t('welcome_back', 'Welcome back')}</Text>
-        <Text style={styles.subtitle}>{t('login_subtitle', 'Sign in to continue')}</Text>
+        <Text style={[styles.title, styles.rtlText]}>{t('welcome_back', 'Welcome back')}</Text>
+        <Text style={[styles.subtitle, styles.rtlText]}>{t('login_subtitle', 'Sign in to continue')}</Text>
 
         <View style={styles.form}>
           <PhoneInput
             value={phoneNumber}
             onChangeText={setPhoneNumber}
             error={error}
+            placeholder={t('enter_phone_number', 'Enter phone number')}
           />
+          <View style={styles.rtlPasswordContainer}>
+            <TextInput
+              value={password}
+              onChangeText={setPassword}
+              placeholder={t('password', 'Password')}
+              placeholderTextColor="#999999"
+              style={[styles.rtlPasswordInput, error && styles.inputError]}
+              secureTextEntry={!showPassword}
+            />
+            <TouchableOpacity 
+              style={[styles.eyeIconContainer, styles.rtlEyeIconContainer]}
+              onPress={() => setShowPassword(!showPassword)}
+            >
+              <Ionicons 
+                name={showPassword ? 'eye-off' : 'eye'} 
+                size={22} 
+                color="#666666" 
+              />
+            </TouchableOpacity>
+          </View>
+          {error ? <Text style={[styles.error, styles.rtlText]}>{error}</Text> : null}
           <ContinueButton 
             onPress={handleLogin}
             loading={loading}
+            text={t('login', 'Login')}
           />
         </View>
       </View>
