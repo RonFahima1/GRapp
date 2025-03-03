@@ -1,5 +1,7 @@
 import { useState } from 'react';
-import { View, Text, TextInput, TouchableOpacity, Image } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, Image, I18nManager } from 'react-native';
+import { LanguageToggle } from '@/components/LanguageToggle';
+import { useTranslation } from '@/context/I18nContext';
 import { router } from 'expo-router';
 import { parsePhoneNumber, isValidPhoneNumber } from 'libphonenumber-js';
 import styles from './styles/welcome';
@@ -7,6 +9,10 @@ import styles from './styles/welcome';
 export default function Welcome() {
   const [phoneNumber, setPhoneNumber] = useState('');
   const [error, setError] = useState('');
+  const { t, currentLanguage } = useTranslation();
+  const isRTL = currentLanguage === 'he' || currentLanguage === 'ar';
+  I18nManager.allowRTL(isRTL);
+  I18nManager.forceRTL(isRTL);
 
   const validateAndSendCode = () => {
     try {
@@ -36,22 +42,22 @@ export default function Welcome() {
   };
 
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, isRTL && styles.rtlContainer]}>
+      <LanguageToggle />
       <View style={styles.content}>
         <Image 
           source={require('../assets/images/logo.jpg')}
           style={styles.logo}
           resizeMode="contain"
         />
-        <Text style={styles.title}>Welcome to Remit</Text>
-        <Text style={styles.subtitle}>Enter your phone number to get started</Text>
+        <Text style={[styles.title, isRTL && styles.rtlText]}>{t('welcome_to_remit', 'Welcome to Remit')}</Text>
+        <Text style={[styles.subtitle, isRTL && styles.rtlText]}>{t('enter_phone_subtitle', 'Enter your phone number to get started')}</Text>
         
-        <View style={styles.phoneContainer}>
+        <View style={styles.inputWrapper}>
           <View style={styles.countryCode}>
-            <Text style={styles.flag}>🇮🇱</Text>
             <Text style={styles.countryCodeText}>+972</Text>
+            <Text style={styles.flag}>🇮🇱</Text>
           </View>
-          
           <TextInput
             style={styles.input}
             value={phoneNumber}
@@ -60,21 +66,32 @@ export default function Welcome() {
               setPhoneNumber(numbersOnly);
               setError('');
             }}
-            placeholder="Enter phone number"
+            placeholder={t('enter_phone_number', 'Enter phone number')}
+            placeholderTextColor="#999999"
             keyboardType="numeric"
             maxLength={10}
+            textAlign={phoneNumber ? 'left' : 'center'}
           />
         </View>
-        
+
         {error ? <Text style={styles.error}>{error}</Text> : null}
 
         <TouchableOpacity 
-          style={[styles.button, phoneNumber.length < 9 && styles.buttonDisabled]}
+          style={[styles.continueButton, phoneNumber.length === 0 && styles.continueButtonDisabled]} 
           onPress={validateAndSendCode}
-          disabled={phoneNumber.length < 9}
+          disabled={phoneNumber.length === 0}
         >
-          <Text style={styles.buttonText}>Continue</Text>
+          <Text style={[styles.continueButtonText, phoneNumber.length === 0 && styles.continueButtonTextDisabled]}>
+            {t('continue', 'Continue')}
+          </Text>
         </TouchableOpacity>
+
+        <View style={[styles.loginContainer, isRTL && styles.loginContainerRTL]}>
+          <Text style={[styles.loginText, isRTL && styles.loginTextRTL]}>{t('already_member', 'Already a member?')}</Text>
+          <TouchableOpacity onPress={() => router.push('/login')}>
+            <Text style={styles.loginLink}>{t('login_here', 'Login here')}</Text>
+          </TouchableOpacity>
+        </View>
       </View>
     </View>
   );
