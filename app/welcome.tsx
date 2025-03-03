@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { View, Text, TextInput, TouchableOpacity, Image, I18nManager } from 'react-native';
 import { LanguageToggle } from '@/components/LanguageToggle';
 import { useTranslation } from '@/context/I18nContext';
@@ -9,10 +9,8 @@ import styles from './styles/welcome';
 export default function Welcome() {
   const [phoneNumber, setPhoneNumber] = useState('');
   const [error, setError] = useState('');
-  const { t, currentLanguage } = useTranslation();
-  const isRTL = currentLanguage === 'he' || currentLanguage === 'ar';
-  I18nManager.allowRTL(isRTL);
-  I18nManager.forceRTL(isRTL);
+  const { t, currentLanguage, supportedLanguages } = useTranslation();
+  const isRTL = supportedLanguages[currentLanguage]?.rtl || false;
 
   const validateAndSendCode = () => {
     try {
@@ -71,6 +69,7 @@ export default function Welcome() {
             keyboardType="numeric"
             maxLength={10}
             textAlign={phoneNumber ? 'left' : 'center'}
+            writingDirection="ltr"
           />
         </View>
 
@@ -86,11 +85,13 @@ export default function Welcome() {
           </Text>
         </TouchableOpacity>
 
-        <View style={[styles.loginContainer, isRTL && styles.loginContainerRTL]}>
-          <Text style={[styles.loginText, isRTL && styles.loginTextRTL]}>{t('already_member', 'Already a member?')}</Text>
-          <TouchableOpacity onPress={() => router.push('/login')}>
-            <Text style={styles.loginLink}>{t('login_here', 'Login here')}</Text>
-          </TouchableOpacity>
+        <View style={styles.loginContainer}>
+          <View style={[styles.loginTextContainer, isRTL && styles.loginTextContainerRTL]}>
+            <Text style={[styles.loginText, isRTL && styles.loginTextRTL]}>{t('already_member', 'Already a member?')}</Text>
+            <TouchableOpacity onPress={() => router.push('/login')}>
+              <Text style={[styles.loginLink, isRTL && styles.loginTextRTL]}>{t('login_here', 'Login here')}</Text>
+            </TouchableOpacity>
+          </View>
         </View>
       </View>
     </View>

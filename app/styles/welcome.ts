@@ -15,27 +15,25 @@ const styles = StyleSheet.create({
   content: {
     flex: 1,
     alignItems: 'center',
-    justifyContent: 'flex-start',
+    justifyContent: 'center',
     paddingHorizontal: 20,
-    paddingTop: 100,
   },
   logo: {
-    width: 240,
-    height: 100,
-    marginBottom: 40,
-    resizeMode: 'contain',
+    width: 200,
+    height: 80,
+    marginBottom: 48,
   },
   title: {
-    fontSize: 32,
+    fontSize: 28,
     fontWeight: 'bold',
-    marginBottom: 16,
+    marginBottom: 12,
     color: '#0066FF',
     textAlign: 'center',
   },
   subtitle: {
-    fontSize: 20,
+    fontSize: 16,
     color: '#666666',
-    marginBottom: 40,
+    marginBottom: 32,
     textAlign: 'center',
   },
   inputWrapper: {
@@ -47,9 +45,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#F5F5F5',
     borderRadius: 100,
     height: 56,
-  },
-  countryCodeRTL: {
-    flexDirection: 'row-reverse',
+    direction: 'ltr', // Force LTR layout for phone input
   },
   countryCode: {
     flexDirection: 'row',
@@ -75,8 +71,10 @@ const styles = StyleSheet.create({
     height: '100%',
     fontSize: 18,
     color: '#333333',
-    textAlign: 'left', // Always LTR for numbers
-    paddingRight: 16,
+    textAlign: 'left',
+    writingDirection: 'ltr',
+    direction: 'ltr',
+    paddingHorizontal: 16,
   },
   continueButton: {
     width: '100%',
@@ -99,27 +97,33 @@ const styles = StyleSheet.create({
     color: '#999999',
   },
   loginContainer: {
+    width: '100%',
+    marginTop: 32,
+    paddingHorizontal: 24,
+  },
+  loginTextContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'center',
-    marginTop: 24,
-    gap: 8,
+    gap: 4,
+    alignSelf: 'flex-start',
+    marginLeft: -4,
   },
-  loginContainerRTL: {
+  loginTextContainerRTL: {
     flexDirection: 'row-reverse',
+    alignSelf: 'flex-end',
+    marginRight: -4,
   },
   loginText: {
-    fontSize: 16,
+    fontSize: 14,
     color: '#666666',
-    textAlign: 'left',
   },
   loginTextRTL: {
     textAlign: 'right',
   },
   loginLink: {
-    fontSize: 16,
+    fontSize: 14,
     color: '#0066FF',
-    fontWeight: '500',
+    fontWeight: '600',
   },
   error: {
     color: colors.error,
