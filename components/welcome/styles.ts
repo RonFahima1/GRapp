@@ -1,44 +1,8 @@
 import { StyleSheet } from 'react-native';
-import theme from './theme';
+import theme from '@/app/styles/theme';
 const { colors } = theme;
 
-const styles = StyleSheet.create({
-  rtlText: {
-    writingDirection: 'rtl',
-    textAlign: 'right',
-  },
-  rtlContainer: {
-    direction: 'rtl',
-  },
-
-  container: {
-    flex: 1,
-    backgroundColor: colors.white,
-  },
-  content: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    paddingHorizontal: 20,
-  },
-  logo: {
-    width: 200,
-    height: 80,
-    marginBottom: 48,
-  },
-  title: {
-    fontSize: 28,
-    fontWeight: 'bold',
-    marginBottom: 12,
-    color: '#0066FF',
-    textAlign: 'center',
-  },
-  subtitle: {
-    fontSize: 16,
-    color: '#666666',
-    marginBottom: 32,
-    textAlign: 'center',
-  },
+export default StyleSheet.create({
   inputWrapper: {
     position: 'relative',
     width: '100%',
@@ -48,18 +12,19 @@ const styles = StyleSheet.create({
     backgroundColor: '#F5F5F5',
     borderRadius: 100,
     height: 56,
-    direction: 'ltr', // Force LTR layout for phone input
+    direction: 'ltr',
   },
   countryCode: {
     flexDirection: 'row',
     alignItems: 'center',
     gap: 8,
-    paddingHorizontal: 16,
+    paddingLeft: 16,
+    paddingRight: 12,
     height: '100%',
     borderRightWidth: 1,
     borderRightColor: '#E0E0E0',
     marginRight: 12,
-    minWidth: 100, // Ensure consistent width for the country code section
+    minWidth: 100,
   },
   flag: {
     fontSize: 20,
@@ -102,19 +67,18 @@ const styles = StyleSheet.create({
   loginContainer: {
     width: '100%',
     marginTop: 32,
+    alignItems: 'center',
     paddingHorizontal: 24,
   },
   loginTextContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    gap: 4,
-    alignSelf: 'flex-start',
-    marginLeft: -4,
+    gap: 8,
+    minWidth: 200,
+    justifyContent: 'center',
   },
   loginTextContainerRTL: {
     flexDirection: 'row-reverse',
-    alignSelf: 'flex-end',
-    marginRight: -4,
   },
   loginText: {
     fontSize: 14,
@@ -128,12 +92,4 @@ const styles = StyleSheet.create({
     color: '#0066FF',
     fontWeight: '600',
   },
-  error: {
-    color: colors.error,
-    marginBottom: 20,
-    fontSize: 14,
-  },
-
 });
-
-export default styles;

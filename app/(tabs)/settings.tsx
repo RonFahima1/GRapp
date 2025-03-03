@@ -3,21 +3,13 @@ import { View, Text, StyleSheet, TouchableOpacity, Switch, ScrollView } from 're
 import { useTranslation } from '@/context/I18nContext';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Globe, Moon, Bell, Lock, CreditCard, CircleHelp as HelpCircle, ChevronRight } from 'lucide-react-native';
+import { LanguageSelector } from '@/components/LanguageSelector';
 
 export default function SettingsScreen() {
   const { t, changeLanguage, currentLanguage } = useTranslation();
   const [darkMode, setDarkMode] = useState(false);
   const [notifications, setNotifications] = useState(true);
   const [biometrics, setBiometrics] = useState(true);
-
-  const languages = [
-    { code: 'en', name: 'English' },
-    { code: 'es', name: 'Español' },
-    { code: 'fr', name: 'Français' },
-    { code: 'zh', name: 'Chinese (中文)' },
-    { code: 'hi', name: 'Hindi (हिन्दी)' },
-    { code: 'ar', name: 'Arabic (العربية)' },
-  ];
 
   const settingsSections = [
     {
@@ -118,27 +110,7 @@ export default function SettingsScreen() {
             <Globe color="#FF6B6B" size={24} />
             <Text style={styles.sectionTitle}>{t('language')}</Text>
           </View>
-          <View style={styles.languageGrid}>
-            {languages.map((language) => (
-              <TouchableOpacity
-                key={language.code}
-                style={[
-                  styles.languageButton,
-                  currentLanguage === language.code && styles.activeLanguageButton,
-                ]}
-                onPress={() => changeLanguage(language.code)}
-              >
-                <Text
-                  style={[
-                    styles.languageButtonText,
-                    currentLanguage === language.code && styles.activeLanguageButtonText,
-                  ]}
-                >
-                  {language.name}
-                </Text>
-              </TouchableOpacity>
-            ))}
-          </View>
+          <LanguageSelector />
         </View>
 
         {settingsSections.map((section) => (

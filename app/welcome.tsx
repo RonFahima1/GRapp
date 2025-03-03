@@ -68,7 +68,7 @@ export default function Welcome() {
             placeholderTextColor="#999999"
             keyboardType="numeric"
             maxLength={10}
-            textAlign={phoneNumber ? 'left' : 'center'}
+            textAlign="left"
             writingDirection="ltr"
           />
         </View>

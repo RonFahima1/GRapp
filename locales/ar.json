@@ -1,9 +1,13 @@
 {
   "welcome_to_remit": "مرحباً بكم في ريميت",
   "enter_phone_subtitle": "أدخل رقم هاتفك للبدء",
+  "enter_phone_number": "أدخل رقم الهاتف",
   "continue": "متابعة",
   "already_member": "هل أنت عضو بالفعل؟",
   "login_here": "تسجيل الدخول هنا",
+  "phone_error_start": "يجب أن يبدأ رقم الهاتف بـ 0 أو 5",
+  "phone_error_invalid": "الرجاء إدخال رقم هاتف صحيح",
+  "phone_error_format": "تنسيق رقم الهاتف غير صحيح",
   "hello": "مرحباً",
   "welcome_back": "مرحباً بعودتك",
   "email": "البريد الإلكتروني",
