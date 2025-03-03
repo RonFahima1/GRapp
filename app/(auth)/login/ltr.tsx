@@ -1,25 +1,45 @@
 import React, { useState } from 'react';
-import { View, Text, Image, TextInput, TouchableOpacity } from 'react-native';
+import { View, Text, Image } from 'react-native';
 import { useRouter } from 'expo-router';
 import { useTranslation } from '../../../context/I18nContext';
 import { LanguageToggle } from '../../../components/LanguageToggle';
+import { PhoneInput } from '../../../components/welcome/PhoneInput';
+import { ContinueButton } from '../../../components/welcome/ContinueButton';
+import { isValidPhoneNumber } from 'libphonenumber-js';
 import styles from './styles';
 
 export default function LTRLogin() {
   const router = useRouter();
   const { t } = useTranslation();
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [phoneNumber, setPhoneNumber] = useState('');
   const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
 
   const handleLogin = () => {
-    if (!email || !password) {
-      setError(t('login_error_fields', 'Please fill in all fields'));
+    setError('');
+    
+    // Validate phone number
+    const digits = phoneNumber.replace(/\D/g, '');
+    if (!digits.match(/^[05]/)) {
+      setError(t('phone_error_start', 'Phone number must start with 0 or 5'));
       return;
     }
 
+    // Format the number for validation
+    const fullNumber = `+972${digits.startsWith('0') ? digits.slice(1) : digits}`;
+    const isValid = isValidPhoneNumber(fullNumber);
+
+    if (!isValid) {
+      setError(t('phone_error_invalid', 'Please enter a valid phone number'));
+      return;
+    }
+
+    setLoading(true);
     // Add login logic here
-    setError('');
+    setTimeout(() => {
+      setLoading(false);
+      router.push('/verify');
+    }, 1000);
   };
 
   return (
@@ -35,33 +55,15 @@ export default function LTRLogin() {
         <Text style={styles.subtitle}>{t('login_subtitle', 'Sign in to continue')}</Text>
 
         <View style={styles.form}>
-          <TextInput
-            style={styles.input}
-            placeholder={t('email', 'Email')}
-            value={email}
-            onChangeText={setEmail}
-            keyboardType="email-address"
-            autoCapitalize="none"
+          <PhoneInput
+            value={phoneNumber}
+            onChangeText={setPhoneNumber}
+            error={error}
           />
-          <TextInput
-            style={styles.input}
-            placeholder={t('password', 'Password')}
-            value={password}
-            onChangeText={setPassword}
-            secureTextEntry
+          <ContinueButton 
+            onPress={handleLogin}
+            loading={loading}
           />
-          {error ? <Text style={styles.error}>{error}</Text> : null}
-          <TouchableOpacity style={styles.button} onPress={handleLogin}>
-            <Text style={styles.buttonText}>{t('login', 'Login')}</Text>
-          </TouchableOpacity>
-          <TouchableOpacity 
-            style={styles.forgotPassword}
-            onPress={() => router.push('/forgot-password')}
-          >
-            <Text style={styles.forgotPasswordText}>
-              {t('forgot_password', 'Forgot password?')}
-            </Text>
-          </TouchableOpacity>
         </View>
       </View>
     </View>
