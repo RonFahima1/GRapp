@@ -1,13 +1,19 @@
 import { useState, useEffect } from 'react';
-import { StyleSheet, TextInput, View, TouchableOpacity, Text, Image, Switch } from 'react-native';
-import { Link, router } from 'expo-router';
+import { View, TouchableOpacity, Text, TextInput, Switch, I18nManager } from 'react-native';
+import { router } from 'expo-router';
 import { useAuth } from '../context/AuthContext';
 import { useBiometrics } from '../hooks/useBiometrics';
 import { secureStorage } from '../utils/secureStorage';
+import { useTranslation } from '../context/I18nContext';
+import styles from './styles/login';
 
 export default function Login() {
   const { isAvailable, biometricType, authenticate } = useBiometrics();
   const { login } = useAuth();
+  const { t, currentLanguage } = useTranslation();
+  const isRTL = currentLanguage === 'he' || currentLanguage === 'ar';
+  I18nManager.allowRTL(isRTL);
+  I18nManager.forceRTL(isRTL);
   const [formData, setFormData] = useState({
     email: '',
     password: '',
@@ -51,36 +57,50 @@ export default function Login() {
   };
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Welcome Back</Text>
+    <View style={[styles.container, isRTL && styles.rtlContainer]}>
+      <Text style={styles.title}>{t('welcome_back', 'Welcome Back')}</Text>
       
-      <TextInput
-        style={styles.input}
-        placeholder="Email"
-        value={formData.email}
-        onChangeText={(text) => setFormData({ ...formData, email: text })}
-        keyboardType="email-address"
-        autoCapitalize="none"
-      />
+      <View style={styles.inputWrapper}>
+        <TextInput
+          style={[styles.input, isRTL && styles.inputRTL]}
+          placeholder={t('email', 'Email')}
+          value={formData.email}
+          onChangeText={(text) => setFormData({ ...formData, email: text })}
+          keyboardType="email-address"
+          autoCapitalize="none"
+          placeholderTextColor="#999999"
+        />
+      </View>
       
-      <TextInput
-        style={styles.input}
-        placeholder="Password"
-        value={formData.password}
-        onChangeText={(text) => setFormData({ ...formData, password: text })}
-        secureTextEntry
-      />
+      <View style={styles.inputWrapper}>
+        <TextInput
+          style={[styles.input, isRTL && styles.inputRTL]}
+          placeholder={t('password', 'Password')}
+          value={formData.password}
+          onChangeText={(text) => setFormData({ ...formData, password: text })}
+          secureTextEntry
+          placeholderTextColor="#999999"
+        />
+      </View>
 
       {error ? <Text style={styles.error}>{error}</Text> : null}
 
-      <TouchableOpacity style={styles.button} onPress={handleLogin}>
-        <Text style={styles.buttonText}>Login</Text>
+      <TouchableOpacity 
+        style={[styles.button, (!formData.email || !formData.password) && styles.buttonDisabled]} 
+        onPress={handleLogin}
+        disabled={!formData.email || !formData.password}
+      >
+        <Text style={[styles.buttonText, (!formData.email || !formData.password) && styles.buttonTextDisabled]}>
+          {t('login', 'Login')}
+        </Text>
       </TouchableOpacity>
 
       {isAvailable && (
         <View style={styles.biometricContainer}>
-          <View style={styles.biometricRow}>
-            <Text style={styles.biometricText}>Enable {biometricType} login</Text>
+          <View style={[styles.biometricRow, isRTL && styles.biometricRowRTL]}>
+            <Text style={[styles.biometricText, isRTL && styles.biometricTextRTL]}>
+              {t('enable_biometric_login', `Enable ${biometricType} login`)}
+            </Text>
             <Switch
               value={enableBiometric}
               onValueChange={setEnableBiometric}
