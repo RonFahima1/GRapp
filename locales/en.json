@@ -10,6 +10,8 @@
   "password": "Password",
   "login": "Login",
   "enable_biometric_login": "Enable {{biometricType}} login",
+  "no_account": "Don't have an account?",
+  "register": "Register",
   "settings": "Settings",
   "appearance": "Appearance",
   "dark_mode": "Dark Mode",

@@ -11,6 +11,8 @@
   "password": "סיסמה",
   "login": "התחבר",
   "enable_biometric_login": "הפעל התחברות באמצעות {{biometricType}}",
+  "no_account": "אין לך חשבון?",
+  "register": "הרשם",
   "settings": "הגדרות",
   "appearance": "מראה",
   "dark_mode": "מצב כהה",

@@ -10,6 +10,8 @@
   "password": "كلمة المرور",
   "login": "تسجيل الدخول",
   "enable_biometric_login": "تمكين تسجيل الدخول باستخدام {{biometricType}}",
+  "no_account": "ليس لديك حساب؟",
+  "register": "تسجيل",
   "settings": "الإعدادات",
   "appearance": "المظهر",
   "dark_mode": "الوضع الداكن",

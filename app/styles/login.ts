@@ -98,4 +98,17 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: '#333333',
   },
+  linkContainer: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    marginTop: 20,
+    gap: 8,
+  },
+  linkContainerRTL: {
+    flexDirection: 'row-reverse',
+  },
+  link: {
+    color: '#0066FF',
+    textDecorationLine: 'underline',
+  },
 });
