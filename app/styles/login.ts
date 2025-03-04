@@ -10,7 +10,11 @@ export default StyleSheet.create({
     paddingTop: 60,
   },
   rtlContainer: {
-    alignItems: 'flex-end',
+    direction: 'rtl',
+  },
+  rtlText: {
+    textAlign: 'right',
+    writingDirection: 'rtl',
   },
   title: {
     fontSize: 32,
@@ -18,6 +22,7 @@ export default StyleSheet.create({
     color: '#0066FF',
     marginBottom: 40,
     textAlign: 'center',
+    width: '100%',
   },
   inputWrapper: {
     position: 'relative',
@@ -103,6 +108,7 @@ export default StyleSheet.create({
     justifyContent: 'center',
     marginTop: 20,
     gap: 8,
+    alignSelf: 'center',
   },
   linkContainerRTL: {
     flexDirection: 'row-reverse',

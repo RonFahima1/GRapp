@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { View, TouchableOpacity, Text, TextInput, Switch, I18nManager } from 'react-native';
-import { router } from 'expo-router';
+import { router, Link } from 'expo-router';
 import { useAuth } from '../context/AuthContext';
 import { useBiometrics } from '../hooks/useBiometrics';
 import { secureStorage } from '../utils/secureStorage';
@@ -12,8 +12,6 @@ export default function Login() {
   const { login } = useAuth();
   const { t, currentLanguage } = useTranslation();
   const isRTL = currentLanguage === 'he' || currentLanguage === 'ar';
-  I18nManager.allowRTL(isRTL);
-  I18nManager.forceRTL(isRTL);
   const [formData, setFormData] = useState({
     email: '',
     password: '',
@@ -58,7 +56,7 @@ export default function Login() {
 
   return (
     <View style={[styles.container, isRTL && styles.rtlContainer]}>
-      <Text style={styles.title}>{t('welcome_back', 'Welcome Back')}</Text>
+      <Text style={[styles.title, isRTL && styles.rtlText]}>{t('welcome_back', 'Welcome Back')}</Text>
       
       <View style={styles.inputWrapper}>
         <TextInput
@@ -127,8 +125,8 @@ export default function Login() {
       )}
 
       <View style={[styles.linkContainer, isRTL && styles.linkContainerRTL]}>
-        <Text>{t('no_account', "Don't have an account?")} </Text>
-        <Link href="/register" style={styles.link}>{t('register', 'Register')}</Link>
+        <Text style={isRTL ? styles.rtlText : null}>{t('no_account', "Don't have an account?")} </Text>
+        <Link href="/register" style={[styles.link, isRTL && styles.rtlText]}>{t('register', 'Register')}</Link>
       </View>
     </View>
   );

@@ -102,26 +102,16 @@ const styles = StyleSheet.create({
   loginContainer: {
     width: '100%',
     marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  loginTextContainer: {
-    flexDirection: 'row',
     alignItems: 'center',
-    gap: 4,
-    alignSelf: 'flex-start',
-    marginLeft: -4,
+    justifyContent: 'center',
   },
-  loginTextContainerRTL: {
-    flexDirection: 'row-reverse',
-    alignSelf: 'flex-end',
-    marginRight: -4,
+  loginWrapper: {
+    paddingHorizontal: 20,
   },
   loginText: {
     fontSize: 14,
     color: '#666666',
-  },
-  loginTextRTL: {
-    textAlign: 'right',
+    textAlign: 'center',
   },
   loginLink: {
     fontSize: 14,

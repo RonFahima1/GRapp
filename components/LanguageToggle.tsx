@@ -3,7 +3,8 @@ import { TouchableOpacity, Text, StyleSheet, View, Modal, FlatList } from 'react
 import { useTranslation, SUPPORTED_LANGUAGES } from '../context/I18nContext';
 
 export const LanguageToggle = () => {
-  const { currentLanguage, changeLanguage } = useTranslation();
+  const { currentLanguage, changeLanguage, supportedLanguages } = useTranslation();
+  const isRTL = supportedLanguages[currentLanguage]?.rtl || false;
   const [isModalVisible, setIsModalVisible] = useState(false);
 
   const languageList = Object.entries(SUPPORTED_LANGUAGES).map(([code, details]) => ({
@@ -27,12 +28,14 @@ export const LanguageToggle = () => {
 
   return (
     <>
-      <TouchableOpacity
-        style={styles.toggle}
-        onPress={() => setIsModalVisible(true)}
-      >
-        <Text style={styles.text}>{SUPPORTED_LANGUAGES[currentLanguage].name}</Text>
-      </TouchableOpacity>
+      <View style={[styles.toggleContainer, isRTL && { justifyContent: 'flex-start' }]}>
+        <TouchableOpacity
+          style={styles.toggle}
+          onPress={() => setIsModalVisible(true)}
+        >
+          <Text style={styles.text}>{SUPPORTED_LANGUAGES[currentLanguage].name}</Text>
+        </TouchableOpacity>
+      </View>
 
       <Modal
         visible={isModalVisible}
@@ -64,15 +67,22 @@ export const LanguageToggle = () => {
 };
 
 const styles = StyleSheet.create({
-  toggle: {
+  toggleContainer: {
     position: 'absolute',
-    top: 50,
-    right: 20,
+    top: 0,
+    left: 0,
+    right: 0,
+    flexDirection: 'row',
+    justifyContent: 'flex-end',
+    padding: 20,
+    paddingTop: 50,
+    zIndex: 10,
+  },
+  toggle: {
     padding: 8,
     paddingHorizontal: 12,
     borderRadius: 100,
     backgroundColor: '#F5F5F5',
-    zIndex: 1,
   },
   text: {
     fontSize: 14,

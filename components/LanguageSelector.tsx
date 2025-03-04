@@ -3,7 +3,11 @@ import { View, Text, TouchableOpacity, ScrollView, StyleSheet } from 'react-nati
 import { useTranslation } from '../context/I18nContext';
 
 export const LanguageSelector = () => {
-  const { currentLanguage, changeLanguage, supportedLanguages } = useTranslation();
+  const { 
+    currentLanguage, 
+    changeLanguage, 
+    supportedLanguages
+  } = useTranslation();
 
   return (
     <ScrollView style={styles.container}>
@@ -14,7 +18,10 @@ export const LanguageSelector = () => {
             styles.languageButton,
             currentLanguage === code && styles.selectedLanguage,
           ]}
-          onPress={() => changeLanguage(code)}
+          onPress={() => {
+            console.log('Language button pressed:', code);
+            changeLanguage(code);
+          }}
         >
           <View style={styles.languageContent}>
             <Text style={[
