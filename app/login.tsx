@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { View, TouchableOpacity, Text, TextInput, Switch, I18nManager } from 'react-native';
+import { PasswordInput } from '../components/welcome/PasswordInput';
 import { router, Link } from 'expo-router';
 import { useAuth } from '../context/AuthContext';
 import { useBiometrics } from '../hooks/useBiometrics';
@@ -70,16 +71,13 @@ export default function Login() {
         />
       </View>
       
-      <View style={styles.inputWrapper}>
-        <TextInput
-          style={[styles.input, isRTL && styles.inputRTL]}
-          placeholder={t('password', 'Password')}
-          value={formData.password}
-          onChangeText={(text) => setFormData({ ...formData, password: text })}
-          secureTextEntry
-          placeholderTextColor="#999999"
-        />
-      </View>
+      <PasswordInput
+        value={formData.password}
+        onChangeText={(text) => setFormData({ ...formData, password: text })}
+        placeholder={t('password', 'Password')}
+        isRTL={isRTL}
+        style={styles.passwordInput}
+      />
 
       {error ? <Text style={styles.error}>{error}</Text> : null}
 

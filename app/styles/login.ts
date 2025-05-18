@@ -117,4 +117,7 @@ export default StyleSheet.create({
     color: '#0066FF',
     textDecorationLine: 'underline',
   },
+  passwordInput: {
+    marginBottom: 20,
+  },
 });

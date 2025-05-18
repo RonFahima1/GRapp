@@ -105,10 +105,12 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  loginWrapper: {
-    paddingHorizontal: 20,
+  loginButton: {
+    padding: 10,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
-  loginText: {
+  loginButtonText: {
     fontSize: 14,
     color: '#666666',
     textAlign: 'center',

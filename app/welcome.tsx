@@ -86,17 +86,14 @@ export default function Welcome() {
         </TouchableOpacity>
 
         <View style={styles.loginContainer}>
-          <View style={styles.loginWrapper}>
-            <Text style={[styles.loginText, isRTL ? { textAlign: 'right', writingDirection: 'rtl' } : { textAlign: 'center' }]}>
-              {t('already_member', 'Already a member?')}{' '}
-              <Text 
-                style={[styles.loginLink, isRTL ? { textAlign: 'right', writingDirection: 'rtl' } : { textAlign: 'center' }]} 
-                onPress={() => router.push('/login')}
-              >
-                {t('login_here', 'Login here')}
-              </Text>
+          <TouchableOpacity 
+            style={styles.loginButton}
+            onPress={() => router.push('/login')}
+          >
+            <Text style={styles.loginButtonText}>
+              {t('already_member', 'Already a member?')} <Text style={styles.loginLink}>{t('login_here', 'Login here')}</Text>
             </Text>
-          </View>
+          </TouchableOpacity>
         </View>
       </View>
     </View>

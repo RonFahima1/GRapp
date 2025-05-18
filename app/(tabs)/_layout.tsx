@@ -1,8 +1,7 @@
 import { Tabs } from 'expo-router';
 import { StyleSheet, View, Text } from 'react-native';
-import { Chrome as Home, Send, Wallet, User, Globe } from 'lucide-react-native';
+import { Home, User } from 'lucide-react-native';
 import { useTranslation } from '@/context/I18nContext';
-import { BlurView } from 'expo-blur';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 export default function TabLayout() {
@@ -15,52 +14,51 @@ export default function TabLayout() {
         headerShown: false,
         tabBarStyle: {
           position: 'absolute',
-          borderTopWidth: 0,
-          backgroundColor: 'transparent',
+          borderTopWidth: 0.5,
+          borderTopColor: '#E0E0E0',
+          backgroundColor: '#FFFFFF',
           elevation: 0,
-          height: 70 + insets.bottom,
+          height: 60 + insets.bottom,
           paddingBottom: insets.bottom,
+          paddingHorizontal: 0,
         },
-        tabBarBackground: () => (
-          <BlurView intensity={80} style={StyleSheet.absoluteFill} tint="light" />
-        ),
-        tabBarActiveTintColor: '#FF6B6B',
-        tabBarInactiveTintColor: '#8A8A8A',
-        tabBarLabelStyle: styles.tabBarLabel,
+        tabBarIconStyle: {
+          marginTop: 15, // Center the icons vertically
+        },
+        tabBarItemStyle: {
+          flex: 1, // Make each item take equal space
+        },
+        tabBarShowLabel: false, // Hide the text labels
+        tabBarActiveTintColor: '#666666',
+        tabBarInactiveTintColor: '#AAAAAA',
       }}>
       <Tabs.Screen
-        name="index"
+        name="home"
         options={{
-          title: t('home'),
-          tabBarIcon: ({ color, size }) => <Home color={color} size={size} />,
+          tabBarIcon: ({ color, size }) => <Home color={color} size={24} />,
         }}
       />
       <Tabs.Screen
-        name="send"
+        name="g"
         options={{
-          title: t('send'),
-          tabBarIcon: ({ color, size }) => <Send color={color} size={size} />,
-        }}
-      />
-      <Tabs.Screen
-        name="wallet"
-        options={{
-          title: t('wallet'),
-          tabBarIcon: ({ color, size }) => <Wallet color={color} size={size} />,
+          tabBarIcon: ({ color, size }) => (
+            <View style={styles.gIconContainer}>
+              <Text style={[styles.gIcon, { color }]}>G</Text>
+            </View>
+          ),
         }}
       />
       <Tabs.Screen
         name="profile"
         options={{
-          title: t('profile'),
-          tabBarIcon: ({ color, size }) => <User color={color} size={size} />,
+          tabBarIcon: ({ color, size }) => <User color={color} size={24} />,
         }}
       />
+      {/* Hide the my-account tab from the tab bar */}
       <Tabs.Screen
-        name="settings"
+        name="my-account"
         options={{
-          title: t('settings'),
-          tabBarIcon: ({ color, size }) => <Globe color={color} size={size} />,
+          href: null, // This prevents the tab from being accessible via the tab bar
         }}
       />
     </Tabs>
@@ -70,7 +68,27 @@ export default function TabLayout() {
 const styles = StyleSheet.create({
   tabBarLabel: {
     fontWeight: '600',
-    fontSize: 12,
-    marginBottom: 5,
+    fontSize: 11,
+    marginBottom: 6,
+    marginTop: -2,
+  },
+  gIconContainer: {
+    width: 36,
+    height: 36,
+    borderRadius: 18,
+    backgroundColor: '#E8F1FF',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  gIcon: {
+    fontSize: 24,
+    fontWeight: '900',
+    color: '#8A8A8A',
+  },
+  plusSymbol: {
+    fontSize: 14,
+    fontWeight: '700',
+    color: '#8A8A8A',
+    top: -2,
   },
 });

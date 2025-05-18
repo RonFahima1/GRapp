@@ -5,43 +5,22 @@ import { useAuth } from '../context/AuthContext';
 export const useAuthGuard = (excludeRoutes: string[] = []) => {
   const { isAuthenticated, checkAuthState } = useAuth();
   const pathname = usePathname();
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
   const [shouldRedirect, setShouldRedirect] = useState(false);
 
-  // First effect just checks auth without navigation
+  // Temporarily disabled auth guard to allow viewing all pages
   useEffect(() => {
     const checkAuth = async () => {
-      if (excludeRoutes.includes(pathname)) {
-        setIsLoading(false);
-        return;
-      }
-
-      try {
-        await checkAuthState();
-        if (!isAuthenticated) {
-          setShouldRedirect(true);
-        }
-      } catch (error) {
-        console.error('Auth check failed:', error);
-        setShouldRedirect(true);
-      } finally {
-        setIsLoading(false);
-      }
+      setIsLoading(false);
     };
 
     checkAuth();
-  }, [pathname, isAuthenticated]);
+  }, []);
 
-  // Second effect handles navigation after layout is mounted
+  // Disabled redirection
   useEffect(() => {
-    if (shouldRedirect && !isLoading && !excludeRoutes.includes(pathname)) {
-      // Use setTimeout to ensure this happens after layout mounting
-      const timer = setTimeout(() => {
-        router.replace('login');
-      }, 100);
-      return () => clearTimeout(timer);
-    }
-  }, [shouldRedirect, isLoading, pathname]);
+    // No redirection
+  }, []);
 
   return { isAuthenticated, isLoading };
 };

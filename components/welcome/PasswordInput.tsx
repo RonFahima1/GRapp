@@ -14,20 +14,9 @@ type PasswordInputProps = {
 export function PasswordInput({ value, onChangeText, error, placeholder, isRTL, style }: PasswordInputProps) {
   const [showPassword, setShowPassword] = useState(false);
 
-  const containerStyle = isRTL ? { flexDirection: 'row-reverse' } : { flexDirection: 'row' };
-
   return (
-    <View style={[styles.container, containerStyle, error && styles.containerError, style]}>
-      <TouchableOpacity 
-        onPress={() => setShowPassword(!showPassword)}
-        style={styles.eyeIcon}
-      >
-        <Ionicons 
-          name={showPassword ? 'eye-off' : 'eye'} 
-          size={24} 
-          color="#666666"
-        />
-      </TouchableOpacity>
+    <View style={[styles.container, error && styles.containerError, style]}>
+      {/* Input field */}
       <TextInput
         value={value}
         onChangeText={onChangeText}
@@ -38,9 +27,21 @@ export function PasswordInput({ value, onChangeText, error, placeholder, isRTL, 
           isRTL ? styles.rtlInput : styles.ltrInput
         ]}
         secureTextEntry={!showPassword}
-        textAlign={isRTL ? 'right' : 'left'}
+        textAlign={isRTL ? 'left' : 'left'}
         writingDirection={isRTL ? 'rtl' : 'ltr'}
       />
+      
+      {/* Eye icon */}
+      <TouchableOpacity 
+        onPress={() => setShowPassword(!showPassword)}
+        style={[styles.eyeIcon, isRTL ? styles.eyeIconRTL : styles.eyeIconLTR]}
+      >
+        <Ionicons 
+          name={showPassword ? 'eye-off' : 'eye'} 
+          size={24} 
+          color="#666666"
+        />
+      </TouchableOpacity>
     </View>
   );
 }
@@ -49,10 +50,12 @@ const styles = StyleSheet.create({
   container: {
     width: '100%',
     marginBottom: 20,
+    flexDirection: 'row',
     alignItems: 'center',
     backgroundColor: '#F5F5F5',
     borderRadius: 100,
     height: 56,
+    position: 'relative',
   },
   containerError: {
     borderWidth: 1,
@@ -66,19 +69,25 @@ const styles = StyleSheet.create({
     backgroundColor: 'transparent',
   },
   ltrInput: {
-    textAlign: 'left',
     paddingLeft: 16,
-    paddingRight: 16,
+    paddingRight: 56, // Space for the eye icon on the right
   },
   rtlInput: {
-    textAlign: 'right',
-    paddingLeft: 16,
+    paddingLeft: 56, // Space for the eye icon on the left
     paddingRight: 16,
   },
   eyeIcon: {
+    position: 'absolute',
     height: '100%',
     width: 56,
     justifyContent: 'center',
     alignItems: 'center',
+    zIndex: 1,
+  },
+  eyeIconLTR: {
+    right: 0,
+  },
+  eyeIconRTL: {
+    left: 0,
   },
 });

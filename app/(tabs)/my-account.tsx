@@ -1,0 +1,435 @@
+import React from 'react';
+import { 
+  View, 
+  Text, 
+  StyleSheet, 
+  TouchableOpacity, 
+  ScrollView,
+  Alert,
+  I18nManager
+} from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import { Copy, ChevronLeft, ChevronRight } from 'lucide-react-native';
+import * as Haptics from 'expo-haptics';
+import * as Clipboard from 'expo-clipboard';
+import { useRouter } from 'expo-router';
+import { useTranslation } from '../../hooks/useTranslation';
+import { getRTLFlexDirection, getRTLTextAlign, getChevronTransform } from '../../utils/rtlUtils';
+import { RTLText } from '../../components/RTLProvider';
+
+const MyAccountScreen = () => {
+  const router = useRouter();
+  const { t } = useTranslation();
+  
+  // Fallback text for missing translations
+  const getTranslation = (key: string, fallback: string) => {
+    try {
+      return t(key) || fallback;
+    } catch (error) {
+      return fallback;
+    }
+  };
+
+  // Handle copy to clipboard
+  const copyToClipboard = async (text: string) => {
+    Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
+    await Clipboard.setStringAsync(text);
+    Alert.alert('Copied', 'Information copied to clipboard');
+  };
+
+  // Navigate to edit screens
+  const navigateToEditEmail = () => {
+    router.push('/(modals)/edit-email');
+  };
+
+  const navigateToEditHomeAddress = () => {
+    router.push('/(modals)/edit-home-address');
+  };
+
+  const navigateToEditMailingAddress = () => {
+    router.push('/(modals)/edit-mailing-address');
+  };
+
+  const navigateToEditPhone = () => {
+    router.push('/(modals)/edit-phone');
+  };
+
+  const navigateToAccountClosure = () => {
+    router.push('/(modals)/account-closure');
+  };
+
+  return (
+    <SafeAreaView style={styles.container} edges={['top']}>
+      {/* Header with title and back button */}
+      <View style={styles.header}>
+        <RTLText style={styles.headerTitle}>{getTranslation('profile.myAccount', 'My Account')}</RTLText>
+        <TouchableOpacity 
+          style={I18nManager.isRTL ? styles.backButtonRTL : styles.backButton} 
+          onPress={() => router.back()}
+          hitSlop={{ top: 15, right: 15, bottom: 15, left: 15 }}
+        >
+          {I18nManager.isRTL ? 
+            <ChevronRight color="#007AFF" size={24} /> : 
+            <ChevronLeft color="#007AFF" size={24} />}
+        </TouchableOpacity>
+      </View>
+
+      <ScrollView 
+        style={styles.contentContainer}
+        showsVerticalScrollIndicator={true}
+        indicatorStyle="black"
+      >
+        {/* Account Name */}
+        <View style={styles.section}>
+          <RTLText style={styles.sectionLabel}>{getTranslation('myAccount.accountName', 'Account on Name')}</RTLText>
+          <RTLText style={styles.nameValue}>John Smith</RTLText>
+        </View>
+
+        {/* Account Details Section */}
+        <View style={styles.detailsSection}>
+          <View style={styles.detailsHeader}>
+            <RTLText style={styles.detailsLabel}>{getTranslation('myAccount.accountNumber', 'Account Number')}</RTLText>
+            <RTLText style={styles.detailsLabel}>{getTranslation('myAccount.branch', 'Branch')}</RTLText>
+            <RTLText style={styles.detailsLabel}>{getTranslation('myAccount.bank', 'Bank')}</RTLText>
+          </View>
+          <View style={styles.detailsRow}>
+            <TouchableOpacity 
+              style={I18nManager.isRTL ? styles.copyButtonRTL : styles.copyButton} 
+              onPress={() => copyToClipboard("25365625")}
+            >
+              <Copy color="#CCCCCC" size={18} />
+            </TouchableOpacity>
+            <RTLText style={styles.detailsValue}>25365625</RTLText>
+            <RTLText style={styles.detailsValue}>998</RTLText>
+            <RTLText style={styles.detailsValue}>10</RTLText>
+          </View>
+        </View>
+
+        {/* IBAN Section */}
+        <View style={styles.itemSection}>
+          <TouchableOpacity 
+            style={styles.accountItem}
+            onPress={() => copyToClipboard("IL40010998000002536565")}
+          >
+            {I18nManager.isRTL ? (
+              <>
+                <View style={styles.accountItemContent}>
+                  <RTLText style={styles.itemLabel}>{getTranslation('myAccount.ibanNumber', 'IBAN Number')}</RTLText>
+                  <RTLText style={styles.itemValue}>IL40010998000002536565</RTLText>
+                </View>
+                <View style={styles.copyIcon}>
+                  <Copy color="#CCCCCC" size={18} />
+                </View>
+              </>
+            ) : (
+              <>
+                <View style={styles.copyIcon}>
+                  <Copy color="#CCCCCC" size={18} />
+                </View>
+                <View style={styles.accountItemContent}>
+                  <RTLText style={styles.itemLabel}>{getTranslation('myAccount.ibanNumber', 'IBAN Number')}</RTLText>
+                  <RTLText style={styles.itemValue}>IL40010998000002536565</RTLText>
+                </View>
+              </>
+            )}
+          </TouchableOpacity>
+        </View>
+
+        {/* SWIFT Code Section */}
+        <View style={styles.itemSection}>
+          <TouchableOpacity 
+            style={styles.accountItem}
+            onPress={() => copyToClipboard("LUMILITXXX")}
+          >
+            {I18nManager.isRTL ? (
+              <>
+                <View style={styles.accountItemContent}>
+                  <RTLText style={styles.itemLabel}>{getTranslation('myAccount.swiftCode', 'SWIFT Code')}</RTLText>
+                  <RTLText style={styles.itemValue}>LUMILITXXX</RTLText>
+                </View>
+                <View style={styles.copyIcon}>
+                  <Copy color="#CCCCCC" size={18} />
+                </View>
+              </>
+            ) : (
+              <>
+                <View style={styles.copyIcon}>
+                  <Copy color="#CCCCCC" size={18} />
+                </View>
+                <View style={styles.accountItemContent}>
+                  <RTLText style={styles.itemLabel}>{getTranslation('myAccount.swiftCode', 'SWIFT Code')}</RTLText>
+                  <RTLText style={styles.itemValue}>LUMILITXXX</RTLText>
+                </View>
+              </>
+            )}
+          </TouchableOpacity>
+        </View>
+
+        {/* Communication Ways Section Header */}
+        <View style={styles.sectionTitleContainer}>
+          <Text style={styles.sectionTitle}>Ways of Communication</Text>
+        </View>
+
+        {/* Email Address */}
+        <View style={styles.contactSection}>
+          <TouchableOpacity 
+            style={styles.contactItem}
+            onPress={navigateToEditEmail}
+          >
+            <View style={styles.contactItemContent}>
+              <Text style={styles.contactItemLabel}>Email Address</Text>
+              <Text style={styles.contactItemValue}>john.smith@example.com</Text>
+            </View>
+            <ChevronRight color="#CCCCCC" size={18} />
+          </TouchableOpacity>
+        </View>
+
+        {/* Home Address */}
+        <View style={styles.contactSection}>
+          <TouchableOpacity 
+            style={styles.contactItem}
+            onPress={navigateToEditHomeAddress}
+          >
+            <View style={styles.contactItemContent}>
+              <Text style={styles.contactItemLabel}>Home Address</Text>
+              <Text style={styles.contactItemValue}>123 Main St., Springfield, 12345</Text>
+            </View>
+            <ChevronRight color="#CCCCCC" size={18} />
+          </TouchableOpacity>
+        </View>
+
+        {/* Mailing Address */}
+        <View style={styles.contactSection}>
+          <TouchableOpacity 
+            style={styles.contactItem}
+            onPress={navigateToEditMailingAddress}
+          >
+            <View style={styles.contactItemContent}>
+              <Text style={styles.contactItemLabel}>Mailing Address</Text>
+              <Text style={styles.contactItemValue}>123 Main St., Springfield, 12345</Text>
+            </View>
+            <ChevronRight color="#CCCCCC" size={18} />
+          </TouchableOpacity>
+        </View>
+
+        {/* Phone Number */}
+        <View style={styles.contactSection}>
+          <TouchableOpacity 
+            style={styles.contactItem}
+            onPress={navigateToEditPhone}
+          >
+            <View style={styles.contactItemContent}>
+              <Text style={styles.contactItemLabel}>Phone</Text>
+              <Text style={styles.contactItemValue}>555-123-4567</Text>
+            </View>
+            <ChevronRight color="#CCCCCC" size={18} />
+          </TouchableOpacity>
+        </View>
+
+        {/* Close Account Button */}
+        <TouchableOpacity 
+          style={styles.closeAccountButton}
+          onPress={navigateToAccountClosure}
+        >
+          <RTLText style={styles.closeAccountText}>{getTranslation('myAccount.requestAccountClosure', 'Request Account Closure')}</RTLText>
+        </TouchableOpacity>
+
+        {/* Bottom padding */}
+        <View style={styles.bottomPadding} />
+      </ScrollView>
+    </SafeAreaView>
+  );
+};
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#F8F8F8',
+  },
+  header: {
+    flexDirection: getRTLFlexDirection('row'),
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingHorizontal: 20,
+    paddingVertical: 15,
+    borderBottomWidth: 1,
+    borderBottomColor: '#E0E0E0',
+    backgroundColor: '#FFFFFF',
+    position: 'relative',
+  },
+  headerTitle: {
+    fontSize: 18,
+    fontWeight: '600',
+    color: '#333333',
+    fontFamily: 'System',
+    textAlign: 'center',
+  },
+  backButton: {
+    position: 'absolute',
+    left: 20,
+    padding: 5,
+  },
+  backButtonRTL: {
+    position: 'absolute',
+    right: 20,
+    padding: 5,
+  },
+  contentContainer: {
+    flex: 1,
+  },
+  section: {
+    padding: 16,
+    backgroundColor: '#FFFFFF',
+    borderBottomWidth: 1,
+    borderBottomColor: '#E0E0E0',
+  },
+  sectionLabel: {
+    fontSize: 13,
+    color: '#999999',
+    marginBottom: 5,
+    fontFamily: 'System',
+  },
+  nameValue: {
+    fontSize: 18,
+    fontWeight: '600',
+    color: '#333333',
+    fontFamily: 'System',
+  },
+  detailsSection: {
+    padding: 16,
+    paddingBottom: 20,
+    backgroundColor: '#FFFFFF',
+    borderBottomWidth: 1,
+    borderBottomColor: '#E0E0E0',
+  },
+  detailsHeader: {
+    flexDirection: getRTLFlexDirection('row'),
+    justifyContent: 'space-between',
+    paddingRight: I18nManager.isRTL ? 0 : 50, // Space for copy button
+    paddingLeft: I18nManager.isRTL ? 50 : 0,
+  },
+  detailsLabel: {
+    fontSize: 13,
+    color: '#999999',
+    flex: 1,
+    textAlign: 'center',
+    fontFamily: 'System',
+  },
+  detailsRow: {
+    flexDirection: getRTLFlexDirection('row'),
+    alignItems: 'center',
+    marginTop: 8,
+    position: 'relative',
+  },
+  detailsValue: {
+    fontSize: 16,
+    fontWeight: '700',
+    flex: 1,
+    textAlign: 'center',
+    color: '#333333',
+    fontFamily: 'System',
+  },
+  copyButton: {
+    position: 'absolute',
+    right: 0,
+    padding: 10,
+  },
+  copyButtonRTL: {
+    position: 'absolute',
+    left: 0,
+    padding: 10,
+  },
+  itemSection: {
+    backgroundColor: '#FFFFFF',
+    borderBottomWidth: 1,
+    borderBottomColor: '#E0E0E0',
+  },
+  accountItem: {
+    flexDirection: getRTLFlexDirection('row'),
+    padding: 16,
+    alignItems: 'center',
+  },
+  copyIcon: {
+    marginRight: I18nManager.isRTL ? 0 : 10,
+    marginLeft: I18nManager.isRTL ? 10 : 0,
+  },
+  accountItemContent: {
+    flex: 1,
+  },
+  itemLabel: {
+    fontSize: 13,
+    color: '#999999',
+    marginBottom: 5,
+    fontFamily: 'System',
+  },
+  itemValue: {
+    fontSize: 16,
+    fontWeight: '700',
+    color: '#333333',
+    fontFamily: 'System',
+  },
+  sectionTitleContainer: {
+    padding: 16,
+    paddingBottom: 8,
+    backgroundColor: '#F8F8F8',
+  },
+  sectionTitle: {
+    fontSize: 16,
+    fontWeight: '600',
+    color: '#333333',
+    fontFamily: 'System',
+  },
+  contactSection: {
+    backgroundColor: '#FFFFFF',
+    borderBottomWidth: 1,
+    borderBottomColor: '#E0E0E0',
+  },
+  contactItem: {
+    flexDirection: I18nManager.isRTL ? 'row-reverse' : 'row',
+    padding: 16,
+    alignItems: 'center',
+    justifyContent: 'space-between',
+  },
+  contactItemIcon: {
+    marginRight: I18nManager.isRTL ? 0 : 10,
+    marginLeft: I18nManager.isRTL ? 10 : 0,
+  },
+  contactItemContent: {
+    flex: 1,
+  },
+  contactItemLabel: {
+    fontSize: 13,
+    color: '#999999',
+    marginBottom: 5,
+    fontFamily: 'System',
+  },
+  contactItemValue: {
+    fontSize: 16,
+    fontWeight: '600',
+    color: '#333333',
+    fontFamily: 'System',
+  },
+  closeAccountButton: {
+    margin: 16,
+    padding: 16,
+    backgroundColor: '#FFFFFF',
+    borderRadius: 12,
+    alignItems: 'center',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 1 },
+    shadowOpacity: 0.08,
+    shadowRadius: 2,
+    elevation: 2,
+  },
+  closeAccountText: {
+    fontSize: 16,
+    fontWeight: '600',
+    color: '#FF3B30',
+    fontFamily: 'System',
+  },
+  bottomPadding: {
+    height: 40,
+  },
+});
+
+export default MyAccountScreen;
