@@ -6,15 +6,18 @@ import {
   TouchableOpacity, 
   TextInput,
   Alert,
-  ScrollView
+  ScrollView,
+  Platform
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { ChevronLeft, X } from 'lucide-react-native';
 import * as Haptics from 'expo-haptics';
 import { useRouter } from 'expo-router';
+import { useTranslate } from '../../context/TranslationContext';
 
 const EditHomeAddressScreen = () => {
   const router = useRouter();
+  const { t, isRTL } = useTranslate();
   const [otpSent, setOtpSent] = useState(false);
   const [otp, setOtp] = useState('');
   const [address, setAddress] = useState({
@@ -25,49 +28,62 @@ const EditHomeAddressScreen = () => {
 
   // Function to send OTP
   const sendOTP = () => {
-    Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
+    if (Platform.OS !== 'web') {
+      Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
+    }
     setOtpSent(true);
-    Alert.alert('OTP Sent', 'A verification code has been sent to your email address');
+    Alert.alert(
+      t('editHomeAddress.otp.sentTitle'), 
+      t('editHomeAddress.otp.sentMessage')
+    );
   };
 
   // Function to verify OTP and update address
   const verifyOTP = () => {
     if (otp.length === 6) {
-      Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
-      Alert.alert('Address Updated', 'Your home address has been successfully updated', [
-        { text: 'OK', onPress: () => router.back() }
-      ]);
+      if (Platform.OS !== 'web') {
+        Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
+      }
+      Alert.alert(
+        t('editHomeAddress.update.successTitle'), 
+        t('editHomeAddress.update.successMessage'), 
+        [{ text: t('common.ok'), onPress: () => router.back() }]
+      );
     } else {
-      Alert.alert('Invalid OTP', 'Please enter the 6-digit code sent to your email');
+      Alert.alert(
+        t('editHomeAddress.otp.invalidTitle'), 
+        t('editHomeAddress.otp.invalidMessage')
+      );
     }
   };
 
   return (
     <SafeAreaView style={styles.container} edges={['top']}>
       {/* Header with title and back button */}
-      <View style={styles.header}>
+      <View style={[styles.header, { flexDirection: isRTL ? 'row-reverse' : 'row' }]}>
         <TouchableOpacity 
-          style={styles.backButton} 
+          style={[styles.backButton, { left: isRTL ? undefined : 0, right: isRTL ? 0 : undefined }]} 
           onPress={() => router.back()}
           hitSlop={{ top: 15, right: 15, bottom: 15, left: 15 }}
+          accessibilityLabel={t('common.back')}
         >
           <ChevronLeft color="#007AFF" size={24} />
         </TouchableOpacity>
-        <Text style={styles.headerTitle}>Home Address</Text>
+        <Text style={styles.headerTitle}>{t('editHomeAddress.title')}</Text>
         <View style={styles.rightPlaceholder} />
       </View>
 
       <ScrollView style={styles.content} contentContainerStyle={styles.contentContainer}>
-        <Text style={styles.descriptionText}>
-          Update your residential address
+        <Text style={[styles.descriptionText, { textAlign: isRTL ? 'right' : 'left' }]}>
+          {t('editHomeAddress.description')}
         </Text>
 
         <View style={styles.inputContainer}>
           <TextInput
-            style={styles.input}
+            style={[styles.input, { textAlign: isRTL ? 'right' : 'left' }]}
             value={address.street}
             onChangeText={(text) => setAddress({...address, street: text})}
-            placeholder="Street Address"
+            placeholder={t('editHomeAddress.fields.street')}
             autoCapitalize="words"
           />
           {address.street.length > 0 && (
@@ -82,10 +98,10 @@ const EditHomeAddressScreen = () => {
 
         <View style={styles.inputContainer}>
           <TextInput
-            style={styles.input}
+            style={[styles.input, { textAlign: isRTL ? 'right' : 'left' }]}
             value={address.city}
             onChangeText={(text) => setAddress({...address, city: text})}
-            placeholder="City"
+            placeholder={t('editHomeAddress.fields.city')}
             autoCapitalize="words"
           />
           {address.city.length > 0 && (
@@ -100,10 +116,10 @@ const EditHomeAddressScreen = () => {
 
         <View style={styles.inputContainer}>
           <TextInput
-            style={styles.input}
+            style={[styles.input, { textAlign: isRTL ? 'right' : 'left' }]}
             value={address.zipCode}
             onChangeText={(text) => setAddress({...address, zipCode: text})}
-            placeholder="Zip Code"
+            placeholder={t('editHomeAddress.fields.zipCode')}
             keyboardType="number-pad"
           />
           {address.zipCode.length > 0 && (
@@ -118,33 +134,33 @@ const EditHomeAddressScreen = () => {
 
         {otpSent && (
           <>
-            <Text style={[styles.descriptionText, styles.otpText]}>
-              Enter the verification code sent to your email
+            <Text style={[styles.descriptionText, styles.otpText, { textAlign: isRTL ? 'right' : 'left' }]}>
+              {t('editHomeAddress.otp.enterCode')}
             </Text>
             <View style={styles.inputContainer}>
               <TextInput
-                style={styles.input}
+                style={[styles.input, { textAlign: isRTL ? 'right' : 'left' }]}
                 value={otp}
                 onChangeText={setOtp}
-                placeholder="6-digit code"
+                placeholder={t('editHomeAddress.otp.placeholder')}
                 keyboardType="number-pad"
                 maxLength={6}
               />
             </View>
             <TouchableOpacity style={styles.submitButton} onPress={verifyOTP}>
-              <Text style={styles.submitButtonText}>Verify</Text>
+              <Text style={styles.submitButtonText}>{t('editHomeAddress.buttons.verify')}</Text>
             </TouchableOpacity>
           </>
         )}
 
         {!otpSent && (
           <TouchableOpacity style={styles.submitButton} onPress={sendOTP}>
-            <Text style={styles.submitButtonText}>Update</Text>
+            <Text style={styles.submitButtonText}>{t('editHomeAddress.buttons.update')}</Text>
           </TouchableOpacity>
         )}
 
-        <Text style={styles.privacyText}>
-          I confirm that the details provided are accurate and I agree to the legal and privacy terms.
+        <Text style={[styles.privacyText, { textAlign: isRTL ? 'right' : 'left' }]}>
+          {t('editHomeAddress.privacyConfirmation')}
         </Text>
       </ScrollView>
     </SafeAreaView>
@@ -157,7 +173,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#F8F8F8',
   },
   header: {
-    flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
     paddingHorizontal: 20,
@@ -165,6 +180,7 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     borderBottomColor: '#E0E0E0',
     backgroundColor: '#FFFFFF',
+    position: 'relative',
   },
   headerTitle: {
     fontSize: 18,
@@ -174,6 +190,8 @@ const styles = StyleSheet.create({
   },
   backButton: {
     padding: 5,
+    position: 'absolute',
+    zIndex: 10,
   },
   rightPlaceholder: {
     width: 30,
@@ -234,7 +252,6 @@ const styles = StyleSheet.create({
   privacyText: {
     fontSize: 12,
     color: '#999999',
-    textAlign: 'center',
     fontFamily: 'System',
   },
 });

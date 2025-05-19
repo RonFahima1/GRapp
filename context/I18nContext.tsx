@@ -20,6 +20,8 @@ import ja from '../locales/ja.json';
 import es from '../locales/es.json';
 import fr from '../locales/fr.json';
 import pt from '../locales/pt.json';
+import hi from '../locales/hi.json'; // Hindi translation
+import tl from '../locales/tl.json'; // Filipino/Tagalog translation
 
 export const SUPPORTED_LANGUAGES = {
   en: { name: 'English', rtl: false },
@@ -35,7 +37,11 @@ export const SUPPORTED_LANGUAGES = {
   es: { name: 'Español', rtl: false },
   fr: { name: 'Français', rtl: false },
   pt: { name: 'Português', rtl: false },
+  hi: { name: 'हिन्दी', rtl: false },  // Hindi
+  tl: { name: 'Filipino', rtl: false }, // Filipino/Tagalog
 };
+
+export type LanguageCode = keyof typeof SUPPORTED_LANGUAGES;
 
 // Storage keys
 const LANGUAGE_KEY = 'user_language';
@@ -72,7 +78,7 @@ const getInitialLanguage = async () => {
     
     // Fallback to default language
     const defaultLang = 'en';
-    const isRTL = SUPPORTED_LANGUAGES[defaultLang]?.rtl || false;
+    const isRTL = SUPPORTED_LANGUAGES[defaultLang as LanguageCode]?.rtl || false;
     I18nManager.allowRTL(isRTL);
     I18nManager.forceRTL(isRTL);
     return defaultLang;
@@ -80,7 +86,7 @@ const getInitialLanguage = async () => {
     console.error('Error loading saved language:', error);
     // Fallback to default language
     const defaultLang = 'en';
-    const isRTL = SUPPORTED_LANGUAGES[defaultLang]?.rtl || false;
+    const isRTL = SUPPORTED_LANGUAGES[defaultLang as LanguageCode]?.rtl || false;
     I18nManager.allowRTL(isRTL);
     I18nManager.forceRTL(isRTL);
     return defaultLang;
@@ -104,10 +110,12 @@ i18n
       ja: { translation: ja },
       es: { translation: es },
       fr: { translation: fr },
-      pt: { translation: pt }
+      pt: { translation: pt },
+      hi: { translation: hi }, // Hindi translation
+      tl: { translation: tl }  // Filipino/Tagalog translation
     },
-    fallbackLng: 'en',
-    lng: 'en', // Will be updated after loading from storage
+    fallbackLng: 'th', // Changed to Thai for testing
+    lng: 'th', // Changed to Thai for testing
     supportedLngs: Object.keys(SUPPORTED_LANGUAGES),
     interpolation: {
       escapeValue: false,
@@ -133,7 +141,7 @@ interface I18nContextType {
 
 const I18nContext = createContext<I18nContextType | null>(null);
 
-export const I18nProvider = ({ children }) => {
+export const I18nProvider = ({ children }: { children: React.ReactNode }) => {
   // State for the language switch modal
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [pendingLanguage, setPendingLanguage] = useState<string | null>(null);
@@ -146,7 +154,7 @@ export const I18nProvider = ({ children }) => {
 
     // Handle RTL setup when language changes
     const handleLanguageChange = async (lng: string) => {
-      const isRTL = SUPPORTED_LANGUAGES[lng]?.rtl || false;
+      const isRTL = SUPPORTED_LANGUAGES[lng as LanguageCode]?.rtl || false;
       // Reset to LTR first
       await I18nManager.allowRTL(false);
       await I18nManager.forceRTL(false);
@@ -179,80 +187,76 @@ export const I18nProvider = ({ children }) => {
   const handleConfirmLanguageSwitch = async () => {
     console.log('Provider: Confirming language switch to:', pendingLanguage);
     setIsModalVisible(false);
-    if (pendingLanguage) {
-      const isRTL = SUPPORTED_LANGUAGES[pendingLanguage]?.rtl || false;
-      try {
-        // Need to set allowRTL before forceRTL
-        console.log('Provider: Setting RTL to:', isRTL);
-        await I18nManager.allowRTL(isRTL);
-        await I18nManager.forceRTL(isRTL);
-        // Small delay to ensure RTL is applied
-        await new Promise(resolve => setTimeout(resolve, 50));
-        console.log('Provider: Changing i18n language to:', pendingLanguage);
-        i18n.changeLanguage(pendingLanguage);
-        
-        // Save language and RTL setting to secure storage
-        await saveLanguage(pendingLanguage, isRTL);
-        console.log('Provider: Language changed successfully');
-        
-        // Alert the user and restart the app
-        Alert.alert(
-          'Restart Required',
-          'The language has been changed to: ' + SUPPORTED_LANGUAGES[pendingLanguage]?.name + 
-          '. The app will now restart to apply the changes.',
-          [{ 
-            text: 'OK', 
-            onPress: () => {
-              console.log('Restarting app...');
-              // Restart the app
-              try {
-                console.log('Attempting to reload the app...');
-                
-                // Try multiple reload methods
-                
-                // Method 1: DevSettings (available in development)
-                if (DevSettings && typeof DevSettings.reload === 'function') {
-                  console.log('Reloading with DevSettings.reload()');
-                  DevSettings.reload();
-                  return;
-                }
-                
-                // Method 2: Expo Updates
-                if (Updates && typeof Updates.reloadAsync === 'function') {
-                  console.log('Reloading with Updates.reloadAsync()');
-                  Updates.reloadAsync();
-                  return;
-                }
-                
-                // Method 3: react-native-restart as a last resort
-                try {
-                  const RNRestart = require('react-native-restart');
-                  if (RNRestart && typeof RNRestart.Restart === 'function') {
-                    console.log('Reloading with RNRestart.Restart()');
-                    RNRestart.Restart();
-                    return;
-                  }
-                } catch (e) {
-                  console.log('RNRestart not available:', e);
-                }
-                
-                throw new Error('No reload method available');
-              } catch (error) {
-                console.error('Error reloading app:', error);
-                // Fallback: Apply language change without restart
-                Alert.alert(
-                  'Restart Required',
-                  'Please manually restart the app to fully apply the language changes.',
-                  [{ text: 'OK' }]
-                );
-              }
-            } 
-          }]
-        );
-      } catch (error) {
-        console.error('Provider: Error changing language:', error);
-      }
+    
+    if (!pendingLanguage) {
+      console.error('No pending language set');
+      return;
     }
+    
+    const isRTL = SUPPORTED_LANGUAGES[pendingLanguage as LanguageCode]?.rtl || false;
+    try {
+      // Need to manually apply the new language after restart
+      await saveLanguage(pendingLanguage, isRTL);
+
+      // Set RTL before reloading
+      await I18nManager.allowRTL(isRTL);
+      await I18nManager.forceRTL(isRTL);
+
+      // Change language in i18n immediately
+      await i18n.changeLanguage(pendingLanguage);
+    } catch (error) {
+      console.error('Error during language switch:', error);
+      setPendingLanguage(null);
+      return;
+    }
+
+    // Alert the user and restart the app
+    Alert.alert(
+      'Restart Required',
+      'The language has been changed to: ' + SUPPORTED_LANGUAGES[pendingLanguage as LanguageCode]?.name + 
+      '. The app will now restart to apply the changes.',
+      [{ 
+        text: 'OK', 
+        onPress: () => {
+          console.log('Restarting app...');
+          // Reload the app to apply RTL changes
+          if (Platform.OS !== 'web') {
+            try {
+              console.log('Attempting to reload app...');
+              if (Updates && typeof Updates.reloadAsync === 'function') {
+                console.log('Reloading app with Expo Updates');
+                Updates.reloadAsync();
+                return;
+              }
+              // Try to use react-native-restart as fallback if available
+              try {
+                // @ts-ignore - dynamic require
+                const RNRestart = require('react-native-restart');
+                if (RNRestart && typeof RNRestart.Restart === 'function') {
+                  console.log('Reloading with RNRestart.Restart()');  
+                  RNRestart.Restart();
+                  return;
+                }
+              } catch (e) {
+                console.log('RNRestart not available:', e);
+              }
+              
+              // Fallback if no reload method works
+              console.error('Error: No reload method available');
+              // Fallback: Apply language change without restart
+              Alert.alert(
+                'Restart Required',
+                'Please manually restart the app to fully apply the language changes.',
+                [{ text: 'OK' }]
+              );
+            } catch (error) {
+              console.error('Error during app reload:', error);
+            }
+          }
+        }
+      }]
+    );
+    
     setPendingLanguage(null);
   };
 
@@ -307,8 +311,8 @@ export const useTranslation = () => {
       return;
     }
 
-    const currentIsRTL = SUPPORTED_LANGUAGES[i18nInstance.language]?.rtl || false;
-    const newIsRTL = SUPPORTED_LANGUAGES[language]?.rtl || false;
+    const currentIsRTL = SUPPORTED_LANGUAGES[i18nInstance.language as LanguageCode]?.rtl || false;
+    const newIsRTL = SUPPORTED_LANGUAGES[language as LanguageCode]?.rtl || false;
     
     console.log('RTL status - current:', currentIsRTL, 'new:', newIsRTL);
     
@@ -328,7 +332,7 @@ export const useTranslation = () => {
 
   const applyLanguageChange = async (language: string) => {
     console.log('Applying language change to:', language);
-    const isRTL = SUPPORTED_LANGUAGES[language]?.rtl || false;
+    const isRTL = SUPPORTED_LANGUAGES[language as LanguageCode]?.rtl || false;
     try {
       console.log('Setting RTL to:', isRTL);
       // Need to set allowRTL before forceRTL

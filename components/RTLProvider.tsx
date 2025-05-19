@@ -18,6 +18,7 @@ const createRTLStyles = (isRTL: boolean): RTLStyles => {
       flexDirection: 'column',
       alignItems: 'stretch',
       justifyContent: 'flex-start',
+      direction: isRTL ? 'rtl' : 'ltr',
     },
     text: {
       textAlign: isRTL ? 'right' : 'left',

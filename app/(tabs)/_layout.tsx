@@ -1,15 +1,26 @@
 import { Tabs } from 'expo-router';
-import { StyleSheet, View, Text } from 'react-native';
-import { Home, User } from 'lucide-react-native';
-import { useTranslation } from '@/context/I18nContext';
+import { StyleSheet, Text, View } from 'react-native';
+import { Home, User, Circle } from 'lucide-react-native'; // Added Circle icon
+import { useTranslate } from '../../context/TranslationContext';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
+/**
+ * THIS COMPONENT DEFINES THE TAB BAR WITH EXACTLY 3 TABS:
+ * 1. Home (with wallet functionality)
+ * 2. G
+ * 3. Profile
+ * 
+ * THERE MUST BE EXACTLY 3 TABS. NO MORE.
+ */
 export default function TabLayout() {
-  const { t } = useTranslation();
+  const { t, isRTL } = useTranslate();
   const insets = useSafeAreaInsets();
 
+  // Create a tab layout with exactly 3 tabs
   return (
     <Tabs
+      // Important: This ensures exactly 3 tabs with the correct icons
+      initialRouteName="home-new"
       screenOptions={{
         headerShown: false,
         tabBarStyle: {
@@ -23,72 +34,108 @@ export default function TabLayout() {
           paddingHorizontal: 0,
         },
         tabBarIconStyle: {
-          marginTop: 15, // Center the icons vertically
+          marginTop: 5, 
         },
         tabBarItemStyle: {
-          flex: 1, // Make each item take equal space
+          flex: 1,
         },
-        tabBarShowLabel: false, // Hide the text labels
+        tabBarShowLabel: false,
         tabBarActiveTintColor: '#666666',
         tabBarInactiveTintColor: '#AAAAAA',
-      }}>
+      }}
+    >
+      {/* TAB 1: Home (includes wallet functionality) */}
       <Tabs.Screen
-        name="home"
+        name="home-new"
         options={{
-          tabBarIcon: ({ color, size }) => <Home color={color} size={24} />,
-        }}
-      />
-      <Tabs.Screen
-        name="g"
-        options={{
-          tabBarIcon: ({ color, size }) => (
-            <View style={styles.gIconContainer}>
-              <Text style={[styles.gIcon, { color }]}>G</Text>
+          title: t('tabs.home'),
+          tabBarLabel: t('tabs.home'),
+          tabBarIcon: ({ color, focused }) => (
+            <View style={focused ? styles.activeIconContainer : styles.iconContainer}>
+              <Home color={color} size={24} />
             </View>
           ),
         }}
       />
+
+      {/* TAB 2: G */}
+      <Tabs.Screen
+        name="index"
+        options={{
+          title: t('tabs.g'),
+          tabBarLabel: t('tabs.g'),
+          tabBarIcon: ({ color, focused }) => {
+            // Use proper TypeScript type for props
+            const CustomG = (props: {color: string}) => (
+              <View style={{width: 24, height: 24, alignItems: 'center', justifyContent: 'center'}}>
+                <Text style={{
+                  color: props.color,
+                  fontSize: 21,
+                  fontWeight: '700',
+                  textAlign: 'center',
+                  height: 24,
+                  lineHeight: 24
+                }}>G</Text>
+              </View>
+            );
+            
+            return (
+              <View style={focused ? styles.activeIconContainer : styles.iconContainer}>
+                <CustomG color={color} />
+              </View>
+            );
+          },
+        }}
+      />
+
+      {/* TAB 3: Profile */}
       <Tabs.Screen
         name="profile"
         options={{
-          tabBarIcon: ({ color, size }) => <User color={color} size={24} />,
+          title: t('tabs.profile'),
+          tabBarLabel: t('tabs.profile'),
+          tabBarIcon: ({ color, focused }) => (
+            <View style={focused ? styles.activeIconContainer : styles.iconContainer}>
+              <User color={color} size={24} />
+            </View>
+          ),
         }}
       />
-      {/* Hide the my-account tab from the tab bar */}
-      <Tabs.Screen
-        name="my-account"
-        options={{
-          href: null, // This prevents the tab from being accessible via the tab bar
-        }}
-      />
+      
+      {/* IMPORTANT: NO ADDITIONAL TABS BEYOND THIS POINT */}
     </Tabs>
   );
 }
 
 const styles = StyleSheet.create({
+  iconContainer: {
+    padding: 8,
+    borderRadius: 50,
+  },
+  activeIconContainer: {
+    backgroundColor: '#F0F0F0',
+    padding: 8,
+    borderRadius: 50,
+  },
+  svgIconContainer: {
+    // Exact dimensions to match the SVG icons used by Home and Profile
+    width: 24,
+    height: 24,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  gLogo: {
+    fontSize: 19, 
+    fontWeight: '700',
+    includeFontPadding: false,
+    marginTop: 0,
+    textAlign: 'center',
+    fontFamily: 'System',
+    height: 24,
+    lineHeight: 24,
+  },
   tabBarLabel: {
     fontWeight: '600',
     fontSize: 11,
-    marginBottom: 6,
-    marginTop: -2,
-  },
-  gIconContainer: {
-    width: 36,
-    height: 36,
-    borderRadius: 18,
-    backgroundColor: '#E8F1FF',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  gIcon: {
-    fontSize: 24,
-    fontWeight: '900',
-    color: '#8A8A8A',
-  },
-  plusSymbol: {
-    fontSize: 14,
-    fontWeight: '700',
-    color: '#8A8A8A',
-    top: -2,
   },
 });

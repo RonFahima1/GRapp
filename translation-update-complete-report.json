@@ -1,0 +1,128 @@
+{
+  "totalKeysInEnglish": 347,
+  "languages": {
+    "ar": {
+      "added": 216,
+      "kept": 47,
+      "fixed": 12,
+      "totalKeys": 278,
+      "placeholderKeys": 228,
+      "completenessPercentage": "17.99"
+    },
+    "cn": {
+      "added": 216,
+      "kept": 31,
+      "fixed": 28,
+      "totalKeys": 277,
+      "placeholderKeys": 244,
+      "completenessPercentage": "11.91"
+    },
+    "es": {
+      "added": 216,
+      "kept": 35,
+      "fixed": 24,
+      "totalKeys": 278,
+      "placeholderKeys": 240,
+      "completenessPercentage": "13.67"
+    },
+    "fr": {
+      "added": 216,
+      "kept": 35,
+      "fixed": 24,
+      "totalKeys": 278,
+      "placeholderKeys": 240,
+      "completenessPercentage": "13.67"
+    },
+    "he": {
+      "added": 216,
+      "kept": 47,
+      "fixed": 12,
+      "totalKeys": 278,
+      "placeholderKeys": 228,
+      "completenessPercentage": "17.99"
+    },
+    "hi": {
+      "added": 213,
+      "kept": 59,
+      "fixed": 3,
+      "totalKeys": 352,
+      "placeholderKeys": 216,
+      "completenessPercentage": "38.64"
+    },
+    "ja": {
+      "added": 216,
+      "kept": 35,
+      "fixed": 24,
+      "totalKeys": 278,
+      "placeholderKeys": 240,
+      "completenessPercentage": "13.67"
+    },
+    "np": {
+      "added": 216,
+      "kept": 31,
+      "fixed": 28,
+      "totalKeys": 277,
+      "placeholderKeys": 244,
+      "completenessPercentage": "11.91"
+    },
+    "pt": {
+      "added": 216,
+      "kept": 35,
+      "fixed": 24,
+      "totalKeys": 278,
+      "placeholderKeys": 240,
+      "completenessPercentage": "13.67"
+    },
+    "ro": {
+      "added": 216,
+      "kept": 31,
+      "fixed": 28,
+      "totalKeys": 277,
+      "placeholderKeys": 244,
+      "completenessPercentage": "11.91"
+    },
+    "ru": {
+      "added": 216,
+      "kept": 31,
+      "fixed": 28,
+      "totalKeys": 277,
+      "placeholderKeys": 244,
+      "completenessPercentage": "11.91"
+    },
+    "si": {
+      "added": 216,
+      "kept": 53,
+      "fixed": 6,
+      "totalKeys": 349,
+      "placeholderKeys": 222,
+      "completenessPercentage": "36.39"
+    },
+    "th": {
+      "added": 13,
+      "kept": 270,
+      "fixed": 64,
+      "totalKeys": 395,
+      "placeholderKeys": 77,
+      "completenessPercentage": "80.51"
+    },
+    "tl": {
+      "added": 213,
+      "kept": 59,
+      "fixed": 3,
+      "totalKeys": 352,
+      "placeholderKeys": 216,
+      "completenessPercentage": "38.64"
+    },
+    "zh": {
+      "added": 286,
+      "kept": 21,
+      "fixed": 35,
+      "totalKeys": 343,
+      "placeholderKeys": 321,
+      "completenessPercentage": "6.41"
+    }
+  },
+  "timestamp": "2025-05-19T17:10:44.172Z",
+  "totalLanguages": 15,
+  "totalFilesFixed": 15
+}

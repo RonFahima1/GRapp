@@ -10,49 +10,51 @@ import {
 } from 'react-native';
 import { useBiometrics } from '../hooks/useBiometrics';
 import { useTransactionAuth } from '../context/TransactionAuthContext';
+import { useTranslate } from '../context/TranslationContext';
 
 export function PinSetupModal() {
+  const { t, isRTL } = useTranslate();
   const { isAvailable, biometricType } = useBiometrics();
   const { isPinSetupVisible, hidePinSetup, configureAuth } = useTransactionAuth();
   
   const [pin, setPin] = useState('');
   const [confirmPin, setConfirmPin] = useState('');
-  const [useBiometrics, setUseBiometrics] = useState(false);
+  const [useBio, setUseBio] = useState(false);
   const [error, setError] = useState('');
   const [isConfiguring, setIsConfiguring] = useState(false);
 
   const handleSave = async () => {
     setError('');
     
-    if (!useBiometrics && !pin) {
-      setError('Please set up at least one authentication method');
+    if (!useBio && !pin) {
+      setError(t('pin.errorRequireOneMethod'));
       return;
     }
 
     if (pin) {
       if (pin.length !== 6) {
-        setError('PIN must be 6 digits');
+        setError(t('pin.errorPinLength'));
         return;
       }
 
       if (pin !== confirmPin) {
-        setError('PINs do not match');
+        setError(t('pin.errorPinMismatch'));
         return;
       }
 
       if (!/^\d+$/.test(pin)) {
-        setError('PIN must contain only numbers');
+        setError(t('pin.errorPinOnlyNumbers'));
         return;
       }
     }
 
     setIsConfiguring(true);
     try {
-      await configureAuth(useBiometrics, pin || undefined);
+      await configureAuth(useBio, pin || undefined);
       hidePinSetup();
     } catch (error) {
       console.error('Error configuring auth:', error);
-      setError('Failed to save settings');
+      setError(t('pin.errorSavingSettings'));
     }
     setIsConfiguring(false);
   };
@@ -65,21 +67,21 @@ export function PinSetupModal() {
       onRequestClose={hidePinSetup}
     >
       <View style={styles.centeredView}>
-        <View style={styles.modalView}>
-          <Text style={styles.title}>Transaction Security Setup</Text>
+        <View style={[styles.modalView, { alignItems: isRTL ? 'flex-end' : 'flex-start' }]}>
+          <Text style={[styles.title, { alignSelf: 'center', textAlign: isRTL ? 'right' : 'left' }]}>{t('pin.title')}</Text>
           
           {isAvailable && (
-            <View style={styles.optionRow}>
-              <Text style={styles.optionText}>Use {biometricType}</Text>
-              <Switch value={useBiometrics} onValueChange={setUseBiometrics} />
+            <View style={[styles.optionRow, { flexDirection: isRTL ? 'row-reverse' : 'row' }]}>
+              <Text style={[styles.optionText, { textAlign: isRTL ? 'right' : 'left' }]}>{t('pin.useBiometrics', { biometricType })}</Text>
+              <Switch value={useBio} onValueChange={setUseBio} />
             </View>
           )}
 
-          <Text style={styles.subtitle}>Set up 6-digit PIN (Optional)</Text>
+          <Text style={[styles.subtitle, { textAlign: isRTL ? 'right' : 'left', alignSelf: isRTL ? 'flex-end' : 'flex-start' }]}>{t('pin.setPinSubtitle')}</Text>
           
           <TextInput
             style={styles.input}
-            placeholder="Enter 6-digit PIN"
+            placeholder={t('pin.enterPinPlaceholder')}
             value={pin}
             onChangeText={setPin}
             keyboardType="numeric"
@@ -89,7 +91,7 @@ export function PinSetupModal() {
 
           <TextInput
             style={styles.input}
-            placeholder="Confirm PIN"
+            placeholder={t('pin.confirmPinPlaceholder')}
             value={confirmPin}
             onChangeText={setConfirmPin}
             keyboardType="numeric"
@@ -99,12 +101,12 @@ export function PinSetupModal() {
 
           {error ? <Text style={styles.error}>{error}</Text> : null}
 
-          <View style={styles.buttonRow}>
+          <View style={[styles.buttonRow, { flexDirection: isRTL ? 'row-reverse' : 'row' }]}>
             <TouchableOpacity
               style={[styles.button, styles.cancelButton]}
               onPress={hidePinSetup}
             >
-              <Text style={styles.buttonText}>Cancel</Text>
+              <Text style={styles.buttonText}>{t('cancel')}</Text>
             </TouchableOpacity>
 
             <TouchableOpacity
@@ -113,7 +115,7 @@ export function PinSetupModal() {
               disabled={isConfiguring}
             >
               <Text style={styles.buttonText}>
-                {isConfiguring ? 'Saving...' : 'Save'}
+                {isConfiguring ? t('pin.saving') : t('pin.save')}
               </Text>
             </TouchableOpacity>
           </View>

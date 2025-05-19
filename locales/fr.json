@@ -1,40 +1,441 @@
 {
-  "welcome_to_remit": "Bienvenue sur Remit",
+  "welcome_to_remit": "Bienvenue à la remise",
   "enter_phone_subtitle": "Entrez votre numéro de téléphone pour commencer",
-  "continue": "Continuer",
-  "already_member": "Déjà membre ?",
+  "enter_phone_number": "Entrez le numéro de téléphone",
+  "continue_button": "Continuer",
+  "already_member": "Déjà membre?",
   "login_here": "Connectez-vous ici",
+  "phone_error_start": "Le numéro de téléphone doit commencer par 0 ou 5",
+  "phone_error_invalid": "Veuillez saisir un numéro de téléphone valide",
+  "phone_error_format": "Format de numéro de téléphone non valide",
   "hello": "Bonjour",
-  "welcome_back": "Bon retour",
+  "hello_name": "Hello, {{name}}",
+  "welcome_back": "Content de te revoir",
+  "login_subtitle": "Connectez-vous pour continuer",
+  "email": "E-mail",
+  "password": "Mot de passe",
+  "login": "Se connecter",
+  "login_error_fields": "Veuillez remplir tous les champs",
+  "enable_biometric_login": "Enable {{biometricType}} login",
+  "no_account": "Vous n'avez pas de compte?",
+  "register": "Registre",
   "settings": "Paramètres",
   "appearance": "Apparence",
   "dark_mode": "Mode sombre",
   "notifications": "Notifications",
   "push_notifications": "Notifications push",
-  "security": "Sécurité",
+  "security_title": "Sécurité",
   "biometric_authentication": "Authentification biométrique",
   "change_password": "Changer le mot de passe",
   "payment": "Paiement",
   "payment_methods": "Méthodes de paiement",
   "currencies": "Devises",
-  "support": "Support",
+  "support": "Soutien",
   "help_center": "Centre d'aide",
   "contact_us": "Contactez-nous",
   "language": "Langue",
   "total_balance": "Solde total",
-  "this_week": "cette semaine",
+  "this_week": "Cette semaine",
+  "percentage_change": "{{percentage}}% this week",
   "send_money": "Envoyer de l'argent",
-  "request": "Demander",
-  "top_up": "Recharger",
+  "send": "Envoyer",
+  "request": "Demande",
+  "exchange": "Échange",
+  "top_up": "Se débarrasser de",
   "recent_transactions": "Transactions récentes",
   "exchange_rates": "Taux de change",
   "see_all": "Voir tout",
   "my_wallet": "Mon portefeuille",
-  "transactions": "Transactions",
-  "profile": "Profil",
+  "dashboard": {
+    "cards": "Cartes de paiement",
+    "wallet_transactions": "Transactions",
+    "wallet_balance": "Équilibre",
+    "add_new_card": "Ajouter une nouvelle carte"
+  },
+  "transactions_label": "Transactions",
+  "profile_tab": "Profil",
   "edit_profile": "Modifier le profil",
-  "countries": "Pays",
-  "transfers": "Transferts",
-  "sent": "Envoyé",
-  "logout": "Déconnexion"
+  "logout": "Déconnexion",
+  "cancel": "Annuler",
+  "done": "Fait",
+  "security": {
+    "section_title": "Sécurité et préférences",
+    "preferences": "Préférences du système",
+    "faceID": "Id-id",
+    "faceIDDescription": "Utilisez Face ID pour déverrouiller votre compte",
+    "changePassword": "Changer le mot de passe",
+    "securityQuestions": "Questions de sécurité"
+  },
+  "profile": {
+    "fullName": "Nom et prénom",
+    "email": "E-mail",
+    "emailAddress": "{{email}}",
+    "myAccount": "Mon compte",
+    "documents": "Documents",
+    "securityAndPreferences": "Sécurité et préférences",
+    "notificationSettings": "Paramètres de notification",
+    "helpSupport": "Aide et soutien",
+    "about": "À propos de l'application",
+    "accountId": "ID de compte",
+    "memberSince": "Membre depuis",
+    "transactionCount": "Transactions",
+    "accountIdValue": "{{accountId}}",
+    "memberSinceValue": "{{memberSince}}",
+    "transactionCountValue": "{{transactionCount}}",
+    "language": "Langue",
+    "darkMode": "Mode sombre",
+    "logoutConfirmation": "Êtes-vous sûr de vouloir vous déconnecter?"
+  },
+  "common": {
+    "copied": "Copié dans le presse-papiers",
+    "copied_title": "Copié",
+    "darkModeDescription": "Utilisez le thème sombre pour l'application",
+    "copy": "Copie",
+    "back": "Dos",
+    "close": "Fermer",
+    "continue": "Continuer",
+    "cancel": "Annuler",
+    "save": "Sauvegarder",
+    "delete": "Supprimer",
+    "edit": "Modifier",
+    "settings": "Paramètres",
+    "search": "Recherche",
+    "done": "Fait",
+    "visa": "Visa",
+    "mastercard": "MasterCard",
+    "endingIn": "se terminer dans",
+    "expires": "Expire"
+  },
+  "countries": {
+    "Mexico": "Mexique",
+    "India": "Inde",
+    "Colombia": "Colombie",
+    "Philippines": "Philippines"
+  },
+  "language_settings": {
+    "preferred_languages": "Langues préférées",
+    "all_languages": "Toutes les langues",
+    "changing_language": "Langue changeante ...",
+    "language_change_error": "Il y a eu une erreur de modification de la langue. Veuillez réessayer.",
+    "restart_required": "Redémarrer requis",
+    "restart_message_rtl": "La commutation entre les langues RTL et LTR nécessite que l'application redémarre. Voulez-vous continuer?",
+    "restart_message_ltr": "La commutation entre les langues LTR et RTL nécessite que l'application redémarre. Voulez-vous continuer?",
+    "save_preferences": "Sauver les préférences",
+    "language_saved": "Les préférences linguistiques ont économisé avec succès."
+  },
+  "error": "Erreur",
+  "ok": "D'ACCORD",
+  "tabs": {
+    "home": "Maison",
+    "g": "G",
+    "profile": "Profil"
+  },
+  "myAccount": {
+    "title": "Mon compte",
+    "accountOnName": "Compte sur le nom",
+    "userName": "John Smith",
+    "accountNumber": "Numéro de compte",
+    "branch": "Bifurquer",
+    "bank": "Banque",
+    "ibanNumber": "Numéro iban",
+    "swiftCode": "Code rapide",
+    "yourContactInformation": "Vos coordonnées",
+    "emailAddress": "Adresse email",
+    "homeAddress": "Adresse à la maison",
+    "mailingAddress": "Adresse postale",
+    "phone": "Téléphone",
+    "editEmail": "Modifier l'adresse e-mail",
+    "editHomeAddress": "Modifier l'adresse de la maison",
+    "editMailingAddress": "Modifier l'adresse postale",
+    "editPhone": "Modifier le numéro de téléphone",
+    "requestAccountClosure": "Demande la fermeture du compte",
+    "informationCopied": "Informations copiées dans le presse-papiers"
+  },
+  "sendMoney": {
+    "availableBalance": "Solde disponible",
+    "title": "Envoyer de l'argent",
+    "to": "À",
+    "amount": "Montant",
+    "transferType": "Type de transfert",
+    "immediateTransfer": "Transfert immédiat",
+    "scheduledTransfer": "Transfert planifié",
+    "scheduledDate": "Date prévue",
+    "scheduledTime": "Heure planifiée",
+    "details": {
+      "title": "Transférer les détails",
+      "transferSummary": "Résumé du transfert",
+      "to": "À",
+      "amount": "Montant",
+      "when": "Quand",
+      "account": "Compte",
+      "paymentMethod": "Mode de paiement",
+      "bankAccount": "Compte bancaire",
+      "creditDebitCard": "Carte de crédit / débit",
+      "selectBank": "Sélectionner la banque",
+      "selectCard": "Sélectionner la carte",
+      "addNewCard": "+ Ajouter une nouvelle carte",
+      "feeBreakdown": "Ventilation des frais",
+      "transferAmount": "Montant de transfert",
+      "transferFee": "Frais de transfert",
+      "total": "Total",
+      "continue": "Continuer",
+      "scheduleInfo": "Prévu pour",
+      "immediateInfo": "Transfert immédiat"
+    }
+  },
+  "transactions": {
+    "title": "Transactions",
+    "allTransactions": "toutes transactions",
+    "search": "Transactions de recherche",
+    "searchPlaceholder": "Recherche par nom ou description",
+    "filter": "Filtre",
+    "filterTitle": "Transactions de filtre",
+    "apply": "Appliquer",
+    "clear": "Effacer tout",
+    "close": "Fermer",
+    "reset": "Réinitialiser",
+    "dateRange": "Plage de dates",
+    "from": "Depuis",
+    "to": "À",
+    "startDate": "Date de début",
+    "endDate": "Date de fin",
+    "amountRange": "Range de montants",
+    "min": "Min",
+    "max": "Max",
+    "transactionType": "Type de transaction",
+    "all": "Tous",
+    "sent": "Envoyé",
+    "received": "Reçu",
+    "exchanged": "Échangé",
+    "noResults": "Aucune transaction trouvée",
+    "noTransactionsFound": "Aucune transaction trouvée.",
+    "adjustSearchOrFilter": "Essayez d'ajuster vos critères de recherche ou de filtre.",
+    "status": {
+      "pending": "En attente",
+      "completed": "Complété",
+      "failed": "Échoué"
+    },
+    "descriptions": {
+      "payment": "Paiement des services",
+      "gift": "Cadeau d'anniversaire",
+      "exchange": "Exchange from {{from}} to {{to}}",
+      "dinner": "Paiement du dîner",
+      "rent": "Paiement de loyer",
+      "utilities": "Paiement des services publics"
+    },
+    "filters": {
+      "transactionType": "Type de transaction",
+      "dateRange": "Plage de dates",
+      "amountRangeUSD": "Plage de montants (USD)",
+      "startDate": "Date de début",
+      "endDate": "Date de fin",
+      "minAmount": "Quantité min",
+      "maxAmount": "Montant maximal",
+      "clearFilters": "Filtres à claire",
+      "applyFilters": "Appliquer des filtres",
+      "types": {
+        "all": "Tous",
+        "sent": "Envoyé",
+        "received": "Reçu",
+        "exchanged": "Échangé"
+      }
+    }
+  },
+  "moneyTransfer": {
+    "details": {
+      "title": "Transférer les détails",
+      "transferSummary": "Résumé du transfert",
+      "to": "À",
+      "amount": "Montant",
+      "when": "Quand",
+      "account": "Compte",
+      "paymentMethod": "Mode de paiement",
+      "bankAccount": "Compte bancaire",
+      "creditDebitCard": "Carte de crédit / débit",
+      "selectBank": "Sélectionner la banque",
+      "selectCard": "Sélectionner la carte",
+      "addNewCard": "+ Ajouter une nouvelle carte",
+      "feeBreakdown": "Ventilation des frais",
+      "transferAmount": "Montant de transfert",
+      "transferFee": "Frais de transfert",
+      "total": "Total",
+      "continue": "Continuer",
+      "immediateTransfer": "Transfert immédiat",
+      "scheduledTransfer": "Prévu pour le 25 mai 2025"
+    }
+  },
+  "privacy": {
+    "title": "politique de confidentialité",
+    "lastUpdated": "{{date}}",
+    "lastUpdatedPrefix": "Dernière mise à jour",
+    "securityIcon": "Icône du bouclier de sécurité",
+    "sections": {
+      "introduction": {
+        "title": "Introduction",
+        "paragraph1": "Global Remit («nous», «notre» ou «nous») s'engage à protéger votre vie privée. Cette politique de confidentialité explique comment nous collectons, utilisons, divulguons et protégeons vos informations lorsque vous utilisez notre application mobile ou notre site Web (collectivement, \"Services\").",
+        "paragraph2": "Veuillez lire attentivement cette politique de confidentialité. En accédant ou en utilisant nos services, vous reconnaissez que vous avez lu, compris et accepté d'être lié par toutes les termes de cette politique de confidentialité."
+      },
+      "informationCollected": {
+        "title": "Informations que nous collectons",
+        "personalInfoTitle": "Information personnelle",
+        "personalInfoContent": "Nous pouvons collecter des informations personnellement identifiables, telles que votre nom, votre adresse e-mail, le numéro de téléphone, la date de naissance, le numéro de sécurité sociale et l'identification émise par le gouvernement lorsque vous vous inscrivez à un compte ou utilisez nos services.",
+        "financialInfoTitle": "Informations financières",
+        "financialInfoContent": "Pour fournir nos services bancaires et de transfert d'argent, nous collectons les coordonnées bancaires, les numéros de compte, l'historique des transactions et les informations de paiement.",
+        "deviceInfoTitle": "Informations sur l'appareil",
+        "deviceInfoContent": "Lorsque vous accédez à nos services, nous collectons automatiquement des informations de périphérique telles que l'ID de l'appareil mobile, le modèle, le fabricant, le système d'exploitation, l'adresse IP et le comportement de navigation."
+      },
+      "informationUsage": {
+        "title": "Comment nous utilisons vos informations",
+        "intro": "Nous utilisons les informations que nous collectons pour",
+        "bulletPoints": {
+          "improve": "Fournir, maintenir et améliorer nos services",
+          "process": "Traiter les transactions et envoyer des informations connexes",
+          "verify": "Vérifiez votre identité et empêchez la fraude",
+          "personalize": "Personnalisez votre expérience",
+          "communicate": "Communiquez avec vous sur nos services",
+          "comply": "Respecter les obligations légales"
+        }
+      },
+      "informationSharing": {
+        "title": "Partage d'informations",
+        "intro": "Nous pouvons partager vos informations avec",
+        "bulletPoints": {
+          "providers": "Fournisseurs de services qui effectuent des services en notre nom",
+          "financial": "Institutions financières pour effectuer des transactions",
+          "legal": "Autorités judiciaires lorsque la loi requise",
+          "partners": "Les affaires s'associent à votre consentement"
+        }
+      },
+      "dataSecurity": {
+        "title": "Sécurité des données",
+        "content": "Nous mettons en œuvre des mesures de sécurité appropriées pour protéger vos informations personnelles contre l'accès, l'altération, la divulgation ou la destruction non autorisés. Cependant, aucune méthode de transmission sur Internet ou le stockage électronique n'est sécurisée à 100%, nous ne pouvons donc garantir la sécurité absolue."
+      },
+      "yourRights": {
+        "title": "Vos droits",
+        "intro": "Selon votre emplacement, vous pouvez avoir certains droits concernant vos informations personnelles, y compris le droit de",
+        "bulletPoints": {
+          "access": "Accéder à vos informations personnelles",
+          "correct": "Correction d'informations inexactes",
+          "delete": "Supprimez vos informations personnelles",
+          "object": "S'opposer au traitement de vos informations",
+          "withdraw": "Retirer le consentement"
+        }
+      },
+      "contactUs": {
+        "title": "Contactez-nous",
+        "intro": "Si vous avez des questions sur cette politique de confidentialité, veuillez nous contacter à",
+        "email": "privacy@globalremit.com",
+        "phone": "1-800-Global-Rimit"
+      }
+    }
+  },
+  "supportChat": {
+    "title": "Chat de remise mondial",
+    "today": "Aujourd'hui",
+    "typePlaceholder": "Tapez votre message",
+    "send": "Envoyer",
+    "attach": "Attacher",
+    "messageSent": "Message envoyé",
+    "messageSentDesc": "Votre message a été envoyé à notre équipe d'assistance.",
+    "quickReplies": {
+      "accountQuestions": "Questions de compte",
+      "creditCards": "Cartes de crédit",
+      "appIssues": "Problèmes d'application",
+      "moneyTransfers": "Transferts d'argent",
+      "accountAccess": "Accès au compte",
+      "openAccount": "Compte ouvert"
+    },
+    "exitConfirm": {
+      "title": "Vous voulez quitter le chat?",
+      "message": "Toutes les données entrées ne seront pas enregistrées",
+      "leave": "Je veux partir",
+      "continue": "Je veux continuer"
+    }
+  },
+  "pin": {
+    "title": "Configuration de la sécurité des transactions",
+    "setPinSubtitle": "Configurer la broche à 6 chiffres (facultative)",
+    "enterPinPlaceholder": "Entrez la broche à 6 chiffres",
+    "confirmPinPlaceholder": "Confirmer la broche",
+    "save": "Sauvegarder",
+    "saving": "Économie...",
+    "useBiometrics": "Use {{biometricType}}",
+    "errorRequireOneMethod": "Veuillez configurer au moins une méthode d'authentification",
+    "errorPinLength": "La broche doit être à 6 chiffres",
+    "errorPinMismatch": "Les épingles ne correspondent pas",
+    "errorPinOnlyNumbers": "La broche ne doit contenir que des nombres",
+    "errorSavingSettings": "Échec de l'enregistrement des paramètres"
+  },
+  "accountClosure": {
+    "title": "Fermeture du compte",
+    "mainQuestion": "Comment pouvons-nous vous aider avec la fermeture de votre compte?",
+    "processingRequest": "Nous traitons actuellement votre demande et nous aimerions comprendre pourquoi.",
+    "nextStepInfo": "Si vous souhaitez fermer votre compte, la prochaine étape serait de nous contacter.",
+    "bankingIssueNote": "Si la fermeture du compte est due à un problème bancaire, nous pouvons être en mesure de le résoudre sans fermer votre compte.",
+    "getMoreInfo": "Obtenez plus d'informations sur la fermeture du compte",
+    "proceedAwareness": "Pour procéder à la fermeture du compte, sachez que:",
+    "points": {
+      "recurringPayments": "Tous les paiements récurrents et transferts automatiques seront annulés",
+      "remainingBalance": "Tout solde restant devra être transféré sur un autre compte",
+      "destroyCards": "Vous devrez détruire toutes les cartes associées",
+      "processDuration": "Le processus peut prendre jusqu'à 30 jours pour terminer"
+    },
+    "requestClosure": "Demande la fermeture du compte",
+    "alert": {
+      "title": "Demande de fermeture reçue",
+      "message": "La demande de fermeture de votre compte a été soumise. L'étape suivante consiste à contacter notre service client."
+    }
+  },
+  "editHomeAddress": {
+    "title": "Adresse à la maison",
+    "description": "Mettez à jour votre adresse résidentielle",
+    "fields": {
+      "street": "Adresse de la rue",
+      "city": "Ville",
+      "zipCode": "Code postal"
+    },
+    "buttons": {
+      "update": "Mise à jour",
+      "verify": "Vérifier"
+    },
+    "otp": {
+      "sentTitle": "OTP envoyé",
+      "sentMessage": "Un code de vérification a été envoyé à votre adresse e-mail",
+      "enterCode": "Entrez le code de vérification envoyé à votre e-mail",
+      "placeholder": "Code à 6 chiffres",
+      "invalidTitle": "OTP non valide",
+      "invalidMessage": "Veuillez saisir le code à 6 chiffres envoyé à votre e-mail"
+    },
+    "update": {
+      "successTitle": "Adresse mise à jour",
+      "successMessage": "Votre adresse personnelle a été mise à jour avec succès"
+    },
+    "privacyConfirmation": "Je confirme que les détails fournis sont exacts et j'accepte les conditions juridiques et de confidentialité."
+  },
+  "editMailingAddress": {
+    "title": "Adresse postale",
+    "description": "Mettez à jour votre adresse postale où vous souhaitez recevoir des documents importants",
+    "fields": {
+      "street": "Adresse de la rue",
+      "city": "Ville",
+      "zipCode": "Code postal"
+    },
+    "buttons": {
+      "update": "Mise à jour",
+      "verify": "Vérifier"
+    },
+    "otp": {
+      "sentTitle": "OTP envoyé",
+      "sentMessage": "Un code de vérification a été envoyé à votre adresse e-mail",
+      "enterCode": "Entrez le code de vérification envoyé à votre e-mail",
+      "placeholder": "Code à 6 chiffres",
+      "invalidTitle": "OTP non valide",
+      "invalidMessage": "Veuillez saisir le code à 6 chiffres envoyé à votre e-mail"
+    },
+    "update": {
+      "successTitle": "Adresse mise à jour",
+      "successMessage": "Votre adresse postale a été mise à jour avec succès"
+    },
+    "privacyConfirmation": "Je confirme que les détails fournis sont exacts et j'accepte les conditions juridiques et de confidentialité."
+  }
 }

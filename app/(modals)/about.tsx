@@ -7,7 +7,7 @@ import {
   ScrollView
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { ChevronRight, Info, Bookmark, FileText, PiggyBank, Shield, Award, HelpCircle, BookOpen } from 'lucide-react-native';
+import { ChevronLeft, ChevronRight, Info, Bookmark, FileText, PiggyBank, Shield, Award, HelpCircle, BookOpen } from 'lucide-react-native';
 import * as Haptics from 'expo-haptics';
 import { useRouter } from 'expo-router';
 import { Platform } from 'react-native';
@@ -88,8 +88,9 @@ export default function AboutScreen() {
         <TouchableOpacity 
           style={styles.backButton} 
           onPress={() => router.back()}
+          hitSlop={{ top: 15, right: 15, bottom: 15, left: 15 }}
         >
-          <ChevronRight color="#007AFF" size={24} style={styles.backIcon} />
+          <ChevronLeft color="#007AFF" size={24} />
         </TouchableOpacity>
         <Text style={styles.headerTitle}>About</Text>
         <View style={styles.rightPlaceholder} />
@@ -143,10 +144,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#FFFFFF',
   },
   backButton: {
-    padding: 8,
-  },
-  backIcon: {
-    transform: [{ scaleX: -1 }],
+    padding: 5,
   },
   headerTitle: {
     fontSize: 18,

@@ -5,7 +5,9 @@ import {
   Text,
   StyleSheet,
   TouchableOpacity,
+  Alert,
 } from 'react-native';
+import { useTranslation } from '../hooks/useTranslation';
 
 interface LanguageSwitchModalProps {
   visible: boolean;
@@ -20,6 +22,17 @@ export function LanguageSwitchModal({
   onCancel,
   isRTLSwitch,
 }: LanguageSwitchModalProps) {
+  const { t } = useTranslation();
+  
+  // Safe onConfirm handler that catches errors
+  const handleConfirm = () => {
+    try {
+      onConfirm();
+    } catch (error) {
+      console.error('Error in language switch confirmation:', error);
+      Alert.alert('Error', 'There was a problem changing the language. Please try again.');
+    }
+  };
   return (
     <Modal
       visible={visible}
@@ -29,12 +42,12 @@ export function LanguageSwitchModal({
     >
       <View style={styles.centeredView}>
         <View style={styles.modalView}>
-          <Text style={styles.title}>Restart Required</Text>
+          <Text style={styles.title}>{t('restart_required') || 'Restart Required'}</Text>
           
           <Text style={styles.message}>
             {isRTLSwitch 
-              ? 'Switching between RTL and LTR languages requires the application to restart. Do you want to continue?'
-              : 'Switching between LTR and RTL languages requires the application to restart. Do you want to continue?'
+              ? t('restart_message_rtl') || 'Switching between RTL and LTR languages requires the application to restart. Do you want to continue?'
+              : t('restart_message_ltr') || 'Switching between LTR and RTL languages requires the application to restart. Do you want to continue?'
             }
           </Text>
 
@@ -43,14 +56,14 @@ export function LanguageSwitchModal({
               style={[styles.button, styles.cancelButton]}
               onPress={onCancel}
             >
-              <Text style={styles.cancelButtonText}>Cancel</Text>
+              <Text style={styles.cancelButtonText}>{t('cancel') || 'Cancel'}</Text>
             </TouchableOpacity>
 
             <TouchableOpacity
               style={[styles.button, styles.confirmButton]}
-              onPress={onConfirm}
+              onPress={handleConfirm}
             >
-              <Text style={styles.confirmButtonText}>Continue</Text>
+              <Text style={styles.confirmButtonText}>{t('continue_button') || 'Continue'}</Text>
             </TouchableOpacity>
           </View>
         </View>

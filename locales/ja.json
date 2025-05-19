@@ -1,19 +1,32 @@
 {
-  "welcome_to_remit": "Remitへようこそ",
-  "enter_phone_subtitle": "電話番号を入力して始めましょう",
-  "continue": "続ける",
-  "already_member": "すでにメンバーですか？",
-  "login_here": "こちらでログイン",
+  "welcome_to_remit": "レミットへようこそ",
+  "enter_phone_subtitle": "開始するには、電話番号を入力してください",
+  "enter_phone_number": "電話番号を入力してください",
+  "continue_button": "続く",
+  "already_member": "すでにメンバー？",
+  "login_here": "ここでログインします",
+  "phone_error_start": "電話番号は0または5で始まる必要があります",
+  "phone_error_invalid": "有効な電話番号を入力してください",
+  "phone_error_format": "無効な電話番号形式",
   "hello": "こんにちは",
-  "welcome_back": "お帰りなさい",
+  "hello_name": "Hello, {{name}}",
+  "welcome_back": "おかえり",
+  "login_subtitle": "継続するためにサインインします",
+  "email": "メール",
+  "password": "パスワード",
+  "login": "ログイン",
+  "login_error_fields": "すべてのフィールドに記入してください",
+  "enable_biometric_login": "Enable {{biometricType}} login",
+  "no_account": "アカウントを持っていませんか？",
+  "register": "登録する",
   "settings": "設定",
   "appearance": "外観",
   "dark_mode": "ダークモード",
   "notifications": "通知",
-  "push_notifications": "プッシュ通知",
-  "security": "セキュリティ",
+  "push_notifications": "通知をプッシュします",
+  "security_title": "安全",
   "biometric_authentication": "生体認証",
-  "change_password": "パスワードの変更",
+  "change_password": "パスワードを変更する",
   "payment": "支払い",
   "payment_methods": "支払い方法",
   "currencies": "通貨",
@@ -21,20 +34,408 @@
   "help_center": "ヘルプセンター",
   "contact_us": "お問い合わせ",
   "language": "言語",
-  "total_balance": "合計残高",
+  "total_balance": "総バランス",
   "this_week": "今週",
-  "send_money": "送金",
+  "percentage_change": "{{percentage}}% this week",
+  "send_money": "お金を送ってください",
+  "send": "送信",
   "request": "リクエスト",
-  "top_up": "チャージ",
-  "recent_transactions": "最近の取引",
+  "exchange": "交換",
+  "top_up": "補充します",
+  "recent_transactions": "最近のトランザクション",
   "exchange_rates": "為替レート",
-  "see_all": "すべて表示",
-  "my_wallet": "マイウォレット",
-  "transactions": "取引履歴",
-  "profile": "プロフィール",
-  "edit_profile": "プロフィール編集",
-  "countries": "国",
-  "transfers": "送金",
-  "sent": "送信済み",
-  "logout": "ログアウト"
+  "see_all": "すべてを参照してください",
+  "my_wallet": "私の財布",
+  "dashboard": {
+    "cards": "支払いカード",
+    "wallet_transactions": "トランザクション",
+    "wallet_balance": "バランス",
+    "add_new_card": "新しいカードを追加します"
+  },
+  "transactions_label": "トランザクション",
+  "profile_tab": "プロフィール",
+  "edit_profile": "プロファイルを編集します",
+  "logout": "ログアウト",
+  "cancel": "キャンセル",
+  "done": "終わり",
+  "security": {
+    "section_title": "セキュリティと設定",
+    "preferences": "システム設定",
+    "faceID": "顔ID",
+    "faceIDDescription": "Face IDを使用してアカウントのロックを解除します",
+    "changePassword": "パスワードを変更する",
+    "securityQuestions": "セキュリティの質問"
+  },
+  "profile": {
+    "fullName": "フルネーム",
+    "email": "メール",
+    "emailAddress": "{{email}}",
+    "myAccount": "私のアカウント",
+    "documents": "ドキュメント",
+    "securityAndPreferences": "セキュリティと設定",
+    "notificationSettings": "通知設定",
+    "helpSupport": "ヘルプとサポート",
+    "about": "アプリについて",
+    "accountId": "アカウントID",
+    "memberSince": "それ以来",
+    "transactionCount": "トランザクション",
+    "accountIdValue": "{{accountId}}",
+    "memberSinceValue": "{{memberSince}}",
+    "transactionCountValue": "{{transactionCount}}",
+    "language": "言語",
+    "darkMode": "ダークモード",
+    "logoutConfirmation": "ログアウトしたいですか？"
+  },
+  "common": {
+    "copied": "クリップボードにコピーされました",
+    "copied_title": "コピー",
+    "darkModeDescription": "アプリに暗いテーマを使用します",
+    "copy": "コピー",
+    "back": "戻る",
+    "close": "近い",
+    "continue": "続く",
+    "cancel": "キャンセル",
+    "save": "保存",
+    "delete": "消去",
+    "edit": "編集",
+    "settings": "設定",
+    "search": "検索",
+    "done": "終わり",
+    "visa": "ビザ",
+    "mastercard": "マスターカード",
+    "endingIn": "で終わる",
+    "expires": "期限切れ"
+  },
+  "countries": {
+    "Mexico": "メキシコ",
+    "India": "インド",
+    "Colombia": "コロンビア",
+    "Philippines": "フィリピン"
+  },
+  "language_settings": {
+    "preferred_languages": "優先言語",
+    "all_languages": "すべての言語",
+    "changing_language": "言語を変える...",
+    "language_change_error": "言語を変更するエラーがありました。もう一度やり直してください。",
+    "restart_required": "再起動が必要です",
+    "restart_message_rtl": "RTL言語とLTR言語を切り替えるには、再起動するためのアプリケーションが必要です。続けたいですか？",
+    "restart_message_ltr": "LTR言語とRTL言語を切り替えるには、再起動するためのアプリケーションが必要です。続けたいですか？",
+    "save_preferences": "設定を保存します",
+    "language_saved": "言語の好みが正常に保存されました。"
+  },
+  "error": "エラー",
+  "ok": "わかりました",
+  "tabs": {
+    "home": "家",
+    "g": "g",
+    "profile": "プロフィール"
+  },
+  "myAccount": {
+    "title": "私のアカウント",
+    "accountOnName": "名前のアカウント",
+    "userName": "ジョン・スミス",
+    "accountNumber": "口座番号",
+    "branch": "支店",
+    "bank": "銀行",
+    "ibanNumber": "IBAN番号",
+    "swiftCode": "スウィフトコード",
+    "yourContactInformation": "あなたの連絡先情報",
+    "emailAddress": "電子メールアドレス",
+    "homeAddress": "自宅の住所",
+    "mailingAddress": "郵送先住所",
+    "phone": "電話",
+    "editEmail": "メールアドレスを編集します",
+    "editHomeAddress": "ホームアドレスを編集します",
+    "editMailingAddress": "郵送先住所を編集します",
+    "editPhone": "電話番号を編集します",
+    "requestAccountClosure": "アカウントの閉鎖を要求します",
+    "informationCopied": "クリップボードにコピーされた情報"
+  },
+  "sendMoney": {
+    "availableBalance": "利用可能なバランス",
+    "title": "お金を送ってください",
+    "to": "に",
+    "amount": "額",
+    "transferType": "転送タイプ",
+    "immediateTransfer": "即時転送",
+    "scheduledTransfer": "スケジュールされた転送",
+    "scheduledDate": "スケジュール日",
+    "scheduledTime": "予定時間",
+    "details": {
+      "title": "詳細を転送します",
+      "transferSummary": "転送の概要",
+      "to": "に",
+      "amount": "額",
+      "when": "いつ",
+      "account": "アカウント",
+      "paymentMethod": "支払方法",
+      "bankAccount": "銀行口座",
+      "creditDebitCard": "クレジット/デビットカード",
+      "selectBank": "銀行を選択します",
+      "selectCard": "カードを選択します",
+      "addNewCard": "+新しいカードを追加します",
+      "feeBreakdown": "手数料の内訳",
+      "transferAmount": "転送量",
+      "transferFee": "転送料",
+      "total": "合計",
+      "continue": "続く",
+      "scheduleInfo": "予定",
+      "immediateInfo": "即時転送"
+    }
+  },
+  "transactions": {
+    "title": "トランザクション",
+    "allTransactions": "全取引",
+    "search": "トランザクションを検索します",
+    "searchPlaceholder": "名前または説明で検索します",
+    "filter": "フィルター",
+    "filterTitle": "フィルタートランザクション",
+    "apply": "適用する",
+    "clear": "すべてをクリアします",
+    "close": "近い",
+    "reset": "リセット",
+    "dateRange": "日付範囲",
+    "from": "から",
+    "to": "に",
+    "startDate": "開始日",
+    "endDate": "終了日",
+    "amountRange": "金額範囲",
+    "min": "分",
+    "max": "マックス",
+    "transactionType": "トランザクションタイプ",
+    "all": "全て",
+    "sent": "送信済み",
+    "received": "受け取った",
+    "exchanged": "交換",
+    "noResults": "トランザクションは見つかりません",
+    "noTransactionsFound": "トランザクションは見つかりません。",
+    "adjustSearchOrFilter": "検索またはフィルターの基準を調整してみてください。",
+    "status": {
+      "pending": "保留中",
+      "completed": "完了しました",
+      "failed": "失敗した"
+    },
+    "descriptions": {
+      "payment": "サービスの支払い",
+      "gift": "誕生日プレゼント",
+      "exchange": "Exchange from {{from}} to {{to}}",
+      "dinner": "夕食の支払い",
+      "rent": "支払いを借ります",
+      "utilities": "ユーティリティの支払い"
+    },
+    "filters": {
+      "transactionType": "トランザクションタイプ",
+      "dateRange": "日付範囲",
+      "amountRangeUSD": "金額範囲（USD）",
+      "startDate": "開始日",
+      "endDate": "終了日",
+      "minAmount": "最小量",
+      "maxAmount": "最大量",
+      "clearFilters": "フィルターをクリアします",
+      "applyFilters": "フィルターを適用します",
+      "types": {
+        "all": "全て",
+        "sent": "送信済み",
+        "received": "受け取った",
+        "exchanged": "交換"
+      }
+    }
+  },
+  "moneyTransfer": {
+    "details": {
+      "title": "詳細を転送します",
+      "transferSummary": "転送の概要",
+      "to": "に",
+      "amount": "額",
+      "when": "いつ",
+      "account": "アカウント",
+      "paymentMethod": "支払方法",
+      "bankAccount": "銀行口座",
+      "creditDebitCard": "クレジット/デビットカード",
+      "selectBank": "銀行を選択します",
+      "selectCard": "カードを選択します",
+      "addNewCard": "+新しいカードを追加します",
+      "feeBreakdown": "手数料の内訳",
+      "transferAmount": "転送量",
+      "transferFee": "転送料",
+      "total": "合計",
+      "continue": "続く",
+      "immediateTransfer": "即時転送",
+      "scheduledTransfer": "2025年5月25日に予定されています"
+    }
+  },
+  "privacy": {
+    "title": "プライバシーポリシー",
+    "lastUpdated": "{{date}}",
+    "lastUpdatedPrefix": "最後に更新されました",
+    "securityIcon": "セキュリティシールドアイコン",
+    "sections": {
+      "introduction": {
+        "title": "導入",
+        "paragraph1": "Global Remit（「We」、「私たち」、または「私たち」）は、あなたのプライバシーを保護することに取り組んでいます。このプライバシーポリシーでは、モバイルアプリケーションまたはWebサイト（総称して「サービス」）を使用するときの情報を収集、使用、開示、保護する方法について説明します。",
+        "paragraph2": "このプライバシーポリシーを注意深くお読みください。当社のサービスにアクセスまたは使用することにより、お客様は、このプライバシーポリシーのすべての条件に拘束されることを読み、理解し、同意したことを認めます。"
+      },
+      "informationCollected": {
+        "title": "私たちが収集する情報",
+        "personalInfoTitle": "個人情報",
+        "personalInfoContent": "お客様の名前、メールアドレス、電話番号、生年月日、社会保障番号、政府発行の識別など、アカウントに登録したり、当社のサービスを使用したりする場合、個人を特定できる情報を収集する場合があります。",
+        "financialInfoTitle": "財務情報",
+        "financialInfoContent": "銀行および送金サービスを提供するために、銀行の詳細、口座番号、取引履歴、および支払い情報を収集します。",
+        "deviceInfoTitle": "デバイス情報",
+        "deviceInfoContent": "サービスにアクセスすると、モバイルデバイスID、モデル、メーカー、オペレーティングシステム、IPアドレス、ブラウジング動作などのデバイス情報を自動的に収集します。"
+      },
+      "informationUsage": {
+        "title": "お客様の情報の使用方法",
+        "intro": "収集した情報を使用します",
+        "bulletPoints": {
+          "improve": "サービスを提供、維持、および改善します",
+          "process": "トランザクションを処理し、関連情報を送信します",
+          "verify": "あなたの身元を確認し、詐欺を防ぎます",
+          "personalize": "あなたの経験をパーソナライズします",
+          "communicate": "私たちのサービスについてあなたとコミュニケーションをとってください",
+          "comply": "法的義務に従う"
+        }
+      },
+      "informationSharing": {
+        "title": "情報共有",
+        "intro": "お客様の情報を共有する場合があります",
+        "bulletPoints": {
+          "providers": "私たちに代わってサービスを実行するサービスプロバイダー",
+          "financial": "取引を完了する金融機関",
+          "legal": "法律で義務付けられた場合の法律当局",
+          "partners": "あなたの同意を得てビジネスパートナー"
+        }
+      },
+      "dataSecurity": {
+        "title": "データセキュリティ",
+        "content": "当社は、不正アクセス、変更、開示、または破壊からお客様の個人情報を保護するための適切なセキュリティ対策を実施します。ただし、インターネットや電子ストレージを介した送信方法は100％安全ではないため、絶対的なセキュリティを保証することはできません。"
+      },
+      "yourRights": {
+        "title": "あなたの権利",
+        "intro": "あなたの場所に応じて、あなたはあなたの個人情報に関して特定の権利を持っているかもしれません、",
+        "bulletPoints": {
+          "access": "個人情報にアクセスします",
+          "correct": "正しい不正確な情報",
+          "delete": "個人情報を削除します",
+          "object": "あなたの情報の処理に反対します",
+          "withdraw": "同意を撤回します"
+        }
+      },
+      "contactUs": {
+        "title": "お問い合わせ",
+        "intro": "このプライバシーポリシーについてご質問がある場合は、までお問い合わせください",
+        "email": "Privacy@globalRemit.com",
+        "phone": "1-800-Global-remit"
+      }
+    }
+  },
+  "supportChat": {
+    "title": "グローバルなレミットチャット",
+    "today": "今日",
+    "typePlaceholder": "メッセージを入力します",
+    "send": "送信",
+    "attach": "取り付けます",
+    "messageSent": "送信されたメッセージ",
+    "messageSentDesc": "あなたのメッセージは私たちのサポートチームに送られました。",
+    "quickReplies": {
+      "accountQuestions": "アカウントの質問",
+      "creditCards": "クレジットカード",
+      "appIssues": "アプリの問題",
+      "moneyTransfers": "送金",
+      "accountAccess": "アカウントアクセス",
+      "openAccount": "オープンアカウント"
+    },
+    "exitConfirm": {
+      "title": "チャットを離れたいですか？",
+      "message": "入力されたすべてのデータは保存されません",
+      "leave": "去りたい",
+      "continue": "続けたいです"
+    }
+  },
+  "pin": {
+    "title": "トランザクションセキュリティのセットアップ",
+    "setPinSubtitle": "6桁のピンをセットアップ（オプション）",
+    "enterPinPlaceholder": "6桁のピンを入力します",
+    "confirmPinPlaceholder": "ピンを確認します",
+    "save": "保存",
+    "saving": "節約...",
+    "useBiometrics": "Use {{biometricType}}",
+    "errorRequireOneMethod": "少なくとも1つの認証方法を設定してください",
+    "errorPinLength": "ピンは6桁でなければなりません",
+    "errorPinMismatch": "ピンは一致しません",
+    "errorPinOnlyNumbers": "ピンには番号のみが含まれている必要があります",
+    "errorSavingSettings": "設定を保存できませんでした"
+  },
+  "accountClosure": {
+    "title": "アカウントの閉鎖",
+    "mainQuestion": "アカウントの閉鎖をどのように支援できますか？",
+    "processingRequest": "現在、お客様のリクエストを処理しており、その理由を理解したいと思います。",
+    "nextStepInfo": "アカウントを閉鎖したい場合は、次のステップはお問い合わせください。",
+    "bankingIssueNote": "アカウントの閉鎖が銀行の問題によるものである場合、アカウントを閉じることなく解決するのに役立つ可能性があります。",
+    "getMoreInfo": "アカウントの閉鎖に関する詳細情報を入手してください",
+    "proceedAwareness": "アカウントの閉鎖を続行するには、次のことに注意してください。",
+    "points": {
+      "recurringPayments": "すべての定期的な支払いと自動転送がキャンセルされます",
+      "remainingBalance": "残りの残高は別のアカウントに転送する必要があります",
+      "destroyCards": "関連するカードを破壊する必要があります",
+      "processDuration": "プロセスは完了するまでに最大30日かかる場合があります"
+    },
+    "requestClosure": "アカウントの閉鎖を要求します",
+    "alert": {
+      "title": "閉鎖リクエストが受信されます",
+      "message": "アカウントの閉鎖リクエストが送信されました。次のステップは、カスタマーサービスに連絡することです。"
+    }
+  },
+  "editHomeAddress": {
+    "title": "自宅の住所",
+    "description": "住宅住所を更新します",
+    "fields": {
+      "street": "住所",
+      "city": "市",
+      "zipCode": "郵便番号"
+    },
+    "buttons": {
+      "update": "アップデート",
+      "verify": "確認する"
+    },
+    "otp": {
+      "sentTitle": "OTP送信",
+      "sentMessage": "確認コードがメールアドレスに送信されました",
+      "enterCode": "メールに送信された確認コードを入力します",
+      "placeholder": "6桁のコード",
+      "invalidTitle": "無効なOTP",
+      "invalidMessage": "メールに送信された6桁のコードを入力してください"
+    },
+    "update": {
+      "successTitle": "アドレスが更新されました",
+      "successMessage": "自宅の住所が正常に更新されました"
+    },
+    "privacyConfirmation": "提供された詳細が正確であることを確認し、法的およびプライバシー条件に同意します。"
+  },
+  "editMailingAddress": {
+    "title": "郵送先住所",
+    "description": "重要な文書を受け取りたい場所に郵送先住所を更新する",
+    "fields": {
+      "street": "住所",
+      "city": "市",
+      "zipCode": "郵便番号"
+    },
+    "buttons": {
+      "update": "アップデート",
+      "verify": "確認する"
+    },
+    "otp": {
+      "sentTitle": "OTP送信",
+      "sentMessage": "確認コードがメールアドレスに送信されました",
+      "enterCode": "メールに送信された確認コードを入力します",
+      "placeholder": "6桁のコード",
+      "invalidTitle": "無効なOTP",
+      "invalidMessage": "メールに送信された6桁のコードを入力してください"
+    },
+    "update": {
+      "successTitle": "アドレスが更新されました",
+      "successMessage": "郵送先住所が正常に更新されました"
+    },
+    "privacyConfirmation": "提供された詳細が正確であることを確認し、法的およびプライバシー条件に同意します。"
+  }
 }

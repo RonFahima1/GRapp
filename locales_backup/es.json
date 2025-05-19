@@ -1,0 +1,441 @@
+{
+  "welcome_to_remit": "Bienvenido a Remit",
+  "enter_phone_subtitle": "Ingresa tu número de teléfono para comenzar",
+  "enter_phone_number": "🆕 Ingrese el número de teléfono",
+  "continue_button": "🆕 Continuar",
+  "already_member": "¿Ya eres miembro?",
+  "login_here": "Inicia sesión aquí",
+  "phone_error_start": "🆕 El número de teléfono debe comenzar con 0 o 5",
+  "phone_error_invalid": "🆕 Ingrese un número de teléfono válido",
+  "phone_error_format": "🆕 Formato de número de teléfono no válido",
+  "hello": "Hola",
+  "hello_name": "🆕 Hello, {{name}}",
+  "welcome_back": "Bienvenido de nuevo",
+  "login_subtitle": "🆕 Iniciar sesión para continuar",
+  "email": "🆕 Correo electrónico",
+  "password": "🆕 Contraseña",
+  "login": "🆕 Acceso",
+  "login_error_fields": "🆕 Complete todos los campos",
+  "enable_biometric_login": "🆕 Enable {{biometricType}} login",
+  "no_account": "🆕 ¿No tienes una cuenta?",
+  "register": "🆕 Registro",
+  "settings": "Ajustes",
+  "appearance": "Apariencia",
+  "dark_mode": "Modo oscuro",
+  "notifications": "Notificaciones",
+  "push_notifications": "Notificaciones push",
+  "security_title": "🆕 Seguridad",
+  "biometric_authentication": "Autenticación biométrica",
+  "change_password": "Cambiar contraseña",
+  "payment": "Pago",
+  "payment_methods": "Métodos de pago",
+  "currencies": "Monedas",
+  "support": "Soporte",
+  "help_center": "Centro de ayuda",
+  "contact_us": "Contáctanos",
+  "language": "Idioma",
+  "total_balance": "Balance total",
+  "this_week": "esta semana",
+  "percentage_change": "🆕 {{percentage}}% this week",
+  "send_money": "Enviar dinero",
+  "send": "🆕 Enviar",
+  "request": "Solicitar",
+  "exchange": "🆕 Intercambio",
+  "top_up": "Recargar",
+  "recent_transactions": "Transacciones recientes",
+  "exchange_rates": "Tipos de cambio",
+  "see_all": "Ver todo",
+  "my_wallet": "Mi billetera",
+  "dashboard": {
+    "cards": "⚠️ Payment cards",
+    "wallet_transactions": "⚠️ Transactions",
+    "wallet_balance": "⚠️ Balance",
+    "add_new_card": "🆕 Agregar nueva tarjeta"
+  },
+  "transactions_label": "🆕 Actas",
+  "profile_tab": "🆕 Perfil",
+  "edit_profile": "Editar perfil",
+  "logout": "Cerrar sesión",
+  "cancel": "🆕 Cancelar",
+  "done": "🆕 Hecho",
+  "security": {
+    "section_title": "⚠️ Security & Preferences",
+    "preferences": "⚠️ System Preferences",
+    "faceID": "⚠️ Face ID",
+    "faceIDDescription": "🆕 Use Face ID para desbloquear su cuenta",
+    "changePassword": "🆕 Cambiar la contraseña",
+    "securityQuestions": "🆕 Preguntas de seguridad"
+  },
+  "profile": {
+    "fullName": "⚠️ Full Name",
+    "email": "⚠️ Email",
+    "emailAddress": "⚠️ {{email}}",
+    "myAccount": "⚠️ My Account",
+    "documents": "⚠️ Documents",
+    "securityAndPreferences": "⚠️ Security & Preferences",
+    "notificationSettings": "⚠️ Notification Settings",
+    "helpSupport": "⚠️ Help & Support",
+    "about": "⚠️ About App",
+    "accountId": "⚠️ Account ID",
+    "memberSince": "⚠️ Member Since",
+    "transactionCount": "⚠️ Transactions",
+    "accountIdValue": "⚠️ {{accountId}}",
+    "memberSinceValue": "⚠️ {{memberSince}}",
+    "transactionCountValue": "⚠️ {{transactionCount}}",
+    "language": "⚠️ Language",
+    "darkMode": "⚠️ Dark Mode",
+    "logoutConfirmation": "🆕 ¿Estás seguro de que quieres cerrar sesión?"
+  },
+  "common": {
+    "copied": "⚠️ Copied to clipboard",
+    "copied_title": "⚠️ Copied",
+    "darkModeDescription": "⚠️ Use dark theme for the app",
+    "copy": "⚠️ Copy",
+    "back": "⚠️ Back",
+    "close": "⚠️ Close",
+    "continue": "⚠️ Continue",
+    "cancel": "⚠️ Cancel",
+    "save": "⚠️ Save",
+    "delete": "⚠️ Delete",
+    "edit": "⚠️ Edit",
+    "settings": "⚠️ Settings",
+    "search": "⚠️ Search",
+    "done": "⚠️ Done",
+    "visa": "🆕 Visa",
+    "mastercard": "🆕 Tarjeta MasterCard",
+    "endingIn": "🆕 terminando en",
+    "expires": "🆕 Expirar"
+  },
+  "countries": {
+    "Mexico": "⚠️ Mexico",
+    "India": "🆕 India",
+    "Colombia": "🆕 Colombia",
+    "Philippines": "🆕 Filipinas"
+  },
+  "language_settings": {
+    "preferred_languages": "⚠️ Preferred Languages",
+    "all_languages": "⚠️ All Languages",
+    "changing_language": "⚠️ Changing language...",
+    "language_change_error": "⚠️ There was an error changing the language. Please try again.",
+    "restart_required": "⚠️ Restart Required",
+    "restart_message_rtl": "⚠️ Switching between RTL and LTR languages requires the application to restart. Do you want to continue?",
+    "restart_message_ltr": "⚠️ Switching between LTR and RTL languages requires the application to restart. Do you want to continue?",
+    "save_preferences": "🆕 Guardar preferencias",
+    "language_saved": "🆕 Preferencias del idioma guardadas con éxito."
+  },
+  "error": "🆕 Error",
+  "ok": "🆕 DE ACUERDO",
+  "tabs": {
+    "home": "⚠️ Home",
+    "g": "🆕 GRAMO",
+    "profile": "🆕 Perfil"
+  },
+  "myAccount": {
+    "title": "⚠️ My Account",
+    "accountOnName": "⚠️ Account on Name",
+    "userName": "⚠️ John Smith",
+    "accountNumber": "⚠️ Account Number",
+    "branch": "⚠️ Branch",
+    "bank": "⚠️ Bank",
+    "ibanNumber": "⚠️ IBAN Number",
+    "swiftCode": "⚠️ SWIFT Code",
+    "yourContactInformation": "⚠️ Your Contact Information",
+    "emailAddress": "⚠️ Email Address",
+    "homeAddress": "⚠️ Home Address",
+    "mailingAddress": "⚠️ Mailing Address",
+    "phone": "⚠️ Phone",
+    "editEmail": "⚠️ Edit Email Address",
+    "editHomeAddress": "⚠️ Edit Home Address",
+    "editMailingAddress": "⚠️ Edit Mailing Address",
+    "editPhone": "⚠️ Edit Phone Number",
+    "requestAccountClosure": "⚠️ Request Account Closure",
+    "informationCopied": "🆕 Información copiada al portapapeles"
+  },
+  "sendMoney": {
+    "availableBalance": "⚠️ Available Balance",
+    "title": "⚠️ Send Money",
+    "to": "⚠️ To",
+    "amount": "⚠️ Amount",
+    "transferType": "⚠️ Transfer Type",
+    "immediateTransfer": "⚠️ Immediate Transfer",
+    "scheduledTransfer": "⚠️ Scheduled Transfer",
+    "scheduledDate": "⚠️ Scheduled Date",
+    "scheduledTime": "⚠️ Scheduled Time",
+    "details": {
+      "title": "⚠️ Transfer Details",
+      "transferSummary": "⚠️ Transfer Summary",
+      "to": "⚠️ To",
+      "amount": "⚠️ Amount",
+      "when": "⚠️ When",
+      "account": "⚠️ Account",
+      "paymentMethod": "⚠️ Payment Method",
+      "bankAccount": "⚠️ Bank Account",
+      "creditDebitCard": "⚠️ Credit/Debit Card",
+      "selectBank": "⚠️ Select Bank",
+      "selectCard": "⚠️ Select Card",
+      "addNewCard": "⚠️ + Add New Card",
+      "feeBreakdown": "⚠️ Fee Breakdown",
+      "transferAmount": "⚠️ Transfer Amount",
+      "transferFee": "⚠️ Transfer Fee",
+      "total": "🆕 Total",
+      "continue": "🆕 Continuar",
+      "scheduleInfo": "🆕 Programado para",
+      "immediateInfo": "🆕 Transferencia inmediata"
+    }
+  },
+  "transactions": {
+    "title": "⚠️ Transactions",
+    "allTransactions": "⚠️ All Transactions",
+    "search": "⚠️ Search transactions",
+    "searchPlaceholder": "⚠️ Search by name or description",
+    "filter": "⚠️ Filter",
+    "filterTitle": "⚠️ Filter Transactions",
+    "apply": "⚠️ Apply",
+    "clear": "⚠️ Clear All",
+    "close": "⚠️ Close",
+    "reset": "⚠️ Reset",
+    "dateRange": "⚠️ Date Range",
+    "from": "⚠️ From",
+    "to": "⚠️ To",
+    "startDate": "⚠️ Start Date",
+    "endDate": "⚠️ End Date",
+    "amountRange": "⚠️ Amount Range",
+    "min": "⚠️ Min",
+    "max": "⚠️ Max",
+    "transactionType": "⚠️ Transaction Type",
+    "all": "⚠️ All",
+    "sent": "⚠️ Sent",
+    "received": "⚠️ Received",
+    "exchanged": "⚠️ Exchanged",
+    "noResults": "⚠️ No transactions found",
+    "noTransactionsFound": "⚠️ No transactions found.",
+    "adjustSearchOrFilter": "⚠️ Try adjusting your search or filter criteria.",
+    "status": {
+      "pending": "⚠️ Pending",
+      "completed": "⚠️ Completed",
+      "failed": "⚠️ Failed"
+    },
+    "descriptions": {
+      "payment": "⚠️ Payment for services",
+      "gift": "⚠️ Birthday gift",
+      "exchange": "⚠️ Exchange from {{from}} to {{to}}",
+      "dinner": "⚠️ Dinner payment",
+      "rent": "⚠️ Rent payment",
+      "utilities": "⚠️ Utilities payment"
+    },
+    "filters": {
+      "transactionType": "⚠️ Transaction Type",
+      "dateRange": "⚠️ Date Range",
+      "amountRangeUSD": "⚠️ Amount Range (USD)",
+      "startDate": "⚠️ Start Date",
+      "endDate": "⚠️ End Date",
+      "minAmount": "⚠️ Min Amount",
+      "maxAmount": "⚠️ Max Amount",
+      "clearFilters": "⚠️ Clear Filters",
+      "applyFilters": "⚠️ Apply Filters",
+      "types": {
+        "all": "⚠️ All",
+        "sent": "⚠️ Sent",
+        "received": "🆕 Recibió",
+        "exchanged": "🆕 Intercambiado"
+      }
+    }
+  },
+  "moneyTransfer": {
+    "details": {
+      "title": "⚠️ Transfer Details",
+      "transferSummary": "⚠️ Transfer Summary",
+      "to": "⚠️ To",
+      "amount": "⚠️ Amount",
+      "when": "⚠️ When",
+      "account": "⚠️ Account",
+      "paymentMethod": "⚠️ Payment Method",
+      "bankAccount": "⚠️ Bank Account",
+      "creditDebitCard": "⚠️ Credit/Debit Card",
+      "selectBank": "⚠️ Select Bank",
+      "selectCard": "⚠️ Select Card",
+      "addNewCard": "⚠️ + Add New Card",
+      "feeBreakdown": "⚠️ Fee Breakdown",
+      "transferAmount": "⚠️ Transfer Amount",
+      "transferFee": "⚠️ Transfer Fee",
+      "total": "⚠️ Total",
+      "continue": "⚠️ Continue",
+      "immediateTransfer": "⚠️ Immediate Transfer",
+      "scheduledTransfer": "🆕 Programado para el 25 de mayo de 2025"
+    }
+  },
+  "privacy": {
+    "title": "⚠️ Privacy Policy",
+    "lastUpdated": "⚠️ {{date}}",
+    "lastUpdatedPrefix": "⚠️ Last updated",
+    "securityIcon": "⚠️ Security Shield Icon",
+    "sections": {
+      "introduction": {
+        "title": "⚠️ Introduction",
+        "paragraph1": "⚠️ Global Remit (\"we,\" \"our,\" or \"us\") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our mobile application or website (collectively, \"Services\").",
+        "paragraph2": "⚠️ Please read this Privacy Policy carefully. By accessing or using our Services, you acknowledge that you have read, understood, and agree to be bound by all the terms of this Privacy Policy."
+      },
+      "informationCollected": {
+        "title": "⚠️ Information We Collect",
+        "personalInfoTitle": "⚠️ Personal Information",
+        "personalInfoContent": "⚠️ We may collect personally identifiable information, such as your name, email address, telephone number, date of birth, social security number, and government-issued identification when you register for an account or use our Services.",
+        "financialInfoTitle": "⚠️ Financial Information",
+        "financialInfoContent": "⚠️ To provide our banking and money transfer services, we collect banking details, account numbers, transaction history, and payment information.",
+        "deviceInfoTitle": "⚠️ Device Information",
+        "deviceInfoContent": "⚠️ When you access our Services, we automatically collect device information such as your mobile device ID, model, manufacturer, operating system, IP address, and browsing behavior."
+      },
+      "informationUsage": {
+        "title": "⚠️ How We Use Your Information",
+        "intro": "⚠️ We use the information we collect to",
+        "bulletPoints": {
+          "improve": "⚠️ Provide, maintain, and improve our Services",
+          "process": "⚠️ Process transactions and send related information",
+          "verify": "⚠️ Verify your identity and prevent fraud",
+          "personalize": "⚠️ Personalize your experience",
+          "communicate": "⚠️ Communicate with you about our Services",
+          "comply": "⚠️ Comply with legal obligations"
+        }
+      },
+      "informationSharing": {
+        "title": "⚠️ Information Sharing",
+        "intro": "⚠️ We may share your information with",
+        "bulletPoints": {
+          "providers": "⚠️ Service providers who perform services on our behalf",
+          "financial": "⚠️ Financial institutions to complete transactions",
+          "legal": "⚠️ Legal authorities when required by law",
+          "partners": "⚠️ Business partners with your consent"
+        }
+      },
+      "dataSecurity": {
+        "title": "⚠️ Data Security",
+        "content": "⚠️ We implement appropriate security measures to protect your personal information from unauthorized access, alteration, disclosure, or destruction. However, no method of transmission over the Internet or electronic storage is 100% secure, so we cannot guarantee absolute security."
+      },
+      "yourRights": {
+        "title": "⚠️ Your Rights",
+        "intro": "⚠️ Depending on your location, you may have certain rights regarding your personal information, including the right to",
+        "bulletPoints": {
+          "access": "⚠️ Access your personal information",
+          "correct": "⚠️ Correct inaccurate information",
+          "delete": "⚠️ Delete your personal information",
+          "object": "⚠️ Object to processing of your information",
+          "withdraw": "⚠️ Withdraw consent"
+        }
+      },
+      "contactUs": {
+        "title": "⚠️ Contact Us",
+        "intro": "⚠️ If you have any questions about this Privacy Policy, please contact us at",
+        "email": "🆕 privacy@globalremit.com",
+        "phone": "🆕 1-800-REMIT GLOBAL"
+      }
+    }
+  },
+  "supportChat": {
+    "title": "⚠️ Global Remit Chat",
+    "today": "⚠️ Today",
+    "typePlaceholder": "⚠️ Type your message",
+    "send": "⚠️ Send",
+    "attach": "⚠️ Attach",
+    "messageSent": "⚠️ Message Sent",
+    "messageSentDesc": "⚠️ Your message was sent to our support team.",
+    "quickReplies": {
+      "accountQuestions": "⚠️ Account questions",
+      "creditCards": "⚠️ Credit cards",
+      "appIssues": "⚠️ App issues",
+      "moneyTransfers": "⚠️ Money transfers",
+      "accountAccess": "⚠️ Account access",
+      "openAccount": "⚠️ Open account"
+    },
+    "exitConfirm": {
+      "title": "🆕 ¿Quieres dejar el chat?",
+      "message": "🆕 Todos los datos ingresados ​​no se guardarán",
+      "leave": "🆕 Quiero irme",
+      "continue": "🆕 Quiero continuar"
+    }
+  },
+  "pin": {
+    "title": "⚠️ Transaction Security Setup",
+    "setPinSubtitle": "⚠️ Set up 6-digit PIN (Optional)",
+    "enterPinPlaceholder": "⚠️ Enter 6-digit PIN",
+    "confirmPinPlaceholder": "⚠️ Confirm PIN",
+    "save": "⚠️ Save",
+    "saving": "⚠️ Saving...",
+    "useBiometrics": "⚠️ Use {{biometricType}}",
+    "errorRequireOneMethod": "⚠️ Please set up at least one authentication method",
+    "errorPinLength": "⚠️ PIN must be 6 digits",
+    "errorPinMismatch": "⚠️ PINs do not match",
+    "errorPinOnlyNumbers": "⚠️ PIN must contain only numbers",
+    "errorSavingSettings": "🆕 No se pudo guardar la configuración"
+  },
+  "accountClosure": {
+    "title": "⚠️ Account Closure",
+    "mainQuestion": "⚠️ How can we help you with your account closure?",
+    "processingRequest": "⚠️ We are currently processing your request and we'd like to understand why.",
+    "nextStepInfo": "⚠️ If you would like to close your account, the next step would be to contact us.",
+    "bankingIssueNote": "⚠️ If the account closure is due to a banking issue, we may be able to help resolve it without closing your account.",
+    "getMoreInfo": "⚠️ Get more information about account closure",
+    "proceedAwareness": "⚠️ To proceed with account closure, please be aware that:",
+    "points": {
+      "recurringPayments": "⚠️ All recurring payments and automatic transfers will be canceled",
+      "remainingBalance": "⚠️ Any remaining balance will need to be transferred to another account",
+      "destroyCards": "🆕 Tendrás que destruir cualquier carta asociada",
+      "processDuration": "🆕 El proceso puede tardar hasta 30 días en completarse"
+    },
+    "requestClosure": "🆕 Solicitar cierre de la cuenta",
+    "alert": {
+      "title": "🆕 Solicitud de cierre recibida",
+      "message": "🆕 La solicitud de cierre de su cuenta ha sido enviada. El siguiente paso es comunicarse con nuestro servicio al cliente."
+    }
+  },
+  "editHomeAddress": {
+    "title": "⚠️ Home Address",
+    "description": "⚠️ Update your residential address",
+    "fields": {
+      "street": "⚠️ Street Address",
+      "city": "⚠️ City",
+      "zipCode": "⚠️ Zip Code"
+    },
+    "buttons": {
+      "update": "⚠️ Update",
+      "verify": "⚠️ Verify"
+    },
+    "otp": {
+      "sentTitle": "⚠️ OTP Sent",
+      "sentMessage": "⚠️ A verification code has been sent to your email address",
+      "enterCode": "⚠️ Enter the verification code sent to your email",
+      "placeholder": "⚠️ 6-digit code",
+      "invalidTitle": "⚠️ Invalid OTP",
+      "invalidMessage": "⚠️ Please enter the 6-digit code sent to your email"
+    },
+    "update": {
+      "successTitle": "⚠️ Address Updated",
+      "successMessage": "⚠️ Your home address has been successfully updated"
+    },
+    "privacyConfirmation": "🆕 Confirmo que los detalles proporcionados son precisos y de acuerdo con los términos legales y de privacidad."
+  },
+  "editMailingAddress": {
+    "title": "⚠️ Mailing Address",
+    "description": "⚠️ Update your mailing address where you would like to receive important documents",
+    "fields": {
+      "street": "⚠️ Street Address",
+      "city": "⚠️ City",
+      "zipCode": "⚠️ Zip Code"
+    },
+    "buttons": {
+      "update": "⚠️ Update",
+      "verify": "⚠️ Verify"
+    },
+    "otp": {
+      "sentTitle": "⚠️ OTP Sent",
+      "sentMessage": "⚠️ A verification code has been sent to your email address",
+      "enterCode": "⚠️ Enter the verification code sent to your email",
+      "placeholder": "⚠️ 6-digit code",
+      "invalidTitle": "⚠️ Invalid OTP",
+      "invalidMessage": "⚠️ Please enter the 6-digit code sent to your email"
+    },
+    "update": {
+      "successTitle": "⚠️ Address Updated",
+      "successMessage": "🆕 Su dirección postal se ha actualizado correctamente"
+    },
+    "privacyConfirmation": "🆕 Confirmo que los detalles proporcionados son precisos y de acuerdo con los términos legales y de privacidad."
+  }
+}

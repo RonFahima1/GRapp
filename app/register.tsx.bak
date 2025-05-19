@@ -1,0 +1,7 @@
+import { Redirect } from 'expo-router';
+
+export default function Register() {
+  // Use Redirect component instead of useEffect+router.replace
+  // This is the proper way to handle initial navigation in Expo Router
+  return <Redirect href="/register/personal-info" />;
+}

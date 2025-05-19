@@ -7,14 +7,22 @@ import {
   ScrollView
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { ChevronRight, Shield } from 'lucide-react-native';
+import { ChevronLeft, ChevronRight, Shield } from 'lucide-react-native';
 import * as Haptics from 'expo-haptics';
 import { useRouter } from 'expo-router';
 import { Platform } from 'react-native';
+import { useTranslate } from '../../context/TranslationContext';
 
 export default function AboutPrivacyScreen() {
   const router = useRouter();
-  const lastUpdated = 'May 10, 2025';
+  const { t, isRTL } = useTranslate();
+  // Get localized date format
+  const formattedDate = new Date(2025, 4, 10).toLocaleDateString(isRTL ? 'th-TH' : 'en-US', { 
+    year: 'numeric', 
+    month: 'long', 
+    day: 'numeric' 
+  });
+  const lastUpdated = t('privacy.lastUpdated', { date: formattedDate });
 
   // Handle tap with haptic feedback
   const handleTap = () => {
@@ -26,86 +34,95 @@ export default function AboutPrivacyScreen() {
   return (
     <SafeAreaView style={styles.container} edges={['top']}>
       {/* Header with title and back button */}
-      <View style={styles.header}>
+      <View style={[styles.header, { flexDirection: isRTL ? 'row-reverse' : 'row' }]}>
         <TouchableOpacity 
-          style={styles.backButton} 
+          style={[styles.backButton, { left: isRTL ? undefined : 0, right: isRTL ? 0 : undefined }]} 
           onPress={() => router.back()}
+          hitSlop={{ top: 15, right: 15, bottom: 15, left: 15 }}
+          accessibilityLabel={t('common.back')}
+          accessibilityRole="button"
         >
-          <ChevronRight color="#007AFF" size={24} style={styles.backIcon} />
+          <ChevronLeft color="#007AFF" size={24} />
         </TouchableOpacity>
-        <Text style={styles.headerTitle}>Privacy Policy</Text>
+        <Text style={styles.headerTitle} accessibilityRole="header">{t('privacy.title')}</Text>
         <View style={styles.rightPlaceholder} />
       </View>
 
-      <ScrollView style={styles.contentContainer}>
+      <ScrollView 
+        style={styles.contentContainer} 
+        contentContainerStyle={{ paddingBottom: 20 }}
+        accessibilityLabel={t('privacy.title')}
+      >
         {/* Banner */}
         <View style={styles.bannerContainer}>
-          <Shield color="#007AFF" size={36} />
-          <Text style={styles.lastUpdated}>Last updated: {lastUpdated}</Text>
+          <Shield color="#007AFF" size={36} accessibilityLabel={t('privacy.securityIcon')} />
+          <Text style={[styles.lastUpdated, { textAlign: isRTL ? 'right' : 'left' }]}>
+            {t('privacy.lastUpdatedPrefix')}: {lastUpdated}
+          </Text>
         </View>
 
         {/* Privacy Policy content */}
         <View style={styles.policyContainer}>
-          <Text style={styles.sectionTitle}>Introduction</Text>
-          <Text style={styles.paragraph}>
-            Global Remit ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our mobile application or website (collectively, "Services").
+          <Text style={[styles.sectionTitle, { textAlign: isRTL ? 'right' : 'left' }]}>{t('privacy.sections.introduction.title')}</Text>
+          <Text style={[styles.paragraph, { textAlign: isRTL ? 'right' : 'left' }]}>
+            {t('privacy.sections.introduction.paragraph1')}
           </Text>
-          <Text style={styles.paragraph}>
-            Please read this Privacy Policy carefully. By accessing or using our Services, you acknowledge that you have read, understood, and agree to be bound by all the terms of this Privacy Policy.
-          </Text>
-
-          <Text style={styles.sectionTitle}>Information We Collect</Text>
-          <Text style={styles.paragraph}>
-            <Text style={styles.bold}>Personal Information:</Text> We may collect personally identifiable information, such as your name, email address, telephone number, date of birth, social security number, and government-issued identification when you register for an account or use our Services.
-          </Text>
-          <Text style={styles.paragraph}>
-            <Text style={styles.bold}>Financial Information:</Text> To provide our banking and money transfer services, we collect banking details, account numbers, transaction history, and payment information.
-          </Text>
-          <Text style={styles.paragraph}>
-            <Text style={styles.bold}>Device Information:</Text> When you access our Services, we automatically collect device information such as your mobile device ID, model, manufacturer, operating system, IP address, and browsing behavior.
+          <Text style={[styles.paragraph, { textAlign: isRTL ? 'right' : 'left' }]}>
+            {t('privacy.sections.introduction.paragraph2')}
           </Text>
 
-          <Text style={styles.sectionTitle}>How We Use Your Information</Text>
-          <Text style={styles.paragraph}>
-            We use the information we collect to:
+          <Text style={[styles.sectionTitle, { textAlign: isRTL ? 'right' : 'left' }]}>{t('privacy.sections.informationCollected.title')}</Text>
+          <Text style={[styles.paragraph, { textAlign: isRTL ? 'right' : 'left' }]}>
+            <Text style={styles.bold}>{t('privacy.sections.informationCollected.personalInfoTitle')}:</Text> {t('privacy.sections.informationCollected.personalInfoContent')}
           </Text>
-          <Text style={styles.bulletPoint}>• Provide, maintain, and improve our Services</Text>
-          <Text style={styles.bulletPoint}>• Process transactions and send related information</Text>
-          <Text style={styles.bulletPoint}>• Verify your identity and prevent fraud</Text>
-          <Text style={styles.bulletPoint}>• Personalize your experience</Text>
-          <Text style={styles.bulletPoint}>• Communicate with you about our Services</Text>
-          <Text style={styles.bulletPoint}>• Comply with legal obligations</Text>
-
-          <Text style={styles.sectionTitle}>Information Sharing</Text>
-          <Text style={styles.paragraph}>
-            We may share your information with:
+          <Text style={[styles.paragraph, { textAlign: isRTL ? 'right' : 'left' }]}>
+            <Text style={styles.bold}>{t('privacy.sections.informationCollected.financialInfoTitle')}:</Text> {t('privacy.sections.informationCollected.financialInfoContent')}
           </Text>
-          <Text style={styles.bulletPoint}>• Service providers who perform services on our behalf</Text>
-          <Text style={styles.bulletPoint}>• Financial institutions to complete transactions</Text>
-          <Text style={styles.bulletPoint}>• Legal authorities when required by law</Text>
-          <Text style={styles.bulletPoint}>• Business partners with your consent</Text>
-
-          <Text style={styles.sectionTitle}>Data Security</Text>
-          <Text style={styles.paragraph}>
-            We implement appropriate security measures to protect your personal information from unauthorized access, alteration, disclosure, or destruction. However, no method of transmission over the Internet or electronic storage is 100% secure, so we cannot guarantee absolute security.
+          <Text style={[styles.paragraph, { textAlign: isRTL ? 'right' : 'left' }]}>
+            <Text style={styles.bold}>{t('privacy.sections.informationCollected.deviceInfoTitle')}:</Text> {t('privacy.sections.informationCollected.deviceInfoContent')}
           </Text>
 
-          <Text style={styles.sectionTitle}>Your Rights</Text>
-          <Text style={styles.paragraph}>
-            Depending on your location, you may have certain rights regarding your personal information, including the right to:
+          <Text style={[styles.sectionTitle, { textAlign: isRTL ? 'right' : 'left' }]}>{t('privacy.sections.informationUsage.title')}</Text>
+          <Text style={[styles.paragraph, { textAlign: isRTL ? 'right' : 'left' }]}>
+            {t('privacy.sections.informationUsage.intro')}:
           </Text>
-          <Text style={styles.bulletPoint}>• Access your personal information</Text>
-          <Text style={styles.bulletPoint}>• Correct inaccurate information</Text>
-          <Text style={styles.bulletPoint}>• Delete your personal information</Text>
-          <Text style={styles.bulletPoint}>• Object to processing of your information</Text>
-          <Text style={styles.bulletPoint}>• Withdraw consent</Text>
+          <Text style={[styles.bulletPoint, { textAlign: isRTL ? 'right' : 'left', marginRight: isRTL ? 8 : 0, marginLeft: isRTL ? 0 : 8 }]}>• {t('privacy.sections.informationUsage.bulletPoints.improve')}</Text>
+          <Text style={[styles.bulletPoint, { textAlign: isRTL ? 'right' : 'left', marginRight: isRTL ? 8 : 0, marginLeft: isRTL ? 0 : 8 }]}>• {t('privacy.sections.informationUsage.bulletPoints.process')}</Text>
+          <Text style={[styles.bulletPoint, { textAlign: isRTL ? 'right' : 'left', marginRight: isRTL ? 8 : 0, marginLeft: isRTL ? 0 : 8 }]}>• {t('privacy.sections.informationUsage.bulletPoints.verify')}</Text>
+          <Text style={[styles.bulletPoint, { textAlign: isRTL ? 'right' : 'left', marginRight: isRTL ? 8 : 0, marginLeft: isRTL ? 0 : 8 }]}>• {t('privacy.sections.informationUsage.bulletPoints.personalize')}</Text>
+          <Text style={[styles.bulletPoint, { textAlign: isRTL ? 'right' : 'left', marginRight: isRTL ? 8 : 0, marginLeft: isRTL ? 0 : 8 }]}>• {t('privacy.sections.informationUsage.bulletPoints.communicate')}</Text>
+          <Text style={[styles.bulletPoint, { textAlign: isRTL ? 'right' : 'left', marginRight: isRTL ? 8 : 0, marginLeft: isRTL ? 0 : 8 }]}>• {t('privacy.sections.informationUsage.bulletPoints.comply')}</Text>
 
-          <Text style={styles.sectionTitle}>Contact Us</Text>
-          <Text style={styles.paragraph}>
-            If you have any questions about this Privacy Policy, please contact us at:
+          <Text style={[styles.sectionTitle, { textAlign: isRTL ? 'right' : 'left' }]}>{t('privacy.sections.informationSharing.title')}</Text>
+          <Text style={[styles.paragraph, { textAlign: isRTL ? 'right' : 'left' }]}>
+            {t('privacy.sections.informationSharing.intro')}:
           </Text>
-          <Text style={styles.contactInfo}>privacy@globalremit.com</Text>
-          <Text style={styles.contactInfo}>1-800-GLOBAL-REMIT</Text>
+          <Text style={[styles.bulletPoint, { textAlign: isRTL ? 'right' : 'left', marginRight: isRTL ? 8 : 0, marginLeft: isRTL ? 0 : 8 }]}>• {t('privacy.sections.informationSharing.bulletPoints.providers')}</Text>
+          <Text style={[styles.bulletPoint, { textAlign: isRTL ? 'right' : 'left', marginRight: isRTL ? 8 : 0, marginLeft: isRTL ? 0 : 8 }]}>• {t('privacy.sections.informationSharing.bulletPoints.financial')}</Text>
+          <Text style={[styles.bulletPoint, { textAlign: isRTL ? 'right' : 'left', marginRight: isRTL ? 8 : 0, marginLeft: isRTL ? 0 : 8 }]}>• {t('privacy.sections.informationSharing.bulletPoints.legal')}</Text>
+          <Text style={[styles.bulletPoint, { textAlign: isRTL ? 'right' : 'left', marginRight: isRTL ? 8 : 0, marginLeft: isRTL ? 0 : 8 }]}>• {t('privacy.sections.informationSharing.bulletPoints.partners')}</Text>
+
+          <Text style={[styles.sectionTitle, { textAlign: isRTL ? 'right' : 'left' }]}>{t('privacy.sections.dataSecurity.title')}</Text>
+          <Text style={[styles.paragraph, { textAlign: isRTL ? 'right' : 'left' }]}>
+            {t('privacy.sections.dataSecurity.content')}
+          </Text>
+
+          <Text style={[styles.sectionTitle, { textAlign: isRTL ? 'right' : 'left' }]}>{t('privacy.sections.yourRights.title')}</Text>
+          <Text style={[styles.paragraph, { textAlign: isRTL ? 'right' : 'left' }]}>
+            {t('privacy.sections.yourRights.intro')}:
+          </Text>
+          <Text style={[styles.bulletPoint, { textAlign: isRTL ? 'right' : 'left', marginRight: isRTL ? 8 : 0, marginLeft: isRTL ? 0 : 8 }]}>• {t('privacy.sections.yourRights.bulletPoints.access')}</Text>
+          <Text style={[styles.bulletPoint, { textAlign: isRTL ? 'right' : 'left', marginRight: isRTL ? 8 : 0, marginLeft: isRTL ? 0 : 8 }]}>• {t('privacy.sections.yourRights.bulletPoints.correct')}</Text>
+          <Text style={[styles.bulletPoint, { textAlign: isRTL ? 'right' : 'left', marginRight: isRTL ? 8 : 0, marginLeft: isRTL ? 0 : 8 }]}>• {t('privacy.sections.yourRights.bulletPoints.delete')}</Text>
+          <Text style={[styles.bulletPoint, { textAlign: isRTL ? 'right' : 'left', marginRight: isRTL ? 8 : 0, marginLeft: isRTL ? 0 : 8 }]}>• {t('privacy.sections.yourRights.bulletPoints.object')}</Text>
+          <Text style={[styles.bulletPoint, { textAlign: isRTL ? 'right' : 'left', marginRight: isRTL ? 8 : 0, marginLeft: isRTL ? 0 : 8 }]}>• {t('privacy.sections.yourRights.bulletPoints.withdraw')}</Text>
+
+          <Text style={[styles.sectionTitle, { textAlign: isRTL ? 'right' : 'left' }]}>{t('privacy.sections.contactUs.title')}</Text>
+          <Text style={[styles.paragraph, { textAlign: isRTL ? 'right' : 'left' }]}>
+            {t('privacy.sections.contactUs.intro')}:
+          </Text>
+          <Text style={[styles.contactInfo, { textAlign: isRTL ? 'right' : 'left', marginRight: isRTL ? 8 : 0, marginLeft: isRTL ? 0 : 8 }]}>{t('privacy.sections.contactUs.email')}</Text>
+          <Text style={[styles.contactInfo, { textAlign: isRTL ? 'right' : 'left', marginRight: isRTL ? 8 : 0, marginLeft: isRTL ? 0 : 8 }]}>{t('privacy.sections.contactUs.phone')}</Text>
         </View>
       </ScrollView>
     </SafeAreaView>
@@ -118,7 +135,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#F8F8F8',
   },
   header: {
-    flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
     paddingHorizontal: 16,
@@ -126,12 +142,12 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     borderBottomColor: '#EEEEEE',
     backgroundColor: '#FFFFFF',
+    position: 'relative',
   },
   backButton: {
-    padding: 8,
-  },
-  backIcon: {
-    transform: [{ scaleX: -1 }],
+    padding: 5,
+    position: 'absolute',
+    zIndex: 10,
   },
   headerTitle: {
     fontSize: 18,

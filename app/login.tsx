@@ -124,7 +124,7 @@ export default function Login() {
 
       <View style={[styles.linkContainer, isRTL && styles.linkContainerRTL]}>
         <Text style={isRTL ? styles.rtlText : null}>{t('no_account', "Don't have an account?")} </Text>
-        <Link href="/register" style={[styles.link, isRTL && styles.rtlText]}>{t('register', 'Register')}</Link>
+        <Link href="/register-redirect" style={[styles.link, isRTL && styles.rtlText]}>{t('register', 'Register')}</Link>
       </View>
     </View>
   );

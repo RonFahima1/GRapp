@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import ProfileMenuItem, { MenuItemProps } from './ProfileMenuItem';
+import { useTranslate } from '../context/TranslationContext';
 
 type ProfileMenuSectionProps = {
   title?: string;
@@ -8,9 +9,10 @@ type ProfileMenuSectionProps = {
 };
 
 const ProfileMenuSection: React.FC<ProfileMenuSectionProps> = ({ title, items }) => {
+  const { isRTL } = useTranslate();
   return (
     <View style={styles.section}>
-      {title && <Text style={styles.sectionTitle}>{title}</Text>}
+      {title && <Text style={[styles.sectionTitle, { textAlign: isRTL ? 'right' : 'left' }]}>{title}</Text>}
       <View style={styles.sectionContent}>
         {items.map((item, index) => (
           <View key={item.id} style={[

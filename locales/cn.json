@@ -1,35 +1,441 @@
 {
+  "welcome_to_remit": "欢迎来到汇",
+  "enter_phone_subtitle": "输入您的电话号码开始",
+  "enter_phone_number": "输入电话号码",
+  "continue_button": "继续",
+  "already_member": "已经是会员了吗？",
+  "login_here": "在这里登录",
+  "phone_error_start": "电话号码必须从0或5开始",
+  "phone_error_invalid": "请输入有效的电话号码",
+  "phone_error_format": "无效的电话号码格式",
   "hello": "你好",
+  "hello_name": "Hello, {{name}}",
   "welcome_back": "欢迎回来",
+  "login_subtitle": "登录继续",
+  "email": "电子邮件",
+  "password": "密码",
+  "login": "登录",
+  "login_error_fields": "请填写所有字段",
+  "enable_biometric_login": "Enable {{biometricType}} login",
+  "no_account": "没有帐户？",
+  "register": "登记",
   "settings": "设置",
-  "appearance": "外观",
-  "dark_mode": "深色模式",
+  "appearance": "外貌",
+  "dark_mode": "黑暗模式",
   "notifications": "通知",
   "push_notifications": "推送通知",
-  "security": "安全",
-  "biometric_authentication": "生物识别认证",
-  "change_password": "修改密码",
+  "security_title": "安全",
+  "biometric_authentication": "生物识别验证",
+  "change_password": "更改密码",
   "payment": "支付",
-  "payment_methods": "支付方式",
+  "payment_methods": "付款方式",
   "currencies": "货币",
   "support": "支持",
   "help_center": "帮助中心",
   "contact_us": "联系我们",
   "language": "语言",
   "total_balance": "总余额",
-  "this_week": "本周",
-  "send_money": "发送资金",
-  "request": "请求",
+  "this_week": "本星期",
+  "percentage_change": "{{percentage}}% this week",
+  "send_money": "寄钱",
+  "send": "发送",
+  "request": "要求",
+  "exchange": "交换",
   "top_up": "充值",
-  "recent_transactions": "最近交易",
+  "recent_transactions": "最近的交易",
   "exchange_rates": "汇率",
-  "see_all": "查看全部",
+  "see_all": "看看全部",
   "my_wallet": "我的钱包",
-  "transactions": "交易",
-  "profile": "个人资料",
-  "edit_profile": "编辑资料",
-  "countries": "国家",
-  "transfers": "转账",
-  "sent": "已发送",
-  "logout": "退出登录"
+  "dashboard": {
+    "cards": "支付卡",
+    "wallet_transactions": "交易",
+    "wallet_balance": "平衡",
+    "add_new_card": "添加新卡"
+  },
+  "transactions_label": "交易",
+  "profile_tab": "轮廓",
+  "edit_profile": "编辑个人资料",
+  "logout": "注销",
+  "cancel": "取消",
+  "done": "完毕",
+  "security": {
+    "section_title": "安全与偏好",
+    "preferences": "系统首选项",
+    "faceID": "面对ID",
+    "faceIDDescription": "使用Face ID解锁您的帐户",
+    "changePassword": "更改密码",
+    "securityQuestions": "安全问题"
+  },
+  "profile": {
+    "fullName": "姓名",
+    "email": "电子邮件",
+    "emailAddress": "{{email}}",
+    "myAccount": "我的账户",
+    "documents": "文件",
+    "securityAndPreferences": "安全与偏好",
+    "notificationSettings": "通知设置",
+    "helpSupport": "帮助和支持",
+    "about": "关于应用程序",
+    "accountId": "帐户ID",
+    "memberSince": "从那以后",
+    "transactionCount": "交易",
+    "accountIdValue": "{{accountId}}",
+    "memberSinceValue": "{{memberSince}}",
+    "transactionCountValue": "{{transactionCount}}",
+    "language": "语言",
+    "darkMode": "黑暗模式",
+    "logoutConfirmation": "您确定要注销吗？"
+  },
+  "common": {
+    "copied": "复制到剪贴板",
+    "copied_title": "复制",
+    "darkModeDescription": "为应用程序使用深色主题",
+    "copy": "复制",
+    "back": "后退",
+    "close": "关闭",
+    "continue": "继续",
+    "cancel": "取消",
+    "save": "节省",
+    "delete": "删除",
+    "edit": "编辑",
+    "settings": "设置",
+    "search": "搜索",
+    "done": "完毕",
+    "visa": "签证",
+    "mastercard": "万事达",
+    "endingIn": "结束",
+    "expires": "到期"
+  },
+  "countries": {
+    "Mexico": "墨西哥",
+    "India": "印度",
+    "Colombia": "哥伦比亚",
+    "Philippines": "菲律宾"
+  },
+  "language_settings": {
+    "preferred_languages": "首选语言",
+    "all_languages": "所有语言",
+    "changing_language": "改变语言...",
+    "language_change_error": "有一个错误改变语言的错误。请重试。",
+    "restart_required": "重新启动所需",
+    "restart_message_rtl": "在RTL和LTR语言之间切换需要重新启动应用程序。你想继续吗？",
+    "restart_message_ltr": "在LTR和RTL语言之间切换需要重新启动应用程序。你想继续吗？",
+    "save_preferences": "保存首选项",
+    "language_saved": "语言偏好成功保存。"
+  },
+  "error": "错误",
+  "ok": "好的",
+  "tabs": {
+    "home": "家",
+    "g": "g",
+    "profile": "轮廓"
+  },
+  "myAccount": {
+    "title": "我的账户",
+    "accountOnName": "姓名帐户",
+    "userName": "约翰·史密斯",
+    "accountNumber": "帐号",
+    "branch": "分支",
+    "bank": "银行",
+    "ibanNumber": "伊班号",
+    "swiftCode": "SWIFT代码",
+    "yourContactInformation": "您的联系信息",
+    "emailAddress": "电子邮件",
+    "homeAddress": "家庭住址",
+    "mailingAddress": "邮寄地址",
+    "phone": "电话",
+    "editEmail": "编辑电子邮件地址",
+    "editHomeAddress": "编辑家庭住址",
+    "editMailingAddress": "编辑邮寄地址",
+    "editPhone": "编辑电话号码",
+    "requestAccountClosure": "请求帐户关闭",
+    "informationCopied": "复制到剪贴板的信息"
+  },
+  "sendMoney": {
+    "availableBalance": "可用的余额",
+    "title": "寄钱",
+    "to": "到",
+    "amount": "数量",
+    "transferType": "转移类型",
+    "immediateTransfer": "立即转移",
+    "scheduledTransfer": "计划转移",
+    "scheduledDate": "计划日期",
+    "scheduledTime": "预定时间",
+    "details": {
+      "title": "转移详细信息",
+      "transferSummary": "转移摘要",
+      "to": "到",
+      "amount": "数量",
+      "when": "什么时候",
+      "account": "帐户",
+      "paymentMethod": "付款方式",
+      "bankAccount": "银行帐户",
+      "creditDebitCard": "信用/借记卡",
+      "selectBank": "选择银行",
+      "selectCard": "选择卡",
+      "addNewCard": "+添加新卡",
+      "feeBreakdown": "费用分解",
+      "transferAmount": "转移金额",
+      "transferFee": "转移费",
+      "total": "全部的",
+      "continue": "继续",
+      "scheduleInfo": "计划进行",
+      "immediateInfo": "立即转移"
+    }
+  },
+  "transactions": {
+    "title": "交易",
+    "allTransactions": "所有交易",
+    "search": "搜索交易",
+    "searchPlaceholder": "按名称或描述搜索",
+    "filter": "筛选",
+    "filterTitle": "过滤交易",
+    "apply": "申请",
+    "clear": "清除全部",
+    "close": "关闭",
+    "reset": "重置",
+    "dateRange": "日期范围",
+    "from": "从",
+    "to": "到",
+    "startDate": "开始日期",
+    "endDate": "结束日期",
+    "amountRange": "数量范围",
+    "min": "最小",
+    "max": "最大限度",
+    "transactionType": "交易类型",
+    "all": "全部",
+    "sent": "发送",
+    "received": "已收到",
+    "exchanged": "交换",
+    "noResults": "找不到交易",
+    "noTransactionsFound": "找不到交易。",
+    "adjustSearchOrFilter": "尝试调整搜索或过滤标准。",
+    "status": {
+      "pending": "待办的",
+      "completed": "完全的",
+      "failed": "失败的"
+    },
+    "descriptions": {
+      "payment": "服务付款",
+      "gift": "生日礼物",
+      "exchange": "Exchange from {{from}} to {{to}}",
+      "dinner": "晚餐付款",
+      "rent": "租金付款",
+      "utilities": "公用事业付款"
+    },
+    "filters": {
+      "transactionType": "交易类型",
+      "dateRange": "日期范围",
+      "amountRangeUSD": "金额范围（美元）",
+      "startDate": "开始日期",
+      "endDate": "结束日期",
+      "minAmount": "最小金额",
+      "maxAmount": "最大金额",
+      "clearFilters": "清除过滤器",
+      "applyFilters": "应用过滤器",
+      "types": {
+        "all": "全部",
+        "sent": "发送",
+        "received": "已收到",
+        "exchanged": "交换"
+      }
+    }
+  },
+  "moneyTransfer": {
+    "details": {
+      "title": "转移详细信息",
+      "transferSummary": "转移摘要",
+      "to": "到",
+      "amount": "数量",
+      "when": "什么时候",
+      "account": "帐户",
+      "paymentMethod": "付款方式",
+      "bankAccount": "银行帐户",
+      "creditDebitCard": "信用/借记卡",
+      "selectBank": "选择银行",
+      "selectCard": "选择卡",
+      "addNewCard": "+添加新卡",
+      "feeBreakdown": "费用分解",
+      "transferAmount": "转移金额",
+      "transferFee": "转移费",
+      "total": "全部的",
+      "continue": "继续",
+      "immediateTransfer": "立即转移",
+      "scheduledTransfer": "计划于2025年5月25日"
+    }
+  },
+  "privacy": {
+    "title": "隐私政策",
+    "lastUpdated": "{{date}}",
+    "lastUpdatedPrefix": "最后更新",
+    "securityIcon": "安全盾牌图标",
+    "sections": {
+      "introduction": {
+        "title": "介绍",
+        "paragraph1": "全球职权范围（“我们”，“我们的”或“我们”）致力于保护您的隐私。本隐私政策解释了当您使用我们的移动应用程序或网站时（统称为“服务”），我们如何收集，使用，披露和保护您的信息。",
+        "paragraph2": "请仔细阅读本隐私政策。通过访问或使用我们的服务，您承认您已经阅读，理解并同意受本隐私政策的所有条款的约束。"
+      },
+      "informationCollected": {
+        "title": "我们收集的信息",
+        "personalInfoTitle": "个人信息",
+        "personalInfoContent": "当您注册帐户或使用我们的服务时，我们可能会收集个人身份信息，例如您的姓名，电子邮件地址，电话号码，出生日期，社会保险号和政府发行的身份。",
+        "financialInfoTitle": "财务信息",
+        "financialInfoContent": "为了提供我们的银行和汇款服务，我们收集银行详细信息，帐号，交易历史记录和付款信息。",
+        "deviceInfoTitle": "设备信息",
+        "deviceInfoContent": "当您访问我们的服务时，我们会自动收集设备信息，例如您的移动设备ID，型号，制造商，操作系统，IP地址和浏览行为。"
+      },
+      "informationUsage": {
+        "title": "我们如何使用您的信息",
+        "intro": "我们使用收集的信息",
+        "bulletPoints": {
+          "improve": "提供，维护和改善我们的服务",
+          "process": "处理交易并发送相关信息",
+          "verify": "验证您的身份并防止欺诈",
+          "personalize": "个性化您的经验",
+          "communicate": "与您沟通有关我们的服务",
+          "comply": "遵守法律义务"
+        }
+      },
+      "informationSharing": {
+        "title": "信息共享",
+        "intro": "我们可能会与您分享您的信息",
+        "bulletPoints": {
+          "providers": "代表我们执行服务的服务提供商",
+          "financial": "金融机构完成交易",
+          "legal": "法律要求的法律当局",
+          "partners": "您同意的业务合作伙伴"
+        }
+      },
+      "dataSecurity": {
+        "title": "数据安全",
+        "content": "我们采取适当的安全措施，以保护您的个人信息免受未经授权的访问，更改，披露或破坏的影响。但是，没有通过Internet或电子存储的传输方法100％安全，因此我们不能保证绝对安全性。"
+      },
+      "yourRights": {
+        "title": "您的权利",
+        "intro": "根据您的位置，您可能拥有有关个人信息的某些权利，包括",
+        "bulletPoints": {
+          "access": "访问您的个人信息",
+          "correct": "纠正不准确的信息",
+          "delete": "删除您的个人信息",
+          "object": "反对处理信息的处理",
+          "withdraw": "撤回同意"
+        }
+      },
+      "contactUs": {
+        "title": "联系我们",
+        "intro": "如果您对本隐私政策有任何疑问，请通过",
+        "email": "privacy@globalremit.com",
+        "phone": "1-800-Global-Remit"
+      }
+    }
+  },
+  "supportChat": {
+    "title": "全球列出聊天",
+    "today": "今天",
+    "typePlaceholder": "输入您的消息",
+    "send": "发送",
+    "attach": "附",
+    "messageSent": "发送的消息",
+    "messageSentDesc": "您的消息已发送给我们的支持团队。",
+    "quickReplies": {
+      "accountQuestions": "帐户问题",
+      "creditCards": "信用卡",
+      "appIssues": "应用问题",
+      "moneyTransfers": "钱转移",
+      "accountAccess": "帐户访问",
+      "openAccount": "开放帐户"
+    },
+    "exitConfirm": {
+      "title": "想离开聊天吗？",
+      "message": "所有输入的数据都不会保存",
+      "leave": "我想离开",
+      "continue": "我想继续"
+    }
+  },
+  "pin": {
+    "title": "交易安全设置",
+    "setPinSubtitle": "设置6位销（可选）",
+    "enterPinPlaceholder": "输入6位PIN",
+    "confirmPinPlaceholder": "确认PIN",
+    "save": "节省",
+    "saving": "保存...",
+    "useBiometrics": "Use {{biometricType}}",
+    "errorRequireOneMethod": "请设置至少一种身份验证方法",
+    "errorPinLength": "别针必须是6位数字",
+    "errorPinMismatch": "引脚不匹配",
+    "errorPinOnlyNumbers": "PIN必须只包含数字",
+    "errorSavingSettings": "无法保存设置"
+  },
+  "accountClosure": {
+    "title": "帐户关闭",
+    "mainQuestion": "我们如何帮助您关闭帐户？",
+    "processingRequest": "我们目前正在处理您的请求，我们想了解原因。",
+    "nextStepInfo": "如果您想关闭您的帐户，下一步将是与我们联系。",
+    "bankingIssueNote": "如果帐户关闭是由于银行问题，我们可能能够帮助解决该帐户而无需关闭您的帐户。",
+    "getMoreInfo": "获取有关关闭帐户的更多信息",
+    "proceedAwareness": "要进行帐户关闭，请注意：",
+    "points": {
+      "recurringPayments": "所有重复的付款和自动转移将被取消",
+      "remainingBalance": "任何剩余的余额都需要转移到另一个帐户",
+      "destroyCards": "您需要销毁任何相关卡",
+      "processDuration": "该过程可能需要长达30天才能完成"
+    },
+    "requestClosure": "请求帐户关闭",
+    "alert": {
+      "title": "收到的关闭请求",
+      "message": "您的帐户关闭请求已提交。下一步是联系我们的客户服务。"
+    }
+  },
+  "editHomeAddress": {
+    "title": "家庭住址",
+    "description": "更新您的住宅地址",
+    "fields": {
+      "street": "街道地址",
+      "city": "城市",
+      "zipCode": "邮政编码"
+    },
+    "buttons": {
+      "update": "更新",
+      "verify": "核实"
+    },
+    "otp": {
+      "sentTitle": "OTP发送",
+      "sentMessage": "验证代码已发送到您的电子邮件地址",
+      "enterCode": "输入发送到电子邮件的验证代码",
+      "placeholder": "6位代码",
+      "invalidTitle": "无效的OTP",
+      "invalidMessage": "请输入发送给您电子邮件的6位代码"
+    },
+    "update": {
+      "successTitle": "地址更新",
+      "successMessage": "您的家庭住址已成功更新"
+    },
+    "privacyConfirmation": "我确认所提供的细节是准确的，我同意法律和隐私条款。"
+  },
+  "editMailingAddress": {
+    "title": "邮寄地址",
+    "description": "更新您的邮件地址，您想在哪里收到重要文件",
+    "fields": {
+      "street": "街道地址",
+      "city": "城市",
+      "zipCode": "邮政编码"
+    },
+    "buttons": {
+      "update": "更新",
+      "verify": "核实"
+    },
+    "otp": {
+      "sentTitle": "OTP发送",
+      "sentMessage": "验证代码已发送到您的电子邮件地址",
+      "enterCode": "输入发送到电子邮件的验证代码",
+      "placeholder": "6位代码",
+      "invalidTitle": "无效的OTP",
+      "invalidMessage": "请输入发送给您电子邮件的6位代码"
+    },
+    "update": {
+      "successTitle": "地址更新",
+      "successMessage": "您的邮件地址已成功更新"
+    },
+    "privacyConfirmation": "我确认所提供的细节是准确的，我同意法律和隐私条款。"
+  }
 }

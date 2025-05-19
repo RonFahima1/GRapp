@@ -1,0 +1,441 @@
+{
+  "welcome_to_remit": "Maligayang pagdating sa remit",
+  "enter_phone_subtitle": "Ipasok ang iyong numero ng telepono upang makapagsimula",
+  "enter_phone_number": "Ipasok ang numero ng telepono",
+  "continue_button": "Magpatuloy",
+  "already_member": "Miyembro na?",
+  "login_here": "Mag -login dito",
+  "phone_error_start": "Ang numero ng telepono ay dapat magsimula sa 0 o 5",
+  "phone_error_invalid": "Mangyaring magpasok ng isang wastong numero ng telepono",
+  "phone_error_format": "Hindi wastong format ng numero ng telepono",
+  "hello": "Kumusta",
+  "hello_name": "Hello, {{name}}",
+  "welcome_back": "Maligayang pagdating",
+  "login_subtitle": "Mag -sign in upang magpatuloy",
+  "email": "Email",
+  "password": "Password",
+  "login": "Mag -login",
+  "login_error_fields": "Mangyaring punan ang lahat ng mga patlang",
+  "enable_biometric_login": "Enable {{biometricType}} login",
+  "no_account": "Wala kang account?",
+  "register": "Magrehistro",
+  "settings": "Mga setting",
+  "appearance": "Hitsura",
+  "dark_mode": "Madilim na mode",
+  "notifications": "Mga abiso",
+  "push_notifications": "Itulak ang mga abiso",
+  "security_title": "Seguridad",
+  "biometric_authentication": "Biometric Authentication",
+  "change_password": "Baguhin ang password",
+  "payment": "Pagbabayad",
+  "payment_methods": "Mga Paraan ng Pagbabayad",
+  "currencies": "Pera",
+  "support": "Suporta",
+  "help_center": "Tulong sa sentro",
+  "contact_us": "Makipag -ugnay sa amin",
+  "language": "Wika",
+  "total_balance": "Kabuuang balanse",
+  "this_week": "Sa linggong ito",
+  "percentage_change": "{{percentage}}% this week",
+  "send_money": "Magpadala ng pera",
+  "send": "Ipadala",
+  "request": "Humiling",
+  "exchange": "Palitan",
+  "top_up": "I -top up",
+  "recent_transactions": "Kamakailang mga transaksyon",
+  "exchange_rates": "Mga rate ng palitan",
+  "see_all": "Tingnan ang lahat",
+  "my_wallet": "Ang pitaka ko",
+  "dashboard": {
+    "cards": "Mga kard ng pagbabayad",
+    "wallet_transactions": "Mga Transaksyon",
+    "wallet_balance": "Balansehin",
+    "add_new_card": "Magdagdag ng bagong card"
+  },
+  "transactions_label": "Mga Transaksyon",
+  "profile_tab": "Profile",
+  "edit_profile": "I -edit ang profile",
+  "logout": "Mag -logout",
+  "cancel": "Kanselahin",
+  "done": "Tapos na",
+  "security": {
+    "section_title": "Seguridad at Kagustuhan",
+    "preferences": "Kagustuhan ng system",
+    "faceID": "Mukha id",
+    "faceIDDescription": "Gumamit ng Face ID upang i -unlock ang iyong account",
+    "changePassword": "Baguhin ang password",
+    "securityQuestions": "Mga Katanungan sa Seguridad"
+  },
+  "profile": {
+    "fullName": "Buong pangalan",
+    "email": "Email",
+    "emailAddress": "{{email}}",
+    "myAccount": "Ang aking account",
+    "documents": "Mga dokumento",
+    "securityAndPreferences": "Seguridad at Kagustuhan",
+    "notificationSettings": "Mga Setting ng Abiso",
+    "helpSupport": "Tulong at Suporta",
+    "about": "Tungkol sa app",
+    "accountId": "Account ID",
+    "memberSince": "Miyembro mula pa",
+    "transactionCount": "Mga Transaksyon",
+    "accountIdValue": "{{accountId}}",
+    "memberSinceValue": "{{memberSince}}",
+    "transactionCountValue": "{{transactionCount}}",
+    "language": "Wika",
+    "darkMode": "Madilim na mode",
+    "logoutConfirmation": "Sigurado ka bang nais mong mag -log out?"
+  },
+  "common": {
+    "copied": "Kinopya sa clipboard",
+    "copied_title": "Kinopya",
+    "darkModeDescription": "Gumamit ng madilim na tema para sa app",
+    "copy": "Kopyahin",
+    "back": "Balik",
+    "close": "Malapit",
+    "continue": "Magpatuloy",
+    "cancel": "Kanselahin",
+    "save": "I -save",
+    "delete": "Tanggalin",
+    "edit": "I -edit",
+    "settings": "Mga setting",
+    "search": "Maghanap",
+    "done": "Tapos na",
+    "visa": "Visa",
+    "mastercard": "MasterCard",
+    "endingIn": "nagtatapos sa",
+    "expires": "Mag -expire"
+  },
+  "countries": {
+    "Mexico": "Mexico",
+    "India": "India",
+    "Colombia": "Colombia",
+    "Philippines": "Pilipinas"
+  },
+  "language_settings": {
+    "preferred_languages": "Ginustong mga wika",
+    "all_languages": "Lahat ng wika",
+    "changing_language": "Ang pagbabago ng wika ...",
+    "language_change_error": "Nagkaroon ng isang error na pagbabago ng wika. Mangyaring subukang muli.",
+    "restart_required": "I -restart ang kinakailangan",
+    "restart_message_rtl": "Ang paglipat sa pagitan ng mga wika ng RTL at LTR ay nangangailangan ng application upang i -restart. Nais mo bang magpatuloy?",
+    "restart_message_ltr": "Ang paglipat sa pagitan ng mga wika ng LTR at RTL ay nangangailangan ng application upang i -restart. Nais mo bang magpatuloy?",
+    "save_preferences": "I -save ang mga kagustuhan",
+    "language_saved": "Matagumpay na nai -save ang mga kagustuhan sa wika."
+  },
+  "error": "Error",
+  "ok": "Ok",
+  "tabs": {
+    "home": "Home",
+    "g": "G",
+    "profile": "Profile"
+  },
+  "myAccount": {
+    "title": "Ang aking account",
+    "accountOnName": "Account sa pangalan",
+    "userName": "John Smith",
+    "accountNumber": "Numero ng account",
+    "branch": "Sangay",
+    "bank": "Bangko",
+    "ibanNumber": "Numero ng iban",
+    "swiftCode": "Swift Code",
+    "yourContactInformation": "Ang iyong impormasyon sa pakikipag -ugnay",
+    "emailAddress": "Email address",
+    "homeAddress": "Address ng bahay",
+    "mailingAddress": "Address ng mailing",
+    "phone": "Telepono",
+    "editEmail": "I -edit ang email address",
+    "editHomeAddress": "I -edit ang address ng bahay",
+    "editMailingAddress": "I -edit ang address ng mailing",
+    "editPhone": "I -edit ang numero ng telepono",
+    "requestAccountClosure": "Humiling ng pagsasara ng account",
+    "informationCopied": "Impormasyon na kinopya sa clipboard"
+  },
+  "sendMoney": {
+    "availableBalance": "Magagamit na balanse",
+    "title": "Magpadala ng pera",
+    "to": "Sa",
+    "amount": "Halaga",
+    "transferType": "Uri ng paglipat",
+    "immediateTransfer": "Agarang paglipat",
+    "scheduledTransfer": "Naka -iskedyul na paglipat",
+    "scheduledDate": "Naka -iskedyul na petsa",
+    "scheduledTime": "Naka -iskedyul na oras",
+    "details": {
+      "title": "Mga detalye ng paglipat",
+      "transferSummary": "Buod ng paglipat",
+      "to": "Sa",
+      "amount": "Halaga",
+      "when": "Kailan",
+      "account": "Account",
+      "paymentMethod": "Paraan ng Pagbabayad",
+      "bankAccount": "Bank account",
+      "creditDebitCard": "Credit/debit card",
+      "selectBank": "Piliin ang Bangko",
+      "selectCard": "Piliin ang Card",
+      "addNewCard": "+ Magdagdag ng bagong card",
+      "feeBreakdown": "Breakdown ng bayad",
+      "transferAmount": "Halaga ng paglipat",
+      "transferFee": "Transfer Fee",
+      "total": "Kabuuan",
+      "continue": "Magpatuloy",
+      "scheduleInfo": "Naka -iskedyul para sa",
+      "immediateInfo": "Agarang paglipat"
+    }
+  },
+  "transactions": {
+    "title": "Mga Transaksyon",
+    "allTransactions": "Lahat ng mga transaksyon",
+    "search": "Mga Transaksyon sa Paghahanap",
+    "searchPlaceholder": "Maghanap sa pangalan o paglalarawan",
+    "filter": "Filter",
+    "filterTitle": "Mga transaksyon sa filter",
+    "apply": "Mag -apply",
+    "clear": "Malinaw ang lahat",
+    "close": "Malapit",
+    "reset": "I -reset",
+    "dateRange": "Saklaw ng petsa",
+    "from": "Mula sa",
+    "to": "Sa",
+    "startDate": "Petsa ng pagsisimula",
+    "endDate": "Pagtatapos ng petsa",
+    "amountRange": "Saklaw ng halaga",
+    "min": "Min",
+    "max": "Max",
+    "transactionType": "Uri ng transaksyon",
+    "all": "Lahat",
+    "sent": "Ipinadala",
+    "received": "Natanggap",
+    "exchanged": "Ipinagpalit",
+    "noResults": "Walang nahanap na mga transaksyon",
+    "noTransactionsFound": "Walang nahanap na mga transaksyon.",
+    "adjustSearchOrFilter": "Subukang ayusin ang iyong pamantayan sa paghahanap o filter.",
+    "status": {
+      "pending": "Nakabinbin",
+      "completed": "Nakumpleto",
+      "failed": "Nabigo"
+    },
+    "descriptions": {
+      "payment": "Pagbabayad para sa mga serbisyo",
+      "gift": "Regalo sa Kaarawan",
+      "exchange": "Exchange from {{from}} to {{to}}",
+      "dinner": "Pagbabayad ng hapunan",
+      "rent": "Rent Payment",
+      "utilities": "Pagbabayad ng Mga Utility"
+    },
+    "filters": {
+      "transactionType": "Uri ng transaksyon",
+      "dateRange": "Saklaw ng petsa",
+      "amountRangeUSD": "Saklaw ng Halaga (USD)",
+      "startDate": "Petsa ng pagsisimula",
+      "endDate": "Pagtatapos ng petsa",
+      "minAmount": "Halaga ng min",
+      "maxAmount": "Max na halaga",
+      "clearFilters": "Malinaw na mga filter",
+      "applyFilters": "Mag -apply ng mga filter",
+      "types": {
+        "all": "Lahat",
+        "sent": "Ipinadala",
+        "received": "Natanggap",
+        "exchanged": "Ipinagpalit"
+      }
+    }
+  },
+  "moneyTransfer": {
+    "details": {
+      "title": "Mga detalye ng paglipat",
+      "transferSummary": "Buod ng paglipat",
+      "to": "Sa",
+      "amount": "Halaga",
+      "when": "Kailan",
+      "account": "Account",
+      "paymentMethod": "Paraan ng Pagbabayad",
+      "bankAccount": "Bank account",
+      "creditDebitCard": "Credit/debit card",
+      "selectBank": "Piliin ang Bangko",
+      "selectCard": "Piliin ang Card",
+      "addNewCard": "+ Magdagdag ng bagong card",
+      "feeBreakdown": "Breakdown ng bayad",
+      "transferAmount": "Halaga ng paglipat",
+      "transferFee": "Transfer Fee",
+      "total": "Kabuuan",
+      "continue": "Magpatuloy",
+      "immediateTransfer": "Agarang paglipat",
+      "scheduledTransfer": "Naka -iskedyul para sa Mayo 25, 2025"
+    }
+  },
+  "privacy": {
+    "title": "Patakaran sa Pagkapribado",
+    "lastUpdated": "{{date}}",
+    "lastUpdatedPrefix": "Huling na -update",
+    "securityIcon": "Icon ng kalasag sa seguridad",
+    "sections": {
+      "introduction": {
+        "title": "Panimula",
+        "paragraph1": "Ang Global Remit (\"Kami,\" \"Ang aming,\" o \"kami\") ay nakatuon sa pagprotekta sa iyong privacy. Ipinapaliwanag ng Patakaran sa Pagkapribado na ito kung paano namin kinokolekta, ginagamit, ibunyag, at pangalagaan ang iyong impormasyon kapag ginamit mo ang aming mobile application o website (sama -sama, \"mga serbisyo\").",
+        "paragraph2": "Mangyaring basahin nang mabuti ang Patakaran sa Pagkapribado na ito. Sa pamamagitan ng pag -access o paggamit ng aming mga serbisyo, kinikilala mo na nabasa mo, naunawaan, at sumasang -ayon na makagapos ng lahat ng mga tuntunin ng Patakaran sa Pagkapribado na ito."
+      },
+      "informationCollected": {
+        "title": "Impormasyon na kinokolekta namin",
+        "personalInfoTitle": "Personal na impormasyon",
+        "personalInfoContent": "Maaari kaming mangolekta ng personal na makikilalang impormasyon, tulad ng iyong pangalan, email address, numero ng telepono, petsa ng kapanganakan, numero ng seguridad sa lipunan, at pagkakakilanlan na inilabas ng gobyerno kapag nagparehistro ka para sa isang account o gamitin ang aming mga serbisyo.",
+        "financialInfoTitle": "Impormasyon sa pananalapi",
+        "financialInfoContent": "Upang maibigay ang aming mga serbisyo sa paglilipat ng pagbabangko at pera, kinokolekta namin ang mga detalye ng pagbabangko, mga numero ng account, kasaysayan ng transaksyon, at impormasyon sa pagbabayad.",
+        "deviceInfoTitle": "Impormasyon ng aparato",
+        "deviceInfoContent": "Kapag na -access mo ang aming mga serbisyo, awtomatikong kinokolekta namin ang impormasyon ng aparato tulad ng iyong mobile device ID, modelo, tagagawa, operating system, IP address, at pag -browse sa pag -browse."
+      },
+      "informationUsage": {
+        "title": "Paano namin ginagamit ang iyong impormasyon",
+        "intro": "Ginagamit namin ang impormasyong kinokolekta namin",
+        "bulletPoints": {
+          "improve": "Magbigay, mapanatili, at pagbutihin ang aming mga serbisyo",
+          "process": "Proseso ng mga transaksyon at magpadala ng mga kaugnay na impormasyon",
+          "verify": "Patunayan ang iyong pagkakakilanlan at maiwasan ang pandaraya",
+          "personalize": "Isapersonal ang iyong karanasan",
+          "communicate": "Makipag -usap sa iyo tungkol sa aming mga serbisyo",
+          "comply": "Sumunod sa mga ligal na obligasyon"
+        }
+      },
+      "informationSharing": {
+        "title": "Pagbabahagi ng impormasyon",
+        "intro": "Maaari naming ibahagi ang iyong impormasyon sa",
+        "bulletPoints": {
+          "providers": "Mga service provider na nagsasagawa ng mga serbisyo sa aming ngalan",
+          "financial": "Mga institusyong pampinansyal upang makumpleto ang mga transaksyon",
+          "legal": "Mga Ligal na Awtoridad Kapag hinihiling ng batas",
+          "partners": "Mga kasosyo sa negosyo sa iyong pahintulot"
+        }
+      },
+      "dataSecurity": {
+        "title": "Seguridad ng data",
+        "content": "Nagpapatupad kami ng naaangkop na mga hakbang sa seguridad upang maprotektahan ang iyong personal na impormasyon mula sa hindi awtorisadong pag -access, pagbabago, pagsisiwalat, o pagkawasak. Gayunpaman, walang paraan ng paghahatid sa internet o elektronikong imbakan ay 100% na ligtas, kaya hindi namin masiguro ang ganap na seguridad."
+      },
+      "yourRights": {
+        "title": "Ang iyong mga karapatan",
+        "intro": "Depende sa iyong lokasyon, maaari kang magkaroon ng ilang mga karapatan tungkol sa iyong personal na impormasyon, kabilang ang karapatan sa",
+        "bulletPoints": {
+          "access": "I -access ang iyong personal na impormasyon",
+          "correct": "Tamang hindi tumpak na impormasyon",
+          "delete": "Tanggalin ang iyong personal na impormasyon",
+          "object": "Object sa pagproseso ng iyong impormasyon",
+          "withdraw": "Bawiin ang pahintulot"
+        }
+      },
+      "contactUs": {
+        "title": "Makipag -ugnay sa amin",
+        "intro": "Kung mayroon kang anumang mga katanungan tungkol sa Patakaran sa Pagkapribado na ito, mangyaring makipag -ugnay sa amin sa",
+        "email": "privacy@globalremit.com",
+        "phone": "1-800-Global-Remit"
+      }
+    }
+  },
+  "supportChat": {
+    "title": "Global Remit Chat",
+    "today": "Ngayon",
+    "typePlaceholder": "I -type ang iyong mensahe",
+    "send": "Ipadala",
+    "attach": "Ikabit",
+    "messageSent": "Ipinadala ang mensahe",
+    "messageSentDesc": "Ang iyong mensahe ay ipinadala sa aming koponan ng suporta.",
+    "quickReplies": {
+      "accountQuestions": "Mga katanungan sa account",
+      "creditCards": "Mga credit card",
+      "appIssues": "Mga isyu sa app",
+      "moneyTransfers": "Paglilipat ng pera",
+      "accountAccess": "Pag -access sa account",
+      "openAccount": "Buksan ang account"
+    },
+    "exitConfirm": {
+      "title": "Nais mong iwanan ang chat?",
+      "message": "Ang lahat ng ipinasok na data ay hindi mai -save",
+      "leave": "Gusto kong umalis",
+      "continue": "Gusto kong magpatuloy"
+    }
+  },
+  "pin": {
+    "title": "Pag -setup ng seguridad sa transaksyon",
+    "setPinSubtitle": "I-set up ang 6-digit na pin (opsyonal)",
+    "enterPinPlaceholder": "Ipasok ang 6-digit na pin",
+    "confirmPinPlaceholder": "Kumpirmahin ang pin",
+    "save": "I -save",
+    "saving": "Saving ...",
+    "useBiometrics": "Use {{biometricType}}",
+    "errorRequireOneMethod": "Mangyaring mag -set up ng hindi bababa sa isang paraan ng pagpapatunay",
+    "errorPinLength": "Ang pin ay dapat na 6 na numero",
+    "errorPinMismatch": "Ang mga pin ay hindi tumutugma",
+    "errorPinOnlyNumbers": "Ang pin ay dapat maglaman lamang ng mga numero",
+    "errorSavingSettings": "Nabigong i -save ang mga setting"
+  },
+  "accountClosure": {
+    "title": "Pagsasara ng account",
+    "mainQuestion": "Paano ka namin matutulungan sa pagsasara ng iyong account?",
+    "processingRequest": "Kasalukuyan kaming pinoproseso ang iyong kahilingan at nais naming maunawaan kung bakit.",
+    "nextStepInfo": "Kung nais mong isara ang iyong account, ang susunod na hakbang ay ang makipag -ugnay sa amin.",
+    "bankingIssueNote": "Kung ang pagsasara ng account ay dahil sa isang isyu sa pagbabangko, maaari naming makatulong na malutas ito nang hindi isasara ang iyong account.",
+    "getMoreInfo": "Kumuha ng karagdagang impormasyon tungkol sa pagsasara ng account",
+    "proceedAwareness": "Upang magpatuloy sa pagsasara ng account, mangyaring magkaroon ng kamalayan na:",
+    "points": {
+      "recurringPayments": "Ang lahat ng mga paulit -ulit na pagbabayad at awtomatikong paglilipat ay kanselahin",
+      "remainingBalance": "Anumang natitirang balanse ay kailangang ilipat sa ibang account",
+      "destroyCards": "Kailangan mong sirain ang anumang mga nauugnay na kard",
+      "processDuration": "Ang proseso ay maaaring tumagal ng hanggang 30 araw upang makumpleto"
+    },
+    "requestClosure": "Humiling ng pagsasara ng account",
+    "alert": {
+      "title": "Natanggap ang kahilingan sa pagsasara",
+      "message": "Ang iyong kahilingan sa pagsasara ng account ay isinumite. Ang susunod na hakbang ay ang pakikipag -ugnay sa aming serbisyo sa customer."
+    }
+  },
+  "editHomeAddress": {
+    "title": "Address ng bahay",
+    "description": "I -update ang iyong tirahan",
+    "fields": {
+      "street": "Address ng kalye",
+      "city": "Lungsod",
+      "zipCode": "Zip code"
+    },
+    "buttons": {
+      "update": "I -update",
+      "verify": "I -verify"
+    },
+    "otp": {
+      "sentTitle": "Ipinadala ang OTP",
+      "sentMessage": "Ang isang verification code ay ipinadala sa iyong email address",
+      "enterCode": "Ipasok ang verification code na ipinadala sa iyong email",
+      "placeholder": "6-digit na code",
+      "invalidTitle": "Di -wastong OTP",
+      "invalidMessage": "Mangyaring ipasok ang 6-digit na code na ipinadala sa iyong email"
+    },
+    "update": {
+      "successTitle": "Na -update ang address",
+      "successMessage": "Matagumpay na na -update ang iyong address sa bahay"
+    },
+    "privacyConfirmation": "Kinumpirma ko na ang mga detalye na ibinigay ay tumpak at sumasang -ayon ako sa mga termino ng ligal at privacy."
+  },
+  "editMailingAddress": {
+    "title": "Address ng mailing",
+    "description": "I -update ang iyong mailing address kung saan nais mong makatanggap ng mga mahahalagang dokumento",
+    "fields": {
+      "street": "Address ng kalye",
+      "city": "Lungsod",
+      "zipCode": "Zip code"
+    },
+    "buttons": {
+      "update": "I -update",
+      "verify": "I -verify"
+    },
+    "otp": {
+      "sentTitle": "Ipinadala ang OTP",
+      "sentMessage": "Ang isang verification code ay ipinadala sa iyong email address",
+      "enterCode": "Ipasok ang verification code na ipinadala sa iyong email",
+      "placeholder": "6-digit na code",
+      "invalidTitle": "Di -wastong OTP",
+      "invalidMessage": "Mangyaring ipasok ang 6-digit na code na ipinadala sa iyong email"
+    },
+    "update": {
+      "successTitle": "Na -update ang address",
+      "successMessage": "Ang iyong mailing address ay matagumpay na na -update"
+    },
+    "privacyConfirmation": "Kinumpirma ko na ang mga detalye na ibinigay ay tumpak at sumasang -ayon ako sa mga termino ng ligal at privacy."
+  }
+}

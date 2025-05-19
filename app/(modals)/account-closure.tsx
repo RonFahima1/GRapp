@@ -6,23 +6,30 @@ import {
   TouchableOpacity, 
   Image,
   Alert,
-  ScrollView
+  ScrollView,
+  Platform
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { ChevronLeft } from 'lucide-react-native';
 import * as Haptics from 'expo-haptics';
 import { useRouter } from 'expo-router';
+import { useTranslate } from '../../context/TranslationContext';
 
 const AccountClosureScreen = () => {
   const router = useRouter();
+  const { t, isRTL } = useTranslate();
   const [confirmReceived, setConfirmReceived] = useState(false);
 
   // Function to request account closure
   const requestClosure = () => {
-    Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
-    Alert.alert('Closure Request Received', 'Your account closure request has been submitted. The next step is to contact our customer service.', [
-      { text: 'OK', onPress: () => router.back() }
-    ]);
+    if (Platform.OS !== 'web') {
+      Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
+    }
+    Alert.alert(
+      t('accountClosure.alert.title'), 
+      t('accountClosure.alert.message'), 
+      [{ text: t('common.ok'), onPress: () => router.back() }]
+    );
   };
 
   // Function to get more info
@@ -33,15 +40,16 @@ const AccountClosureScreen = () => {
   return (
     <SafeAreaView style={styles.container} edges={['top']}>
       {/* Header with title and back button */}
-      <View style={styles.header}>
+      <View style={[styles.header, { flexDirection: isRTL ? 'row-reverse' : 'row' }]}>
         <TouchableOpacity 
-          style={styles.backButton} 
+          style={[styles.backButton, { left: isRTL ? undefined : 0, right: isRTL ? 0 : undefined }]} 
           onPress={() => router.back()}
           hitSlop={{ top: 15, right: 15, bottom: 15, left: 15 }}
+          accessibilityLabel={t('common.back')}
         >
           <ChevronLeft color="#007AFF" size={24} />
         </TouchableOpacity>
-        <Text style={styles.headerTitle}>Account Closure</Text>
+        <Text style={styles.headerTitle}>{t('accountClosure.title')}</Text>
         <View style={styles.rightPlaceholder} />
       </View>
 
@@ -55,56 +63,56 @@ const AccountClosureScreen = () => {
           </View>
         </View>
 
-        <Text style={styles.titleText}>
-          How can we help you with your account closure?
+        <Text style={[styles.titleText, { textAlign: isRTL ? 'right' : 'left' }]}>
+          {t('accountClosure.mainQuestion')}
         </Text>
 
-        <Text style={styles.descriptionText}>
-          We are currently processing your request and we'd like to understand why.
+        <Text style={[styles.descriptionText, { textAlign: isRTL ? 'right' : 'left' }]}>
+          {t('accountClosure.processingRequest')}
         </Text>
 
-        <Text style={styles.infoText}>
-          If you would like to close your account, the next step would be to contact us.
+        <Text style={[styles.infoText, { textAlign: isRTL ? 'right' : 'left' }]}>
+          {t('accountClosure.nextStepInfo')}
         </Text>
 
-        <Text style={styles.noteText}>
-          If the account closure is due to a banking issue, we may be able to help resolve it without closing your account.
+        <Text style={[styles.noteText, { textAlign: isRTL ? 'right' : 'left' }]}>
+          {t('accountClosure.bankingIssueNote')}
         </Text>
 
         <TouchableOpacity style={styles.actionButton} onPress={getMoreInfo}>
-          <Text style={styles.actionButtonText}>Get more information about account closure</Text>
+          <Text style={[styles.actionButtonText, { textAlign: isRTL ? 'right' : 'left' }]}>{t('accountClosure.getMoreInfo')}</Text>
         </TouchableOpacity>
 
         {confirmReceived && (
           <>
             <View style={styles.separator} />
             
-            <Text style={styles.confirmationText}>
-              To proceed with account closure, please be aware that:
+            <Text style={[styles.confirmationText, { textAlign: isRTL ? 'right' : 'left' }]}>
+              {t('accountClosure.proceedAwareness')}
             </Text>
             
-            <View style={styles.pointContainer}>
+            <View style={[styles.pointContainer, { flexDirection: isRTL ? 'row-reverse' : 'row' }]}>
               <Text style={styles.bulletPoint}>•</Text>
-              <Text style={styles.pointText}>All recurring payments and automatic transfers will be canceled</Text>
+              <Text style={[styles.pointText, { textAlign: isRTL ? 'right' : 'left' }]}>{t('accountClosure.points.recurringPayments')}</Text>
             </View>
             
-            <View style={styles.pointContainer}>
+            <View style={[styles.pointContainer, { flexDirection: isRTL ? 'row-reverse' : 'row' }]}>
               <Text style={styles.bulletPoint}>•</Text>
-              <Text style={styles.pointText}>Any remaining balance will need to be transferred to another account</Text>
+              <Text style={[styles.pointText, { textAlign: isRTL ? 'right' : 'left' }]}>{t('accountClosure.points.remainingBalance')}</Text>
             </View>
             
-            <View style={styles.pointContainer}>
+            <View style={[styles.pointContainer, { flexDirection: isRTL ? 'row-reverse' : 'row' }]}>
               <Text style={styles.bulletPoint}>•</Text>
-              <Text style={styles.pointText}>You'll need to destroy any associated cards</Text>
+              <Text style={[styles.pointText, { textAlign: isRTL ? 'right' : 'left' }]}>{t('accountClosure.points.destroyCards')}</Text>
             </View>
             
-            <View style={styles.pointContainer}>
+            <View style={[styles.pointContainer, { flexDirection: isRTL ? 'row-reverse' : 'row' }]}>
               <Text style={styles.bulletPoint}>•</Text>
-              <Text style={styles.pointText}>The process may take up to 30 days to complete</Text>
+              <Text style={[styles.pointText, { textAlign: isRTL ? 'right' : 'left' }]}>{t('accountClosure.points.processDuration')}</Text>
             </View>
             
             <TouchableOpacity style={styles.closeAccountButton} onPress={requestClosure}>
-              <Text style={styles.closeAccountText}>Request Account Closure</Text>
+              <Text style={[styles.closeAccountText, { textAlign: isRTL ? 'right' : 'left' }]}>{t('accountClosure.requestClosure')}</Text>
             </TouchableOpacity>
           </>
         )}
@@ -119,7 +127,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#F8F8F8',
   },
   header: {
-    flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
     paddingHorizontal: 20,
@@ -127,6 +134,7 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     borderBottomColor: '#E0E0E0',
     backgroundColor: '#FFFFFF',
+    position: 'relative',
   },
   headerTitle: {
     fontSize: 18,
@@ -136,6 +144,8 @@ const styles = StyleSheet.create({
   },
   backButton: {
     padding: 5,
+    position: 'absolute',
+    zIndex: 10,
   },
   rightPlaceholder: {
     width: 30,
@@ -192,28 +202,24 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: '700',
     color: '#333333',
-    textAlign: 'center',
     marginBottom: 20,
     fontFamily: 'System',
   },
   descriptionText: {
     fontSize: 16,
     color: '#666666',
-    textAlign: 'center',
     marginBottom: 20,
     fontFamily: 'System',
   },
   infoText: {
     fontSize: 16,
     color: '#666666',
-    textAlign: 'center',
     marginBottom: 10,
     fontFamily: 'System',
   },
   noteText: {
     fontSize: 14,
     color: '#666666',
-    textAlign: 'center',
     marginBottom: 30,
     fontFamily: 'System',
   },

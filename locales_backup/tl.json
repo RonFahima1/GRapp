@@ -1,0 +1,150 @@
+{
+  "welcome_to_remit": "Maligayang pagdating sa Remit",
+  "enter_phone_subtitle": "Ilagay ang iyong numero ng telepono para makapagsimula",
+  "enter_phone_number": "Ilagay ang numero ng telepono",
+  "continue_button": "Magpatuloy",
+  "already_member": "Miyembro na?",
+  "login_here": "Mag-login dito",
+  "phone_error_start": "Ang numero ng telepono ay dapat magsimula sa 0 o 5",
+  "phone_error_invalid": "Mangyaring maglagay ng wastong numero ng telepono",
+  "phone_error_format": "Hindi wastong format ng numero ng telepono",
+  "hello": "Kamusta",
+  "hello_name": "Kamusta, {{name}}",
+  "welcome_back": "Maligayang pagbabalik",
+  "login_subtitle": "Mag-sign in para magpatuloy",
+  "email": "Email",
+  "password": "Password",
+  "login": "Mag-login",
+  "login_error_fields": "Mangyaring punan ang lahat ng fields",
+  "enable_biometric_login": "I-enable ang {{biometricType}} login",
+  "no_account": "Walang account?",
+  "register": "Mag-rehistro",
+  "settings": "Mga Setting",
+  "appearance": "Hitsura",
+  "dark_mode": "Dark Mode",
+  "notifications": "Mga Notification",
+  "push_notifications": "Push Notifications",
+  "security_title": "🆕 Seguridad",
+  "biometric_authentication": "Biometric Authentication",
+  "change_password": "Palitan ang Password",
+  "payment": "Bayad",
+  "payment_methods": "Mga Paraan ng Pagbabayad",
+  "currencies": "Mga Currency",
+  "support": "Suporta",
+  "help_center": "Help Center",
+  "contact_us": "Makipag-ugnayan sa Amin",
+  "language": "Wika",
+  "total_balance": "Kabuuang Balanse",
+  "this_week": "ngayong linggo",
+  "percentage_change": "{{percentage}}% ngayong linggo",
+  "send_money": "Magpadala ng Pera",
+  "send": "magpadala",
+  "request": "Humiling",
+  "exchange": "palitan",
+  "top_up": "Mag-top Up",
+  "recent_transactions": "Mga Kamakailang Transaksyon",
+  "exchange_rates": "Mga Rate ng Palitan",
+  "see_all": "Tingnan Lahat",
+  "my_wallet": "Aking Wallet",
+  "dashboard": {
+    "add_new_card": "🆕 Magdagdag ng bagong card"
+  },
+  "transactions_label": "🆕 Mga Transaksyon",
+  "profile_tab": "🆕 Profile",
+  "edit_profile": "I-edit ang Profile",
+  "logout": "Mag-logout",
+  "cancel": "Kanselahin",
+  "done": "Tapos Na",
+  "security": {
+    "faceIDDescription": "🆕 Gumamit ng Face ID upang i -unlock ang iyong account",
+    "changePassword": "🆕 Baguhin ang password",
+    "securityQuestions": "🆕 Mga Katanungan sa Seguridad"
+  },
+  "profile": {
+    "logoutConfirmation": "🆕 Sigurado ka bang nais mong mag -log out?"
+  },
+  "common": {
+    "visa": "🆕 Visa",
+    "mastercard": "🆕 MasterCard",
+    "endingIn": "🆕 nagtatapos sa",
+    "expires": "🆕 Mag -expire"
+  },
+  "countries": {
+    "India": "🆕 India",
+    "Colombia": "🆕 Colombia",
+    "Philippines": "🆕 Pilipinas"
+  },
+  "language_settings": {
+    "save_preferences": "🆕 I -save ang mga kagustuhan",
+    "language_saved": "🆕 Matagumpay na nai -save ang mga kagustuhan sa wika."
+  },
+  "error": "Error",
+  "ok": "OK",
+  "tabs": {
+    "g": "G",
+    "profile": "Profile"
+  },
+  "myAccount": {
+    "informationCopied": "🆕 Impormasyon na kinopya sa clipboard"
+  },
+  "sendMoney": {
+    "details": {
+      "total": "🆕 Kabuuan",
+      "continue": "🆕 Magpatuloy",
+      "scheduleInfo": "🆕 Naka -iskedyul para sa",
+      "immediateInfo": "🆕 Agarang paglipat"
+    }
+  },
+  "transactions": {
+    "filters": {
+      "types": {
+        "received": "🆕 Natanggap",
+        "exchanged": "🆕 Ipinagpalit"
+      }
+    }
+  },
+  "moneyTransfer": {
+    "details": {
+      "scheduledTransfer": "🆕 Naka -iskedyul para sa Mayo 25, 2025"
+    }
+  },
+  "privacy": {
+    "sections": {
+      "contactUs": {
+        "email": "🆕 privacy@globalremit.com",
+        "phone": "🆕 1-800-Global-Remit"
+      }
+    }
+  },
+  "supportChat": {
+    "exitConfirm": {
+      "title": "🆕 Nais mong iwanan ang chat?",
+      "message": "🆕 Ang lahat ng ipinasok na data ay hindi mai -save",
+      "leave": "🆕 Gusto kong umalis",
+      "continue": "🆕 Gusto kong magpatuloy"
+    }
+  },
+  "pin": {
+    "errorSavingSettings": "🆕 Nabigong i -save ang mga setting"
+  },
+  "accountClosure": {
+    "points": {
+      "destroyCards": "🆕 Kailangan mong sirain ang anumang mga nauugnay na kard",
+      "processDuration": "🆕 Ang proseso ay maaaring tumagal ng hanggang 30 araw upang makumpleto"
+    },
+    "requestClosure": "🆕 Humiling ng pagsasara ng account",
+    "alert": {
+      "title": "🆕 Natanggap ang kahilingan sa pagsasara",
+      "message": "🆕 Ang iyong kahilingan sa pagsasara ng account ay isinumite. Ang susunod na hakbang ay ang pakikipag -ugnay sa aming serbisyo sa customer."
+    }
+  },
+  "editHomeAddress": {
+    "privacyConfirmation": "🆕 Kinumpirma ko na ang mga detalye na ibinigay ay tumpak at sumasang -ayon ako sa mga termino ng ligal at privacy."
+  },
+  "editMailingAddress": {
+    "update": {
+      "successMessage": "🆕 Ang iyong mailing address ay matagumpay na na -update"
+    },
+    "privacyConfirmation": "🆕 Kinumpirma ko na ang mga detalye na ibinigay ay tumpak at sumasang -ayon ako sa mga termino ng ligal at privacy."
+  }
+}

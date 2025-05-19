@@ -1,0 +1,101 @@
+{
+  "startTime": "2025-05-19T17:22:47.745Z",
+  "endTime": "2025-05-19T17:38:00.928Z",
+  "totalKeys": 347,
+  "totalLanguages": 15,
+  "totalAPIRequests": 4438,
+  "totalCharactersTranslated": 101248,
+  "byLanguage": {
+    "ar": {
+      "total": 16,
+      "new": 5,
+      "preserved": 43,
+      "failed": 299
+    },
+    "cn": {
+      "total": 16,
+      "new": 5,
+      "preserved": 27,
+      "failed": 315
+    },
+    "es": {
+      "total": 16,
+      "new": 5,
+      "preserved": 31,
+      "failed": 311
+    },
+    "fr": {
+      "total": 16,
+      "new": 5,
+      "preserved": 31,
+      "failed": 311
+    },
+    "he": {
+      "total": 16,
+      "new": 5,
+      "preserved": 43,
+      "failed": 299
+    },
+    "hi": {
+      "total": 16,
+      "new": 5,
+      "preserved": 55,
+      "failed": 287
+    },
+    "ja": {
+      "total": 16,
+      "new": 5,
+      "preserved": 31,
+      "failed": 311
+    },
+    "np": {
+      "total": 16,
+      "new": 5,
+      "preserved": 27,
+      "failed": 315
+    },
+    "pt": {
+      "total": 16,
+      "new": 5,
+      "preserved": 31,
+      "failed": 311
+    },
+    "ro": {
+      "total": 16,
+      "new": 5,
+      "preserved": 27,
+      "failed": 315
+    },
+    "ru": {
+      "total": 16,
+      "new": 5,
+      "preserved": 27,
+      "failed": 315
+    },
+    "si": {
+      "total": 16,
+      "new": 5,
+      "preserved": 49,
+      "failed": 293
+    },
+    "th": {
+      "total": 16,
+      "new": 0,
+      "preserved": 270,
+      "failed": 77
+    },
+    "tl": {
+      "total": 16,
+      "new": 5,
+      "preserved": 55,
+      "failed": 287
+    },
+    "zh": {
+      "total": 16,
+      "new": 5,
+      "preserved": 20,
+      "failed": 322
+    }
+  },
+  "totalDurationMs": 913183
+}

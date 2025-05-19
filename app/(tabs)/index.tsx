@@ -1,8 +1,440 @@
-import { Redirect } from 'expo-router';
+import React, { useRef, useState, useEffect } from 'react';
+import { StyleSheet, View, Text, TouchableOpacity, Image, Animated, ScrollView, Platform } from 'react-native';
+import { SafeAreaView, useSafeAreaInsets } from 'react-native-safe-area-context';
+import { LinearGradient } from 'expo-linear-gradient';
+import { BlurView } from 'expo-blur';
+import { useTranslation } from 'react-i18next';
+import { useTranslate } from '../../context/TranslationContext';
+import { useRouter } from 'expo-router';
+import { TrendingUp, ArrowUpRight, RefreshCw, PlusCircle, DollarSign, ArrowRight, ChevronRight } from 'lucide-react-native';
 
-export default function IndexScreen() {
-  // Redirect to the G page
+export default function HomeScreen() {
+  const { t } = useTranslation();
+  const { currentLanguage } = useTranslate();
+  const router = useRouter();
+  const insets = useSafeAreaInsets();
+  const scrollY = useRef(new Animated.Value(0)).current;
+  const [refreshing, setRefreshing] = useState(false);
+
+  // Sample data
+  const recentTransactions = [
+    { id: 1, name: 'Maria Rodriguez', amount: 250, currency: 'USD', date: 'May 15', status: 'completed', avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80' },
+    { id: 2, name: 'Juan Perez', amount: 150, currency: 'USD', date: 'May 10', status: 'completed', avatar: 'https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80' },
+    { id: 3, name: 'Ana Lopez', amount: 300, currency: 'USD', date: 'May 5', status: 'pending', avatar: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80' },
+  ];
+
+  const countries = [
+    { id: 1, name: 'countries.Mexico', flag: '🇲🇽', rate: '17.50', code: 'MXN', change: '+0.2%' },
+    { id: 2, name: 'countries.Philippines', flag: '🇵🇭', rate: '56.20', code: 'PHP', change: '-0.1%' },
+    { id: 3, name: 'countries.India', flag: '🇮🇳', rate: '83.15', code: 'INR', change: '+0.3%' },
+    { id: 4, name: 'countries.Colombia', flag: '🇨🇴', rate: '3,950', code: 'COP', change: '-0.5%' },
+  ];
+  
+  // Simulate refresh
+  const handleRefresh = () => {
+    setRefreshing(true);
+    setTimeout(() => {
+      setRefreshing(false);
+    }, 1500);
+  };
+
   return (
-    <Redirect href="/(tabs)/g" />
+    <SafeAreaView style={styles.container} edges={['top']}>
+      <Animated.ScrollView 
+        showsVerticalScrollIndicator={false}
+        contentContainerStyle={styles.scrollContent}
+        onScroll={Animated.event(
+          [{ nativeEvent: { contentOffset: { y: scrollY } } }],
+          { useNativeDriver: true }
+        )}
+        scrollEventThrottle={16}
+      >
+        {/* Header - Simplified without notification bar */}
+        <View style={styles.header}>
+          <View>
+            <Text style={styles.greeting}>{t('auth.hello_name', {name: 'Ron'})}</Text>
+            <Text style={styles.subGreeting}>{t('auth.welcome_back')}</Text>
+          </View>
+          <TouchableOpacity style={styles.refreshButton} onPress={handleRefresh}>
+            <RefreshCw color="#007AFF" size={20} />
+          </TouchableOpacity>
+        </View>
+
+        {/* Balance Card - iOS style with rounded corners and subtle gradient */}
+        <View style={styles.balanceCardContainer}>
+          <LinearGradient
+            colors={['#007AFF', '#34AADC']}
+            start={{ x: 0, y: 0 }}
+            end={{ x: 1, y: 0 }}
+            style={styles.balanceCard}>
+            <View style={styles.balanceCardContent}>
+              <Text style={styles.balanceLabel}>{t('dashboard.total_balance')}</Text>
+              <Text style={styles.balanceAmount}>
+                {new Intl.NumberFormat(currentLanguage, { style: 'currency', currency: 'USD' }).format(1250)}
+              </Text>
+              <View style={styles.balanceChange}>
+                <TrendingUp color="#fff" size={14} />
+                <Text style={styles.balanceChangeText}>
+                  {t('dashboard.percentage_change', {percentage: '+2.5'})}
+                </Text>
+              </View>
+            </View>
+            <View style={styles.balanceCardRight}>
+              <DollarSign color="rgba(255,255,255,0.8)" size={40} />
+            </View>
+          </LinearGradient>
+        </View>
+
+        {/* Quick Actions - iOS style with cleaner design */}
+        <View style={styles.actionsContainer}>
+          <TouchableOpacity 
+            style={styles.actionButton}
+            onPress={() => router.push('/(modals)/money-transfer')}
+          >
+            <View style={[styles.actionIcon, { backgroundColor: 'rgba(0, 122, 255, 0.1)' }]}>
+              <ArrowUpRight color="#007AFF" size={22} />
+            </View>
+            <Text style={styles.actionText}>{t('send_money')}</Text>
+          </TouchableOpacity>
+          
+          <TouchableOpacity style={styles.actionButton}>
+            <View style={[styles.actionIcon, { backgroundColor: 'rgba(52, 199, 89, 0.1)' }]}>
+              <PlusCircle color="#34C759" size={22} />
+            </View>
+            <Text style={styles.actionText}>{t('dashboard.request')}</Text>
+          </TouchableOpacity>
+          
+          <TouchableOpacity 
+            style={styles.actionButton}
+            onPress={() => router.push({
+              pathname: '/(modals)/exchange-flow/select-currency',
+              params: { from: 'USD' } // Assuming USD is the default currency the user has
+            })}
+          >
+            <View style={[styles.actionIcon, { backgroundColor: 'rgba(255, 149, 0, 0.1)' }]}>
+              <RefreshCw color="#FF9500" size={22} />
+            </View>
+            <Text style={styles.actionText}>{t('dashboard.send')}</Text>
+          </TouchableOpacity>
+        </View>
+
+        <View style={styles.sectionContainer}>
+          <View style={styles.sectionHeader}>
+            <Text style={styles.sectionTitle}>{t('recent_transactions')}</Text>
+            <TouchableOpacity onPress={() => router.push("/(modals)/transactions")}>
+              <Text style={styles.seeAllText}>{t('see_all')}</Text>
+            </TouchableOpacity>
+          </View>
+          
+          <View style={styles.transactionsContainer}>
+            {recentTransactions.map((transaction) => (
+              <View key={transaction.id} style={styles.transactionItem}>
+                <Image source={{ uri: transaction.avatar }} style={styles.transactionAvatar} />
+                
+                <View style={styles.transactionDetails}>
+                  <Text style={styles.transactionName}>{transaction.name}</Text>
+                  <Text style={styles.transactionDate}>{transaction.date}</Text>
+                </View>
+                
+                <View style={styles.transactionAmountContainer}>
+                  <Text style={[styles.transactionAmount, 
+                    transaction.status === 'pending' ? styles.transactionPending : null]}>
+                    ${transaction.amount.toFixed(2)}
+                  </Text>
+                  {transaction.status === 'pending' && (
+                    <Text style={styles.transactionStatus}>Pending</Text>
+                  )}
+                </View>
+              </View>
+            ))}
+          </View>
+        </View>
+
+        <View style={styles.sectionContainer}>
+          <View style={styles.sectionHeader}>
+            <Text style={styles.sectionTitle}>{t('exchange_rates')}</Text>
+            <TouchableOpacity onPress={() => router.push("/(modals)/transactions")}>
+              <Text style={styles.seeAllText}>{t('see_all')}</Text>
+            </TouchableOpacity>
+          </View>
+          
+          <View style={styles.ratesContainer}>
+            {countries.map((country) => (
+              <View key={country.id} style={styles.rateItem}>
+                <Text style={styles.rateFlag}>{country.flag}</Text>
+                
+                <View style={styles.rateDetails}>
+                  <Text style={styles.rateName}>{t(country.name)}</Text>
+                </View>
+                
+                <View style={styles.rateValueContainer}>
+                  <Text style={styles.rateValue}>{country.rate} {country.code}</Text>
+                  <Text style={[styles.rateChange, 
+                    country.change.startsWith('+') ? styles.positiveChange : styles.negativeChange]}>
+                    {country.change}
+                  </Text>
+                </View>
+              </View>
+            ))}
+          </View>
+        </View>
+      </Animated.ScrollView>
+    </SafeAreaView>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#F2F2F7', // iOS standard background color
+  },
+  scrollContent: {
+    paddingBottom: 30,
+  },
+  header: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    paddingHorizontal: 20,
+    paddingTop: 10,
+    paddingBottom: 20,
+  },
+  refreshButton: {
+    width: 36,
+    height: 36,
+    borderRadius: 18,
+    backgroundColor: 'rgba(0, 122, 255, 0.1)',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  greeting: {
+    fontSize: 24,
+    fontWeight: '700',
+    color: '#333',
+  },
+  subGreeting: {
+    fontSize: 16,
+    color: '#666',
+    marginTop: 4,
+  },
+  headerIcons: {
+    flexDirection: 'row',
+  },
+  iconButton: {
+    width: 40,
+    height: 40,
+    borderRadius: 20,
+    backgroundColor: '#fff',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginLeft: 10,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+    elevation: 2,
+  },
+  balanceCardContainer: {
+    marginHorizontal: 20,
+    borderRadius: 20,
+    marginBottom: 20,
+    shadowColor: '#007AFF',
+    shadowOffset: { width: 0, height: 10 },
+    shadowOpacity: 0.2,
+    shadowRadius: 20,
+    elevation: 5,
+  },
+  balanceCard: {
+    borderRadius: 20,
+    padding: 20,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+  balanceCardRight: {
+    opacity: 0.8,
+  },
+  balanceCardContent: {
+    flex: 1,
+  },
+  balanceLabel: {
+    fontSize: 16,
+    color: 'rgba(255, 255, 255, 0.8)',
+    marginBottom: 8,
+  },
+  balanceAmount: {
+    fontSize: 32,
+    fontWeight: '700',
+    color: '#fff',
+    marginBottom: 8,
+  },
+  balanceChange: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: 'rgba(255, 255, 255, 0.2)',
+    paddingHorizontal: 10,
+    paddingVertical: 5,
+    borderRadius: 20,
+    alignSelf: 'flex-start',
+  },
+  balanceChangeText: {
+    color: '#fff',
+    marginLeft: 5,
+    fontSize: 12,
+    fontWeight: '600',
+  },
+
+  actionsContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginHorizontal: 20,
+    marginTop: 25,
+  },
+  actionButton: {
+    alignItems: 'center',
+    flex: 1,
+  },
+  actionIcon: {
+    width: 60,
+    height: 60,
+    borderRadius: 30,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginBottom: 8,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+    elevation: 2,
+  },
+  actionIconImage: {
+    width: 30,
+    height: 30,
+    borderRadius: 15,
+  },
+  actionText: {
+    fontSize: 14,
+    fontWeight: '600',
+    color: '#333',
+  },
+  sectionContainer: {
+    marginTop: 30,
+    paddingHorizontal: 20,
+  },
+  sectionHeader: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginBottom: 15,
+  },
+  sectionTitle: {
+    fontSize: 18,
+    fontWeight: '700',
+    color: '#333',
+  },
+  seeAllText: {
+    fontSize: 14,
+    color: '#FF6B6B',
+    fontWeight: '600',
+  },
+  transactionItem: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingVertical: 15,
+    paddingHorizontal: 15,
+    borderBottomWidth: 1,
+    borderBottomColor: '#F2F2F7',
+  },
+  transactionAvatar: {
+    width: 40,
+    height: 40,
+    borderRadius: 20,
+  },
+  transactionDetails: {
+    flex: 1,
+    marginLeft: 12,
+  },
+  transactionName: {
+    fontSize: 16,
+    fontWeight: '600',
+    color: '#000',
+  },
+  transactionDate: {
+    fontSize: 14,
+    color: '#8E8E93',
+    marginTop: 2,
+  },
+  transactionAmountContainer: {
+    alignItems: 'flex-end',
+  },
+  transactionAmount: {
+    fontSize: 16,
+    fontWeight: '600',
+    color: '#000',
+  },
+  transactionPending: {
+    color: '#FF9500',
+  },
+  transactionStatus: {
+    fontSize: 12,
+    color: '#FF9500',
+    marginTop: 2,
+  },
+  transactionsContainer: {
+    backgroundColor: '#FFFFFF',
+    borderRadius: 12,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.05,
+    shadowRadius: 8,
+    elevation: 2,
+    marginBottom: 15,
+  },
+  ratesContainer: {
+    backgroundColor: '#FFFFFF',
+    borderRadius: 12,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.05,
+    shadowRadius: 8,
+    elevation: 2,
+  },
+  rateItem: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingVertical: 12,
+    paddingHorizontal: 15,
+    borderBottomWidth: 1,
+    borderBottomColor: '#F2F2F7',
+  },
+  rateFlag: {
+    fontSize: 24,
+    marginRight: 12,
+  },
+  rateDetails: {
+    flex: 1,
+  },
+  rateName: {
+    fontSize: 16,
+    fontWeight: '600',
+    color: '#000',
+  },
+  rateValueContainer: {
+    alignItems: 'flex-end',
+  },
+  rateValue: {
+    fontSize: 15,
+    fontWeight: '500',
+    color: '#000',
+  },
+  rateChange: {
+    fontSize: 12,
+    marginTop: 2,
+  },
+  positiveChange: {
+    color: '#34C759',
+  },
+  negativeChange: {
+    color: '#FF3B30',
+  },
+});

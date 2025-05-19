@@ -1,0 +1,150 @@
+{
+  "welcome_to_remit": "🆕 Bine ați venit la Remitere",
+  "enter_phone_subtitle": "🆕 Introduceți numărul dvs. de telefon pentru a începe",
+  "enter_phone_number": "🆕 Introduceți numărul de telefon",
+  "continue_button": "🆕 Continua",
+  "already_member": "🆕 Deja membru?",
+  "login_here": "🆕 Conectați -vă aici",
+  "phone_error_start": "🆕 Numărul de telefon trebuie să înceapă cu 0 sau 5",
+  "phone_error_invalid": "🆕 Vă rugăm să introduceți un număr de telefon valid",
+  "phone_error_format": "🆕 Formatul de telefon nevalid",
+  "hello": "Bună",
+  "hello_name": "🆕 Hello, {{name}}",
+  "welcome_back": "Bine ai revenit",
+  "login_subtitle": "🆕 Conectați -vă pentru a continua",
+  "email": "🆕 E-mail",
+  "password": "🆕 Parolă",
+  "login": "🆕 Log in",
+  "login_error_fields": "🆕 Vă rugăm să completați toate câmpurile",
+  "enable_biometric_login": "🆕 Enable {{biometricType}} login",
+  "no_account": "🆕 Nu aveți un cont?",
+  "register": "🆕 Registru",
+  "settings": "Setări",
+  "appearance": "Aspect",
+  "dark_mode": "Mod întunecat",
+  "notifications": "Notificări",
+  "push_notifications": "Notificări push",
+  "security_title": "🆕 Securitate",
+  "biometric_authentication": "Autentificare biometrică",
+  "change_password": "Schimbă parola",
+  "payment": "Plată",
+  "payment_methods": "Metode de plată",
+  "currencies": "Valute",
+  "support": "Suport",
+  "help_center": "Centru de ajutor",
+  "contact_us": "Contactează-ne",
+  "language": "Limbă",
+  "total_balance": "Sold total",
+  "this_week": "săptămâna aceasta",
+  "percentage_change": "🆕 {{percentage}}% this week",
+  "send_money": "Trimite bani",
+  "send": "🆕 Trimite",
+  "request": "Solicită",
+  "exchange": "🆕 Schimb",
+  "top_up": "Încarcă",
+  "recent_transactions": "Tranzacții recente",
+  "exchange_rates": "Rate de schimb",
+  "see_all": "Vezi tot",
+  "my_wallet": "Portofelul meu",
+  "dashboard": {
+    "add_new_card": "🆕 Adăugați card nou"
+  },
+  "transactions_label": "🆕 Tranzacții",
+  "profile_tab": "🆕 Profil",
+  "edit_profile": "Editează profilul",
+  "logout": "Deconectare",
+  "cancel": "🆕 Anula",
+  "done": "🆕 Făcut",
+  "security": {
+    "faceIDDescription": "🆕 Utilizați ID -ul Face pentru a vă debloca contul",
+    "changePassword": "🆕 Schimbaţi parola",
+    "securityQuestions": "🆕 Întrebări de securitate"
+  },
+  "profile": {
+    "logoutConfirmation": "🆕 Ești sigur că vrei să te deconectezi?"
+  },
+  "common": {
+    "visa": "🆕 Visa",
+    "mastercard": "🆕 MasterCard",
+    "endingIn": "🆕 terminând în",
+    "expires": "🆕 Expiră"
+  },
+  "countries": {
+    "India": "🆕 India",
+    "Colombia": "🆕 Columbia",
+    "Philippines": "🆕 Filipine"
+  },
+  "language_settings": {
+    "save_preferences": "🆕 Salvați preferințele",
+    "language_saved": "🆕 Preferințele lingvistice salvate cu succes."
+  },
+  "error": "🆕 Eroare",
+  "ok": "🆕 Bine",
+  "tabs": {
+    "g": "🆕 G",
+    "profile": "🆕 Profil"
+  },
+  "myAccount": {
+    "informationCopied": "🆕 Informații copiate în clipboard"
+  },
+  "sendMoney": {
+    "details": {
+      "total": "🆕 Total",
+      "continue": "🆕 Continua",
+      "scheduleInfo": "🆕 Programat pentru",
+      "immediateInfo": "🆕 Transfer imediat"
+    }
+  },
+  "transactions": {
+    "filters": {
+      "types": {
+        "received": "🆕 Primit",
+        "exchanged": "🆕 Schimbat"
+      }
+    }
+  },
+  "moneyTransfer": {
+    "details": {
+      "scheduledTransfer": "🆕 Programat pentru 25 mai 2025"
+    }
+  },
+  "privacy": {
+    "sections": {
+      "contactUs": {
+        "email": "🆕 confidențialitate@globalremit.com",
+        "phone": "🆕 1-800-GLOBAL-REMIT"
+      }
+    }
+  },
+  "supportChat": {
+    "exitConfirm": {
+      "title": "🆕 Vrei să părăsești chatul?",
+      "message": "🆕 Toate datele introduse nu vor fi salvate",
+      "leave": "🆕 Vreau să plec",
+      "continue": "🆕 Vreau să continui"
+    }
+  },
+  "pin": {
+    "errorSavingSettings": "🆕 Nu a reușit să salveze setările"
+  },
+  "accountClosure": {
+    "points": {
+      "destroyCards": "🆕 Va trebui să distrugeți orice cărți asociate",
+      "processDuration": "🆕 Procesul poate dura până la 30 de zile până la finalizare"
+    },
+    "requestClosure": "🆕 Solicitați închiderea contului",
+    "alert": {
+      "title": "🆕 Cererea de închidere primită",
+      "message": "🆕 Cererea dvs. de închidere a contului a fost trimisă. Următorul pas este să contactăm serviciul nostru pentru clienți."
+    }
+  },
+  "editHomeAddress": {
+    "privacyConfirmation": "🆕 Confirm că detaliile furnizate sunt corecte și sunt de acord cu termenii legali și de confidențialitate."
+  },
+  "editMailingAddress": {
+    "update": {
+      "successMessage": "🆕 Adresa dvs. poștală a fost actualizată cu succes"
+    },
+    "privacyConfirmation": "🆕 Confirm că detaliile furnizate sunt corecte și sunt de acord cu termenii legali și de confidențialitate."
+  }
+}

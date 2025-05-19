@@ -118,6 +118,34 @@ export function getChevronTransform(): { transform: { scaleX: number }[] } {
 }
 
 /**
+ * Helper function to get the correct position for an element in RTL layout
+ * @param defaultPosition The default position object with left/right properties
+ * @returns The RTL-aware position object
+ */
+export function getRTLPosition(defaultPosition: { left?: number, right?: number }): { left?: number, right?: number } {
+  if (I18nManager.isRTL) {
+    const { left, right } = defaultPosition;
+    return {
+      left: right,
+      right: left
+    };
+  }
+  return defaultPosition;
+}
+
+/**
+ * Helper function to get the correct icon position for RTL layout
+ * @param defaultSide The default side ('left' or 'right')
+ * @returns The RTL-aware side
+ */
+export function getRTLIconPosition(defaultSide: 'left' | 'right'): 'left' | 'right' {
+  if (defaultSide === 'left') {
+    return I18nManager.isRTL ? 'right' : 'left';
+  }
+  return I18nManager.isRTL ? 'left' : 'right';
+}
+
+/**
  * Helper function to get the correct flexDirection for RTL
  * @param defaultDirection The default direction ('row' or 'column')
  * @returns The RTL-aware flexDirection
@@ -125,8 +153,12 @@ export function getChevronTransform(): { transform: { scaleX: number }[] } {
 export function getRTLFlexDirection(defaultDirection: 'row' | 'column' = 'row'): 'row' | 'row-reverse' | 'column' | 'column-reverse' {
   if (defaultDirection === 'row') {
     return I18nManager.isRTL ? 'row-reverse' : 'row';
+  } else if (defaultDirection === 'column') {
+    // In some cases, we might want to reverse column direction for RTL
+    // This is useful for vertical lists that should have a different order in RTL
+    // Uncomment if needed: return I18nManager.isRTL ? 'column-reverse' : 'column';
   }
-  return defaultDirection; // column doesn't change for RTL
+  return defaultDirection;
 }
 
 /**

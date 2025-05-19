@@ -10,7 +10,8 @@ export default function Welcome() {
   const [phoneNumber, setPhoneNumber] = useState('');
   const [error, setError] = useState('');
   const { t, currentLanguage, supportedLanguages } = useTranslation();
-  const isRTL = supportedLanguages[currentLanguage]?.rtl || false;
+  // Safely check if the language is RTL using type assertion
+  const isRTL = (supportedLanguages as Record<string, { name: string; rtl: boolean }>)[currentLanguage]?.rtl || false;
 
   const validateAndSendCode = () => {
     try {
@@ -31,7 +32,7 @@ export default function Welcome() {
       }
 
       router.push({ 
-        pathname: '/register',
+        pathname: '/register-redirect',
         params: { phoneNumber: fullNumber }
       });
     } catch (error) {
@@ -69,7 +70,7 @@ export default function Welcome() {
             keyboardType="numeric"
             maxLength={10}
             textAlign="left"
-            writingDirection="ltr"
+            // writingDirection is not a valid property of TextInput, so we use textAlign
           />
         </View>
 

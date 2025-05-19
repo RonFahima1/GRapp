@@ -6,21 +6,18 @@ import {
   TouchableOpacity, 
   SafeAreaView,
   Platform,
-  Modal,
-  I18nManager
+  Modal
 } from 'react-native';
 import { Picker } from '@react-native-picker/picker';
-import { ChevronRight } from 'lucide-react-native';
+import { ChevronLeft } from 'lucide-react-native';
 import * as Haptics from 'expo-haptics';
-import { useTranslation } from '../../hooks/useTranslation';
-import { getRTLFlexDirection, getRTLTextAlign, getChevronTransform } from '../../utils/rtlUtils';
-import { RTLText } from '../../components/RTLProvider';
+import { useTranslate, LanguageCode } from '../../context/TranslationContext';
 
 type LanguageSelectorModalProps = {
   isVisible: boolean;
   onClose: () => void;
-  selectedLanguage: string;
-  onSelectLanguage: (language: string) => void;
+  selectedLanguage: LanguageCode;
+  onSelectLanguage: (language: LanguageCode) => void;
   languages: { code: string; name: string }[];
 };
 
@@ -31,8 +28,8 @@ export default function LanguageSelectorModal({
   onSelectLanguage,
   languages
 }: LanguageSelectorModalProps) {
-  const [tempSelectedLanguage, setTempSelectedLanguage] = useState(selectedLanguage);
-  const { t } = useTranslation();
+  const [tempSelectedLanguage, setTempSelectedLanguage] = useState<LanguageCode>(selectedLanguage);
+  const { t, isRTL, languages: supportedLanguages } = useTranslate();
 
   const handleTap = () => {
     if (Platform.OS !== 'web') {
@@ -47,18 +44,18 @@ export default function LanguageSelectorModal({
 
   const handleDone = () => {
     handleTap();
-    onSelectLanguage(tempSelectedLanguage);
-    onClose();
-  };
-
-  // Fallback text for missing translations
-  const getTranslation = (key: string, fallback: string) => {
     try {
-      return t(key) || fallback;
+      // Safely apply language change
+      onSelectLanguage(tempSelectedLanguage as LanguageCode);
+      onClose();
     } catch (error) {
-      return fallback;
+      console.error('Error applying language selection:', error);
+      // Stay open if there's an error changing language
     }
   };
+
+  // Use standard translation function
+  // No need for fallbacks as all keys are now standardized
 
   return (
     <Modal
@@ -68,13 +65,13 @@ export default function LanguageSelectorModal({
     >
       <SafeAreaView style={styles.modalContainer}>
         <View style={styles.modalContent}>
-          <View style={styles.modalHeader}>
-            <TouchableOpacity onPress={handleCancel} style={styles.headerButton}>
-              <RTLText style={styles.cancelText}>{getTranslation('common.cancel', 'Cancel')}</RTLText>
+          <View style={[styles.modalHeader, { flexDirection: isRTL ? 'row-reverse' : 'row' }]}>
+            <TouchableOpacity onPress={handleCancel} style={styles.headerButton} hitSlop={{ top: 15, right: 15, bottom: 15, left: 15 }}>
+              <Text style={[styles.cancelText, { textAlign: isRTL ? 'right' : 'left' }]}>{t('cancel') || 'Cancel'}</Text>
             </TouchableOpacity>
-            <RTLText style={styles.headerTitle}>{getTranslation('common.selectLanguage', 'Select Language')}</RTLText>
-            <TouchableOpacity onPress={handleDone} style={styles.headerButton}>
-              <RTLText style={styles.doneText}>{getTranslation('common.done', 'Done')}</RTLText>
+            <Text style={[styles.headerTitle, { textAlign: 'center' }]}>{t('language') || 'Language'}</Text>
+            <TouchableOpacity onPress={handleDone} style={styles.headerButton} hitSlop={{ top: 15, right: 15, bottom: 15, left: 15 }}>
+              <Text style={[styles.doneText, { textAlign: isRTL ? 'left' : 'right' }]}>{t('done') || 'Done'}</Text>
             </TouchableOpacity>
           </View>
           
@@ -88,7 +85,7 @@ export default function LanguageSelectorModal({
               {languages.map((language) => (
                 <Picker.Item 
                   key={language.code} 
-                  label={language.name} 
+                  label={`${language.name} (${supportedLanguages[language.code as LanguageCode]?.nativeName || language.name})`} 
                   value={language.code} 
                 />
               ))}
@@ -113,7 +110,6 @@ const styles = StyleSheet.create({
     paddingBottom: Platform.OS === 'ios' ? 20 : 0,
   },
   modalHeader: {
-    flexDirection: getRTLFlexDirection('row'),
     justifyContent: 'space-between',
     alignItems: 'center',
     padding: 16,
@@ -121,24 +117,21 @@ const styles = StyleSheet.create({
     borderBottomColor: '#EEEEEE',
   },
   headerButton: {
-    padding: 4,
+    padding: 5,
   },
   cancelText: {
     fontSize: 16,
     color: '#999999',
-    textAlign: getRTLTextAlign('left'),
   },
   doneText: {
     fontSize: 16,
     fontWeight: '600',
     color: '#007AFF',
-    textAlign: getRTLTextAlign('right'),
   },
   headerTitle: {
     fontSize: 18,
     fontWeight: '600',
     color: '#000000',
-    textAlign: getRTLTextAlign('center'),
   },
   pickerContainer: {
     height: 200,

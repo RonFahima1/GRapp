@@ -1,0 +1,441 @@
+{
+  "welcome_to_remit": "रीमिट में आपका स्वागत है",
+  "enter_phone_subtitle": "आरंभ करने के लिए अपना फ़ोन नंबर दर्ज करें",
+  "enter_phone_number": "फ़ोन नंबर दर्ज करें",
+  "continue_button": "जारी रखना",
+  "already_member": "क्या पहले से ही सदस्य हैं?",
+  "login_here": "यहां लॉगिन करें",
+  "phone_error_start": "फ़ोन नंबर 0 या 5 से शुरू होना चाहिए",
+  "phone_error_invalid": "एक मान्य दूरभाष क्रमांक दर्ज करे",
+  "phone_error_format": "अमान्य फोन नंबर प्रारूप",
+  "hello": "नमस्ते",
+  "hello_name": "Hello, {{name}}",
+  "welcome_back": "वापसी पर स्वागत है",
+  "login_subtitle": "जारी रखने के लिए साइन इन करें",
+  "email": "ईमेल",
+  "password": "पासवर्ड",
+  "login": "लॉग इन करें",
+  "login_error_fields": "कृपया सभी स्थानों को भरें",
+  "enable_biometric_login": "Enable {{biometricType}} login",
+  "no_account": "कोई खाता नहीं है?",
+  "register": "पंजीकरण करवाना",
+  "settings": "सेटिंग",
+  "appearance": "उपस्थिति",
+  "dark_mode": "डार्क मोड",
+  "notifications": "अधिसूचना",
+  "push_notifications": "सूचनाएं धक्का",
+  "security_title": "सुरक्षा",
+  "biometric_authentication": "बायोमेट्रिक प्रमाणीकरण",
+  "change_password": "पासवर्ड बदलें",
+  "payment": "भुगतान",
+  "payment_methods": "अदायगी के तरीके",
+  "currencies": "मुद्राओं",
+  "support": "सहायता",
+  "help_center": "सहायता केंद्र",
+  "contact_us": "हमसे संपर्क करें",
+  "language": "भाषा",
+  "total_balance": "कुल शेष",
+  "this_week": "इस सप्ताह",
+  "percentage_change": "{{percentage}}% this week",
+  "send_money": "पैसे भेजना",
+  "send": "भेजना",
+  "request": "अनुरोध",
+  "exchange": "अदला-बदली",
+  "top_up": "लबालब भरना",
+  "recent_transactions": "हाल ही में लेनदेन",
+  "exchange_rates": "विनिमय दरें",
+  "see_all": "सभी देखें",
+  "my_wallet": "मेरा बटुआ",
+  "dashboard": {
+    "cards": "अदायगी कार्ड",
+    "wallet_transactions": "लेनदेन",
+    "wallet_balance": "संतुलन",
+    "add_new_card": "नया कार्ड जोड़ें"
+  },
+  "transactions_label": "लेनदेन",
+  "profile_tab": "प्रोफ़ाइल",
+  "edit_profile": "प्रोफ़ाइल संपादित करें",
+  "logout": "लॉग आउट",
+  "cancel": "रद्द करना",
+  "done": "हो गया",
+  "security": {
+    "section_title": "सुरक्षा और प्राथमिकताएँ",
+    "preferences": "तंत्र प्राथमिकताएँ",
+    "faceID": "चेहरा आईडी",
+    "faceIDDescription": "अपने खाते को अनलॉक करने के लिए फेस आईडी का उपयोग करें",
+    "changePassword": "पासवर्ड बदलें",
+    "securityQuestions": "सुरक्षा प्रश्न"
+  },
+  "profile": {
+    "fullName": "पूरा नाम",
+    "email": "ईमेल",
+    "emailAddress": "{{email}}",
+    "myAccount": "मेरा खाता",
+    "documents": "दस्तावेज़",
+    "securityAndPreferences": "सुरक्षा और प्राथमिकताएँ",
+    "notificationSettings": "अधिसूचना सेटिंग्स",
+    "helpSupport": "सहायता और समर्थन",
+    "about": "ऐप के बारे में",
+    "accountId": "खाता आईडी",
+    "memberSince": "से सदस्य",
+    "transactionCount": "लेनदेन",
+    "accountIdValue": "{{accountId}}",
+    "memberSinceValue": "{{memberSince}}",
+    "transactionCountValue": "{{transactionCount}}",
+    "language": "भाषा",
+    "darkMode": "डार्क मोड",
+    "logoutConfirmation": "क्या आप लॉग आउट करना चाहते हैं?"
+  },
+  "common": {
+    "copied": "क्लिपबोर्ड के लिए कॉपी किया गया",
+    "copied_title": "कॉपी किया गया",
+    "darkModeDescription": "ऐप के लिए डार्क थीम का उपयोग करें",
+    "copy": "प्रतिलिपि",
+    "back": "पीछे",
+    "close": "बंद करना",
+    "continue": "जारी रखना",
+    "cancel": "रद्द करना",
+    "save": "बचाना",
+    "delete": "मिटाना",
+    "edit": "संपादन करना",
+    "settings": "सेटिंग",
+    "search": "खोज",
+    "done": "हो गया",
+    "visa": "वीज़ा",
+    "mastercard": "मास्टर कार्ड",
+    "endingIn": "समाप्त हो रहा है",
+    "expires": "समय-सीमा समाप्त"
+  },
+  "countries": {
+    "Mexico": "मेक्सिको",
+    "India": "भारत",
+    "Colombia": "कोलंबिया",
+    "Philippines": "फिलिपींस"
+  },
+  "language_settings": {
+    "preferred_languages": "पसंदीदा भाषाएँ",
+    "all_languages": "सभी भाषाएँ",
+    "changing_language": "बदलती भाषा ...",
+    "language_change_error": "भाषा को बदलने में कोई त्रुटि हुई। कृपया पुन: प्रयास करें।",
+    "restart_required": "पुनरारंभ करना आवश्यक है",
+    "restart_message_rtl": "RTL और LTR भाषाओं के बीच स्विच करने के लिए आवेदन को पुनरारंभ करने की आवश्यकता होती है। क्या आप जारी रखना चाहते हैं?",
+    "restart_message_ltr": "LTR और RTL भाषाओं के बीच स्विच करने के लिए आवेदन को पुनरारंभ करने की आवश्यकता होती है। क्या आप जारी रखना चाहते हैं?",
+    "save_preferences": "वरीयताएँ बचाएं",
+    "language_saved": "भाषा की प्राथमिकताएं सफलतापूर्वक बच गईं।"
+  },
+  "error": "गलती",
+  "ok": "ठीक है",
+  "tabs": {
+    "home": "घर",
+    "g": "जी",
+    "profile": "प्रोफ़ाइल"
+  },
+  "myAccount": {
+    "title": "मेरा खाता",
+    "accountOnName": "नाम पर खाता",
+    "userName": "जॉन स्मिथ",
+    "accountNumber": "खाता संख्या",
+    "branch": "शाखा",
+    "bank": "किनारा",
+    "ibanNumber": "इबान नंबर",
+    "swiftCode": "स्विफ्ट कोड",
+    "yourContactInformation": "आपकी संपर्क जानकारी",
+    "emailAddress": "मेल पता",
+    "homeAddress": "गृह पता",
+    "mailingAddress": "डाक पता",
+    "phone": "फ़ोन",
+    "editEmail": "ईमेल पता संपादित करें",
+    "editHomeAddress": "घर का पता संपादित करें",
+    "editMailingAddress": "मेलिंग पता संपादित करें",
+    "editPhone": "फोन नंबर संपादित करें",
+    "requestAccountClosure": "खाता बंद करने का अनुरोध करें",
+    "informationCopied": "क्लिपबोर्ड के लिए कॉपी की गई जानकारी"
+  },
+  "sendMoney": {
+    "availableBalance": "उपलब्ध शेष राशि",
+    "title": "पैसे भेजना",
+    "to": "को",
+    "amount": "मात्रा",
+    "transferType": "अंतरण प्रकार",
+    "immediateTransfer": "तत्काल अंतरण",
+    "scheduledTransfer": "अनुसूचित अंतरण",
+    "scheduledDate": "अनुसूचित तारीख",
+    "scheduledTime": "निर्धारित समय",
+    "details": {
+      "title": "हस्तांतरण विवरण",
+      "transferSummary": "अंतरण सारांश",
+      "to": "को",
+      "amount": "मात्रा",
+      "when": "कब",
+      "account": "खाता",
+      "paymentMethod": "भुगतान विधि",
+      "bankAccount": "बैंक खाता",
+      "creditDebitCard": "जमा करना / खर्च करना का कार्ड",
+      "selectBank": "बैंक का चयन करें",
+      "selectCard": "कार्ड का चयन करें",
+      "addNewCard": "+ नया कार्ड जोड़ें",
+      "feeBreakdown": "शुल्क टूटना",
+      "transferAmount": "अंतरण राशि",
+      "transferFee": "अंतरण शुल्क",
+      "total": "कुल",
+      "continue": "जारी रखना",
+      "scheduleInfo": "के लिए निर्धारित",
+      "immediateInfo": "तत्काल अंतरण"
+    }
+  },
+  "transactions": {
+    "title": "लेनदेन",
+    "allTransactions": "सभी लेन - देन",
+    "search": "खोज लेनदेन",
+    "searchPlaceholder": "नाम या विवरण द्वारा खोजें",
+    "filter": "फ़िल्टर",
+    "filterTitle": "फ़िल्टर लेनदेन",
+    "apply": "आवेदन करना",
+    "clear": "सभी साफ करें",
+    "close": "बंद करना",
+    "reset": "रीसेट करना",
+    "dateRange": "दिनांक सीमा",
+    "from": "से",
+    "to": "को",
+    "startDate": "आरंभ करने की तिथि",
+    "endDate": "अंतिम तिथि",
+    "amountRange": "राशि सीमा",
+    "min": "मिन",
+    "max": "अधिकतम",
+    "transactionType": "लेन -देन प्रकार",
+    "all": "सभी",
+    "sent": "भेजा",
+    "received": "प्राप्त",
+    "exchanged": "आदान-प्रदान किया",
+    "noResults": "कोई परिणाम नहीं मिले",
+    "noTransactionsFound": "कोई परिणाम नहीं मिले।",
+    "adjustSearchOrFilter": "अपनी खोज या फ़िल्टर मानदंड को समायोजित करने का प्रयास करें।",
+    "status": {
+      "pending": "लंबित",
+      "completed": "पुरा होना।",
+      "failed": "असफल"
+    },
+    "descriptions": {
+      "payment": "सेवाओं के लिए भुगतान",
+      "gift": "जन्मदिन का उपहार",
+      "exchange": "Exchange from {{from}} to {{to}}",
+      "dinner": "डिनर भुगतान",
+      "rent": "किराया भुगतान",
+      "utilities": "उपयोगिताओं का भुगतान"
+    },
+    "filters": {
+      "transactionType": "लेन -देन प्रकार",
+      "dateRange": "दिनांक सीमा",
+      "amountRangeUSD": "राशि सीमा (USD)",
+      "startDate": "आरंभ करने की तिथि",
+      "endDate": "अंतिम तिथि",
+      "minAmount": "न्यूनतम राशि",
+      "maxAmount": "अधिकतम राशि",
+      "clearFilters": "स्पष्ट फिल्टर",
+      "applyFilters": "फिल्टर लागू करें",
+      "types": {
+        "all": "सभी",
+        "sent": "भेजा",
+        "received": "प्राप्त",
+        "exchanged": "आदान-प्रदान किया"
+      }
+    }
+  },
+  "moneyTransfer": {
+    "details": {
+      "title": "हस्तांतरण विवरण",
+      "transferSummary": "अंतरण सारांश",
+      "to": "को",
+      "amount": "मात्रा",
+      "when": "कब",
+      "account": "खाता",
+      "paymentMethod": "भुगतान विधि",
+      "bankAccount": "बैंक खाता",
+      "creditDebitCard": "जमा करना / खर्च करना का कार्ड",
+      "selectBank": "बैंक का चयन करें",
+      "selectCard": "कार्ड का चयन करें",
+      "addNewCard": "+ नया कार्ड जोड़ें",
+      "feeBreakdown": "शुल्क टूटना",
+      "transferAmount": "अंतरण राशि",
+      "transferFee": "अंतरण शुल्क",
+      "total": "कुल",
+      "continue": "जारी रखना",
+      "immediateTransfer": "तत्काल अंतरण",
+      "scheduledTransfer": "25 मई, 2025 के लिए निर्धारित"
+    }
+  },
+  "privacy": {
+    "title": "गोपनीयता नीति",
+    "lastUpdated": "{{date}}",
+    "lastUpdatedPrefix": "आखरी अपडेट",
+    "securityIcon": "सुरक्षा शील्ड आइकन",
+    "sections": {
+      "introduction": {
+        "title": "परिचय",
+        "paragraph1": "ग्लोबल रेमिट (\"हम,\" \"हमारा,\" या \"हम\") आपकी गोपनीयता की रक्षा के लिए प्रतिबद्ध है। यह गोपनीयता नीति बताती है कि जब आप हमारे मोबाइल एप्लिकेशन या वेबसाइट (सामूहिक रूप से, \"सेवाओं\") का उपयोग करते हैं तो हम आपकी जानकारी को कैसे एकत्र, उपयोग, खुलासा करते हैं और सुरक्षित कर देते हैं।",
+        "paragraph2": "कृपया इस गोपनीयता नीति को सावधानीपूर्वक पढ़ें। हमारी सेवाओं तक पहुँचने या उपयोग करके, आप स्वीकार करते हैं कि आपने इस गोपनीयता नीति की सभी शर्तों से बाध्य होने के लिए पढ़ा, समझा और सहमत किया है।"
+      },
+      "informationCollected": {
+        "title": "जानकारी हम एकत्र करते हैं",
+        "personalInfoTitle": "व्यक्तिगत सूचना",
+        "personalInfoContent": "हम व्यक्तिगत रूप से पहचान योग्य जानकारी एकत्र कर सकते हैं, जैसे कि आपका नाम, ईमेल पता, टेलीफोन नंबर, जन्म तिथि, सामाजिक सुरक्षा संख्या, और सरकार द्वारा जारी की गई पहचान जब आप किसी खाते के लिए पंजीकरण करते हैं या हमारी सेवाओं का उपयोग करते हैं।",
+        "financialInfoTitle": "वित्तीय सूचना",
+        "financialInfoContent": "हमारी बैंकिंग और मनी ट्रांसफर सेवाएं प्रदान करने के लिए, हम बैंकिंग विवरण, खाता संख्या, लेनदेन इतिहास और भुगतान जानकारी एकत्र करते हैं।",
+        "deviceInfoTitle": "युक्ति सूचना",
+        "deviceInfoContent": "जब आप हमारी सेवाओं का उपयोग करते हैं, तो हम स्वचालित रूप से डिवाइस की जानकारी जैसे कि आपका मोबाइल डिवाइस आईडी, मॉडल, निर्माता, ऑपरेटिंग सिस्टम, आईपी पता और ब्राउज़िंग व्यवहार एकत्र करते हैं।"
+      },
+      "informationUsage": {
+        "title": "हम आपकी सूचना का किस प्रकार प्रयोग करते हैं",
+        "intro": "हम उस जानकारी का उपयोग करते हैं जो हम एकत्र करते हैं",
+        "bulletPoints": {
+          "improve": "हमारी सेवाओं को प्रदान करें, बनाए रखें और सुधारें",
+          "process": "लेनदेन की प्रक्रिया करें और संबंधित जानकारी भेजें",
+          "verify": "अपनी पहचान को सत्यापित करें और धोखाधड़ी को रोकें",
+          "personalize": "अपने अनुभव को निजीकृत करें",
+          "communicate": "हमारी सेवाओं के बारे में आपसे संवाद करें",
+          "comply": "कानूनी दायित्वों का पालन करें"
+        }
+      },
+      "informationSharing": {
+        "title": "जानकारी साझाकरण",
+        "intro": "हम आपकी जानकारी साझा कर सकते हैं",
+        "bulletPoints": {
+          "providers": "सेवा प्रदाता जो हमारी ओर से सेवाएं करते हैं",
+          "financial": "लेनदेन को पूरा करने के लिए वित्तीय संस्थान",
+          "legal": "कानून द्वारा आवश्यक कानूनी अधिकारी",
+          "partners": "आपकी सहमति से व्यावसायिक भागीदार"
+        }
+      },
+      "dataSecurity": {
+        "title": "आँकड़ा सुरक्षा",
+        "content": "हम आपकी व्यक्तिगत जानकारी को अनधिकृत पहुंच, परिवर्तन, प्रकटीकरण या विनाश से बचाने के लिए उचित सुरक्षा उपायों को लागू करते हैं। हालांकि, इंटरनेट या इलेक्ट्रॉनिक स्टोरेज पर ट्रांसमिशन की कोई विधि 100% सुरक्षित नहीं है, इसलिए हम पूर्ण सुरक्षा की गारंटी नहीं दे सकते।"
+      },
+      "yourRights": {
+        "title": "आपके हक",
+        "intro": "आपके स्थान के आधार पर, आपके पास अपनी व्यक्तिगत जानकारी के बारे में कुछ अधिकार हो सकते हैं, जिसमें अधिकार भी शामिल है",
+        "bulletPoints": {
+          "access": "अपनी व्यक्तिगत जानकारी तक पहुँचें",
+          "correct": "गलत जानकारी को सही करें",
+          "delete": "अपनी व्यक्तिगत जानकारी हटाएं",
+          "object": "आपकी जानकारी के प्रसंस्करण के लिए वस्तु",
+          "withdraw": "सहमति वापस लेना"
+        }
+      },
+      "contactUs": {
+        "title": "हमसे संपर्क करें",
+        "intro": "यदि आपके पास इस गोपनीयता नीति के बारे में कोई प्रश्न हैं, तो कृपया हमसे संपर्क करें",
+        "email": "prevacy@globalremit.com",
+        "phone": "1-800-ग्लोबल-रीमिट"
+      }
+    }
+  },
+  "supportChat": {
+    "title": "वैश्विक रीमिट चैट",
+    "today": "आज",
+    "typePlaceholder": "अपना संदेश टाइप करें",
+    "send": "भेजना",
+    "attach": "संलग्न करना",
+    "messageSent": "संदेश भेजा गया",
+    "messageSentDesc": "आपका संदेश हमारी सहायता टीम को भेजा गया था।",
+    "quickReplies": {
+      "accountQuestions": "खाता प्रश्न",
+      "creditCards": "क्रेडिट कार्ड",
+      "appIssues": "ऐप इश्यूज़",
+      "moneyTransfers": "धन हस्तांतरण",
+      "accountAccess": "खाता पहुँच",
+      "openAccount": "खुला खाता"
+    },
+    "exitConfirm": {
+      "title": "चैट छोड़ना चाहते हैं?",
+      "message": "सभी दर्ज किए गए डेटा को सहेजा नहीं जाएगा",
+      "leave": "मैं छोड़ना चाहता हूँ",
+      "continue": "मैं जारी रखना चाहता हूं"
+    }
+  },
+  "pin": {
+    "title": "लेन -देन प्रतिभूति सेटअप",
+    "setPinSubtitle": "6-अंकीय पिन सेट करें (वैकल्पिक)",
+    "enterPinPlaceholder": "6-अंकीय पिन दर्ज करें",
+    "confirmPinPlaceholder": "पिन की पुष्टि करें",
+    "save": "बचाना",
+    "saving": "बचत ...",
+    "useBiometrics": "Use {{biometricType}}",
+    "errorRequireOneMethod": "कृपया कम से कम एक प्रमाणीकरण विधि सेट करें",
+    "errorPinLength": "पिन 6 अंक होना चाहिए",
+    "errorPinMismatch": "पिन मेल नहीं खाते",
+    "errorPinOnlyNumbers": "पिन में केवल संख्या होनी चाहिए",
+    "errorSavingSettings": "सेटिंग्स को बचाने में विफल रहा"
+  },
+  "accountClosure": {
+    "title": "खाता बंद करना",
+    "mainQuestion": "हम आपके खाते के बंद होने में आपकी मदद कैसे कर सकते हैं?",
+    "processingRequest": "हम वर्तमान में आपके अनुरोध को संसाधित कर रहे हैं और हम समझना चाहते हैं कि क्यों।",
+    "nextStepInfo": "यदि आप अपना खाता बंद करना चाहते हैं, तो अगला कदम हमसे संपर्क करना होगा।",
+    "bankingIssueNote": "यदि खाता बंद करना बैंकिंग समस्या के कारण है, तो हम आपके खाते को बंद किए बिना इसे हल करने में मदद कर सकते हैं।",
+    "getMoreInfo": "खाता बंद करने के बारे में अधिक जानकारी प्राप्त करें",
+    "proceedAwareness": "खाता बंद करने के साथ आगे बढ़ने के लिए, कृपया ध्यान रखें कि:",
+    "points": {
+      "recurringPayments": "सभी आवर्ती भुगतान और स्वचालित स्थानान्तरण रद्द कर दिए जाएंगे",
+      "remainingBalance": "किसी भी शेष शेष राशि को दूसरे खाते में स्थानांतरित करना होगा",
+      "destroyCards": "आपको किसी भी संबद्ध कार्ड को नष्ट करने की आवश्यकता होगी",
+      "processDuration": "इस प्रक्रिया को पूरा होने में 30 दिन तक का समय लग सकता है"
+    },
+    "requestClosure": "खाता बंद करने का अनुरोध करें",
+    "alert": {
+      "title": "बंद अनुरोध प्राप्त किया",
+      "message": "आपका खाता बंद अनुरोध प्रस्तुत किया गया है। अगला कदम हमारी ग्राहक सेवा से संपर्क करना है।"
+    }
+  },
+  "editHomeAddress": {
+    "title": "गृह पता",
+    "description": "अपना आवासीय पता अपडेट करें",
+    "fields": {
+      "street": "सड़क का पता",
+      "city": "शहर",
+      "zipCode": "ज़िप कोड"
+    },
+    "buttons": {
+      "update": "अद्यतन",
+      "verify": "सत्यापित करें"
+    },
+    "otp": {
+      "sentTitle": "ओटीपी ने भेजा",
+      "sentMessage": "आपके ईमेल पते पर एक सत्यापन कोड भेजा गया है",
+      "enterCode": "अपने ईमेल पर भेजे गए सत्यापन कोड दर्ज करें",
+      "placeholder": "6 अंकों का कोड",
+      "invalidTitle": "अमान्य ओटीपी",
+      "invalidMessage": "कृपया अपने ईमेल पर भेजे गए 6-अंकीय कोड दर्ज करें"
+    },
+    "update": {
+      "successTitle": "अद्यतन किया गया पता",
+      "successMessage": "आपके घर का पता सफलतापूर्वक अपडेट किया गया है"
+    },
+    "privacyConfirmation": "मैं पुष्टि करता हूं कि प्रदान किए गए विवरण सटीक हैं और मैं कानूनी और गोपनीयता की शर्तों से सहमत हूं।"
+  },
+  "editMailingAddress": {
+    "title": "डाक पता",
+    "description": "अपने मेलिंग पते को अपडेट करें जहां आप महत्वपूर्ण दस्तावेज प्राप्त करना चाहते हैं",
+    "fields": {
+      "street": "सड़क का पता",
+      "city": "शहर",
+      "zipCode": "ज़िप कोड"
+    },
+    "buttons": {
+      "update": "अद्यतन",
+      "verify": "सत्यापित करें"
+    },
+    "otp": {
+      "sentTitle": "ओटीपी ने भेजा",
+      "sentMessage": "आपके ईमेल पते पर एक सत्यापन कोड भेजा गया है",
+      "enterCode": "अपने ईमेल पर भेजे गए सत्यापन कोड दर्ज करें",
+      "placeholder": "6 अंकों का कोड",
+      "invalidTitle": "अमान्य ओटीपी",
+      "invalidMessage": "कृपया अपने ईमेल पर भेजे गए 6-अंकीय कोड दर्ज करें"
+    },
+    "update": {
+      "successTitle": "अद्यतन किया गया पता",
+      "successMessage": "आपका मेलिंग पता सफलतापूर्वक अपडेट किया गया है"
+    },
+    "privacyConfirmation": "मैं पुष्टि करता हूं कि प्रदान किए गए विवरण सटीक हैं और मैं कानूनी और गोपनीयता की शर्तों से सहमत हूं।"
+  }
+}

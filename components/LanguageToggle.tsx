@@ -1,30 +1,58 @@
 import React, { useState } from 'react';
-import { TouchableOpacity, Text, StyleSheet, View, Modal, FlatList } from 'react-native';
-import { useTranslation, SUPPORTED_LANGUAGES } from '../context/I18nContext';
+import { TouchableOpacity, Text, StyleSheet, View, Modal, FlatList, Alert } from 'react-native';
+import { useTranslation } from '../hooks/useTranslation';
+import { LanguageCode } from '../context/I18nContext';
 
 export const LanguageToggle = () => {
-  const { currentLanguage, changeLanguage, supportedLanguages } = useTranslation();
-  const isRTL = supportedLanguages[currentLanguage]?.rtl || false;
+  const { currentLanguage, changeLanguage, getSupportedLanguages, isRTL } = useTranslation();
   const [isModalVisible, setIsModalVisible] = useState(false);
-
-  const languageList = Object.entries(SUPPORTED_LANGUAGES).map(([code, details]) => ({
+  
+  // Get supported languages from the hook
+  const supportedLanguages = getSupportedLanguages();
+  
+  const languageList = Object.entries(supportedLanguages).map(([code, details]) => ({
     code,
-    ...details
+    name: details.name,
+    rtl: details.rtl
   }));
 
   const renderLanguageItem = ({ item }: { item: { code: string; name: string } }) => (
     <TouchableOpacity
-      style={[styles.languageItem, currentLanguage === item.code && styles.selectedLanguage]}
+      style={[styles.languageItem, currentLanguage.code === item.code && styles.selectedLanguage]}
       onPress={() => {
-        changeLanguage(item.code);
-        setIsModalVisible(false);
+        try {
+          // Use try-catch to prevent crashes
+          changeLanguage(item.code as LanguageCode)
+            .then(() => {
+              setIsModalVisible(false);
+            })
+            .catch(error => {
+              console.error('Error changing language:', error);
+              setIsModalVisible(false);
+              Alert.alert('Error', 'There was a problem changing the language');
+            });
+        } catch (error) {
+          console.error('Error changing language:', error);
+          setIsModalVisible(false);
+          Alert.alert('Error', 'There was a problem changing the language');
+        }
       }}
     >
-      <Text style={[styles.languageText, currentLanguage === item.code && styles.selectedLanguageText]}>
+      <Text style={[styles.languageText, currentLanguage.code === item.code && styles.selectedLanguageText]}>
         {item.name}
       </Text>
     </TouchableOpacity>
   );
+
+  // Get the current language name safely
+  const getCurrentLanguageName = () => {
+    try {
+      return currentLanguage.name || 'Select Language';
+    } catch (error) {
+      console.error('Error getting language name:', error);
+      return 'Select Language';
+    }
+  };
 
   return (
     <>
@@ -33,7 +61,7 @@ export const LanguageToggle = () => {
           style={styles.toggle}
           onPress={() => setIsModalVisible(true)}
         >
-          <Text style={styles.text}>{SUPPORTED_LANGUAGES[currentLanguage].name}</Text>
+          <Text style={styles.text}>{getCurrentLanguageName()}</Text>
         </TouchableOpacity>
       </View>
 

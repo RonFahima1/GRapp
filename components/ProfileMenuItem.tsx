@@ -1,8 +1,9 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, Switch } from 'react-native';
-import { ChevronRight } from 'lucide-react-native';
+import { ChevronRight, ChevronLeft } from 'lucide-react-native';
 import * as Haptics from 'expo-haptics';
 import { Platform } from 'react-native';
+import { useTranslate } from '../context/TranslationContext';
 
 export type MenuItemProps = {
   id: string;
@@ -28,6 +29,7 @@ const ProfileMenuItem: React.FC<MenuItemProps> = ({
   onValueChange,
   onPress
 }) => {
+  const { isRTL } = useTranslate();
   // Handle tap with haptic feedback
   const handleTap = () => {
     if (Platform.OS !== 'web') {
@@ -57,15 +59,15 @@ const ProfileMenuItem: React.FC<MenuItemProps> = ({
       onPress={type === 'navigate' ? handlePress : undefined}
       disabled={type === 'toggle'}
     >
-      <View style={styles.menuItemContent}>
-        <View style={styles.menuItemLeft}>
+      <View style={[styles.menuItemContent, { flexDirection: isRTL ? 'row-reverse' : 'row' }]}>
+        <View style={[styles.menuItemLeft, { flexDirection: isRTL ? 'row-reverse' : 'row' }]}>
           <View style={styles.menuItemIcon}>
             {icon}
             {hasNotification && <View style={styles.notificationDot} />}
           </View>
           <View style={styles.menuItemTextContainer}>
-            <Text style={styles.menuItemText}>{title}</Text>
-            {subtitle && <Text style={styles.menuItemSubtitle}>{subtitle}</Text>}
+            <Text style={[styles.menuItemText, { textAlign: isRTL ? 'right' : 'left' }]}>{title}</Text>
+            {subtitle && <Text style={[styles.menuItemSubtitle, { textAlign: isRTL ? 'right' : 'left' }]}>{subtitle}</Text>}
           </View>
         </View>
         
@@ -79,7 +81,7 @@ const ProfileMenuItem: React.FC<MenuItemProps> = ({
               ios_backgroundColor="#E0E0E0"
             />
           ) : (
-            showChevron && <ChevronRight color="#CCCCCC" size={20} />
+            showChevron && (isRTL ? <ChevronLeft color="#CCCCCC" size={20} /> : <ChevronRight color="#CCCCCC" size={20} />)
           )}
         </View>
       </View>

@@ -1,35 +1,441 @@
 {
+  "welcome_to_remit": "ප්රේෂණය කිරීමට සාදරයෙන් පිළිගනිමු",
+  "enter_phone_subtitle": "ආරම්භ කිරීම සඳහා ඔබගේ දුරකථන අංකය ඇතුළත් කරන්න",
+  "enter_phone_number": "දුරකථන අංකය ඇතුළත් කරන්න",
+  "continue_button": "දිගටම කරගෙන යන්න",
+  "already_member": "දැනටමත් සාමාජිකයෙක්ද?",
+  "login_here": "මෙහි පිවිසෙන්න",
+  "phone_error_start": "දුරකථන අංකය 0 හෝ 5 කින් ආරම්භ කළ යුතුය",
+  "phone_error_invalid": "කරුණාකර වලංගු දුරකථන අංකයක් ඇතුළත් කරන්න",
+  "phone_error_format": "වලංගු නොවන දුරකථන අංක ආකෘතිය",
   "hello": "ආයුබෝවන්",
+  "hello_name": "Hello, {{name}}",
   "welcome_back": "ආපසු සාදරයෙන් පිළිගනිමු",
+  "login_subtitle": "ඉදිරියට යාමට පුරනය වන්න",
+  "email": "විද්යුත් තැපෑල",
+  "password": "මුරපදය",
+  "login": "ඇතුල් වන්න",
+  "login_error_fields": "කරුණාකර සියලු ක්ෂේත්ර පුරවන්න",
+  "enable_biometric_login": "Enable {{biometricType}} login",
+  "no_account": "ගිණුමක් නැද්ද?",
+  "register": "ලියාපදිංචි වන්න",
   "settings": "සැකසුම්",
   "appearance": "පෙනුම",
   "dark_mode": "අඳුරු මාදිලිය",
   "notifications": "දැනුම්දීම්",
-  "push_notifications": "පුෂ් දැනුම්දීම්",
-  "security": "ආරක්ෂාව",
-  "biometric_authentication": "ජෛවමිතික සත්‍යාපනය",
+  "push_notifications": "දැනුම්දීම් තල්ලු කරන්න",
+  "security_title": "ආරක්ෂාව",
+  "biometric_authentication": "ජෛවමිතික සත්යාපනය",
   "change_password": "මුරපදය වෙනස් කරන්න",
-  "payment": "ගෙවීම්",
-  "payment_methods": "ගෙවීම් ක්‍රම",
-  "currencies": "මුදල් වර්ග",
+  "payment": "ගෙවීම",
+  "payment_methods": "ගෙවීම් ක්රම",
+  "currencies": "මුදල්",
   "support": "සහාය",
-  "help_center": "උපකාර මධ්‍යස්ථානය",
-  "contact_us": "අප අමතන්න",
+  "help_center": "උපකාරක මධ්යස්ථානය",
+  "contact_us": "අපව අමතන්න",
   "language": "භාෂාව",
   "total_balance": "මුළු ශේෂය",
   "this_week": "මෙම සතිය",
+  "percentage_change": "{{percentage}}% this week",
   "send_money": "මුදල් යවන්න",
+  "send": "යවන්න",
   "request": "ඉල්ලීම",
-  "top_up": "ටොප් අප්",
+  "exchange": "හුවමාරුව",
+  "top_up": "ඉහළට ඉහළට",
   "recent_transactions": "මෑත ගනුදෙනු",
   "exchange_rates": "විනිමය අනුපාත",
   "see_all": "සියල්ල බලන්න",
-  "my_wallet": "මගේ පසුම්බිය",
-  "transactions": "ගනුදෙනු",
-  "profile": "පැතිකඩ",
-  "edit_profile": "පැතිකඩ සංස්කරණය",
-  "countries": "රටවල්",
-  "transfers": "මාරු කිරීම්",
-  "sent": "යවා ඇත",
-  "logout": "පිටවීම"
+  "my_wallet": "මගේ මුදල් පසුම්බිය",
+  "dashboard": {
+    "cards": "ගෙවීම් කාඩ්පත්",
+    "wallet_transactions": "ගනුදෙනු",
+    "wallet_balance": "ශේෂය",
+    "add_new_card": "නව කාඩ්පතක් එක් කරන්න"
+  },
+  "transactions_label": "ගනුදෙනු",
+  "profile_tab": "පැතිකඩ",
+  "edit_profile": "පැතිකඩ සංස්කරණය කරන්න",
+  "logout": "පිටවීම",
+  "cancel": "අවලංගු කරන්න",
+  "done": "කළා",
+  "security": {
+    "section_title": "ආරක්ෂාව සහ මනාපයන්",
+    "preferences": "පද්ධති මනාපයන්",
+    "faceID": "මුහුණු හැඳුනුම්පත",
+    "faceIDDescription": "ඔබගේ ගිණුම අගුළු ඇරීමට මුහුණු හැඳුනුම්පත භාවිතා කරන්න",
+    "changePassword": "මුරපදය වෙනස් කරන්න",
+    "securityQuestions": "ආරක්ෂක ප්රශ්න"
+  },
+  "profile": {
+    "fullName": "සම්පූර්ණ නම",
+    "email": "විද්යුත් තැපෑල",
+    "emailAddress": "{{email}}",
+    "myAccount": "මගේ ගිණුම",
+    "documents": "ලේඛන",
+    "securityAndPreferences": "ආරක්ෂාව සහ මනාපයන්",
+    "notificationSettings": "දැනුම්දීම් සැකසුම්",
+    "helpSupport": "උදව් සහ සහාය",
+    "about": "යෙදුම ගැන",
+    "accountId": "ගිණුම් හැඳුනුම්පත",
+    "memberSince": "සිට සාමාජික",
+    "transactionCount": "ගනුදෙනු",
+    "accountIdValue": "{{accountId}}",
+    "memberSinceValue": "{{memberSince}}",
+    "transactionCountValue": "{{transactionCount}}",
+    "language": "භාෂාව",
+    "darkMode": "අඳුරු මාදිලිය",
+    "logoutConfirmation": "ඔබට ප්රවේශම් වීමට අවශ්ය බව ඔබට විශ්වාසද?"
+  },
+  "common": {
+    "copied": "ක්ලිප් පුවරුවට පිටපත් කරන ලදි",
+    "copied_title": "පිටපත් කරන ලදි",
+    "darkModeDescription": "යෙදුම සඳහා අඳුරු තේමාව භාවිතා කරන්න",
+    "copy": "පිටපත",
+    "back": "ආපසු",
+    "close": "වසන්න",
+    "continue": "දිගටම කරගෙන යන්න",
+    "cancel": "අවලංගු කරන්න",
+    "save": "සුරකින්න",
+    "delete": "මකන්න",
+    "edit": "සංස්කරණය කරන්න",
+    "settings": "සැකසුම්",
+    "search": "සෙවීම",
+    "done": "කළා",
+    "visa": "වීසා",
+    "mastercard": "මාස්ටර්කාඩ්",
+    "endingIn": "අවසන් වීම",
+    "expires": "කල් ඉකුත් වේ"
+  },
+  "countries": {
+    "Mexico": "මෙක්සිකෝව",
+    "India": "ඉන්දියාව",
+    "Colombia": "කොලොම්බියාව",
+    "Philippines": "පිලිපීනය"
+  },
+  "language_settings": {
+    "preferred_languages": "කැමති භාෂා",
+    "all_languages": "සියලුම භාෂා",
+    "changing_language": "භාෂාව වෙනස් කිරීම ...",
+    "language_change_error": "භාෂාව වෙනස් කිරීමේදී දෝෂයක් ඇතිවිය. කරුණාකර නැවත උත්සාහ කරන්න.",
+    "restart_required": "නැවත ආරම්භ කිරීම අවශ්යයි",
+    "restart_message_rtl": "RTL සහ LTR භාෂා අතර මාරුවීම නැවත ආරම්භ කිරීම සඳහා යෙදුම අවශ්ය වේ. ඔබට ඉදිරියට යාමට අවශ්යද?",
+    "restart_message_ltr": "LTR සහ RTL භාෂා අතර මාරුවීම නැවත ආරම්භ කිරීම සඳහා යෙදුම අවශ්ය වේ. ඔබට ඉදිරියට යාමට අවශ්යද?",
+    "save_preferences": "මනාපයන් සුරකින්න",
+    "language_saved": "භාෂා මනාපයන් සාර්ථකව සුරකින ලදි."
+  },
+  "error": "දෝෂයකි",
+  "ok": "හරි",
+  "tabs": {
+    "home": "මුල් පිටුව",
+    "g": "උ",
+    "profile": "පැතිකඩ"
+  },
+  "myAccount": {
+    "title": "මගේ ගිණුම",
+    "accountOnName": "නම පිළිබඳ ගිණුම",
+    "userName": "ජෝන් ස්මිත්",
+    "accountNumber": "ගිණුම් අංකය",
+    "branch": "ශාඛාව",
+    "bank": "බැංකුව",
+    "ibanNumber": "IBAN අංකය",
+    "swiftCode": "ස්විෆ්ට් කේතය",
+    "yourContactInformation": "ඔබගේ සම්බන්ධතා තොරතුරු",
+    "emailAddress": "ඊතැපැල් ලිපිනය",
+    "homeAddress": "නිවසේ ලිපිනය",
+    "mailingAddress": "තැපැල් කරන ලිපිනය",
+    "phone": "දුරකථනය",
+    "editEmail": "විද්යුත් තැපැල් ලිපිනය සංස්කරණය කරන්න",
+    "editHomeAddress": "නිවසේ ලිපිනය සංස්කරණය කරන්න",
+    "editMailingAddress": "තැපැල් ලිපිනය සංස්කරණය කරන්න",
+    "editPhone": "දුරකථන අංකය සංස්කරණය කරන්න",
+    "requestAccountClosure": "ගිණුම වසා දැමීම ඉල්ලන්න",
+    "informationCopied": "තොරතුරු ක්ලිප් පුවරුවට පිටපත් කරන ලදි"
+  },
+  "sendMoney": {
+    "availableBalance": "ලබා ගත හැකි ශේෂය",
+    "title": "මුදල් යවන්න",
+    "to": "වෙත",
+    "amount": "මුදල",
+    "transferType": "හුවමාරු වර්ගය",
+    "immediateTransfer": "වහාම මාරු කිරීම",
+    "scheduledTransfer": "උපලේඛනගත මාරුව",
+    "scheduledDate": "උපලේඛනගත දිනය",
+    "scheduledTime": "නියමිත කාලය",
+    "details": {
+      "title": "විස්තර හුවමාරු",
+      "transferSummary": "හුවමාරු සාරාංශය",
+      "to": "වෙත",
+      "amount": "මුදල",
+      "when": "කවදා ද",
+      "account": "ගිණුම",
+      "paymentMethod": "ගෙවීම් ක්රමය",
+      "bankAccount": "බැංකු ගිණුම",
+      "creditDebitCard": "ණය / හර කාඩ්පත",
+      "selectBank": "බැංකුව තෝරන්න",
+      "selectCard": "කාඩ්පත තෝරන්න",
+      "addNewCard": "+ නව කාඩ්පතක් එක් කරන්න",
+      "feeBreakdown": "ගාස්තු බිඳවැටීම",
+      "transferAmount": "මාරු මුදල",
+      "transferFee": "ගාස්තු මාරු කිරීම",
+      "total": "එකතුව",
+      "continue": "දිගටම කරගෙන යන්න",
+      "scheduleInfo": "නියමිත වේලාවට",
+      "immediateInfo": "වහාම මාරු කිරීම"
+    }
+  },
+  "transactions": {
+    "title": "ගනුදෙනු",
+    "allTransactions": "සියලුම ගනුදෙනු",
+    "search": "ගනුදෙනු සොයන්න",
+    "searchPlaceholder": "නම හෝ විස්තරය අනුව සොයන්න",
+    "filter": "පෙරණය",
+    "filterTitle": "පෙරහන් ගනුදෙනු",
+    "apply": "අයදුම් කරන්න",
+    "clear": "සියල්ල ඉවත් කරන්න",
+    "close": "වසන්න",
+    "reset": "නැවත සකසන්න",
+    "dateRange": "දිනය පරාසය",
+    "from": "සිට",
+    "to": "වෙත",
+    "startDate": "ආරම්භක දිනය",
+    "endDate": "අවසන් දිනය",
+    "amountRange": "ප්රමාණය පරාසය",
+    "min": "මිනි",
+    "max": "මැක්ස්",
+    "transactionType": "ගනුදෙනු වර්ගය",
+    "all": "සියල්ල",
+    "sent": "යවා",
+    "received": "ලැබුණි",
+    "exchanged": "හුවමාරු විය",
+    "noResults": "කිසිදු ගනුදෙනුවක් හමු නොවීය",
+    "noTransactionsFound": "කිසිදු ගනුදෙනුවක් හමු නොවීය.",
+    "adjustSearchOrFilter": "ඔබගේ සෙවීම හෝ පෙරහන් නිර්ණායක සකස් කිරීමට උත්සාහ කරන්න.",
+    "status": {
+      "pending": "අපේක්ෂිත",
+      "completed": "සම්පුර්ණ කරන ලදි",
+      "failed": "අසමත්"
+    },
+    "descriptions": {
+      "payment": "සේවා සඳහා ගෙවීම්",
+      "gift": "උපන්දින තෑග්ග",
+      "exchange": "Exchange from {{from}} to {{to}}",
+      "dinner": "රාත්රී ආහාරය ගෙවීම",
+      "rent": "කුලී ගෙවීම",
+      "utilities": "උපයෝගිතා ගෙවීම්"
+    },
+    "filters": {
+      "transactionType": "ගනුදෙනු වර්ගය",
+      "dateRange": "දිනය පරාසය",
+      "amountRangeUSD": "ප්රමාණය පරාසය (USD)",
+      "startDate": "ආරම්භක දිනය",
+      "endDate": "අවසන් දිනය",
+      "minAmount": "අවම මුදල",
+      "maxAmount": "උපරිම මුදල",
+      "clearFilters": "පෙරහන් ඉවත් කරන්න",
+      "applyFilters": "පෙරහන් යොදන්න",
+      "types": {
+        "all": "සියල්ල",
+        "sent": "යවා",
+        "received": "ලැබුණි",
+        "exchanged": "හුවමාරු විය"
+      }
+    }
+  },
+  "moneyTransfer": {
+    "details": {
+      "title": "විස්තර හුවමාරු",
+      "transferSummary": "හුවමාරු සාරාංශය",
+      "to": "වෙත",
+      "amount": "මුදල",
+      "when": "කවදා ද",
+      "account": "ගිණුම",
+      "paymentMethod": "ගෙවීම් ක්රමය",
+      "bankAccount": "බැංකු ගිණුම",
+      "creditDebitCard": "ණය / හර කාඩ්පත",
+      "selectBank": "බැංකුව තෝරන්න",
+      "selectCard": "කාඩ්පත තෝරන්න",
+      "addNewCard": "+ නව කාඩ්පතක් එක් කරන්න",
+      "feeBreakdown": "ගාස්තු බිඳවැටීම",
+      "transferAmount": "මාරු මුදල",
+      "transferFee": "ගාස්තු මාරු කිරීම",
+      "total": "එකතුව",
+      "continue": "දිගටම කරගෙන යන්න",
+      "immediateTransfer": "වහාම මාරු කිරීම",
+      "scheduledTransfer": "2025 මැයි 25 දිනට සැලසුම් කර ඇත"
+    }
+  },
+  "privacy": {
+    "title": "රහස්යතා ප්රතිපත්තිය",
+    "lastUpdated": "{{date}}",
+    "lastUpdatedPrefix": "අවසන් වරට යාවත්කාලීන කරන ලදි",
+    "securityIcon": "ආරක්ෂක පලිහ නිරූපකය",
+    "sections": {
+      "introduction": {
+        "title": "හැඳින්වීම",
+        "paragraph1": "ගෝලීය ප්රේෂණය (\"අපගේ,\" හෝ \"එක්සත් ජනපදය\") ඔබේ පෞද්ගලිකත්වය ආරක්ෂා කිරීමට කැපවී සිටිමු. මෙම රහස්යතා ප්රතිපත්තිය ඔබ අපගේ ජංගම යෙදුම හෝ වෙබ් අඩවිය (සාමූහිකව \"සේවාවන් භාවිතා කරන විට, ඔබේ තොරතුරු රැස්කර, භාවිතා කිරීම, අනාවරණය කිරීම, අනාවරණය කිරීම සහ ආරක්ෂා කරන ආකාරය පැහැදිලි කරයි).",
+        "paragraph2": "කරුණාකර මෙම රහස්යතා ප්රතිපත්තිය ප්රවේශමෙන් කියවන්න. අපගේ සේවාවන් ප්රවේශ වීම හෝ භාවිතා කිරීමෙන්, මෙම රහස්යතා ප්රතිපත්තියේ සියලු කොන්දේසි වලින් ඔබ කියවා, තේරුම් ගෙන ඇති සහ එකඟ වීමට එකඟ වන බව ඔබ පිළිගනී."
+      },
+      "informationCollected": {
+        "title": "අපි එකතු කරන තොරතුරු",
+        "personalInfoTitle": "පුද්ගලික තොරතුරු",
+        "personalInfoContent": "ඔබගේ නම, ඊමේල් ලිපිනය, දුරකථන අංකය, උපන් අංකය, උපන් අංකය, උපන් අංකය, සමාජ ආරක්ෂණ අංකය සහ රජය විසින් නිකුත් කරන ලද අනන්යතාවය වැනි පෞද්ගලිකව හඳුනාගත හැකි තොරතුරු රැස්කරන්නන් හෝ අපගේ සේවාවන් භාවිතා කරන විට.",
+        "financialInfoTitle": "මූල්ය තොරතුරු",
+        "financialInfoContent": "අපගේ බැංකු හා මුදල් හුවමාරු සේවා සැපයීම සඳහා අපි බැංකු තොරතුරු, ගිණුම් අංක, ගනුදෙනු ඉතිහාසය සහ ගෙවීම් තොරතුරු රැස් කරන්නෙමු.",
+        "deviceInfoTitle": "උපාංග තොරතුරු",
+        "deviceInfoContent": "ඔබ අපගේ සේවාවන් වෙත ප්රවේශ වූ විට, ඔබගේ ජංගම උපාංග හැඳුනුම්පත, ආකෘති, නිෂ්පාදකයා, මෙහෙයුම් පද්ධතිය, IP ලිපිනය සහ ගවේෂණ හැසිරීම වැනි උපාංග තොරතුරු ස්වයංක්රීයව එකතු කරමු."
+      },
+      "informationUsage": {
+        "title": "අපි ඔබේ තොරතුරු භාවිතා කරන ආකාරය",
+        "intro": "අපි එකතු කරන තොරතුරු අපි භාවිතා කරමු",
+        "bulletPoints": {
+          "improve": "අපගේ සේවාවන් සැපයීම, නඩත්තු කිරීම සහ වැඩිදියුණු කිරීම",
+          "process": "ගනුදෙනු කිරීමේ ගනුදෙනු සහ අදාළ තොරතුරු යවන්න",
+          "verify": "ඔබගේ අනන්යතාවය සත්යාපනය කර වංචාව වළක්වා ගන්න",
+          "personalize": "ඔබේ අත්දැකීම් පුද්ගලීකරණය කරන්න",
+          "communicate": "අපගේ සේවාවන් ගැන ඔබ සමඟ සන්නිවේදනය කරන්න",
+          "comply": "නීතිමය වගකීම් වලට අනුකූල වීම"
+        }
+      },
+      "informationSharing": {
+        "title": "තොරතුරු හුවමාරු",
+        "intro": "අපි ඔබේ තොරතුරු සමඟ බෙදා ගත හැකිය",
+        "bulletPoints": {
+          "providers": "අප වෙනුවෙන් සේවාවන් ඉටු කරන සේවා සපයන්නන්",
+          "financial": "ගනුදෙනු සම්පූර්ණ කිරීම සඳහා මූල්ය ආයතන",
+          "legal": "නීතියෙන් අවශ්ය වූ විට නීති බලධාරීන්",
+          "partners": "ඔබේ කැමැත්ත සමඟ ව්යාපාරික හවුල්කරුවන්"
+        }
+      },
+      "dataSecurity": {
+        "title": "දත්ත ආරක්ෂාව",
+        "content": "ඔබේ පුද්ගලික තොරතුරු අනවසර ප්රවේශය, වෙනස් කිරීම, අනාවරණය කිරීම, අනාවරණය කිරීම හෝ විනාශය වළක්වා ගැනීම සඳහා සුදුසු ආරක්ෂක පියවරයන් අපි ක්රියාත්මක කරමු. කෙසේ වෙතත්, අන්තර්ජාලය හරහා සම්ප්රේෂණ ක්රමයක් හෝ ඉලෙක්ට්රොනික ගබඩාව 100% සුරක්ෂිත බැවින් අපට නිරපේක්ෂ ආරක්ෂාව සහතික කළ නොහැක."
+      },
+      "yourRights": {
+        "title": "ඔබේ අයිතිවාසිකම්",
+        "intro": "ඔබේ ස්ථානය අනුව, අයිතිය ඇතුළුව ඔබේ පුද්ගලික තොරතුරු පිළිබඳව ඔබට යම් යම් අයිතිවාසිකම් තිබිය හැකිය",
+        "bulletPoints": {
+          "access": "ඔබේ පුද්ගලික තොරතුරු වෙත ප්රවේශ වන්න",
+          "correct": "නිවැරදි සාවද්ය තොරතුරු",
+          "delete": "ඔබේ පුද්ගලික තොරතුරු මකන්න",
+          "object": "ඔබේ තොරතුරු සැකසීමට වස්තුව",
+          "withdraw": "කැමැත්ත ඉල්ලා අස්කර ගන්න"
+        }
+      },
+      "contactUs": {
+        "title": "අපව අමතන්න",
+        "intro": "මෙම රහස්යතා ප්රතිපත්තිය පිළිබඳව ඔබට කිසියම් ප්රශ්නයක් ඇත්නම්, කරුණාකර අප හා සම්බන්ධ වන්න",
+        "email": "privacy@globallremit.com",
+        "phone": "1-800-ගෝලීය-ප්රේෂණය"
+      }
+    }
+  },
+  "supportChat": {
+    "title": "ගෝලීය ප්රේෂණ චැට්",
+    "today": "අද",
+    "typePlaceholder": "ඔබේ පණිවිඩය ටයිප් කරන්න",
+    "send": "යවන්න",
+    "attach": "අමුණන්න",
+    "messageSent": "පණිවිඩය යවන ලදි",
+    "messageSentDesc": "ඔබගේ පණිවිඩය අපගේ ආධාරක කණ්ඩායමට යවන ලදි.",
+    "quickReplies": {
+      "accountQuestions": "ගිණුම් ප්රශ්න",
+      "creditCards": "ක්රෙඩිට් කාඩ්",
+      "appIssues": "යෙදුම් ගැටළු",
+      "moneyTransfers": "මුදල් හුවමාරුව",
+      "accountAccess": "ගිණුම් ප්රවේශය",
+      "openAccount": "ගිණුම විවෘත කරන්න"
+    },
+    "exitConfirm": {
+      "title": "කතාබහෙන් ඉවත් වීමට අවශ්යද?",
+      "message": "ඇතුළත් කළ සියලුම දත්ත සුරැකෙන්නේ නැත",
+      "leave": "මට යන්න ඕන",
+      "continue": "මට දිගටම කරගෙන යාමට අවශ්යයි"
+    }
+  },
+  "pin": {
+    "title": "ගනුදෙනු සුරක්ෂිතතා සැකසුම",
+    "setPinSubtitle": "ඉලක්කම් 6 කින් යුත් PIN (අත්යවශ්ය නොවේ)",
+    "enterPinPlaceholder": "ඉලක්කම් 6 කින් පින් කරන්න",
+    "confirmPinPlaceholder": "PIN අංකය තහවුරු කරන්න",
+    "save": "සුරකින්න",
+    "saving": "ඉතිරි කිරීම ...",
+    "useBiometrics": "Use {{biometricType}}",
+    "errorRequireOneMethod": "කරුණාකර අවම වශයෙන් එක් සත්යාපන ක්රමයක් වත් සකසන්න",
+    "errorPinLength": "පින් ඉලක්කම් 6 ක් විය යුතුය",
+    "errorPinMismatch": "PINS නොගැලපේ",
+    "errorPinOnlyNumbers": "PIN අංකය අඩංගු විය යුතුය",
+    "errorSavingSettings": "සැකසුම් සුරැකීමට අපොහොසත් විය"
+  },
+  "accountClosure": {
+    "title": "ගිණුම් වසා දැමීම",
+    "mainQuestion": "ඔබගේ ගිණුම වැසීමට අපට උදව් කරන්නේ කෙසේද?",
+    "processingRequest": "අපි දැනට ඔබගේ ඉල්ලීම සකස් කරමින් සිටින අතර අපි එයට හේතුව තේරුම් ගැනීමට කැමතියි.",
+    "nextStepInfo": "ඔබ ඔබේ ගිණුම වසා දැමීමට කැමති නම්, ඊළඟ පියවර වනුයේ අප හා සම්බන්ධ වීමයි.",
+    "bankingIssueNote": "ගිණුම් වසා දැමීම බැංකු ගැටළුවක් නිසා නම්, ඔබගේ ගිණුම වසා නොගෙන එය විසඳීමට අපට හැකි වනු ඇත.",
+    "getMoreInfo": "ගිණුම් වසා දැමීම පිළිබඳ වැඩි විස්තර ලබා ගන්න",
+    "proceedAwareness": "ගිණුම් වසා දැමීම සමඟ ඉදිරියට යාමට, කරුණාකර එය ගැන සැලකිලිමත් වන්න:",
+    "points": {
+      "recurringPayments": "සියලුම පුනරාවර්තන ගෙවීම් සහ ස්වයංක්රීය මාරුවීම් අවලංගු කරනු ලැබේ",
+      "remainingBalance": "ඉතිරිව ඇති ඕනෑම ශේෂයක් වෙනත් ගිණුමකට මාරු කළ යුතුය",
+      "destroyCards": "ඔබට ආශ්රිත කාඩ්පත් විනාශ කිරීමට අවශ්ය වනු ඇත",
+      "processDuration": "ක්රියාවලිය සම්පූර්ණ කිරීමට දින 30 ක් ගතවනු ඇත"
+    },
+    "requestClosure": "ගිණුම වසා දැමීම ඉල්ලන්න",
+    "alert": {
+      "title": "වසා දැමීමේ ඉල්ලීම ලැබුණි",
+      "message": "ඔබගේ ගිණුම් වසා දැමීමේ ඉල්ලීම ඉදිරිපත් කර ඇත. ඊළඟ පියවර වන්නේ අපගේ පාරිභෝගික සේවය හා සම්බන්ධ වීමයි."
+    }
+  },
+  "editHomeAddress": {
+    "title": "නිවසේ ලිපිනය",
+    "description": "ඔබගේ නේවාසික ලිපිනය යාවත්කාලීන කරන්න",
+    "fields": {
+      "street": "වීථි ලිපිනය",
+      "city": "නගරය",
+      "zipCode": "සිප් කේතය"
+    },
+    "buttons": {
+      "update": "යාවත්කාලීන කිරීම",
+      "verify": "සත්යාපනය කරන්න"
+    },
+    "otp": {
+      "sentTitle": "OTP යවන ලදි",
+      "sentMessage": "ඔබගේ විද්යුත් තැපැල් ලිපිනයට සත්යාපන කේතයක් යවා ඇත",
+      "enterCode": "ඔබගේ විද්යුත් තැපෑලට යවන ලද සත්යාපන කේතය ඇතුළත් කරන්න",
+      "placeholder": "6-ඉලක්කම් කේතය",
+      "invalidTitle": "අවලංගු OTP",
+      "invalidMessage": "කරුණාකර ඔබේ විද්යුත් තැපැල් ලිපිනයට යවන ලද 6 කින් යුත් කේතය ඇතුළත් කරන්න"
+    },
+    "update": {
+      "successTitle": "ලිපිනය යාවත්කාලීන කරන ලදි",
+      "successMessage": "ඔබගේ නිවසේ ලිපිනය සාර්ථකව යාවත්කාලීන කර ඇත"
+    },
+    "privacyConfirmation": "ලබා දී ඇති තොරතුරු නිවැරදි බවත් නීතිමය හා රහස්යතා නියමයන්ට මම එකඟ වෙමි."
+  },
+  "editMailingAddress": {
+    "title": "තැපැල් කරන ලිපිනය",
+    "description": "ඔබේ තැපැල් ලිපිනය යාවත්කාලීන කරන්න ඔබ වැදගත් ලියකියවිලි ලබා ගැනීමට කැමති තැන",
+    "fields": {
+      "street": "වීථි ලිපිනය",
+      "city": "නගරය",
+      "zipCode": "සිප් කේතය"
+    },
+    "buttons": {
+      "update": "යාවත්කාලීන කිරීම",
+      "verify": "සත්යාපනය කරන්න"
+    },
+    "otp": {
+      "sentTitle": "OTP යවන ලදි",
+      "sentMessage": "ඔබගේ විද්යුත් තැපැල් ලිපිනයට සත්යාපන කේතයක් යවා ඇත",
+      "enterCode": "ඔබගේ විද්යුත් තැපෑලට යවන ලද සත්යාපන කේතය ඇතුළත් කරන්න",
+      "placeholder": "6-ඉලක්කම් කේතය",
+      "invalidTitle": "අවලංගු OTP",
+      "invalidMessage": "කරුණාකර ඔබේ විද්යුත් තැපැල් ලිපිනයට යවන ලද 6 කින් යුත් කේතය ඇතුළත් කරන්න"
+    },
+    "update": {
+      "successTitle": "ලිපිනය යාවත්කාලීන කරන ලදි",
+      "successMessage": "ඔබගේ තැපැල් ලිපිනය සාර්ථකව යාවත්කාලීන කර ඇත"
+    },
+    "privacyConfirmation": "ලබා දී ඇති තොරතුරු නිවැරදි බවත් නීතිමය හා රහස්යතා නියමයන්ට මම එකඟ වෙමි."
+  }
 }

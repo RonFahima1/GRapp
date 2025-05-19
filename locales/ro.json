@@ -1,35 +1,441 @@
 {
-  "hello": "Bună",
+  "welcome_to_remit": "Bine ați venit la Remitere",
+  "enter_phone_subtitle": "Introduceți numărul dvs. de telefon pentru a începe",
+  "enter_phone_number": "Introduceți numărul de telefon",
+  "continue_button": "Continua",
+  "already_member": "Deja membru?",
+  "login_here": "Conectați -vă aici",
+  "phone_error_start": "Numărul de telefon trebuie să înceapă cu 0 sau 5",
+  "phone_error_invalid": "Vă rugăm să introduceți un număr de telefon valid",
+  "phone_error_format": "Formatul de telefon nevalid",
+  "hello": "Buna ziua",
+  "hello_name": "Hello, {{name}}",
   "welcome_back": "Bine ai revenit",
+  "login_subtitle": "Conectați -vă pentru a continua",
+  "email": "E-mail",
+  "password": "Parolă",
+  "login": "Log in",
+  "login_error_fields": "Vă rugăm să completați toate câmpurile",
+  "enable_biometric_login": "Enable {{biometricType}} login",
+  "no_account": "Nu aveți un cont?",
+  "register": "Registru",
   "settings": "Setări",
   "appearance": "Aspect",
   "dark_mode": "Mod întunecat",
   "notifications": "Notificări",
   "push_notifications": "Notificări push",
-  "security": "Securitate",
+  "security_title": "Securitate",
   "biometric_authentication": "Autentificare biometrică",
-  "change_password": "Schimbă parola",
+  "change_password": "Schimbaţi parola",
   "payment": "Plată",
   "payment_methods": "Metode de plată",
-  "currencies": "Valute",
-  "support": "Suport",
-  "help_center": "Centru de ajutor",
-  "contact_us": "Contactează-ne",
+  "currencies": "Monede",
+  "support": "Sprijin",
+  "help_center": "Centrul de ajutor",
+  "contact_us": "Contactaţi-ne",
   "language": "Limbă",
   "total_balance": "Sold total",
-  "this_week": "săptămâna aceasta",
+  "this_week": "În această săptămână",
+  "percentage_change": "{{percentage}}% this week",
   "send_money": "Trimite bani",
-  "request": "Solicită",
-  "top_up": "Încarcă",
+  "send": "Trimite",
+  "request": "Cerere",
+  "exchange": "Schimb",
+  "top_up": "Top Up",
   "recent_transactions": "Tranzacții recente",
   "exchange_rates": "Rate de schimb",
-  "see_all": "Vezi tot",
+  "see_all": "Vezi toate",
   "my_wallet": "Portofelul meu",
-  "transactions": "Tranzacții",
-  "profile": "Profil",
-  "edit_profile": "Editează profilul",
-  "countries": "Țări",
-  "transfers": "Transferuri",
-  "sent": "Trimis",
-  "logout": "Deconectare"
+  "dashboard": {
+    "cards": "Carduri de plată",
+    "wallet_transactions": "Tranzacții",
+    "wallet_balance": "Echilibru",
+    "add_new_card": "Adăugați card nou"
+  },
+  "transactions_label": "Tranzacții",
+  "profile_tab": "Profil",
+  "edit_profile": "Editați profilul",
+  "logout": "Deconectare",
+  "cancel": "Anula",
+  "done": "Făcut",
+  "security": {
+    "section_title": "Securitate și preferințe",
+    "preferences": "Preferințele sistemului",
+    "faceID": "Față ID",
+    "faceIDDescription": "Utilizați ID -ul Face pentru a vă debloca contul",
+    "changePassword": "Schimbaţi parola",
+    "securityQuestions": "Întrebări de securitate"
+  },
+  "profile": {
+    "fullName": "Numele complet",
+    "email": "E-mail",
+    "emailAddress": "{{email}}",
+    "myAccount": "Contul meu",
+    "documents": "Documente",
+    "securityAndPreferences": "Securitate și preferințe",
+    "notificationSettings": "Setări de notificare",
+    "helpSupport": "Ajutor și asistență",
+    "about": "Despre aplicație",
+    "accountId": "ID de cont",
+    "memberSince": "Membru de atunci",
+    "transactionCount": "Tranzacții",
+    "accountIdValue": "{{accountId}}",
+    "memberSinceValue": "{{memberSince}}",
+    "transactionCountValue": "{{transactionCount}}",
+    "language": "Limbă",
+    "darkMode": "Mod întunecat",
+    "logoutConfirmation": "Ești sigur că vrei să te deconectezi?"
+  },
+  "common": {
+    "copied": "Copiat în clipboard",
+    "copied_title": "Copiat",
+    "darkModeDescription": "Utilizați tema întunecată pentru aplicație",
+    "copy": "Copie",
+    "back": "Spate",
+    "close": "Aproape",
+    "continue": "Continua",
+    "cancel": "Anula",
+    "save": "Salva",
+    "delete": "Şterge",
+    "edit": "Edita",
+    "settings": "Setări",
+    "search": "Căutare",
+    "done": "Făcut",
+    "visa": "Visa",
+    "mastercard": "MasterCard",
+    "endingIn": "terminând în",
+    "expires": "Expiră"
+  },
+  "countries": {
+    "Mexico": "Mexic",
+    "India": "India",
+    "Colombia": "Columbia",
+    "Philippines": "Filipine"
+  },
+  "language_settings": {
+    "preferred_languages": "Limbi preferate",
+    "all_languages": "Toate limbile",
+    "changing_language": "Schimbarea limbajului ...",
+    "language_change_error": "A existat o eroare de schimbare a limbii. Vă rugăm să încercați din nou.",
+    "restart_required": "Reporniți necesar",
+    "restart_message_rtl": "Comutarea între limbile RTL și LTR necesită repornirea aplicației. Vrei să continui?",
+    "restart_message_ltr": "Comutarea între limbile LTR și RTL necesită repornirea aplicației. Vrei să continui?",
+    "save_preferences": "Salvați preferințele",
+    "language_saved": "Preferințele lingvistice salvate cu succes."
+  },
+  "error": "Eroare",
+  "ok": "Bine",
+  "tabs": {
+    "home": "Acasă",
+    "g": "G",
+    "profile": "Profil"
+  },
+  "myAccount": {
+    "title": "Contul meu",
+    "accountOnName": "Cont pe nume",
+    "userName": "John Smith",
+    "accountNumber": "Numărul de cont",
+    "branch": "Ramură",
+    "bank": "Bancar",
+    "ibanNumber": "Numărul iban",
+    "swiftCode": "Codul SWIFT",
+    "yourContactInformation": "Informațiile dvs. de contact",
+    "emailAddress": "Adresa de e-mail",
+    "homeAddress": "Adresa de domiciliu",
+    "mailingAddress": "Adresa poștală",
+    "phone": "Telefon",
+    "editEmail": "Editați adresa de e -mail",
+    "editHomeAddress": "Editați adresa de domiciliu",
+    "editMailingAddress": "Editați adresa poștală",
+    "editPhone": "Editați numărul de telefon",
+    "requestAccountClosure": "Solicitați închiderea contului",
+    "informationCopied": "Informații copiate în clipboard"
+  },
+  "sendMoney": {
+    "availableBalance": "Sold disponibil",
+    "title": "Trimite bani",
+    "to": "La",
+    "amount": "Cantitate",
+    "transferType": "Tip de transfer",
+    "immediateTransfer": "Transfer imediat",
+    "scheduledTransfer": "Transfer programat",
+    "scheduledDate": "Data programată",
+    "scheduledTime": "Ora programată",
+    "details": {
+      "title": "Detalii despre transfer",
+      "transferSummary": "Rezumatul transferului",
+      "to": "La",
+      "amount": "Cantitate",
+      "when": "Când",
+      "account": "Cont",
+      "paymentMethod": "Modalitate de plată",
+      "bankAccount": "Cont bancar",
+      "creditDebitCard": "Card de credit/debit",
+      "selectBank": "Selectați Banca",
+      "selectCard": "Selectați card",
+      "addNewCard": "+ Adăugați card nou",
+      "feeBreakdown": "Defalcarea taxelor",
+      "transferAmount": "Suma de transfer",
+      "transferFee": "Taxa de transfer",
+      "total": "Total",
+      "continue": "Continua",
+      "scheduleInfo": "Programat pentru",
+      "immediateInfo": "Transfer imediat"
+    }
+  },
+  "transactions": {
+    "title": "Tranzacții",
+    "allTransactions": "Toate tranzacțiile",
+    "search": "Căutați tranzacții",
+    "searchPlaceholder": "Căutați după nume sau descriere",
+    "filter": "Filtra",
+    "filterTitle": "Tranzacții de filtrare",
+    "apply": "Aplicați",
+    "clear": "Ștergeți toate",
+    "close": "Aproape",
+    "reset": "Resetează",
+    "dateRange": "Gama de date",
+    "from": "Din",
+    "to": "La",
+    "startDate": "Data de început",
+    "endDate": "Data de încheiere",
+    "amountRange": "Interval de cantitate",
+    "min": "Min",
+    "max": "Max",
+    "transactionType": "Tip de tranzacție",
+    "all": "Toate",
+    "sent": "Trimis",
+    "received": "Primit",
+    "exchanged": "Schimbat",
+    "noResults": "Nu au fost găsite tranzacții",
+    "noTransactionsFound": "Nu au fost găsite tranzacții.",
+    "adjustSearchOrFilter": "Încercați să vă ajustați criteriile de căutare sau filtrare.",
+    "status": {
+      "pending": "În așteptare",
+      "completed": "Completat",
+      "failed": "Eșuat"
+    },
+    "descriptions": {
+      "payment": "Plata pentru servicii",
+      "gift": "Cadou de ziua de naștere",
+      "exchange": "Exchange from {{from}} to {{to}}",
+      "dinner": "Plata cină",
+      "rent": "Plata închirierii",
+      "utilities": "Plata utilităților"
+    },
+    "filters": {
+      "transactionType": "Tip de tranzacție",
+      "dateRange": "Gama de date",
+      "amountRangeUSD": "Suma interval (USD)",
+      "startDate": "Data de început",
+      "endDate": "Data de încheiere",
+      "minAmount": "Suma min",
+      "maxAmount": "Suma maximă",
+      "clearFilters": "Filtre clare",
+      "applyFilters": "Aplicați filtre",
+      "types": {
+        "all": "Toate",
+        "sent": "Trimis",
+        "received": "Primit",
+        "exchanged": "Schimbat"
+      }
+    }
+  },
+  "moneyTransfer": {
+    "details": {
+      "title": "Detalii despre transfer",
+      "transferSummary": "Rezumatul transferului",
+      "to": "La",
+      "amount": "Cantitate",
+      "when": "Când",
+      "account": "Cont",
+      "paymentMethod": "Modalitate de plată",
+      "bankAccount": "Cont bancar",
+      "creditDebitCard": "Card de credit/debit",
+      "selectBank": "Selectați Banca",
+      "selectCard": "Selectați card",
+      "addNewCard": "+ Adăugați card nou",
+      "feeBreakdown": "Defalcarea taxelor",
+      "transferAmount": "Suma de transfer",
+      "transferFee": "Taxa de transfer",
+      "total": "Total",
+      "continue": "Continua",
+      "immediateTransfer": "Transfer imediat",
+      "scheduledTransfer": "Programat pentru 25 mai 2025"
+    }
+  },
+  "privacy": {
+    "title": "Politica de confidențialitate",
+    "lastUpdated": "{{date}}",
+    "lastUpdatedPrefix": "Ultima actualizare",
+    "securityIcon": "Pictograma scutului de securitate",
+    "sections": {
+      "introduction": {
+        "title": "Introducere",
+        "paragraph1": "Remiterea globală („noi”, „a noastră” sau „noi”) se angajează să vă protejeze confidențialitatea. Această politică de confidențialitate explică modul în care colectăm, folosim, dezvăluim și protejăm informațiile dvs. atunci când utilizați aplicația noastră mobilă sau site -ul web (colectiv, „Servicii”).",
+        "paragraph2": "Vă rugăm să citiți cu atenție această politică de confidențialitate. Prin accesarea sau utilizarea serviciilor noastre, recunoașteți că ați citit, ați înțeles și de acord să fiți obligați de toți termenii acestei politici de confidențialitate."
+      },
+      "informationCollected": {
+        "title": "Informații pe care le colectăm",
+        "personalInfoTitle": "Informații personale",
+        "personalInfoContent": "Putem colecta informații de identificare personală, cum ar fi numele dvs., adresa de e-mail, numărul de telefon, data nașterii, numărul de securitate socială și identificarea emisă de guvern atunci când vă înregistrați pentru un cont sau utilizați Serviciile noastre.",
+        "financialInfoTitle": "Informații financiare",
+        "financialInfoContent": "Pentru a furniza serviciile noastre bancare și de transfer de bani, colectăm detalii bancare, numere de cont, istoricul tranzacțiilor și informații de plată.",
+        "deviceInfoTitle": "Informații despre dispozitiv",
+        "deviceInfoContent": "Când accesați serviciile noastre, colectăm automat informații despre dispozitiv, cum ar fi ID -ul dispozitivului mobil, modelul, producătorul, sistemul de operare, adresa IP și comportamentul de navigare."
+      },
+      "informationUsage": {
+        "title": "Cum folosim informațiile dvs.",
+        "intro": "Folosim informațiile pe care le colectăm",
+        "bulletPoints": {
+          "improve": "Oferiți, mențineți și îmbunătățiți serviciile noastre",
+          "process": "Prelucrați tranzacțiile și trimiteți informații conexe",
+          "verify": "Verificați -vă identitatea și preveniți frauda",
+          "personalize": "Personalizați -vă experiența",
+          "communicate": "Comunică cu tine despre serviciile noastre",
+          "comply": "Respectă obligațiile legale"
+        }
+      },
+      "informationSharing": {
+        "title": "Partajarea informațiilor",
+        "intro": "Este posibil să vă împărtășim informațiile dvs. cu",
+        "bulletPoints": {
+          "providers": "Furnizorii de servicii care efectuează servicii în numele nostru",
+          "financial": "Instituții financiare pentru finalizarea tranzacțiilor",
+          "legal": "Autoritățile juridice atunci când este solicitat de lege",
+          "partners": "Parteneri de afaceri cu acordul dvs."
+        }
+      },
+      "dataSecurity": {
+        "title": "Securitatea datelor",
+        "content": "Implementăm măsuri de securitate adecvate pentru a vă proteja informațiile personale de accesul, modificarea, divulgarea sau distrugerea neautorizate. Cu toate acestea, nicio metodă de transmisie pe internet sau stocare electronică nu este sigură 100%, astfel încât nu putem garanta securitatea absolută."
+      },
+      "yourRights": {
+        "title": "Drepturile tale",
+        "intro": "În funcție de locația dvs., este posibil să aveți anumite drepturi cu privire la informațiile dvs. personale, inclusiv dreptul la",
+        "bulletPoints": {
+          "access": "Accesați informațiile dvs. personale",
+          "correct": "Corecte informații inexacte",
+          "delete": "Ștergeți -vă informațiile personale",
+          "object": "Obiectați -vă la procesarea informațiilor dvs.",
+          "withdraw": "Retrage consimțământul"
+        }
+      },
+      "contactUs": {
+        "title": "Contactaţi-ne",
+        "intro": "Dacă aveți întrebări cu privire la această politică de confidențialitate, vă rugăm să ne contactați la",
+        "email": "confidențialitate@globalremit.com",
+        "phone": "1-800-GLOBAL-REMIT"
+      }
+    }
+  },
+  "supportChat": {
+    "title": "Chat Global Remit",
+    "today": "Astăzi",
+    "typePlaceholder": "Introduceți mesajul",
+    "send": "Trimite",
+    "attach": "Atașați",
+    "messageSent": "Mesaj trimis",
+    "messageSentDesc": "Mesajul dvs. a fost trimis echipei noastre de asistență.",
+    "quickReplies": {
+      "accountQuestions": "Întrebări de cont",
+      "creditCards": "Cărți de credit",
+      "appIssues": "Probleme pentru aplicații",
+      "moneyTransfers": "Transferuri de bani",
+      "accountAccess": "Acces la cont",
+      "openAccount": "Cont deschis"
+    },
+    "exitConfirm": {
+      "title": "Vrei să părăsești chatul?",
+      "message": "Toate datele introduse nu vor fi salvate",
+      "leave": "Vreau să plec",
+      "continue": "Vreau să continui"
+    }
+  },
+  "pin": {
+    "title": "Configurarea securității tranzacțiilor",
+    "setPinSubtitle": "Configurați știftul cu 6 cifre (opțional)",
+    "enterPinPlaceholder": "Introduceți PIN-ul din 6 cifre",
+    "confirmPinPlaceholder": "Confirmați pinul",
+    "save": "Salva",
+    "saving": "Economisire...",
+    "useBiometrics": "Use {{biometricType}}",
+    "errorRequireOneMethod": "Vă rugăm să configurați cel puțin o metodă de autentificare",
+    "errorPinLength": "Pinul trebuie să fie de 6 cifre",
+    "errorPinMismatch": "Pinii nu se potrivesc",
+    "errorPinOnlyNumbers": "PIN -ul trebuie să conțină doar numere",
+    "errorSavingSettings": "Nu a reușit să salveze setările"
+  },
+  "accountClosure": {
+    "title": "Închiderea contului",
+    "mainQuestion": "Cum vă putem ajuta cu închiderea contului dvs.?",
+    "processingRequest": "În prezent, procesăm cererea dvs. și am dori să înțelegem de ce.",
+    "nextStepInfo": "Dacă doriți să vă închideți contul, următorul pas ar fi să ne contactați.",
+    "bankingIssueNote": "Dacă închiderea contului se datorează unei probleme bancare, este posibil să putem ajuta la rezolvarea acestuia fără a vă închide contul.",
+    "getMoreInfo": "Obțineți mai multe informații despre închiderea contului",
+    "proceedAwareness": "Pentru a continua închiderea contului, vă rugăm să fiți conștienți de:",
+    "points": {
+      "recurringPayments": "Toate plățile recurente și transferurile automate vor fi anulate",
+      "remainingBalance": "Orice sold rămas va trebui transferat într -un alt cont",
+      "destroyCards": "Va trebui să distrugeți orice cărți asociate",
+      "processDuration": "Procesul poate dura până la 30 de zile până la finalizare"
+    },
+    "requestClosure": "Solicitați închiderea contului",
+    "alert": {
+      "title": "Cererea de închidere primită",
+      "message": "Cererea dvs. de închidere a contului a fost trimisă. Următorul pas este să contactăm serviciul nostru pentru clienți."
+    }
+  },
+  "editHomeAddress": {
+    "title": "Adresa de domiciliu",
+    "description": "Actualizați -vă adresa rezidențială",
+    "fields": {
+      "street": "Adresă",
+      "city": "Oraş",
+      "zipCode": "Cod poștal"
+    },
+    "buttons": {
+      "update": "Actualizare",
+      "verify": "Verifica"
+    },
+    "otp": {
+      "sentTitle": "OTP a trimis",
+      "sentMessage": "Un cod de verificare a fost trimis la adresa dvs. de e -mail",
+      "enterCode": "Introduceți codul de verificare trimis la e -mailul dvs.",
+      "placeholder": "Cod de 6 cifre",
+      "invalidTitle": "OTP nevalid",
+      "invalidMessage": "Vă rugăm să introduceți codul de 6 cifre trimis la e-mailul dvs."
+    },
+    "update": {
+      "successTitle": "Adresa actualizată",
+      "successMessage": "Adresa dvs. de domiciliu a fost actualizată cu succes"
+    },
+    "privacyConfirmation": "Confirm că detaliile furnizate sunt corecte și sunt de acord cu termenii legali și de confidențialitate."
+  },
+  "editMailingAddress": {
+    "title": "Adresa poștală",
+    "description": "Actualizați -vă adresa poștală unde doriți să primiți documente importante",
+    "fields": {
+      "street": "Adresă",
+      "city": "Oraş",
+      "zipCode": "Cod poștal"
+    },
+    "buttons": {
+      "update": "Actualizare",
+      "verify": "Verifica"
+    },
+    "otp": {
+      "sentTitle": "OTP a trimis",
+      "sentMessage": "Un cod de verificare a fost trimis la adresa dvs. de e -mail",
+      "enterCode": "Introduceți codul de verificare trimis la e -mailul dvs.",
+      "placeholder": "Cod de 6 cifre",
+      "invalidTitle": "OTP nevalid",
+      "invalidMessage": "Vă rugăm să introduceți codul de 6 cifre trimis la e-mailul dvs."
+    },
+    "update": {
+      "successTitle": "Adresa actualizată",
+      "successMessage": "Adresa dvs. poștală a fost actualizată cu succes"
+    },
+    "privacyConfirmation": "Confirm că detaliile furnizate sunt corecte și sunt de acord cu termenii legali și de confidențialitate."
+  }
 }

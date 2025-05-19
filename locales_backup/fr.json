@@ -1,0 +1,150 @@
+{
+  "welcome_to_remit": "Bienvenue sur Remit",
+  "enter_phone_subtitle": "Entrez votre numéro de téléphone pour commencer",
+  "enter_phone_number": "🆕 Entrez le numéro de téléphone",
+  "continue_button": "🆕 Continuer",
+  "already_member": "Déjà membre ?",
+  "login_here": "Connectez-vous ici",
+  "phone_error_start": "🆕 Le numéro de téléphone doit commencer par 0 ou 5",
+  "phone_error_invalid": "🆕 Veuillez saisir un numéro de téléphone valide",
+  "phone_error_format": "🆕 Format de numéro de téléphone non valide",
+  "hello": "Bonjour",
+  "hello_name": "🆕 Hello, {{name}}",
+  "welcome_back": "Bon retour",
+  "login_subtitle": "🆕 Connectez-vous pour continuer",
+  "email": "🆕 E-mail",
+  "password": "🆕 Mot de passe",
+  "login": "🆕 Se connecter",
+  "login_error_fields": "🆕 Veuillez remplir tous les champs",
+  "enable_biometric_login": "🆕 Enable {{biometricType}} login",
+  "no_account": "🆕 Vous n'avez pas de compte?",
+  "register": "🆕 Registre",
+  "settings": "Paramètres",
+  "appearance": "Apparence",
+  "dark_mode": "Mode sombre",
+  "notifications": "Notifications",
+  "push_notifications": "Notifications push",
+  "security_title": "🆕 Sécurité",
+  "biometric_authentication": "Authentification biométrique",
+  "change_password": "Changer le mot de passe",
+  "payment": "Paiement",
+  "payment_methods": "Méthodes de paiement",
+  "currencies": "Devises",
+  "support": "Support",
+  "help_center": "Centre d'aide",
+  "contact_us": "Contactez-nous",
+  "language": "Langue",
+  "total_balance": "Solde total",
+  "this_week": "cette semaine",
+  "percentage_change": "🆕 {{percentage}}% this week",
+  "send_money": "Envoyer de l'argent",
+  "send": "🆕 Envoyer",
+  "request": "Demander",
+  "exchange": "🆕 Échange",
+  "top_up": "Recharger",
+  "recent_transactions": "Transactions récentes",
+  "exchange_rates": "Taux de change",
+  "see_all": "Voir tout",
+  "my_wallet": "Mon portefeuille",
+  "dashboard": {
+    "add_new_card": "🆕 Ajouter une nouvelle carte"
+  },
+  "transactions_label": "🆕 Transactions",
+  "profile_tab": "🆕 Profil",
+  "edit_profile": "Modifier le profil",
+  "logout": "Déconnexion",
+  "cancel": "🆕 Annuler",
+  "done": "🆕 Fait",
+  "security": {
+    "faceIDDescription": "🆕 Utilisez Face ID pour déverrouiller votre compte",
+    "changePassword": "🆕 Changer le mot de passe",
+    "securityQuestions": "🆕 Questions de sécurité"
+  },
+  "profile": {
+    "logoutConfirmation": "🆕 Êtes-vous sûr de vouloir vous déconnecter?"
+  },
+  "common": {
+    "visa": "🆕 Visa",
+    "mastercard": "🆕 MasterCard",
+    "endingIn": "🆕 se terminer dans",
+    "expires": "🆕 Expire"
+  },
+  "countries": {
+    "India": "🆕 Inde",
+    "Colombia": "🆕 Colombie",
+    "Philippines": "🆕 Philippines"
+  },
+  "language_settings": {
+    "save_preferences": "🆕 Sauver les préférences",
+    "language_saved": "🆕 Les préférences linguistiques ont économisé avec succès."
+  },
+  "error": "🆕 Erreur",
+  "ok": "🆕 D'ACCORD",
+  "tabs": {
+    "g": "🆕 G",
+    "profile": "🆕 Profil"
+  },
+  "myAccount": {
+    "informationCopied": "🆕 Informations copiées dans le presse-papiers"
+  },
+  "sendMoney": {
+    "details": {
+      "total": "🆕 Total",
+      "continue": "🆕 Continuer",
+      "scheduleInfo": "🆕 Prévu pour",
+      "immediateInfo": "🆕 Transfert immédiat"
+    }
+  },
+  "transactions": {
+    "filters": {
+      "types": {
+        "received": "🆕 Reçu",
+        "exchanged": "🆕 Échangé"
+      }
+    }
+  },
+  "moneyTransfer": {
+    "details": {
+      "scheduledTransfer": "🆕 Prévu pour le 25 mai 2025"
+    }
+  },
+  "privacy": {
+    "sections": {
+      "contactUs": {
+        "email": "🆕 privacy@globalremit.com",
+        "phone": "🆕 1-800-Global-Rimit"
+      }
+    }
+  },
+  "supportChat": {
+    "exitConfirm": {
+      "title": "🆕 Vous voulez quitter le chat?",
+      "message": "🆕 Toutes les données entrées ne seront pas enregistrées",
+      "leave": "🆕 Je veux partir",
+      "continue": "🆕 Je veux continuer"
+    }
+  },
+  "pin": {
+    "errorSavingSettings": "🆕 Échec de l'enregistrement des paramètres"
+  },
+  "accountClosure": {
+    "points": {
+      "destroyCards": "🆕 Vous devrez détruire toutes les cartes associées",
+      "processDuration": "🆕 Le processus peut prendre jusqu'à 30 jours pour terminer"
+    },
+    "requestClosure": "🆕 Demande la fermeture du compte",
+    "alert": {
+      "title": "🆕 Demande de fermeture reçue",
+      "message": "🆕 La demande de fermeture de votre compte a été soumise. L'étape suivante consiste à contacter notre service client."
+    }
+  },
+  "editHomeAddress": {
+    "privacyConfirmation": "🆕 Je confirme que les détails fournis sont exacts et j'accepte les conditions juridiques et de confidentialité."
+  },
+  "editMailingAddress": {
+    "update": {
+      "successMessage": "🆕 Votre adresse postale a été mise à jour avec succès"
+    },
+    "privacyConfirmation": "🆕 Je confirme que les détails fournis sont exacts et j'accepte les conditions juridiques et de confidentialité."
+  }
+}

@@ -6,22 +6,23 @@ import {
   TouchableOpacity, 
   ScrollView,
   Switch,
-  Alert,
-  I18nManager
+  Alert
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { ChevronRight, Fingerprint, Lock, Key, Moon } from 'lucide-react-native';
+import { ChevronLeft, Fingerprint, Lock, Key, Moon, Globe } from 'lucide-react-native';
 import * as Haptics from 'expo-haptics';
 import { useRouter } from 'expo-router';
 import { Platform } from 'react-native';
-import { LanguageSelector } from '../../components/LanguageSelector';
-import { useTranslation } from '../../hooks/useTranslation';
+import { useTranslate, LanguageCode } from '../../context/TranslationContext';
+import IOSLanguageSelector from '../../components/IOSLanguageSelector';
+import StandardBackButton from '../../components/StandardBackButton';
 
 export default function SecuritySettingsModal() {
   const router = useRouter();
-  const { t } = useTranslation();
+  const { t, isRTL, currentLanguage, languages, changeLanguage } = useTranslate();
   const [isFaceIDEnabled, setIsFaceIDEnabled] = useState(false);
   const [isDarkModeEnabled, setIsDarkModeEnabled] = useState(false);
+  const [isLanguageSelectorVisible, setIsLanguageSelectorVisible] = useState(false);
 
   // Handle tap with haptic feedback
   const handleTap = () => {
@@ -47,23 +48,21 @@ export default function SecuritySettingsModal() {
   return (
     <SafeAreaView style={styles.container} edges={['top']}>
       {/* Header with title and back button */}
-      <View style={styles.header}>
-        <TouchableOpacity onPress={() => router.back()} style={styles.backButton}>
-          <ChevronRight color="#007AFF" size={24} style={[styles.backIcon, I18nManager.isRTL && styles.backIconRTL]} />
-        </TouchableOpacity>
-        <Text style={styles.headerTitle}>{t('security.title')}</Text>
+      <View style={[styles.header, { flexDirection: isRTL ? 'row-reverse' : 'row' }]}>
+        <StandardBackButton />
+        <Text style={styles.headerTitle}>{t('security.section_title')}</Text>
         <View style={styles.rightPlaceholder} />
       </View>
 
       <ScrollView showsVerticalScrollIndicator={false} style={styles.scrollView}>
         {/* Face ID section */}
         <View style={styles.section}>
-          <View style={[styles.sectionHeader, I18nManager.isRTL && styles.sectionHeaderRTL]}>
+          <View style={[styles.sectionHeader, { flexDirection: isRTL ? 'row-reverse' : 'row' }]}>
             <Fingerprint color="#007AFF" size={22} />
-            <Text style={styles.sectionHeaderTitle}>{t('security.faceID')}</Text>
+            <Text style={[styles.sectionHeaderTitle, { marginLeft: isRTL ? 0 : 10, marginRight: isRTL ? 10 : 0 }]}>{t('security.faceID')}</Text>
           </View>
           <View style={styles.sectionContent}>
-            <Text style={styles.sectionDescription}>
+            <Text style={[styles.sectionDescription, { textAlign: isRTL ? 'right' : 'left' }]}>
               {t('security.faceIDDescription')}
             </Text>
             <Switch
@@ -85,13 +84,15 @@ export default function SecuritySettingsModal() {
             style={styles.sectionItem} 
             onPress={navigateToChangePassword}
           >
-            <View style={[styles.sectionItemContent, I18nManager.isRTL && styles.sectionItemContentRTL]}>
-              <Lock color="#007AFF" size={22} style={styles.itemIcon} />
+            <View style={[styles.sectionItemContent, { flexDirection: isRTL ? 'row-reverse' : 'row' }]}>
+              <Lock color="#007AFF" size={22} style={{ marginRight: isRTL ? 0 : 12, marginLeft: isRTL ? 12 : 0 }} />
               <Text style={styles.itemText}>{t('security.changePassword')}</Text>
-              <ChevronRight color="#CCCCCC" size={20} style={[styles.chevronIcon, I18nManager.isRTL && styles.chevronIconRTL]} />
+              <ChevronLeft color="#CCCCCC" size={20} hitSlop={{ top: 15, right: 15, bottom: 15, left: 15 }} />
             </View>
           </TouchableOpacity>
         </View>
+
+
 
         {/* Security Questions section */}
         <View style={styles.section}>
@@ -99,28 +100,28 @@ export default function SecuritySettingsModal() {
             style={styles.sectionItem} 
             onPress={navigateToSecurityQuestions}
           >
-            <View style={[styles.sectionItemContent, I18nManager.isRTL && styles.sectionItemContentRTL]}>
-              <Key color="#007AFF" size={22} style={styles.itemIcon} />
+            <View style={[styles.sectionItemContent, { flexDirection: isRTL ? 'row-reverse' : 'row' }]}>
+              <Key color="#007AFF" size={22} style={{ marginRight: isRTL ? 0 : 12, marginLeft: isRTL ? 12 : 0 }} />
               <Text style={styles.itemText}>{t('security.securityQuestions')}</Text>
-              <ChevronRight color="#CCCCCC" size={20} style={[styles.chevronIcon, I18nManager.isRTL && styles.chevronIconRTL]} />
+              <ChevronLeft color="#CCCCCC" size={20} hitSlop={{ top: 15, right: 15, bottom: 15, left: 15 }} />
             </View>
           </TouchableOpacity>
         </View>
         
         {/* Preferences Section Title */}
         <View style={styles.sectionTitleContainer}>
-          <Text style={styles.sectionTitle}>{t('security.preferences')}</Text>
+          <Text style={[styles.sectionTitle, { textAlign: isRTL ? 'right' : 'left' }]}>{t('security.preferences')}</Text>
         </View>
         
         {/* Dark Mode section */}
         <View style={styles.section}>
-          <View style={[styles.sectionHeader, I18nManager.isRTL && styles.sectionHeaderRTL]}>
+          <View style={[styles.sectionHeader, { flexDirection: isRTL ? 'row-reverse' : 'row' }]}>
             <Moon color="#007AFF" size={22} />
-            <Text style={styles.sectionHeaderTitle}>{t('profile.darkMode')}</Text>
+            <Text style={[styles.sectionHeaderTitle, { marginLeft: isRTL ? 0 : 10, marginRight: isRTL ? 10 : 0 }]}>{t('profile.darkMode')}</Text>
           </View>
           <View style={styles.sectionContent}>
-            <Text style={styles.sectionDescription}>
-              {t('common.darkModeDescription') || 'Use dark theme for the app'}
+            <Text style={[styles.sectionDescription, { textAlign: isRTL ? 'right' : 'left' }]}>
+              {t('common.darkModeDescription')}
             </Text>
             <Switch
               value={isDarkModeEnabled}
@@ -137,14 +138,45 @@ export default function SecuritySettingsModal() {
         
         {/* Language section */}
         <View style={styles.section}>
-          <LanguageSelector />
+          <View style={styles.sectionItem}>
+            <TouchableOpacity 
+              style={[styles.sectionItemContent, { flexDirection: isRTL ? 'row-reverse' : 'row' }]}
+              onPress={() => {
+                handleTap();
+                // Show language selector modal directly rather than navigating
+                setIsLanguageSelectorVisible(true);
+              }}
+            >
+              <Globe color="#007AFF" size={22} style={{ marginRight: isRTL ? 0 : 12, marginLeft: isRTL ? 12 : 0 }} />
+              <Text style={[styles.itemText, { flex: 1, textAlign: isRTL ? 'right' : 'left' }]}>{t('settings.language')}</Text>
+              <View style={{ flexDirection: isRTL ? 'row-reverse' : 'row', alignItems: 'center' }}>
+                <Text style={[styles.languageValue, { textAlign: isRTL ? 'right' : 'left' }]}>
+                  {currentLanguage === 'th' ? 'ไทย' : languages[currentLanguage].nativeName}
+                </Text>
+                <ChevronLeft 
+                  color="#CCCCCC" 
+                  size={20}
+                  hitSlop={{ top: 15, right: 15, bottom: 15, left: 15 }}
+                />
+              </View>
+            </TouchableOpacity>
+          </View>
         </View>
 
         {/* Bottom padding */}
         <View style={styles.bottomPadding} />
       </ScrollView>
       
-
+      {/* iOS-style Language Selector */}
+      <IOSLanguageSelector 
+        isVisible={isLanguageSelectorVisible}
+        onClose={() => setIsLanguageSelectorVisible(false)}
+        selectedLanguage={currentLanguage}
+        onSelectLanguage={(langCode: string) => {
+          changeLanguage(langCode as LanguageCode);
+          setIsLanguageSelectorVisible(false);
+        }}
+      />
     </SafeAreaView>
   );
 }
@@ -165,13 +197,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#FFFFFF',
   },
   backButton: {
-    padding: 8,
-  },
-  backIcon: {
-    transform: [{ scaleX: -1 }],
-  },
-  backIconRTL: {
-    transform: [{ scaleX: 1 }],
+    padding: 5,
   },
   headerTitle: {
     fontSize: 18,
@@ -203,9 +229,6 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     borderBottomColor: '#F0F0F0',
   },
-  sectionHeaderRTL: {
-    flexDirection: 'row-reverse',
-  },
   sectionHeaderTitle: {
     fontSize: 16,
     fontWeight: '600',
@@ -219,7 +242,7 @@ const styles = StyleSheet.create({
     marginRight: 10,
   },
   sectionContent: {
-    flexDirection: I18nManager.isRTL ? 'row-reverse' : 'row',
+    flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
     padding: 16,
@@ -228,16 +251,11 @@ const styles = StyleSheet.create({
     padding: 0,
   },
   sectionItemContent: {
-    flexDirection: 'row',
     alignItems: 'center',
     padding: 16,
   },
-  sectionItemContentRTL: {
-    flexDirection: 'row-reverse',
-  },
   itemIcon: {
-    marginRight: I18nManager.isRTL ? 0 : 12,
-    marginLeft: I18nManager.isRTL ? 12 : 0,
+    marginRight: 12,
   },
   itemText: {
     fontSize: 16,
@@ -245,11 +263,13 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   chevronIcon: {
-    marginLeft: I18nManager.isRTL ? 0 : 8,
-    marginRight: I18nManager.isRTL ? 8 : 0,
+    marginLeft: 8,
   },
-  chevronIconRTL: {
-    transform: [{ scaleX: -1 }],
+  languageValue: {
+    fontSize: 15,
+    color: '#8E8E93',
+    marginRight: 8,
+    textAlign: 'right',
   },
   bottomPadding: {
     height: 40,
@@ -263,7 +283,7 @@ const styles = StyleSheet.create({
     fontSize: 14,
     fontWeight: '600',
     color: '#6D6D72',
-    textTransform: 'uppercase',
+    // Removed uppercase transformation
   },
 
 });

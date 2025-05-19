@@ -1,0 +1,150 @@
+{
+  "welcome_to_remit": "🆕 Добро пожаловать в перевод",
+  "enter_phone_subtitle": "🆕 Введите свой номер телефона, чтобы начать",
+  "enter_phone_number": "🆕 Введите номер телефона",
+  "continue_button": "🆕 Продолжать",
+  "already_member": "🆕 Уже участник?",
+  "login_here": "🆕 Войдите здесь",
+  "phone_error_start": "🆕 Номер телефона должен начинаться с 0 или 5",
+  "phone_error_invalid": "🆕 Пожалуйста, введите действительный номер телефона",
+  "phone_error_format": "🆕 Неверный формат номера телефона",
+  "hello": "Здравствуйте",
+  "hello_name": "🆕 Hello, {{name}}",
+  "welcome_back": "С возвращением",
+  "login_subtitle": "🆕 Войдите, чтобы продолжить",
+  "email": "🆕 Электронная почта",
+  "password": "🆕 Пароль",
+  "login": "🆕 Авторизоваться",
+  "login_error_fields": "🆕 Пожалуйста, заполните все поля",
+  "enable_biometric_login": "🆕 Enable {{biometricType}} login",
+  "no_account": "🆕 У вас нет учетной записи?",
+  "register": "🆕 Зарегистрировать",
+  "settings": "Настройки",
+  "appearance": "Внешний вид",
+  "dark_mode": "Тёмная тема",
+  "notifications": "Уведомления",
+  "push_notifications": "Push-уведомления",
+  "security_title": "🆕 Безопасность",
+  "biometric_authentication": "Биометрическая аутентификация",
+  "change_password": "Изменить пароль",
+  "payment": "Оплата",
+  "payment_methods": "Способы оплаты",
+  "currencies": "Валюты",
+  "support": "Поддержка",
+  "help_center": "Центр помощи",
+  "contact_us": "Связаться с нами",
+  "language": "Язык",
+  "total_balance": "Общий баланс",
+  "this_week": "на этой неделе",
+  "percentage_change": "🆕 {{percentage}}% this week",
+  "send_money": "Отправить деньги",
+  "send": "🆕 Отправлять",
+  "request": "Запросить",
+  "exchange": "🆕 Обмен",
+  "top_up": "Пополнить",
+  "recent_transactions": "Последние операции",
+  "exchange_rates": "Курсы валют",
+  "see_all": "Показать все",
+  "my_wallet": "Мой кошелек",
+  "dashboard": {
+    "add_new_card": "🆕 Добавить новую карту"
+  },
+  "transactions_label": "🆕 Транзакции",
+  "profile_tab": "🆕 Профиль",
+  "edit_profile": "Редактировать профиль",
+  "logout": "Выйти",
+  "cancel": "🆕 Отмена",
+  "done": "🆕 Сделанный",
+  "security": {
+    "faceIDDescription": "🆕 Используйте идентификатор лица, чтобы разблокировать свою учетную запись",
+    "changePassword": "🆕 Изменить пароль",
+    "securityQuestions": "🆕 Вопросы безопасности"
+  },
+  "profile": {
+    "logoutConfirmation": "🆕 Вы уверены, что хотите выйти из строя?"
+  },
+  "common": {
+    "visa": "🆕 Виза",
+    "mastercard": "🆕 Mastercard",
+    "endingIn": "🆕 заканчивая в",
+    "expires": "🆕 Истекает"
+  },
+  "countries": {
+    "India": "🆕 Индия",
+    "Colombia": "🆕 Колумбия",
+    "Philippines": "🆕 Филиппины"
+  },
+  "language_settings": {
+    "save_preferences": "🆕 Сохранить предпочтения",
+    "language_saved": "🆕 Языковые предпочтения успешно сохранились."
+  },
+  "error": "🆕 Ошибка",
+  "ok": "🆕 ХОРОШО",
+  "tabs": {
+    "g": "🆕 Глин",
+    "profile": "🆕 Профиль"
+  },
+  "myAccount": {
+    "informationCopied": "🆕 Информация, скопированная в буфер обмена"
+  },
+  "sendMoney": {
+    "details": {
+      "total": "🆕 Общий",
+      "continue": "🆕 Продолжать",
+      "scheduleInfo": "🆕 Запланировано на",
+      "immediateInfo": "🆕 Немедленная передача"
+    }
+  },
+  "transactions": {
+    "filters": {
+      "types": {
+        "received": "🆕 Полученный",
+        "exchanged": "🆕 Обменялся"
+      }
+    }
+  },
+  "moneyTransfer": {
+    "details": {
+      "scheduledTransfer": "🆕 Запланировано на 25 мая 2025 года"
+    }
+  },
+  "privacy": {
+    "sections": {
+      "contactUs": {
+        "email": "🆕 privacy@globalremit.com",
+        "phone": "🆕 1-800-Глобал-Ремит"
+      }
+    }
+  },
+  "supportChat": {
+    "exitConfirm": {
+      "title": "🆕 Хотите оставить чат?",
+      "message": "🆕 Все введенные данные не будут сохранены",
+      "leave": "🆕 Я хочу уйти",
+      "continue": "🆕 Я хочу продолжить"
+    }
+  },
+  "pin": {
+    "errorSavingSettings": "🆕 Не удалось сохранить настройки"
+  },
+  "accountClosure": {
+    "points": {
+      "destroyCards": "🆕 Вам нужно будет уничтожить любые связанные карты",
+      "processDuration": "🆕 Процесс может занять до 30 дней."
+    },
+    "requestClosure": "🆕 Запросить закрытие учетной записи",
+    "alert": {
+      "title": "🆕 Получен запрос на закрытие",
+      "message": "🆕 Ваш запрос на закрытие учетной записи был представлен. Следующий шаг - связаться с нашим обслуживанием клиентов."
+    }
+  },
+  "editHomeAddress": {
+    "privacyConfirmation": "🆕 Я подтверждаю, что предоставленные детали точны, и я согласен с юридическими и конфиденциальными условиями."
+  },
+  "editMailingAddress": {
+    "update": {
+      "successMessage": "🆕 Ваш почтовый адрес был успешно обновлен"
+    },
+    "privacyConfirmation": "🆕 Я подтверждаю, что предоставленные детали точны, и я согласен с юридическими и конфиденциальными условиями."
+  }
+}

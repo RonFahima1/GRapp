@@ -7,7 +7,7 @@ import {
   ScrollView
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { ChevronRight } from 'lucide-react-native';
+import { ChevronLeft, ChevronRight } from 'lucide-react-native';
 import * as Haptics from 'expo-haptics';
 import { useRouter } from 'expo-router';
 import { Platform } from 'react-native';
@@ -67,7 +67,7 @@ export default function ApprovalsScreen() {
           onPress={() => router.back()}
           hitSlop={{ top: 15, right: 15, bottom: 15, left: 15 }}
         >
-          <ChevronRight color="#007AFF" size={24} />
+          <ChevronLeft color="#007AFF" size={24} />
         </TouchableOpacity>
         <Text style={styles.headerTitle}>Approvals</Text>
         <View style={styles.rightPlaceholder} />

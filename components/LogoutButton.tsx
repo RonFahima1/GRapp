@@ -2,12 +2,14 @@ import React from 'react';
 import { TouchableOpacity, Text, StyleSheet, Alert } from 'react-native';
 import * as Haptics from 'expo-haptics';
 import { Platform } from 'react-native';
+import { useTranslate } from '../context/TranslationContext';
 
 type LogoutButtonProps = {
   onLogout: () => void;
 };
 
 const LogoutButton: React.FC<LogoutButtonProps> = ({ onLogout }) => {
+  const { t } = useTranslate();
   // Handle tap with haptic feedback
   const handleTap = () => {
     if (Platform.OS !== 'web') {
@@ -19,15 +21,15 @@ const LogoutButton: React.FC<LogoutButtonProps> = ({ onLogout }) => {
   const confirmLogout = () => {
     handleTap();
     Alert.alert(
-      'Logout',
-      'Are you sure you want to log out?',
+      t('logout'),
+      t('profile.logoutConfirmation'),
       [
         {
-          text: 'Cancel',
+          text: t('cancel'),
           style: 'cancel',
         },
         {
-          text: 'Logout',
+          text: t('logout'),
           style: 'destructive',
           onPress: onLogout,
         },
@@ -37,8 +39,12 @@ const LogoutButton: React.FC<LogoutButtonProps> = ({ onLogout }) => {
   };
 
   return (
-    <TouchableOpacity style={styles.logoutButton} onPress={confirmLogout}>
-      <Text style={styles.logoutText}>Logout</Text>
+    <TouchableOpacity 
+      style={styles.logoutButton} 
+      onPress={confirmLogout}
+      accessibilityLabel={t('logout')}
+    >
+      <Text style={styles.logoutText}>{t('logout')}</Text>
     </TouchableOpacity>
   );
 };

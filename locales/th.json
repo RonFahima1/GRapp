@@ -1,35 +1,441 @@
 {
+  "welcome_to_remit": "ยินดีต้อนรับสู่ remit",
+  "enter_phone_subtitle": "ป้อนหมายเลขโทรศัพท์ของคุณเพื่อเริ่มต้น",
+  "enter_phone_number": "ป้อนหมายเลขโทรศัพท์",
+  "continue_button": "ดำเนินการต่อ",
+  "already_member": "สมาชิกแล้ว?",
+  "login_here": "เข้าสู่ระบบที่นี่",
+  "phone_error_start": "หมายเลขโทรศัพท์ต้องเริ่มต้นด้วย 0 หรือ 5",
+  "phone_error_invalid": "กรุณากรอกหมายเลขโทรศัพท์ที่ถูกต้อง",
+  "phone_error_format": "รูปแบบหมายเลขโทรศัพท์ที่ไม่ถูกต้อง",
   "hello": "สวัสดี",
+  "hello_name": "Hello, {{name}}",
   "welcome_back": "ยินดีต้อนรับกลับ",
+  "login_subtitle": "ลงชื่อเข้าใช้เพื่อดำเนินการต่อ",
+  "email": "อีเมล",
+  "password": "รหัสผ่าน",
+  "login": "เข้าสู่ระบบ",
+  "login_error_fields": "กรุณากรอกข้อมูลทั้งหมด",
+  "enable_biometric_login": "Enable {{biometricType}} login",
+  "no_account": "ไม่มีบัญชี?",
+  "register": "ลงทะเบียน",
   "settings": "การตั้งค่า",
-  "appearance": "รูปลักษณ์",
+  "appearance": "รูปร่าง",
   "dark_mode": "โหมดมืด",
   "notifications": "การแจ้งเตือน",
-  "push_notifications": "การแจ้งเตือนแบบพุช",
-  "security": "ความปลอดภัย",
-  "biometric_authentication": "การยืนยันตัวตนด้วยไบโอเมตริกซ์",
+  "push_notifications": "การแจ้งเตือน",
+  "security_title": "ความปลอดภัย",
+  "biometric_authentication": "การรับรองความถูกต้องทางชีวภาพ",
   "change_password": "เปลี่ยนรหัสผ่าน",
   "payment": "การชำระเงิน",
   "payment_methods": "วิธีการชำระเงิน",
   "currencies": "สกุลเงิน",
-  "support": "การสนับสนุน",
+  "support": "สนับสนุน",
   "help_center": "ศูนย์ช่วยเหลือ",
   "contact_us": "ติดต่อเรา",
   "language": "ภาษา",
-  "total_balance": "ยอดรวม",
+  "total_balance": "ยอดคงเหลือทั้งหมด",
   "this_week": "สัปดาห์นี้",
+  "percentage_change": "{{percentage}}% this week",
   "send_money": "ส่งเงิน",
+  "send": "ส่ง",
   "request": "ขอ",
+  "exchange": "แลกเปลี่ยน",
   "top_up": "เติมเงิน",
   "recent_transactions": "ธุรกรรมล่าสุด",
   "exchange_rates": "อัตราแลกเปลี่ยน",
-  "see_all": "ดูทั้งหมด",
+  "see_all": "เห็นทั้งหมด",
   "my_wallet": "กระเป๋าเงินของฉัน",
-  "transactions": "ธุรกรรม",
-  "profile": "โปรไฟล์",
+  "dashboard": {
+    "cards": "บัตรชำระเงิน",
+    "wallet_transactions": "การทำธุรกรรม",
+    "wallet_balance": "สมดุล",
+    "add_new_card": "เพิ่มการ์ดใหม่"
+  },
+  "transactions_label": "การทำธุรกรรม",
+  "profile_tab": "ประวัติโดยย่อ",
   "edit_profile": "แก้ไขโปรไฟล์",
-  "countries": "ประเทศ",
-  "transfers": "การโอน",
-  "sent": "ส่งแล้ว",
-  "logout": "ออกจากระบบ"
+  "logout": "ออกจากระบบ",
+  "cancel": "ยกเลิก",
+  "done": "เสร็จแล้ว",
+  "security": {
+    "section_title": "ความปลอดภัยและการตั้งค่า",
+    "preferences": "การตั้งค่าระบบ",
+    "faceID": "หน้ารหัส",
+    "faceIDDescription": "ใช้ Face ID เพื่อปลดล็อกบัญชีของคุณ",
+    "changePassword": "เปลี่ยนรหัสผ่าน",
+    "securityQuestions": "คำถามด้านความปลอดภัย"
+  },
+  "profile": {
+    "fullName": "ชื่อเต็ม",
+    "email": "อีเมล",
+    "emailAddress": "{{email}}",
+    "myAccount": "บัญชีของฉัน",
+    "documents": "เอกสาร",
+    "securityAndPreferences": "ความปลอดภัยและการตั้งค่า",
+    "notificationSettings": "การตั้งค่าการแจ้งเตือน",
+    "helpSupport": "ความช่วยเหลือและการสนับสนุน",
+    "about": "เกี่ยวกับแอพ",
+    "accountId": "รหัสบัญชี",
+    "memberSince": "สมาชิกตั้งแต่",
+    "transactionCount": "การทำธุรกรรม",
+    "accountIdValue": "{{accountId}}",
+    "memberSinceValue": "{{memberSince}}",
+    "transactionCountValue": "{{transactionCount}}",
+    "language": "ภาษา",
+    "darkMode": "โหมดมืด",
+    "logoutConfirmation": "แน่ใจหรือว่าต้องการออกจากระบบ?"
+  },
+  "common": {
+    "copied": "คัดลอกไปยังคลิปบอร์ด",
+    "copied_title": "คัดลอก",
+    "darkModeDescription": "ใช้ธีมมืดสำหรับแอป",
+    "copy": "สำเนา",
+    "back": "กลับ",
+    "close": "ปิด",
+    "continue": "ดำเนินการต่อ",
+    "cancel": "ยกเลิก",
+    "save": "บันทึก",
+    "delete": "ลบ",
+    "edit": "แก้ไข",
+    "settings": "การตั้งค่า",
+    "search": "ค้นหา",
+    "done": "เสร็จแล้ว",
+    "visa": "วีซ่า",
+    "mastercard": "มาสเตอร์การ์ด",
+    "endingIn": "จบลงใน",
+    "expires": "หมดอายุ"
+  },
+  "countries": {
+    "Mexico": "เม็กซิโก",
+    "India": "อินเดีย",
+    "Colombia": "ประเทศโคลัมเบีย",
+    "Philippines": "ฟิลิปปินส์"
+  },
+  "language_settings": {
+    "preferred_languages": "ภาษาที่ต้องการ",
+    "all_languages": "ทุกภาษา",
+    "changing_language": "การเปลี่ยนภาษา ...",
+    "language_change_error": "มีข้อผิดพลาดในการเปลี่ยนภาษา โปรดลองอีกครั้ง",
+    "restart_required": "จำเป็นต้องรีสตาร์ท",
+    "restart_message_rtl": "การสลับระหว่างภาษา RTL และ LTR ต้องใช้แอปพลิเคชันเพื่อรีสตาร์ท คุณต้องการดำเนินการต่อหรือไม่?",
+    "restart_message_ltr": "การสลับระหว่างภาษา LTR และ RTL ต้องใช้แอปพลิเคชันเพื่อรีสตาร์ท คุณต้องการดำเนินการต่อหรือไม่?",
+    "save_preferences": "บันทึกการตั้งค่า",
+    "language_saved": "การตั้งค่าภาษาบันทึกสำเร็จ"
+  },
+  "error": "ข้อผิดพลาด",
+  "ok": "ตกลง",
+  "tabs": {
+    "home": "บ้าน",
+    "g": "ก",
+    "profile": "ประวัติโดยย่อ"
+  },
+  "myAccount": {
+    "title": "บัญชีของฉัน",
+    "accountOnName": "บัญชีชื่อ",
+    "userName": "จอห์นสมิ ธ",
+    "accountNumber": "หมายเลขบัญชี",
+    "branch": "สาขา",
+    "bank": "ธนาคาร",
+    "ibanNumber": "หมายเลข iban",
+    "swiftCode": "รหัสที่รวดเร็ว",
+    "yourContactInformation": "ข้อมูลการติดต่อของคุณ",
+    "emailAddress": "ที่อยู่อีเมล",
+    "homeAddress": "ที่อยู่บ้าน",
+    "mailingAddress": "ที่อยู่ทางไปรษณีย์",
+    "phone": "โทรศัพท์",
+    "editEmail": "แก้ไขที่อยู่อีเมล",
+    "editHomeAddress": "แก้ไขที่อยู่บ้าน",
+    "editMailingAddress": "แก้ไขที่อยู่ทางไปรษณีย์",
+    "editPhone": "แก้ไขหมายเลขโทรศัพท์",
+    "requestAccountClosure": "ขอปิดบัญชี",
+    "informationCopied": "ข้อมูลคัดลอกไปยังคลิปบอร์ด"
+  },
+  "sendMoney": {
+    "availableBalance": "ยอดคงเหลือที่มีอยู่",
+    "title": "ส่งเงิน",
+    "to": "ถึง",
+    "amount": "จำนวน",
+    "transferType": "ประเภทโอน",
+    "immediateTransfer": "การถ่ายโอนทันที",
+    "scheduledTransfer": "การถ่ายโอนตามกำหนด",
+    "scheduledDate": "วันที่กำหนด",
+    "scheduledTime": "เวลาที่กำหนด",
+    "details": {
+      "title": "โอนรายละเอียด",
+      "transferSummary": "การถ่ายโอนสรุป",
+      "to": "ถึง",
+      "amount": "จำนวน",
+      "when": "เมื่อไร",
+      "account": "บัญชี",
+      "paymentMethod": "วิธีการชำระเงิน",
+      "bankAccount": "บัญชีธนาคาร",
+      "creditDebitCard": "บัตรเครดิต/เดบิต",
+      "selectBank": "เลือกธนาคาร",
+      "selectCard": "เลือกการ์ด",
+      "addNewCard": "+ เพิ่มการ์ดใหม่",
+      "feeBreakdown": "การแยกแยะค่าธรรมเนียม",
+      "transferAmount": "จำนวนเงินโอน",
+      "transferFee": "ค่าธรรมเนียมการโอน",
+      "total": "ทั้งหมด",
+      "continue": "ดำเนินการต่อ",
+      "scheduleInfo": "กำหนดไว้สำหรับ",
+      "immediateInfo": "การถ่ายโอนทันที"
+    }
+  },
+  "transactions": {
+    "title": "การทำธุรกรรม",
+    "allTransactions": "ธุรกรรมทั้งหมด",
+    "search": "การค้นหาธุรกรรม",
+    "searchPlaceholder": "ค้นหาตามชื่อหรือคำอธิบาย",
+    "filter": "กรอง",
+    "filterTitle": "ธุรกรรมตัวกรอง",
+    "apply": "นำมาใช้",
+    "clear": "ล้างทั้งหมด",
+    "close": "ปิด",
+    "reset": "รีเซ็ต",
+    "dateRange": "ช่วงวันที่",
+    "from": "จาก",
+    "to": "ถึง",
+    "startDate": "วันที่เริ่มต้น",
+    "endDate": "วันที่สิ้นสุด",
+    "amountRange": "ช่วงจำนวน",
+    "min": "นาที",
+    "max": "สูงสุด",
+    "transactionType": "ประเภทธุรกรรม",
+    "all": "ทั้งหมด",
+    "sent": "ส่งแล้ว",
+    "received": "ได้รับ",
+    "exchanged": "ซึ่งแลกเปลี่ยน",
+    "noResults": "ไม่พบธุรกรรม",
+    "noTransactionsFound": "ไม่พบธุรกรรม",
+    "adjustSearchOrFilter": "ลองปรับเกณฑ์การค้นหาหรือตัวกรองของคุณ",
+    "status": {
+      "pending": "รอดำเนินการ",
+      "completed": "สมบูรณ์",
+      "failed": "ล้มเหลว"
+    },
+    "descriptions": {
+      "payment": "การชำระเงินสำหรับบริการ",
+      "gift": "ของขวัญวันเกิด",
+      "exchange": "Exchange from {{from}} to {{to}}",
+      "dinner": "การจ่ายเงินมื้อเย็น",
+      "rent": "ค่าเช่า",
+      "utilities": "การชำระเงินค่าสาธารณูปโภค"
+    },
+    "filters": {
+      "transactionType": "ประเภทธุรกรรม",
+      "dateRange": "ช่วงวันที่",
+      "amountRangeUSD": "ช่วงจำนวน (USD)",
+      "startDate": "วันที่เริ่มต้น",
+      "endDate": "วันที่สิ้นสุด",
+      "minAmount": "จำนวนน้อยที่สุด",
+      "maxAmount": "จำนวนสูงสุด",
+      "clearFilters": "ล้างตัวกรอง",
+      "applyFilters": "ใช้ตัวกรอง",
+      "types": {
+        "all": "ทั้งหมด",
+        "sent": "ส่งแล้ว",
+        "received": "ได้รับ",
+        "exchanged": "ซึ่งแลกเปลี่ยน"
+      }
+    }
+  },
+  "moneyTransfer": {
+    "details": {
+      "title": "โอนรายละเอียด",
+      "transferSummary": "การถ่ายโอนสรุป",
+      "to": "ถึง",
+      "amount": "จำนวน",
+      "when": "เมื่อไร",
+      "account": "บัญชี",
+      "paymentMethod": "วิธีการชำระเงิน",
+      "bankAccount": "บัญชีธนาคาร",
+      "creditDebitCard": "บัตรเครดิต/เดบิต",
+      "selectBank": "เลือกธนาคาร",
+      "selectCard": "เลือกการ์ด",
+      "addNewCard": "+ เพิ่มการ์ดใหม่",
+      "feeBreakdown": "การแยกแยะค่าธรรมเนียม",
+      "transferAmount": "จำนวนเงินโอน",
+      "transferFee": "ค่าธรรมเนียมการโอน",
+      "total": "ทั้งหมด",
+      "continue": "ดำเนินการต่อ",
+      "immediateTransfer": "การถ่ายโอนทันที",
+      "scheduledTransfer": "กำหนดไว้สำหรับวันที่ 25 พฤษภาคม 2568"
+    }
+  },
+  "privacy": {
+    "title": "นโยบายความเป็นส่วนตัว",
+    "lastUpdated": "{{date}}",
+    "lastUpdatedPrefix": "อัปเดตล่าสุด",
+    "securityIcon": "ไอคอนโล่รักษาความปลอดภัย",
+    "sections": {
+      "introduction": {
+        "title": "การแนะนำ",
+        "paragraph1": "Global Remit (\"We,\" \"ของเรา\" หรือ \"เรา\") มุ่งมั่นที่จะปกป้องความเป็นส่วนตัวของคุณ นโยบายความเป็นส่วนตัวนี้อธิบายวิธีที่เรารวบรวมใช้เปิดเผยและปกป้องข้อมูลของคุณเมื่อคุณใช้แอปพลิเคชันมือถือหรือเว็บไซต์ของเรา (รวม \"บริการ\")",
+        "paragraph2": "โปรดอ่านนโยบายความเป็นส่วนตัวนี้อย่างรอบคอบ โดยการเข้าถึงหรือใช้บริการของเราคุณรับทราบว่าคุณได้อ่านเข้าใจและตกลงที่จะผูกพันตามข้อกำหนดทั้งหมดของนโยบายความเป็นส่วนตัวนี้"
+      },
+      "informationCollected": {
+        "title": "ข้อมูลที่เรารวบรวม",
+        "personalInfoTitle": "ข้อมูลส่วนบุคคล",
+        "personalInfoContent": "เราอาจรวบรวมข้อมูลที่สามารถระบุตัวบุคคลได้เช่นชื่อของคุณที่อยู่อีเมลหมายเลขโทรศัพท์วันเดือนปีเกิดหมายเลขประกันสังคมและบัตรประจำตัวที่ออกโดยรัฐบาลเมื่อคุณลงทะเบียนสำหรับบัญชีหรือใช้บริการของเรา",
+        "financialInfoTitle": "ข้อมูลทางการเงิน",
+        "financialInfoContent": "เพื่อให้บริการธนาคารและการโอนเงินของเราเรารวบรวมรายละเอียดธนาคารหมายเลขบัญชีประวัติการทำธุรกรรมและข้อมูลการชำระเงิน",
+        "deviceInfoTitle": "ข้อมูลอุปกรณ์",
+        "deviceInfoContent": "เมื่อคุณเข้าถึงบริการของเราเราจะรวบรวมข้อมูลอุปกรณ์โดยอัตโนมัติเช่นรหัสอุปกรณ์มือถือรุ่นผู้ผลิตระบบปฏิบัติการที่อยู่ IP และพฤติกรรมการเรียกดู"
+      },
+      "informationUsage": {
+        "title": "เราใช้ข้อมูลของคุณอย่างไร",
+        "intro": "เราใช้ข้อมูลที่เรารวบรวมไว้",
+        "bulletPoints": {
+          "improve": "จัดหาบำรุงรักษาและปรับปรุงบริการของเรา",
+          "process": "ประมวลผลธุรกรรมและส่งข้อมูลที่เกี่ยวข้อง",
+          "verify": "ตรวจสอบตัวตนของคุณและป้องกันการฉ้อโกง",
+          "personalize": "ปรับแต่งประสบการณ์ของคุณให้เป็นส่วนตัว",
+          "communicate": "สื่อสารกับคุณเกี่ยวกับบริการของเรา",
+          "comply": "ปฏิบัติตามข้อผูกพันทางกฎหมาย"
+        }
+      },
+      "informationSharing": {
+        "title": "การแบ่งปันข้อมูล",
+        "intro": "เราอาจแบ่งปันข้อมูลของคุณด้วย",
+        "bulletPoints": {
+          "providers": "ผู้ให้บริการที่ให้บริการในนามของเรา",
+          "financial": "สถาบันการเงินเพื่อทำธุรกรรมให้เสร็จสมบูรณ์",
+          "legal": "หน่วยงานด้านกฎหมายเมื่อกำหนดตามกฎหมาย",
+          "partners": "พันธมิตรทางธุรกิจที่ได้รับความยินยอมจากคุณ"
+        }
+      },
+      "dataSecurity": {
+        "title": "ความปลอดภัยของข้อมูล",
+        "content": "เราใช้มาตรการรักษาความปลอดภัยที่เหมาะสมเพื่อปกป้องข้อมูลส่วนบุคคลของคุณจากการเข้าถึงการเปลี่ยนแปลงการเปิดเผยการเปิดเผยหรือการทำลายโดยไม่ได้รับอนุญาต อย่างไรก็ตามไม่มีวิธีการส่งผ่านทางอินเทอร์เน็ตหรือที่เก็บข้อมูลอิเล็กทรอนิกส์มีความปลอดภัย 100% ดังนั้นเราจึงไม่สามารถรับประกันความปลอดภัยที่แน่นอนได้"
+      },
+      "yourRights": {
+        "title": "สิทธิของคุณ",
+        "intro": "ขึ้นอยู่กับที่ตั้งของคุณคุณอาจมีสิทธิ์บางอย่างเกี่ยวกับข้อมูลส่วนบุคคลของคุณรวมถึงสิทธิ์ในการ",
+        "bulletPoints": {
+          "access": "เข้าถึงข้อมูลส่วนบุคคลของคุณ",
+          "correct": "แก้ไขข้อมูลที่ไม่ถูกต้อง",
+          "delete": "ลบข้อมูลส่วนบุคคลของคุณ",
+          "object": "คัดค้านการประมวลผลข้อมูลของคุณ",
+          "withdraw": "ถอนความยินยอม"
+        }
+      },
+      "contactUs": {
+        "title": "ติดต่อเรา",
+        "intro": "หากคุณมีคำถามใด ๆ เกี่ยวกับนโยบายความเป็นส่วนตัวนี้โปรดติดต่อเราที่",
+        "email": "privacy@globalremit.com",
+        "phone": "1-800-global-remit"
+      }
+    }
+  },
+  "supportChat": {
+    "title": "การแชทเงินทั่วโลก",
+    "today": "วันนี้",
+    "typePlaceholder": "พิมพ์ข้อความของคุณ",
+    "send": "ส่ง",
+    "attach": "แนบ",
+    "messageSent": "ส่งข้อความ",
+    "messageSentDesc": "ข้อความของคุณถูกส่งไปยังทีมสนับสนุนของเรา",
+    "quickReplies": {
+      "accountQuestions": "คำถามบัญชี",
+      "creditCards": "บัตรเครดิต",
+      "appIssues": "ปัญหาแอพ",
+      "moneyTransfers": "การโอนเงิน",
+      "accountAccess": "การเข้าถึงบัญชี",
+      "openAccount": "เปิดบัญชี"
+    },
+    "exitConfirm": {
+      "title": "ต้องการออกจากการแชทหรือไม่?",
+      "message": "ข้อมูลที่ป้อนทั้งหมดจะไม่ถูกบันทึก",
+      "leave": "ฉันอยากจากไป",
+      "continue": "ฉันต้องการดำเนินการต่อ"
+    }
+  },
+  "pin": {
+    "title": "การตั้งค่าความปลอดภัยของธุรกรรม",
+    "setPinSubtitle": "ตั้งค่า PIN 6 หลัก (ไม่บังคับ)",
+    "enterPinPlaceholder": "ป้อน PIN 6 หลัก",
+    "confirmPinPlaceholder": "ยืนยันพิน",
+    "save": "บันทึก",
+    "saving": "ประหยัด...",
+    "useBiometrics": "Use {{biometricType}}",
+    "errorRequireOneMethod": "กรุณาตั้งค่าวิธีการรับรองความถูกต้องอย่างน้อยหนึ่งวิธี",
+    "errorPinLength": "พินต้องเป็น 6 หลัก",
+    "errorPinMismatch": "หมุดไม่ตรงกัน",
+    "errorPinOnlyNumbers": "PIN ต้องมีตัวเลขเท่านั้น",
+    "errorSavingSettings": "ไม่สามารถบันทึกการตั้งค่าได้"
+  },
+  "accountClosure": {
+    "title": "การปิดบัญชี",
+    "mainQuestion": "เราจะช่วยคุณปิดบัญชีของคุณได้อย่างไร?",
+    "processingRequest": "ขณะนี้เรากำลังประมวลผลคำขอของคุณและเราต้องการเข้าใจว่าทำไม",
+    "nextStepInfo": "หากคุณต้องการปิดบัญชีของคุณขั้นตอนต่อไปคือการติดต่อเรา",
+    "bankingIssueNote": "หากการปิดบัญชีเกิดจากปัญหาการธนาคารเราอาจช่วยแก้ไขปัญหาได้โดยไม่ต้องปิดบัญชีของคุณ",
+    "getMoreInfo": "รับข้อมูลเพิ่มเติมเกี่ยวกับการปิดบัญชี",
+    "proceedAwareness": "หากต้องการดำเนินการปิดบัญชีโปรดทราบว่า:",
+    "points": {
+      "recurringPayments": "การชำระเงินที่เกิดขึ้นซ้ำทั้งหมดและการโอนอัตโนมัติจะถูกยกเลิก",
+      "remainingBalance": "ยอดคงเหลือใด ๆ ที่เหลือจะต้องถูกโอนไปยังบัญชีอื่น",
+      "destroyCards": "คุณจะต้องทำลายการ์ดที่เกี่ยวข้องใด ๆ",
+      "processDuration": "กระบวนการอาจใช้เวลาถึง 30 วันจึงจะเสร็จสมบูรณ์"
+    },
+    "requestClosure": "ขอปิดบัญชี",
+    "alert": {
+      "title": "ได้รับคำขอปิด",
+      "message": "มีการส่งคำขอปิดบัญชีของคุณแล้ว ขั้นตอนต่อไปคือการติดต่อฝ่ายบริการลูกค้าของเรา"
+    }
+  },
+  "editHomeAddress": {
+    "title": "ที่อยู่บ้าน",
+    "description": "อัปเดตที่อยู่ที่อยู่อาศัยของคุณ",
+    "fields": {
+      "street": "ที่อยู่ถนน",
+      "city": "เมือง",
+      "zipCode": "รหัสไปรษณีย์"
+    },
+    "buttons": {
+      "update": "อัปเดต",
+      "verify": "ตรวจสอบ"
+    },
+    "otp": {
+      "sentTitle": "OTP ส่ง",
+      "sentMessage": "รหัสยืนยันได้ถูกส่งไปยังที่อยู่อีเมลของคุณ",
+      "enterCode": "ป้อนรหัสการยืนยันที่ส่งไปยังอีเมลของคุณ",
+      "placeholder": "รหัส 6 หลัก",
+      "invalidTitle": "OTP ไม่ถูกต้อง",
+      "invalidMessage": "โปรดป้อนรหัส 6 หลักที่ส่งไปยังอีเมลของคุณ"
+    },
+    "update": {
+      "successTitle": "อัปเดตที่อยู่",
+      "successMessage": "ที่อยู่บ้านของคุณได้รับการอัปเดตเรียบร้อยแล้ว"
+    },
+    "privacyConfirmation": "ฉันยืนยันว่ารายละเอียดที่ให้นั้นถูกต้องและฉันยอมรับข้อกำหนดทางกฎหมายและความเป็นส่วนตัว"
+  },
+  "editMailingAddress": {
+    "title": "ที่อยู่ทางไปรษณีย์",
+    "description": "อัปเดตที่อยู่ทางไปรษณีย์ของคุณซึ่งคุณต้องการรับเอกสารสำคัญ",
+    "fields": {
+      "street": "ที่อยู่ถนน",
+      "city": "เมือง",
+      "zipCode": "รหัสไปรษณีย์"
+    },
+    "buttons": {
+      "update": "อัปเดต",
+      "verify": "ตรวจสอบ"
+    },
+    "otp": {
+      "sentTitle": "OTP ส่ง",
+      "sentMessage": "รหัสยืนยันได้ถูกส่งไปยังที่อยู่อีเมลของคุณ",
+      "enterCode": "ป้อนรหัสการยืนยันที่ส่งไปยังอีเมลของคุณ",
+      "placeholder": "รหัส 6 หลัก",
+      "invalidTitle": "OTP ไม่ถูกต้อง",
+      "invalidMessage": "โปรดป้อนรหัส 6 หลักที่ส่งไปยังอีเมลของคุณ"
+    },
+    "update": {
+      "successTitle": "อัปเดตที่อยู่",
+      "successMessage": "ที่อยู่ทางไปรษณีย์ของคุณได้รับการอัปเดตเรียบร้อยแล้ว"
+    },
+    "privacyConfirmation": "ฉันยืนยันว่ารายละเอียดที่ให้นั้นถูกต้องและฉันยอมรับข้อกำหนดทางกฎหมายและความเป็นส่วนตัว"
+  }
 }

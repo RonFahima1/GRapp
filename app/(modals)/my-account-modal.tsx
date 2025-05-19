@@ -8,14 +8,17 @@ import {
   Alert
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { Copy, ChevronLeft } from 'lucide-react-native';
+import { Copy, ChevronLeft, ChevronRight } from 'lucide-react-native';
 import * as Haptics from 'expo-haptics';
 import * as Clipboard from 'expo-clipboard';
 import { useRouter } from 'expo-router';
 import { Platform } from 'react-native';
+import { useTranslate } from '../../context/TranslationContext';
+import StandardBackButton from '../../components/StandardBackButton';
 
 export default function MyAccountModal() {
   const router = useRouter();
+  const { t, isRTL } = useTranslate();
 
   // Handle copy to clipboard
   const copyToClipboard = async (text: string) => {
@@ -23,42 +26,37 @@ export default function MyAccountModal() {
       Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
     }
     await Clipboard.setStringAsync(text);
-    Alert.alert('Copied', 'Information copied to clipboard');
+    Alert.alert(t('common.copied_title'), t('myAccount.informationCopied'));
   };
 
   return (
     <SafeAreaView style={styles.container} edges={['top']}>
       {/* Header with title and back button */}
-      <View style={styles.header}>
-        <TouchableOpacity 
-          style={styles.backButton} 
-          onPress={() => router.back()}
-          hitSlop={{ top: 15, right: 15, bottom: 15, left: 15 }}
-        >
-          <ChevronLeft color="#007AFF" size={24} />
-        </TouchableOpacity>
-        <Text style={styles.headerTitle}>My Account</Text>
+      <View style={[styles.header, { flexDirection: isRTL ? 'row-reverse' : 'row' }]}>
+        <StandardBackButton />
+        <Text style={styles.headerTitle}>{t('myAccount.title')}</Text>
         <View style={styles.rightPlaceholder} />
       </View>
 
       <ScrollView style={styles.contentContainer}>
         {/* Account Name */}
         <View style={styles.section}>
-          <Text style={styles.sectionLabel}>Account on Name</Text>
-          <Text style={styles.nameValue}>John Smith</Text>
+          <Text style={[styles.sectionLabel, { textAlign: isRTL ? 'right' : 'left' }]}>{t('myAccount.accountOnName')}</Text>
+          <Text style={[styles.nameValue, { textAlign: isRTL ? 'right' : 'left' }]}>{t('myAccount.userName')}</Text>
         </View>
 
         {/* Account Details Section */}
         <View style={styles.detailsSection}>
-          <View style={styles.detailsHeader}>
-            <Text style={styles.detailsLabel}>Account Number</Text>
-            <Text style={styles.detailsLabel}>Branch</Text>
-            <Text style={styles.detailsLabel}>Bank</Text>
+          <View style={[styles.detailsHeader, { flexDirection: isRTL ? 'row-reverse' : 'row' }]}>
+            <Text style={styles.detailsLabel}>{t('myAccount.accountNumber')}</Text>
+            <Text style={styles.detailsLabel}>{t('myAccount.branch')}</Text>
+            <Text style={styles.detailsLabel}>{t('myAccount.bank')}</Text>
           </View>
-          <View style={styles.detailsRow}>
+          <View style={[styles.detailsRow, { flexDirection: isRTL ? 'row-reverse' : 'row' }]}>
             <TouchableOpacity 
-              style={styles.copyButton} 
+              style={[styles.copyButton, { left: isRTL ? 0 : undefined, right: isRTL ? undefined : 0 }]} 
               onPress={() => copyToClipboard("25365625")}
+              accessibilityLabel={t('common.copy')}
             >
               <Copy color="#CCCCCC" size={18} />
             </TouchableOpacity>
@@ -71,15 +69,16 @@ export default function MyAccountModal() {
         {/* IBAN Section */}
         <View style={styles.itemSection}>
           <TouchableOpacity 
-            style={styles.accountItem}
+            style={[styles.accountItem, { flexDirection: isRTL ? 'row-reverse' : 'row' }]}
             onPress={() => copyToClipboard("IL40010998000002536565")}
+            accessibilityLabel={t('common.copy') + ' ' + t('myAccount.ibanNumber')}
           >
-            <View style={styles.copyIcon}>
+            <View style={[styles.copyIcon, { marginRight: isRTL ? 0 : 10, marginLeft: isRTL ? 10 : 0 }]}>
               <Copy color="#CCCCCC" size={18} />
             </View>
             <View style={styles.accountItemContent}>
-              <Text style={styles.itemLabel}>IBAN Number</Text>
-              <Text style={styles.itemValue}>IL40010998000002536565</Text>
+              <Text style={[styles.itemLabel, { textAlign: isRTL ? 'right' : 'left' }]}>{t('myAccount.ibanNumber')}</Text>
+              <Text style={[styles.itemValue, { textAlign: isRTL ? 'right' : 'left' }]}>IL40010998000002536565</Text>
             </View>
           </TouchableOpacity>
         </View>
@@ -87,77 +86,82 @@ export default function MyAccountModal() {
         {/* SWIFT Code Section */}
         <View style={styles.itemSection}>
           <TouchableOpacity 
-            style={styles.accountItem}
+            style={[styles.accountItem, { flexDirection: isRTL ? 'row-reverse' : 'row' }]}
             onPress={() => copyToClipboard("LUMILITXXX")}
+            accessibilityLabel={t('common.copy') + ' ' + t('myAccount.swiftCode')}
           >
-            <View style={styles.copyIcon}>
+            <View style={[styles.copyIcon, { marginRight: isRTL ? 0 : 10, marginLeft: isRTL ? 10 : 0 }]}>
               <Copy color="#CCCCCC" size={18} />
             </View>
             <View style={styles.accountItemContent}>
-              <Text style={styles.itemLabel}>SWIFT Code</Text>
-              <Text style={styles.itemValue}>LUMILITXXX</Text>
+              <Text style={[styles.itemLabel, { textAlign: isRTL ? 'right' : 'left' }]}>{t('myAccount.swiftCode')}</Text>
+              <Text style={[styles.itemValue, { textAlign: isRTL ? 'right' : 'left' }]}>LUMILITXXX</Text>
             </View>
           </TouchableOpacity>
         </View>
 
         {/* Communication Ways Section Header */}
         <View style={styles.sectionTitleContainer}>
-          <Text style={styles.sectionTitle}>Ways of Communication</Text>
+          <Text style={[styles.sectionTitle, { textAlign: isRTL ? 'right' : 'left' }]}>{t('myAccount.yourContactInformation')}</Text>
         </View>
 
         {/* Email Address */}
         <View style={styles.contactSection}>
           <TouchableOpacity 
-            style={styles.contactItem}
+            style={[styles.contactItem, { flexDirection: isRTL ? 'row-reverse' : 'row' }]}
             onPress={() => router.push('/(modals)/edit-email')}
+            accessibilityLabel={t('myAccount.editEmail')}
           >
             <View style={styles.contactItemContent}>
-              <Text style={styles.contactItemLabel}>Email</Text>
-              <Text style={styles.contactItemValue}>john.smith@example.com</Text>
+              <Text style={[styles.contactItemLabel, { textAlign: isRTL ? 'right' : 'left' }]}>{t('myAccount.emailAddress')}</Text>
+              <Text style={[styles.contactItemValue, { textAlign: isRTL ? 'right' : 'left' }]}>john.smith@example.com</Text>
             </View>
-            <ChevronLeft color="#CCCCCC" size={18} />
+            {isRTL ? <ChevronLeft color="#CCCCCC" size={18} /> : <ChevronRight color="#CCCCCC" size={18} />}
           </TouchableOpacity>
         </View>
 
         {/* Home Address */}
         <View style={styles.contactSection}>
           <TouchableOpacity 
-            style={styles.contactItem}
+            style={[styles.contactItem, { flexDirection: isRTL ? 'row-reverse' : 'row' }]}
             onPress={() => router.push('/(modals)/edit-home-address')}
+            accessibilityLabel={t('myAccount.editHomeAddress')}
           >
             <View style={styles.contactItemContent}>
-              <Text style={styles.contactItemLabel}>Home Address</Text>
-              <Text style={styles.contactItemValue}>123 Main St, Anytown, CA 12345</Text>
+              <Text style={[styles.contactItemLabel, { textAlign: isRTL ? 'right' : 'left' }]}>{t('myAccount.homeAddress')}</Text>
+              <Text style={[styles.contactItemValue, { textAlign: isRTL ? 'right' : 'left' }]}>123 Main St., Springfield, 12345</Text>
             </View>
-            <ChevronLeft color="#CCCCCC" size={18} />
+            {isRTL ? <ChevronLeft color="#CCCCCC" size={18} /> : <ChevronRight color="#CCCCCC" size={18} />}
           </TouchableOpacity>
         </View>
 
         {/* Mailing Address */}
         <View style={styles.contactSection}>
           <TouchableOpacity 
-            style={styles.contactItem}
+            style={[styles.contactItem, { flexDirection: isRTL ? 'row-reverse' : 'row' }]}
             onPress={() => router.push('/(modals)/edit-mailing-address')}
+            accessibilityLabel={t('myAccount.editMailingAddress')}
           >
             <View style={styles.contactItemContent}>
-              <Text style={styles.contactItemLabel}>Mailing Address</Text>
-              <Text style={styles.contactItemValue}>123 Main St, Anytown, CA 12345</Text>
+              <Text style={[styles.contactItemLabel, { textAlign: isRTL ? 'right' : 'left' }]}>{t('myAccount.mailingAddress')}</Text>
+              <Text style={[styles.contactItemValue, { textAlign: isRTL ? 'right' : 'left' }]}>123 Main St., Springfield, 12345</Text>
             </View>
-            <ChevronLeft color="#CCCCCC" size={18} />
+            {isRTL ? <ChevronLeft color="#CCCCCC" size={18} /> : <ChevronRight color="#CCCCCC" size={18} />}
           </TouchableOpacity>
         </View>
 
-        {/* Phone */}
+        {/* Phone Number */}
         <View style={styles.contactSection}>
           <TouchableOpacity 
-            style={styles.contactItem}
+            style={[styles.contactItem, { flexDirection: isRTL ? 'row-reverse' : 'row' }]}
             onPress={() => router.push('/(modals)/edit-phone')}
+            accessibilityLabel={t('myAccount.editPhone')}
           >
             <View style={styles.contactItemContent}>
-              <Text style={styles.contactItemLabel}>Phone</Text>
-              <Text style={styles.contactItemValue}>555-123-4567</Text>
+              <Text style={[styles.contactItemLabel, { textAlign: isRTL ? 'right' : 'left' }]}>{t('myAccount.phone')}</Text>
+              <Text style={[styles.contactItemValue, { textAlign: isRTL ? 'right' : 'left' }]}>555-123-4567</Text>
             </View>
-            <ChevronLeft color="#CCCCCC" size={18} />
+            {isRTL ? <ChevronLeft color="#CCCCCC" size={18} /> : <ChevronRight color="#CCCCCC" size={18} />}
           </TouchableOpacity>
         </View>
 
@@ -165,8 +169,9 @@ export default function MyAccountModal() {
         <TouchableOpacity 
           style={styles.closeAccountButton}
           onPress={() => router.push('/(modals)/account-closure')}
+          accessibilityLabel={t('myAccount.requestAccountClosure')}
         >
-          <Text style={styles.closeAccountText}>Request Account Closure</Text>
+          <Text style={styles.closeAccountText}>{t('myAccount.requestAccountClosure')}</Text>
         </TouchableOpacity>
 
         {/* Bottom padding */}

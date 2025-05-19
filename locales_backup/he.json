@@ -1,0 +1,150 @@
+{
+  "welcome_to_remit": "ברוכים הבאים לרמיט",
+  "enter_phone_subtitle": "הזן את מספר הטלפון שלך כדי להתחיל",
+  "enter_phone_number": "הכנס מספר טלפון",
+  "continue_button": "🆕 לְהַמשִׁיך",
+  "already_member": "כבר חבר?",
+  "login_here": "התחבר כאן",
+  "phone_error_start": "מספר הטלפון חייב להתחיל ב-0 או 5",
+  "phone_error_invalid": "אנא הזן מספר טלפון תקין",
+  "phone_error_format": "פורמט מספר טלפון לא תקין",
+  "hello": "שלום",
+  "hello_name": "🆕 Hello, {{name}}",
+  "welcome_back": "ברוך שובך",
+  "login_subtitle": "התחבר כדי להמשיך",
+  "email": "אימייל",
+  "password": "סיסמה",
+  "login": "התחבר",
+  "login_error_fields": "אנא מלא את כל השדות",
+  "enable_biometric_login": "הפעל התחברות באמצעות {{biometricType}}",
+  "no_account": "אין לך חשבון?",
+  "register": "הרשם",
+  "settings": "הגדרות",
+  "appearance": "מראה",
+  "dark_mode": "מצב כהה",
+  "notifications": "התראות",
+  "push_notifications": "התראות פוש",
+  "security_title": "🆕 בִּטָחוֹן",
+  "biometric_authentication": "אימות ביומטרי",
+  "change_password": "שינוי סיסמה",
+  "payment": "תשלום",
+  "payment_methods": "אמצעי תשלום",
+  "currencies": "מטבעות",
+  "support": "תמיכה",
+  "help_center": "מרכז עזרה",
+  "contact_us": "צור קשר",
+  "language": "שפה",
+  "total_balance": "יתרה כוללת",
+  "this_week": "השבוע",
+  "percentage_change": "🆕 {{percentage}}% this week",
+  "send_money": "שליחת כסף",
+  "send": "🆕 לִשְׁלוֹחַ",
+  "request": "בקשה",
+  "exchange": "🆕 לְהַחלִיף",
+  "top_up": "טעינה",
+  "recent_transactions": "עסקאות אחרונות",
+  "exchange_rates": "שערי חליפין",
+  "see_all": "ראה הכל",
+  "my_wallet": "הארנק שלי",
+  "dashboard": {
+    "add_new_card": "🆕 הוסף כרטיס חדש"
+  },
+  "transactions_label": "🆕 עסקאות",
+  "profile_tab": "🆕 פּרוֹפִיל",
+  "edit_profile": "עריכת פרופיל",
+  "logout": "התנתקות",
+  "cancel": "🆕 לְבַטֵל",
+  "done": "🆕 נַעֲשָׂה",
+  "security": {
+    "faceIDDescription": "🆕 השתמש במזהה Face כדי לפתוח את חשבונך",
+    "changePassword": "🆕 שנה סיסמה",
+    "securityQuestions": "🆕 שאלות אבטחה"
+  },
+  "profile": {
+    "logoutConfirmation": "🆕 האם אתה בטוח שאתה רוצה להתנתק?"
+  },
+  "common": {
+    "visa": "🆕 וִיזָה",
+    "mastercard": "🆕 מאסטרקארד",
+    "endingIn": "🆕 מסתיים פנימה",
+    "expires": "🆕 פג תוקף"
+  },
+  "countries": {
+    "India": "🆕 הוֹדוּ",
+    "Colombia": "🆕 קולומביה",
+    "Philippines": "🆕 הפיליפינים"
+  },
+  "language_settings": {
+    "save_preferences": "🆕 שמור העדפות",
+    "language_saved": "🆕 העדפות שפה נשמרו בהצלחה."
+  },
+  "error": "🆕 שְׁגִיאָה",
+  "ok": "🆕 בְּסֵדֶר",
+  "tabs": {
+    "g": "🆕 ז",
+    "profile": "🆕 פּרוֹפִיל"
+  },
+  "myAccount": {
+    "informationCopied": "🆕 מידע שהועתק ללוח"
+  },
+  "sendMoney": {
+    "details": {
+      "total": "🆕 סַך הַכֹּל",
+      "continue": "🆕 לְהַמשִׁיך",
+      "scheduleInfo": "🆕 מתוזמן ל",
+      "immediateInfo": "🆕 העברה מיידית"
+    }
+  },
+  "transactions": {
+    "filters": {
+      "types": {
+        "received": "🆕 התקבל",
+        "exchanged": "🆕 הוחלף"
+      }
+    }
+  },
+  "moneyTransfer": {
+    "details": {
+      "scheduledTransfer": "🆕 מתוכנן ל -25 במאי 2025"
+    }
+  },
+  "privacy": {
+    "sections": {
+      "contactUs": {
+        "email": "🆕 privacy@globalremit.com",
+        "phone": "🆕 1-800-גלובל-רמטי"
+      }
+    }
+  },
+  "supportChat": {
+    "exitConfirm": {
+      "title": "🆕 רוצה לעזוב את הצ'אט?",
+      "message": "🆕 כל הנתונים שהוזנו לא יישמרו",
+      "leave": "🆕 אני רוצה לעזוב",
+      "continue": "🆕 אני רוצה להמשיך"
+    }
+  },
+  "pin": {
+    "errorSavingSettings": "🆕 שמירת הגדרות נכשלה"
+  },
+  "accountClosure": {
+    "points": {
+      "destroyCards": "🆕 תצטרך להרוס את כל הקלפים המשויכים",
+      "processDuration": "🆕 התהליך עשוי להימשך עד 30 יום"
+    },
+    "requestClosure": "🆕 בקש סגירת חשבון",
+    "alert": {
+      "title": "🆕 בקשת הסגירה שהתקבלה",
+      "message": "🆕 בקשת סגירת החשבון שלך הוגשה. השלב הבא הוא ליצור קשר עם שירות הלקוחות שלנו."
+    }
+  },
+  "editHomeAddress": {
+    "privacyConfirmation": "🆕 אני מאשר כי הפרטים שנמסרו מדויקים ואני מסכים לתנאי החוק והפרטיות."
+  },
+  "editMailingAddress": {
+    "update": {
+      "successMessage": "🆕 כתובת התפוצה שלך עודכנה בהצלחה"
+    },
+    "privacyConfirmation": "🆕 אני מאשר כי הפרטים שנמסרו מדויקים ואני מסכים לתנאי החוק והפרטיות."
+  }
+}

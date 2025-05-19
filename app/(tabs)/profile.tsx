@@ -1,20 +1,15 @@
-import React, { useState } from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, ScrollView, Switch, Image, I18nManager, Platform, Alert } from 'react-native';
+import React from 'react';
+import { View, Text, StyleSheet, TouchableOpacity, ScrollView, Switch, Image, Platform, Alert } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useRouter } from 'expo-router';
 import * as Clipboard from 'expo-clipboard';
-import { User, File, Shield, Bell, HelpCircle, Info, Moon, ChevronRight, ChevronLeft, LogOut } from 'lucide-react-native';
+import { User, File, Shield, Bell, HelpCircle, Info, ChevronLeft, ChevronRight, LogOut, Copy } from 'lucide-react-native';
 import * as Haptics from 'expo-haptics';
-import { useTranslation } from '../../hooks/useTranslation';
-import { RTLText } from '../../components/RTLProvider';
-import { createRTLAwareStyles, getRTLFlexDirection, getChevronTransform } from '../../utils/rtlUtils';
-import { useLanguage } from '../../contexts/LanguageContext';
+import { useTranslate } from '../../context/TranslationContext';
 
 export default function ProfileScreen() {
   const router = useRouter();
-  const [darkModeEnabled, setDarkModeEnabled] = useState(false);
-  const { t } = useTranslation();
-  const { currentLanguage } = useLanguage();
+  const { t, isRTL } = useTranslate();
 
   // Handle copy to clipboard with haptic feedback
   const copyToClipboard = async (text: string) => {
@@ -22,7 +17,7 @@ export default function ProfileScreen() {
       Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
     }
     await Clipboard.setStringAsync(text);
-    Alert.alert('Copied to clipboard', text);
+    Alert.alert(t('common.copied') || 'Copied to clipboard', text);
   };
 
   // Function to provide haptic feedback
@@ -32,15 +27,15 @@ export default function ProfileScreen() {
     }
   };
 
-  // Define menu items directly as a flat list
-  const menuItems = [
+  // Define menu items directly with English text
+  const menuItems = React.useMemo(() => [
     {
       id: 'my-account',
       icon: <User color="#007AFF" size={22} />,
       title: t('profile.myAccount'),
       onPress: () => {
         triggerHaptic();
-        router.push('/(modals)/my-account-modal');
+        router.push('/my-account-modal');
       }
     },
     {
@@ -55,7 +50,7 @@ export default function ProfileScreen() {
     {
       id: 'security',
       icon: <Shield color="#007AFF" size={22} />,
-      title: t('profile.securityPreferences'),
+      title: t('profile.securityAndPreferences'),
       onPress: () => {
         triggerHaptic();
         router.push('/(modals)/security-settings-modal');
@@ -88,22 +83,21 @@ export default function ProfileScreen() {
         router.push('/(modals)/about');
       }
     },
-  ];
+  ], []);
 
   // Preferences items
-  const preferencesItems = [
-    {
-      id: 'dark-mode',
-      icon: <Moon color="#007AFF" size={22} />,
-      title: t('profile.darkMode'),
-      type: 'toggle',
-      value: darkModeEnabled,
-      onValueChange: (value: boolean) => {
-        triggerHaptic();
-        setDarkModeEnabled(value);
-      }
-    },
-  ];
+  // Define the type for preference items
+  type PreferenceItem = {
+    id: string;
+    icon: React.ReactNode;
+    title: string;
+    type: string;
+    value?: boolean;
+    onValueChange?: (value: boolean) => void;
+  };
+  
+  // Empty preferences array since dark mode is now only in security settings
+  const preferencesItems: PreferenceItem[] = [];
 
   // Handle logout
   const handleLogout = () => {
@@ -112,12 +106,12 @@ export default function ProfileScreen() {
     }
     // Add your logout logic here
     Alert.alert(
-      'Logout',
-      'Are you sure you want to log out?',
+      t('logout'),
+      t('profile.logoutConfirmation') || 'Are you sure you want to log out?',
       [
-        { text: 'Cancel', style: 'cancel' },
+        { text: t('cancel'), style: 'cancel' },
         { 
-          text: 'Logout', 
+          text: t('logout'), 
           style: 'destructive',
           onPress: () => console.log('User logged out')
         },
@@ -125,78 +119,90 @@ export default function ProfileScreen() {
     );
   };
 
-  // Create RTL-aware styles dynamically
-  const rtlStyles = createRTLAwareStyles(styles);
-
-  return (
-    <SafeAreaView style={rtlStyles.container} edges={['top']}>
-      <View style={rtlStyles.header}>
-        <RTLText style={rtlStyles.headerTitle}>{t('profile.title') || 'Profile'}</RTLText>
-      </View>
+    return (
+    <SafeAreaView style={[styles.container]} edges={['top']}>
       <ScrollView 
         showsVerticalScrollIndicator={true} 
         indicatorStyle="black"
         contentContainerStyle={styles.scrollContentContainer}>
-        <View style={rtlStyles.profileHeader}>
+        <View style={styles.profileHeader}>
           {/* Blue profile avatar */}
-          <View style={rtlStyles.avatarContainer}>
-            <Text style={rtlStyles.avatarText}>JD</Text>
+          <View style={styles.avatarContainer}>
+            <Text style={styles.avatarText}>RF</Text>
           </View>
-          <RTLText style={rtlStyles.profileName}>John Doe</RTLText>
+          <Text style={[styles.profileName, { textAlign: isRTL ? 'right' : 'left' }]} numberOfLines={1}>
+            {t('profile.fullName')}
+          </Text>
+          <Text style={[styles.profileEmail, { textAlign: isRTL ? 'right' : 'left' }]}>
+            ronfаhima@example.com
+          </Text>
+        </View>
+        
+        {/* Account Information */}
+        <View style={styles.accountInfoCard}>
+          <View style={[styles.accountInfoContainer, { flexDirection: isRTL ? 'row-reverse' : 'row' }]}>
+            {/* Transactions */}
+            <View style={[styles.accountInfoItem, { alignItems: isRTL ? 'flex-end' : 'flex-start' }]}>
+              <Text style={[styles.accountInfoLabel, { textAlign: isRTL ? 'right' : 'left' }]}>{t('profile.transactions')}</Text>
+              <Text style={[styles.accountInfoValue, { textAlign: isRTL ? 'right' : 'left' }]}>128</Text>
+            </View>
+
+            {/* Member Since */}
+            <View style={[styles.accountInfoItem, { alignItems: isRTL ? 'flex-end' : 'flex-start' }]}>
+              <Text style={[styles.accountInfoLabel, { textAlign: isRTL ? 'right' : 'left' }]}>{t('profile.memberSince')}</Text>
+              <Text style={[styles.accountInfoValue, { textAlign: isRTL ? 'right' : 'left' }]}>May 2023</Text>
+            </View>
+
+            {/* Account ID */}
+            <View style={[styles.accountInfoItem, { alignItems: isRTL ? 'flex-end' : 'flex-start' }]}>
+              <Text style={[styles.accountInfoLabel, { textAlign: isRTL ? 'right' : 'left' }]}>{t('profile.accountNumber')}</Text>
+              <View style={{ flexDirection: isRTL ? 'row-reverse' : 'row', alignItems: 'center' }}>
+                <Text style={[styles.accountInfoValue, { textAlign: isRTL ? 'right' : 'left' }]}>RMT12345</Text>
+                <TouchableOpacity 
+                  style={[styles.copyButton, { marginLeft: isRTL ? 0 : 10, marginRight: isRTL ? 10 : 0 }]}
+                  onPress={() => copyToClipboard('RMT12345')}
+                >
+                  <Copy size={16} color="#007AFF" />
+                </TouchableOpacity>
+              </View>
+            </View>
+          </View>
         </View>
 
-        {/* Account Info Card - All in one line with single copy button */}
-        <View style={rtlStyles.accountInfoCard}>
-          <View style={rtlStyles.accountInfoRow}>
-            <View style={rtlStyles.accountInfoSection}>
-              <RTLText style={rtlStyles.accountInfoLabel}>{t('profile.accountNumber')}</RTLText>
-              <RTLText style={rtlStyles.accountInfoValue}>25365625</RTLText>
-            </View>
-            <View style={rtlStyles.accountInfoSection}>
-              <RTLText style={rtlStyles.accountInfoLabel}>{t('profile.branch')}</RTLText>
-              <RTLText style={rtlStyles.accountInfoValue}>998</RTLText>
-            </View>
-            <View style={rtlStyles.accountInfoSection}>
-              <RTLText style={rtlStyles.accountInfoLabel}>{t('profile.bank')}</RTLText>
-              <RTLText style={rtlStyles.accountInfoValue}>10</RTLText>
-            </View>
-            <TouchableOpacity 
-              style={rtlStyles.copyButton}
-              onPress={() => copyToClipboard('Account: 25365625, Branch: 998, Bank: 10')}
-            >
-              <RTLText style={rtlStyles.copyButtonText}>Copy</RTLText>
-            </TouchableOpacity>
-          </View>
-        </View>
-
-        {/* Menu Items Section */}
-        <View style={rtlStyles.menuSectionContainer}>
+        {/* Menu Sections */}
+        <View style={styles.menuSectionContainer}>
           {menuItems.map((item) => (
-            <View key={item.id} style={rtlStyles.menuItemContainer}>
+            <View key={item.id} style={styles.menuItemContainer}>
               <TouchableOpacity
-                style={rtlStyles.menuItem}
+                style={styles.menuItem}
                 onPress={item.onPress}
+                activeOpacity={0.7}
               >
-                <View style={rtlStyles.menuItemContent}>
-                  <View style={rtlStyles.menuItemLeft}>
-                    {I18nManager.isRTL ? (
-                      <>
-                        <RTLText style={rtlStyles.menuItemText}>{item.title}</RTLText>
-                        <View style={rtlStyles.menuItemIcon}>
-                          {item.icon}
-                        </View>
-                      </>
-                    ) : (
-                      <>
-                        <View style={rtlStyles.menuItemIcon}>
-                          {item.icon}
-                        </View>
-                        <RTLText style={rtlStyles.menuItemText}>{item.title}</RTLText>
-                      </>
-                    )}
+                <View style={[styles.menuItemContent, { flexDirection: isRTL ? 'row-reverse' : 'row' }]}>
+                  {/* The icon container - properly positioned at the edge in RTL mode */}
+                  <View style={[
+                    styles.menuItemIcon, 
+                    { marginRight: isRTL ? 0 : 14, marginLeft: isRTL ? 14 : 0 }
+                  ]}>
+                    {item.icon}
                   </View>
-                  <View style={rtlStyles.menuItemRight}>
-                    {I18nManager.isRTL ? 
+                  
+                  {/* Menu item text */}
+                  <Text style={[
+                    styles.menuItemText, 
+                    { 
+                      flex: 1,
+                      textAlign: isRTL ? 'right' : 'left',
+                      marginLeft: isRTL ? 0 : 4,
+                      marginRight: isRTL ? 4 : 0
+                    }
+                  ]}>
+                    {item.title}
+                  </Text>
+                  
+                  {/* Chevron indicator - properly mirrored in RTL mode */}
+                  <View style={styles.menuItemChevron}>
+                    {isRTL ? 
                       <ChevronLeft color="#CCCCCC" size={20} /> : 
                       <ChevronRight color="#CCCCCC" size={20} />
                     }
@@ -207,90 +213,45 @@ export default function ProfileScreen() {
           ))}
         </View>
 
-        {/* Preferences Section */}
-        <View style={rtlStyles.menuSectionContainer}>
-          {preferencesItems.map((item) => (
-            <View key={item.id} style={rtlStyles.menuItemContainer}>
-              <View style={rtlStyles.menuItem}>
-                <View style={rtlStyles.menuItemContent}>
-                  <View style={rtlStyles.menuItemLeft}>
-                    {I18nManager.isRTL ? (
-                      <>
-                        <RTLText style={rtlStyles.menuItemText}>{item.title}</RTLText>
-                        <View style={rtlStyles.menuItemIcon}>
-                          {item.icon}
-                        </View>
-                      </>
-                    ) : (
-                      <>
-                        <View style={rtlStyles.menuItemIcon}>
-                          {item.icon}
-                        </View>
-                        <RTLText style={rtlStyles.menuItemText}>{item.title}</RTLText>
-                      </>
-                    )}
-                  </View>
-                  <View style={rtlStyles.menuItemRight}>
-                    <Switch
-                      value={item.value}
-                      onValueChange={item.onValueChange}
-                      trackColor={{ false: '#D1D1D6', true: '#34C759' }}
-                    />
-                  </View>
-                </View>
-              </View>
-            </View>
-          ))}
-        </View>
-        
         {/* Logout Button */}
-        <TouchableOpacity 
-          style={rtlStyles.logoutButton}
-          onPress={handleLogout}
-        >
-          <RTLText style={rtlStyles.logoutText}>{t('profile.logout')}</RTLText>
+        <TouchableOpacity style={styles.logoutButton} onPress={handleLogout}>
+          <View style={{ flexDirection: isRTL ? 'row-reverse' : 'row', alignItems: 'center' }}>
+            <LogOut color="#FF3B30" size={20} />
+            <Text style={[styles.logoutText, { marginLeft: isRTL ? 0 : 8, marginRight: isRTL ? 8 : 0 }]}>
+              {t('logout')}
+            </Text>
+          </View>
         </TouchableOpacity>
       </ScrollView>
     </SafeAreaView>
   );
 }
 
-// Define base styles that will be transformed for RTL
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#F8F8F8',
-    // Ensure the container respects RTL layout
-    direction: I18nManager.isRTL ? 'rtl' : 'ltr',
-  },
-  header: {
-    flexDirection: I18nManager.isRTL ? 'row-reverse' : 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
-    paddingHorizontal: 20,
-    paddingVertical: 15,
-    borderBottomWidth: 1,
-    borderBottomColor: '#E0E0E0',
-    backgroundColor: '#FFFFFF',
-    position: 'relative',
-  },
-  headerTitle: {
-    fontSize: 18,
-    fontWeight: '600',
-    color: '#333333',
-    textAlign: 'center',
   },
   scrollContentContainer: {
     paddingBottom: 20, // Add some padding at the bottom
   },
   profileHeader: {
     alignItems: 'center',
-    paddingVertical: 24,
+    paddingTop: 32,
+    paddingBottom: 28,
     paddingHorizontal: 16,
-    // Ensure header content is properly aligned for RTL
-    flexDirection: getRTLFlexDirection('column'),
+    flexDirection: 'column',
     backgroundColor: '#FFFFFF',
-    marginBottom: 20,
+    marginBottom: 24,
+    borderBottomLeftRadius: 20,
+    borderBottomRightRadius: 20,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.05,
+    shadowRadius: 8,
+    elevation: 3,
+    borderWidth: 1,
+    borderColor: 'rgba(0,0,0,0.03)',
   },
   avatarContainer: {
     width: 100,
@@ -299,7 +260,14 @@ const styles = StyleSheet.create({
     backgroundColor: '#007AFF',
     justifyContent: 'center',
     alignItems: 'center',
-    marginBottom: 12,
+    marginBottom: 16,
+    shadowColor: '#007AFF',
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.3,
+    shadowRadius: 8,
+    elevation: 5,
+    borderWidth: 3,
+    borderColor: '#FFFFFF',
   },
   avatarText: {
     color: '#FFFFFF',
@@ -307,34 +275,43 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   profileName: {
-    fontSize: 22,
-    fontWeight: '600',
+    fontSize: 24,
+    fontWeight: '700',
     color: '#1C1C1E',
+    marginBottom: 4,
+  },
+  profileEmail: {
+    fontSize: 14,
+    color: '#8A8A8E',
+    marginBottom: 8,
   },
   accountInfoCard: {
     backgroundColor: '#FFFFFF',
-    borderRadius: 12,
-    padding: 16,
+    borderRadius: 16,
+    padding: 20,
     marginHorizontal: 16,
-    marginBottom: 20,
+    marginBottom: 28,
     shadowColor: '#000000',
-    shadowOffset: { width: 0, height: 1 },
+    shadowOffset: { width: 0, height: 3 },
     shadowOpacity: 0.1,
-    shadowRadius: 3,
-    elevation: 2,
+    shadowRadius: 6,
+    elevation: 4,
+    borderWidth: 1,
+    borderColor: 'rgba(0,0,0,0.03)',
   },
-  accountInfoRow: {
-    flexDirection: getRTLFlexDirection('row'),
-    justifyContent: 'space-between',
+  accountInfoContainer: {
     alignItems: 'center',
+    justifyContent: 'space-between',
   },
-  accountInfoSection: {
+  accountInfoItem: {
     flex: 1,
+    paddingHorizontal: 2,
   },
   accountInfoLabel: {
-    fontSize: 12,
+    fontSize: 11,
     color: '#8E8E93',
     marginBottom: 4,
+    width: '100%',
   },
   accountInfoValue: {
     fontSize: 16,
@@ -342,12 +319,13 @@ const styles = StyleSheet.create({
     color: '#1C1C1E',
   },
   copyButton: {
-    flexDirection: getRTLFlexDirection('row'),
-    alignItems: 'center',
+    padding: 5,
+    borderRadius: 20,
     backgroundColor: '#F0F0F0',
-    paddingHorizontal: 12,
-    paddingVertical: 6,
-    borderRadius: 16,
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: 40,
+    height: 40,
   },
   copyButtonText: {
     fontSize: 14,
@@ -356,69 +334,67 @@ const styles = StyleSheet.create({
   },
   menuSectionContainer: {
     marginHorizontal: 16,
-    marginBottom: 20,
+    marginBottom: 24,
+    backgroundColor: '#FFFFFF',
+    borderRadius: 16,
+    overflow: 'hidden',
+    shadowColor: '#000000',
+    shadowOffset: { width: 0, height: 3 },
+    shadowOpacity: 0.1,
+    shadowRadius: 6,
+    elevation: 3,
+    borderWidth: 1,
+    borderColor: 'rgba(0,0,0,0.03)',
   },
   menuItemContainer: {
-    marginBottom: 12,
+    borderBottomWidth: 0.5,
+    borderBottomColor: '#E0E0E0',
   },
   menuItem: {
-    paddingVertical: 14,
-    paddingHorizontal: 16,
+    paddingVertical: 16,
+    paddingHorizontal: 18,
     backgroundColor: '#FFFFFF',
-    borderRadius: 12,
-    shadowColor: '#000000',
-    shadowOffset: { width: 0, height: 1 },
-    shadowOpacity: 0.1,
-    shadowRadius: 2,
-    elevation: 1,
   },
   menuItemContent: {
-    flexDirection: getRTLFlexDirection('row'),
     justifyContent: 'space-between',
     alignItems: 'center',
-  },
-  menuItemLeft: {
-    flexDirection: I18nManager.isRTL ? 'row-reverse' : 'row',
-    alignItems: 'center',
-    flex: 1,
+    width: '100%',
   },
   menuItemIcon: {
-    width: 30, // Icon container size
-    height: 30,
+    width: 36, // Icon container size
+    height: 36,
     justifyContent: 'center',
     alignItems: 'center',
-    marginRight: I18nManager.isRTL ? 0 : 12, // Space between icon and text
-    marginLeft: I18nManager.isRTL ? 12 : 0,
-  },
-  menuItemIconRTL: {
-    marginRight: 0,
-    marginLeft: 12,
+    backgroundColor: 'rgba(0, 122, 255, 0.1)',
+    borderRadius: 10,
   },
   menuItemText: {
     fontSize: 17,
     fontWeight: '500',
     color: '#1C1C1E',
   },
-  menuItemRight: {
-    alignItems: 'flex-end',
+  menuItemChevron: {
+    padding: 4,
   },
   logoutButton: {
-    marginHorizontal: 20,
-    marginTop: 20,
+    marginHorizontal: 16,
+    marginTop: 24,
     marginBottom: 40,
     backgroundColor: '#FFFFFF',
-    borderRadius: 12,
+    borderRadius: 16,
     padding: 18,
     alignItems: 'center',
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 1 },
-    shadowOpacity: 0.08,
-    shadowRadius: 2,
-    elevation: 2,
+    shadowColor: '#FF3B30',
+    shadowOffset: { width: 0, height: 3 },
+    shadowOpacity: 0.15,
+    shadowRadius: 6,
+    elevation: 3,
+    borderWidth: 1,
+    borderColor: 'rgba(255,59,48,0.1)',
   },
   logoutText: {
     fontSize: 16,
-    fontWeight: '600',
+    fontWeight: '700',
     color: '#FF3B30', // iOS system red
   },
 });

@@ -1,52 +1,441 @@
 {
-  "welcome_to_remit": "ברוכים הבאים לרמיט",
-  "enter_phone_number": "הכנס מספר טלפון",
+  "welcome_to_remit": "ברוך הבא ל-Remit",
   "enter_phone_subtitle": "הזן את מספר הטלפון שלך כדי להתחיל",
-  "continue": "המשך",
+  "enter_phone_number": "הזן את מספר הטלפון",
+  "continue_button": "להמשיך",
   "already_member": "כבר חבר?",
   "login_here": "התחבר כאן",
   "phone_error_start": "מספר הטלפון חייב להתחיל ב-0 או 5",
   "phone_error_invalid": "אנא הזן מספר טלפון תקין",
-  "phone_error_format": "פורמט מספר טלפון לא תקין",
+  "phone_error_format": "פורמט מספר טלפון שגוי",
   "hello": "שלום",
-  "welcome_back": "ברוך שובך",
-  "login_subtitle": "התחבר כדי להמשיך",
-  "email": "אימייל",
+  "hello_name": "שלום, {{name}}",
+  "welcome_back": "ברוך הבא",
+  "login_subtitle": "היכנס כדי להמשיך",
+  "email": "דואר אלקטרוני",
   "password": "סיסמה",
-  "login": "התחבר",
+  "login": "כניסה למערכת",
   "login_error_fields": "אנא מלא את כל השדות",
-  "enable_biometric_login": "הפעל התחברות באמצעות {{biometricType}}",
-  "no_account": "אין לך חשבון?",
-  "register": "הרשם",
+  "enable_biometric_login": "הפעל כניסה באמצעות {{biometricType}}",
+  "no_account": "אין לך חשבון? ",
+  "register": "הרשמה",
   "settings": "הגדרות",
-  "appearance": "מראה",
-  "dark_mode": "מצב כהה",
+  "appearance": "הופעה",
+  "dark_mode": "מצב אפל",
   "notifications": "התראות",
-  "push_notifications": "התראות פוש",
-  "security": "אבטחה",
+  "push_notifications": "הודעות לדחוף",
+  "security_title": "בטחון",
   "biometric_authentication": "אימות ביומטרי",
-  "change_password": "שינוי סיסמה",
+  "change_password": "שנה סיסמה",
   "payment": "תשלום",
-  "payment_methods": "אמצעי תשלום",
+  "payment_methods": "שיטות תשלום",
   "currencies": "מטבעות",
   "support": "תמיכה",
   "help_center": "מרכז עזרה",
-  "contact_us": "צור קשר",
+  "contact_us": "צרו קשר",
   "language": "שפה",
-  "total_balance": "יתרה כוללת",
+  "total_balance": "איזון מוחלט",
   "this_week": "השבוע",
-  "send_money": "שליחת כסף",
+  "percentage_change": "{{percentage}}% this week",
+  "send_money": "שלח כסף",
+  "send": "לשלוח",
   "request": "בקשה",
-  "top_up": "טעינה",
+  "exchange": "להחליף",
+  "top_up": "למעלה",
   "recent_transactions": "עסקאות אחרונות",
   "exchange_rates": "שערי חליפין",
   "see_all": "ראה הכל",
   "my_wallet": "הארנק שלי",
-  "transactions": "עסקאות",
-  "profile": "פרופיל",
-  "edit_profile": "עריכת פרופיל",
-  "countries": "מדינות",
-  "transfers": "העברות",
-  "sent": "נשלח",
-  "logout": "התנתקות"
+  "dashboard": {
+    "cards": "כרטיסי תשלום",
+    "wallet_transactions": "עסקאות",
+    "wallet_balance": "לאזן",
+    "add_new_card": "הוסף כרטיס חדש"
+  },
+  "transactions_label": "עסקאות",
+  "profile_tab": "פרופיל",
+  "edit_profile": "ערוך פרופיל",
+  "logout": "יציאה",
+  "cancel": "לבטל",
+  "done": "נעשה",
+  "security": {
+    "section_title": "אבטחה והעדפות",
+    "preferences": "העדפות מערכת",
+    "faceID": "מזהה פנים",
+    "faceIDDescription": "השתמש במזהה Face כדי לפתוח את חשבונך",
+    "changePassword": "שנה סיסמה",
+    "securityQuestions": "שאלות אבטחה"
+  },
+  "profile": {
+    "fullName": "שם מלא",
+    "email": "דואר אלקטרוני",
+    "emailAddress": "{{email}}",
+    "myAccount": "החשבון שלי",
+    "documents": "מסמכים",
+    "securityAndPreferences": "אבטחה והעדפות",
+    "notificationSettings": "הגדרות הודעה",
+    "helpSupport": "עזרה ותמיכה",
+    "about": "אודות אפליקציה",
+    "accountId": "מזהה חשבון",
+    "memberSince": "חבר מאז",
+    "transactionCount": "עסקאות",
+    "accountIdValue": "{{accountId}}",
+    "memberSinceValue": "{{memberSince}}",
+    "transactionCountValue": "{{transactionCount}}",
+    "language": "שפה",
+    "darkMode": "מצב אפל",
+    "logoutConfirmation": "האם אתה בטוח שאתה רוצה להתנתק?"
+  },
+  "common": {
+    "copied": "מועתק ללוח",
+    "copied_title": "מועתק",
+    "darkModeDescription": "השתמש בנושא אפל לאפליקציה",
+    "copy": "להעתיק",
+    "back": "בחזרה",
+    "close": "לסגור",
+    "continue": "להמשיך",
+    "cancel": "לבטל",
+    "save": "להציל",
+    "delete": "למחוק",
+    "edit": "לערוך",
+    "settings": "הגדרות",
+    "search": "לחפש",
+    "done": "נעשה",
+    "visa": "ויזה",
+    "mastercard": "מאסטרקארד",
+    "endingIn": "מסתיים פנימה",
+    "expires": "פג תוקף"
+  },
+  "countries": {
+    "Mexico": "מקסיקו",
+    "India": "הודו",
+    "Colombia": "קולומביה",
+    "Philippines": "הפיליפינים"
+  },
+  "language_settings": {
+    "preferred_languages": "שפות מועדפות",
+    "all_languages": "כל השפות",
+    "changing_language": "שינוי שפה ...",
+    "language_change_error": "הייתה שגיאה בשינוי השפה. אנא נסה שוב.",
+    "restart_required": "הפעל מחדש נדרש",
+    "restart_message_rtl": "מעבר בין שפות RTL ו- LTR מחייב את ההפעלה מחדש של היישום. האם אתה רוצה להמשיך?",
+    "restart_message_ltr": "מעבר בין שפות LTR ו- RTL מחייב את ההפעלה מחדש של היישום. האם אתה רוצה להמשיך?",
+    "save_preferences": "שמור העדפות",
+    "language_saved": "העדפות שפה נשמרו בהצלחה."
+  },
+  "error": "שגיאה",
+  "ok": "בסדר",
+  "tabs": {
+    "home": "בית",
+    "g": "ז",
+    "profile": "פרופיל"
+  },
+  "myAccount": {
+    "title": "החשבון שלי",
+    "accountOnName": "חשבון על שם",
+    "userName": "ג'ון סמית '",
+    "accountNumber": "מספר חשבון",
+    "branch": "ענף",
+    "bank": "בנק",
+    "ibanNumber": "מספר iban",
+    "swiftCode": "קוד סוויפט",
+    "yourContactInformation": "פרטי הקשר שלך",
+    "emailAddress": "כתובת דוא\"ל",
+    "homeAddress": "כתובת בית",
+    "mailingAddress": "כתובת למשלוח דואר",
+    "phone": "טלפון",
+    "editEmail": "ערוך כתובת דוא\"ל",
+    "editHomeAddress": "ערוך כתובת בית",
+    "editMailingAddress": "ערוך כתובת דיוור",
+    "editPhone": "ערוך מספר טלפון",
+    "requestAccountClosure": "בקש סגירת חשבון",
+    "informationCopied": "מידע שהועתק ללוח"
+  },
+  "sendMoney": {
+    "availableBalance": "איזון זמין",
+    "title": "שלח כסף",
+    "to": "אל",
+    "amount": "סכום",
+    "transferType": "סוג העברה",
+    "immediateTransfer": "העברה מיידית",
+    "scheduledTransfer": "העברה מתוזמנת",
+    "scheduledDate": "תאריך מתוזמן",
+    "scheduledTime": "זמן מתוזמן",
+    "details": {
+      "title": "העבר פרטי",
+      "transferSummary": "סיכום העברה",
+      "to": "אל",
+      "amount": "סכום",
+      "when": "כאשר",
+      "account": "חשבון",
+      "paymentMethod": "אמצעי תשלום",
+      "bankAccount": "חשבון בנק",
+      "creditDebitCard": "כרטיס אשראי/חיוב",
+      "selectBank": "בחר בנק",
+      "selectCard": "בחר כרטיס",
+      "addNewCard": "+ הוסף כרטיס חדש",
+      "feeBreakdown": "פירוט עמלות",
+      "transferAmount": "סכום העברה",
+      "transferFee": "דמי העברה",
+      "total": "סך הכל",
+      "continue": "להמשיך",
+      "scheduleInfo": "מתוזמן ל",
+      "immediateInfo": "העברה מיידית"
+    }
+  },
+  "transactions": {
+    "title": "עסקאות",
+    "allTransactions": "כל הפעולות",
+    "search": "עסקאות חיפוש",
+    "searchPlaceholder": "חיפוש בשם או בתיאור",
+    "filter": "לסנן",
+    "filterTitle": "סינון עסקאות",
+    "apply": "לפנות",
+    "clear": "לנקות הכל",
+    "close": "לסגור",
+    "reset": "אתחול",
+    "dateRange": "טווח תאריכים",
+    "from": "מן",
+    "to": "אל",
+    "startDate": "תאריך התחלה",
+    "endDate": "תאריך סיום",
+    "amountRange": "טווח סכומים",
+    "min": "דקה",
+    "max": "מקס",
+    "transactionType": "סוג עסקה",
+    "all": "כל",
+    "sent": "נשלח",
+    "received": "התקבל",
+    "exchanged": "הוחלף",
+    "noResults": "לא נמצאו עסקאות",
+    "noTransactionsFound": "לא נמצאו עסקאות.",
+    "adjustSearchOrFilter": "נסה להתאים את קריטריוני החיפוש או הסינון שלך.",
+    "status": {
+      "pending": "תלוי ועומד",
+      "completed": "הושלם",
+      "failed": "נכשל"
+    },
+    "descriptions": {
+      "payment": "תשלום עבור שירותים",
+      "gift": "מתנת יום הולדת",
+      "exchange": "Exchange from {{from}} to {{to}}",
+      "dinner": "תשלום ארוחת ערב",
+      "rent": "שכר דירה",
+      "utilities": "תשלום כלי עזר"
+    },
+    "filters": {
+      "transactionType": "סוג עסקה",
+      "dateRange": "טווח תאריכים",
+      "amountRangeUSD": "טווח הסכומים (USD)",
+      "startDate": "תאריך התחלה",
+      "endDate": "תאריך סיום",
+      "minAmount": "סכום דקות",
+      "maxAmount": "סכום מקסימלי",
+      "clearFilters": "מסננים ברורים",
+      "applyFilters": "החל מסננים",
+      "types": {
+        "all": "כל",
+        "sent": "נשלח",
+        "received": "התקבל",
+        "exchanged": "הוחלף"
+      }
+    }
+  },
+  "moneyTransfer": {
+    "details": {
+      "title": "העבר פרטי",
+      "transferSummary": "סיכום העברה",
+      "to": "אל",
+      "amount": "סכום",
+      "when": "כאשר",
+      "account": "חשבון",
+      "paymentMethod": "אמצעי תשלום",
+      "bankAccount": "חשבון בנק",
+      "creditDebitCard": "כרטיס אשראי/חיוב",
+      "selectBank": "בחר בנק",
+      "selectCard": "בחר כרטיס",
+      "addNewCard": "+ הוסף כרטיס חדש",
+      "feeBreakdown": "פירוט עמלות",
+      "transferAmount": "סכום העברה",
+      "transferFee": "דמי העברה",
+      "total": "סך הכל",
+      "continue": "להמשיך",
+      "immediateTransfer": "העברה מיידית",
+      "scheduledTransfer": "מתוכנן ל -25 במאי 2025"
+    }
+  },
+  "privacy": {
+    "title": "מדיניות פרטיות",
+    "lastUpdated": "{{date}}",
+    "lastUpdatedPrefix": "עודכן אחרון",
+    "securityIcon": "אייקון מגן אבטחה",
+    "sections": {
+      "introduction": {
+        "title": "מבוא",
+        "paragraph1": "Global Remite (\"אנחנו\", \"שלנו\", או \"אנחנו\") מחויב להגן על פרטיותך. מדיניות פרטיות זו מסבירה כיצד אנו אוספים, משתמשים, חושפים ומגנים את המידע שלך כשאתה משתמש באפליקציה או באתר האינטרנט שלנו (באופן קולקטיבי, \"שירותים\").",
+        "paragraph2": "אנא קרא בזהירות את מדיניות הפרטיות הזו. על ידי גישה או שימוש בשירותים שלנו, אתה מכיר בכך שקראת, הבנת ומסכים להיות מחויב לכל התנאים של מדיניות פרטיות זו."
+      },
+      "informationCollected": {
+        "title": "מידע שאנו אוספים",
+        "personalInfoTitle": "מידע אישי",
+        "personalInfoContent": "אנו עשויים לאסוף מידע המאפשר זיהוי אישי, כגון שמך, כתובת הדוא\"ל, מספר הטלפון, תאריך הלידה, מספר הביטוח הלאומי וזיהוי שהונפק על ידי הממשלה כשאתה נרשם לחשבון או להשתמש בשירותים שלנו.",
+        "financialInfoTitle": "מידע פיננסי",
+        "financialInfoContent": "כדי לספק את שירותי הבנקאות והעברת הכסף שלנו, אנו אוספים פרטי בנקאות, מספרי חשבונות, היסטוריית עסקאות ומידע תשלום.",
+        "deviceInfoTitle": "מידע על מכשירים",
+        "deviceInfoContent": "כשאתה ניגש לשירותים שלנו, אנו אוספים באופן אוטומטי מידע על מכשירים כגון מזהה המכשיר הנייד שלך, דגם, יצרן, מערכת הפעלה, כתובת IP והתנהגות גלישה."
+      },
+      "informationUsage": {
+        "title": "כיצד אנו משתמשים במידע שלך",
+        "intro": "אנו משתמשים במידע שאנו אוספים אליו",
+        "bulletPoints": {
+          "improve": "לספק, לתחזק ולשפר את השירותים שלנו",
+          "process": "עיבוד עסקאות ושלח מידע קשור",
+          "verify": "אמת את זהותך ומונע הונאה",
+          "personalize": "התאם אישית את החוויה שלך",
+          "communicate": "תקשר איתך על השירותים שלנו",
+          "comply": "לעמוד בחובות משפטיות"
+        }
+      },
+      "informationSharing": {
+        "title": "שיתוף מידע",
+        "intro": "אנו עשויים לשתף את המידע שלך עם",
+        "bulletPoints": {
+          "providers": "נותני שירותים המבצעים שירותים מטעמנו",
+          "financial": "מוסדות פיננסיים להשלמת עסקאות",
+          "legal": "רשויות משפטיות בעת הצורך בחוק",
+          "partners": "שותפים עסקיים עם הסכמתך"
+        }
+      },
+      "dataSecurity": {
+        "title": "אבטחת מידע",
+        "content": "אנו מיישמים אמצעי אבטחה מתאימים כדי להגן על המידע האישי שלך מפני גישה, שינוי, חשיפה או הרס בלתי מורשים. עם זאת, אף שיטת העברה דרך האינטרנט או אחסון אלקטרוני אינה מאובטחת ב 100%, ולכן איננו יכולים להבטיח אבטחה מוחלטת."
+      },
+      "yourRights": {
+        "title": "הזכויות שלך",
+        "intro": "תלוי במיקום שלך, יתכן שיש לך זכויות מסוימות לגבי המידע האישי שלך, כולל הזכות",
+        "bulletPoints": {
+          "access": "גש למידע האישי שלך",
+          "correct": "נכון מידע לא מדויק",
+          "delete": "מחק את המידע האישי שלך",
+          "object": "אובייקט לעיבוד המידע שלך",
+          "withdraw": "לסגת הסכמה"
+        }
+      },
+      "contactUs": {
+        "title": "צרו קשר",
+        "intro": "אם יש לך שאלות לגבי מדיניות פרטיות זו, אנא צור איתנו קשר",
+        "email": "privacy@globalremit.com",
+        "phone": "1-800-גלובל-רמטי"
+      }
+    }
+  },
+  "supportChat": {
+    "title": "צ'אט גלובלי REMIT",
+    "today": "היום",
+    "typePlaceholder": "הקלד את ההודעה שלך",
+    "send": "לשלוח",
+    "attach": "לצרף",
+    "messageSent": "הודעה שנשלחה",
+    "messageSentDesc": "ההודעה שלך נשלחה לצוות התמיכה שלנו.",
+    "quickReplies": {
+      "accountQuestions": "שאלות חשבון",
+      "creditCards": "כרטיסי אשראי",
+      "appIssues": "בעיות אפליקציות",
+      "moneyTransfers": "העברות כסף",
+      "accountAccess": "גישה לחשבון",
+      "openAccount": "חשבון פתוח"
+    },
+    "exitConfirm": {
+      "title": "רוצה לעזוב את הצ'אט?",
+      "message": "כל הנתונים שהוזנו לא יישמרו",
+      "leave": "אני רוצה לעזוב",
+      "continue": "אני רוצה להמשיך"
+    }
+  },
+  "pin": {
+    "title": "הגדרת אבטחת עסקאות",
+    "setPinSubtitle": "הגדר סיכה 6 ספרות (אופציונלית)",
+    "enterPinPlaceholder": "הזן סיכה בת 6 ספרות",
+    "confirmPinPlaceholder": "אשר סיכה",
+    "save": "להציל",
+    "saving": "חסכון...",
+    "useBiometrics": "Use {{biometricType}}",
+    "errorRequireOneMethod": "אנא הגדר לפחות שיטת אימות אחת",
+    "errorPinLength": "PIN חייב להיות 6 ספרות",
+    "errorPinMismatch": "סיכות לא תואמות",
+    "errorPinOnlyNumbers": "PIN חייב להכיל רק מספרים",
+    "errorSavingSettings": "שמירת הגדרות נכשלה"
+  },
+  "accountClosure": {
+    "title": "סגירת חשבון",
+    "mainQuestion": "איך נוכל לעזור לך בסגירת חשבונך?",
+    "processingRequest": "אנו מעבדים כעת את בקשתך ואנחנו רוצים להבין מדוע.",
+    "nextStepInfo": "אם תרצה לסגור את חשבונך, השלב הבא יהיה ליצור איתנו קשר.",
+    "bankingIssueNote": "אם סגירת החשבון נובעת מבעיה בנקאית, ייתכן שנוכל לעזור לפתור אותו מבלי לסגור את חשבונך.",
+    "getMoreInfo": "קבל מידע נוסף על סגירת חשבון",
+    "proceedAwareness": "כדי להמשיך בסגירת חשבון, אנא שימו לב ש:",
+    "points": {
+      "recurringPayments": "כל התשלומים החוזרים ונשנים והעברות אוטומטיות יבוטלו",
+      "remainingBalance": "כל יתרה שנותרה תצטרך להיות מועברת לחשבון אחר",
+      "destroyCards": "תצטרך להרוס את כל הקלפים המשויכים",
+      "processDuration": "התהליך עשוי להימשך עד 30 יום"
+    },
+    "requestClosure": "בקש סגירת חשבון",
+    "alert": {
+      "title": "בקשת הסגירה שהתקבלה",
+      "message": "בקשת סגירת החשבון שלך הוגשה. השלב הבא הוא ליצור קשר עם שירות הלקוחות שלנו."
+    }
+  },
+  "editHomeAddress": {
+    "title": "כתובת בית",
+    "description": "עדכן את כתובת המגורים שלך",
+    "fields": {
+      "street": "כתובת רחוב",
+      "city": "עיר",
+      "zipCode": "מיקוד"
+    },
+    "buttons": {
+      "update": "לעדכן",
+      "verify": "לאמת"
+    },
+    "otp": {
+      "sentTitle": "OTP שלח",
+      "sentMessage": "קוד אימות נשלח לכתובת הדוא\"ל שלך",
+      "enterCode": "הזן את קוד האימות שנשלח לדוא\"ל שלך",
+      "placeholder": "קוד 6 ספרות",
+      "invalidTitle": "OTP לא חוקי",
+      "invalidMessage": "אנא הכנס את הקוד בן 6 הספרות שנשלח לדוא\"ל שלך"
+    },
+    "update": {
+      "successTitle": "כתובת מעודכנת",
+      "successMessage": "כתובת הבית שלך עודכנה בהצלחה"
+    },
+    "privacyConfirmation": "אני מאשר כי הפרטים שנמסרו מדויקים ואני מסכים לתנאי החוק והפרטיות."
+  },
+  "editMailingAddress": {
+    "title": "כתובת למשלוח דואר",
+    "description": "עדכן את כתובת התפוצה שלך שם ברצונך לקבל מסמכים חשובים",
+    "fields": {
+      "street": "כתובת רחוב",
+      "city": "עיר",
+      "zipCode": "מיקוד"
+    },
+    "buttons": {
+      "update": "לעדכן",
+      "verify": "לאמת"
+    },
+    "otp": {
+      "sentTitle": "OTP שלח",
+      "sentMessage": "קוד אימות נשלח לכתובת הדוא\"ל שלך",
+      "enterCode": "הזן את קוד האימות שנשלח לדוא\"ל שלך",
+      "placeholder": "קוד 6 ספרות",
+      "invalidTitle": "OTP לא חוקי",
+      "invalidMessage": "אנא הכנס את הקוד בן 6 הספרות שנשלח לדוא\"ל שלך"
+    },
+    "update": {
+      "successTitle": "כתובת מעודכנת",
+      "successMessage": "כתובת התפוצה שלך עודכנה בהצלחה"
+    },
+    "privacyConfirmation": "אני מאשר כי הפרטים שנמסרו מדויקים ואני מסכים לתנאי החוק והפרטיות."
+  }
 }

@@ -1,0 +1,150 @@
+{
+  "welcome_to_remit": "Bem-vindo ao Remit",
+  "enter_phone_subtitle": "Digite seu número de telefone para começar",
+  "enter_phone_number": "🆕 Insira o número de telefone",
+  "continue_button": "🆕 Continuar",
+  "already_member": "Já é membro?",
+  "login_here": "Faça login aqui",
+  "phone_error_start": "🆕 O número de telefone deve começar com 0 ou 5",
+  "phone_error_invalid": "🆕 Por favor, insira um número de telefone válido",
+  "phone_error_format": "🆕 Formato de número de telefone inválido",
+  "hello": "Olá",
+  "hello_name": "🆕 Hello, {{name}}",
+  "welcome_back": "Bem-vindo de volta",
+  "login_subtitle": "🆕 Faça login para continuar",
+  "email": "🆕 E-mail",
+  "password": "🆕 Senha",
+  "login": "🆕 Conecte-se",
+  "login_error_fields": "🆕 Por favor, preencha todos os campos",
+  "enable_biometric_login": "🆕 Enable {{biometricType}} login",
+  "no_account": "🆕 Não tem uma conta?",
+  "register": "🆕 Registrar",
+  "settings": "Configurações",
+  "appearance": "Aparência",
+  "dark_mode": "Modo escuro",
+  "notifications": "Notificações",
+  "push_notifications": "Notificações push",
+  "security_title": "🆕 Segurança",
+  "biometric_authentication": "Autenticação biométrica",
+  "change_password": "Alterar senha",
+  "payment": "Pagamento",
+  "payment_methods": "Métodos de pagamento",
+  "currencies": "Moedas",
+  "support": "Suporte",
+  "help_center": "Central de ajuda",
+  "contact_us": "Contate-nos",
+  "language": "Idioma",
+  "total_balance": "Saldo total",
+  "this_week": "esta semana",
+  "percentage_change": "🆕 {{percentage}}% this week",
+  "send_money": "Enviar dinheiro",
+  "send": "🆕 Enviar",
+  "request": "Solicitar",
+  "exchange": "🆕 Intercâmbio",
+  "top_up": "Recarregar",
+  "recent_transactions": "Transações recentes",
+  "exchange_rates": "Taxas de câmbio",
+  "see_all": "Ver tudo",
+  "my_wallet": "Minha carteira",
+  "dashboard": {
+    "add_new_card": "🆕 Adicione um novo cartão"
+  },
+  "transactions_label": "🆕 Transações",
+  "profile_tab": "🆕 Perfil",
+  "edit_profile": "Editar perfil",
+  "logout": "Sair",
+  "cancel": "🆕 Cancelar",
+  "done": "🆕 Feito",
+  "security": {
+    "faceIDDescription": "🆕 Use o Face ID para desbloquear sua conta",
+    "changePassword": "🆕 Alterar a senha",
+    "securityQuestions": "🆕 Perguntas de segurança"
+  },
+  "profile": {
+    "logoutConfirmation": "🆕 Tem certeza de que deseja fazer logon?"
+  },
+  "common": {
+    "visa": "🆕 Visa",
+    "mastercard": "🆕 MasterCard",
+    "endingIn": "🆕 terminando",
+    "expires": "🆕 Expira"
+  },
+  "countries": {
+    "India": "🆕 Índia",
+    "Colombia": "🆕 Colômbia",
+    "Philippines": "🆕 Filipinas"
+  },
+  "language_settings": {
+    "save_preferences": "🆕 Salvar preferências",
+    "language_saved": "🆕 Preferências de idiomas economizadas com sucesso."
+  },
+  "error": "🆕 Erro",
+  "ok": "🆕 OK",
+  "tabs": {
+    "g": "🆕 G",
+    "profile": "🆕 Perfil"
+  },
+  "myAccount": {
+    "informationCopied": "🆕 Informações copiadas para a área de transferência"
+  },
+  "sendMoney": {
+    "details": {
+      "total": "🆕 Total",
+      "continue": "🆕 Continuar",
+      "scheduleInfo": "🆕 Programado para",
+      "immediateInfo": "🆕 Transferência imediata"
+    }
+  },
+  "transactions": {
+    "filters": {
+      "types": {
+        "received": "🆕 Recebido",
+        "exchanged": "🆕 Troca"
+      }
+    }
+  },
+  "moneyTransfer": {
+    "details": {
+      "scheduledTransfer": "🆕 Programado para 25 de maio de 2025"
+    }
+  },
+  "privacy": {
+    "sections": {
+      "contactUs": {
+        "email": "🆕 privacy@globalremit.com",
+        "phone": "🆕 1-800-Global-Remit"
+      }
+    }
+  },
+  "supportChat": {
+    "exitConfirm": {
+      "title": "🆕 Quer sair do chat?",
+      "message": "🆕 Todos os dados inseridos não serão salvos",
+      "leave": "🆕 Eu quero sair",
+      "continue": "🆕 Eu quero continuar"
+    }
+  },
+  "pin": {
+    "errorSavingSettings": "🆕 Falha ao salvar as configurações"
+  },
+  "accountClosure": {
+    "points": {
+      "destroyCards": "🆕 Você precisará destruir qualquer cartões associados",
+      "processDuration": "🆕 O processo pode levar até 30 dias para ser concluído"
+    },
+    "requestClosure": "🆕 Solicitar fechamento da conta",
+    "alert": {
+      "title": "🆕 Solicitação de fechamento recebida",
+      "message": "🆕 A solicitação de fechamento da sua conta foi enviada. O próximo passo é entrar em contato com nosso atendimento ao cliente."
+    }
+  },
+  "editHomeAddress": {
+    "privacyConfirmation": "🆕 Confirme que os detalhes fornecidos são precisos e concordo com os termos legais e de privacidade."
+  },
+  "editMailingAddress": {
+    "update": {
+      "successMessage": "🆕 Seu endereço de correspondência foi atualizado com sucesso"
+    },
+    "privacyConfirmation": "🆕 Confirme que os detalhes fornecidos são precisos e concordo com os termos legais e de privacidade."
+  }
+}

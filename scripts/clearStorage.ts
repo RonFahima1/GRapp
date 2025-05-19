@@ -7,6 +7,8 @@ async function clearAllStorage() {
     await SecureStore.deleteItemAsync('biometric_enabled');
     await SecureStore.deleteItemAsync('transaction_auth_config');
     await SecureStore.deleteItemAsync('transaction_pin');
+    await SecureStore.deleteItemAsync('language');
+    await SecureStore.deleteItemAsync('preferred_languages');
     console.log('Successfully cleared all storage');
   } catch (error) {
     console.error('Error clearing storage:', error);

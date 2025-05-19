@@ -10,13 +10,15 @@ import {
   Modal
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { ChevronRight, Send, X, PlusCircle } from 'lucide-react-native';
+import { ChevronLeft, Send, X, PlusCircle } from 'lucide-react-native';
 import * as Haptics from 'expo-haptics';
 import { useRouter } from 'expo-router';
 import { Platform } from 'react-native';
+import { useTranslate } from '../../context/TranslationContext';
 
 export default function SupportChatScreen() {
   const router = useRouter();
+  const { t, isRTL } = useTranslate();
   const [message, setMessage] = useState('');
   const [showExitConfirm, setShowExitConfirm] = useState(false);
   
@@ -47,7 +49,7 @@ export default function SupportChatScreen() {
     setMessage('');
     
     // Just an alert for the placeholder implementation
-    Alert.alert('Message Sent', 'Your message was sent to our support team.');
+    Alert.alert(t('supportChat.messageSent'), t('supportChat.messageSentDesc'));
   };
 
   // Exit chat confirmation
@@ -59,21 +61,23 @@ export default function SupportChatScreen() {
   return (
     <SafeAreaView style={styles.container} edges={['top']}>
       {/* Header with title and back button */}
-      <View style={styles.header}>
+      <View style={[styles.header, { flexDirection: isRTL ? 'row-reverse' : 'row' }]}>
         <TouchableOpacity 
           style={styles.backButton} 
           onPress={confirmExit}
+          hitSlop={{ top: 15, right: 15, bottom: 15, left: 15 }}
+          accessibilityLabel={t('common.back')}
         >
-          <ChevronRight color="#007AFF" size={24} style={styles.backIcon} />
+          <ChevronLeft color="#007AFF" size={24} />
         </TouchableOpacity>
-        <Text style={styles.headerTitle}>Global Remit Chat</Text>
+        <Text style={styles.headerTitle}>{t('supportChat.title')}</Text>
         <View style={styles.rightPlaceholder} />
       </View>
 
       {/* Chat area */}
       <ScrollView style={styles.chatContainer}>
         <View style={styles.dateContainer}>
-          <Text style={styles.dateText}>Today, {new Date().toLocaleDateString()}</Text>
+          <Text style={styles.dateText}>{t('supportChat.today')}, {new Date().toLocaleDateString()}</Text>
         </View>
         
         {messages.map((msg) => (
@@ -93,77 +97,81 @@ export default function SupportChatScreen() {
         
         {/* Quick reply options */}
         <View style={styles.quickRepliesContainer}>
-          <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+          <ScrollView horizontal showsHorizontalScrollIndicator={false} style={{ flexDirection: isRTL ? 'row-reverse' : 'row' }}>
             <TouchableOpacity style={styles.quickReplyButton}>
-              <Text style={styles.quickReplyText}>Account questions</Text>
+              <Text style={styles.quickReplyText}>{t('supportChat.quickReplies.accountQuestions')}</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.quickReplyButton}>
-              <Text style={styles.quickReplyText}>Credit cards</Text>
+              <Text style={styles.quickReplyText}>{t('supportChat.quickReplies.creditCards')}</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.quickReplyButton}>
-              <Text style={styles.quickReplyText}>App issues</Text>
+              <Text style={styles.quickReplyText}>{t('supportChat.quickReplies.appIssues')}</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.quickReplyButton}>
-              <Text style={styles.quickReplyText}>Money transfers</Text>
+              <Text style={styles.quickReplyText}>{t('supportChat.quickReplies.moneyTransfers')}</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.quickReplyButton}>
-              <Text style={styles.quickReplyText}>Account access</Text>
+              <Text style={styles.quickReplyText}>{t('supportChat.quickReplies.accountAccess')}</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.quickReplyButton}>
-              <Text style={styles.quickReplyText}>Open account</Text>
+              <Text style={styles.quickReplyText}>{t('supportChat.quickReplies.openAccount')}</Text>
             </TouchableOpacity>
           </ScrollView>
         </View>
       </ScrollView>
 
       {/* Message input area */}
-      <View style={styles.inputContainer}>
-        <TouchableOpacity style={styles.attachButton}>
+      <View style={[styles.inputContainer, { flexDirection: isRTL ? 'row-reverse' : 'row' }]}>
+        <TouchableOpacity style={styles.attachButton} accessibilityLabel={t('supportChat.attach')}>
           <PlusCircle color="#007AFF" size={24} />
         </TouchableOpacity>
         <TextInput
-          style={styles.textInput}
-          placeholder="Type a message..."
+          style={[styles.textInput, { textAlign: isRTL ? 'right' : 'left' }]}
+          placeholder={t('supportChat.typePlaceholder')}
           value={message}
           onChangeText={setMessage}
           multiline
         />
         <TouchableOpacity 
-          style={[styles.sendButton, !message.trim() && styles.disabledButton]}
           onPress={sendMessage}
-          disabled={!message.trim()}
+          style={[styles.sendButton, message.trim() === '' ? styles.disabledButton : {}]}
+          disabled={message.trim() === ''}
+          accessibilityLabel={t('supportChat.send')}
         >
-          <Send color={message.trim() ? "#007AFF" : "#C7C7CC"} size={20} />
+          <Send color="#007AFF" size={24} />
         </TouchableOpacity>
       </View>
 
       {/* Exit confirmation modal */}
       <Modal
-        visible={showExitConfirm}
-        transparent
         animationType="fade"
+        transparent={true}
+        visible={showExitConfirm}
+        onRequestClose={() => setShowExitConfirm(false)}
       >
         <View style={styles.modalOverlay}>
           <View style={styles.modalContainer}>
             <View style={styles.modalHeader}>
-              <X size={24} color="#999" onPress={() => setShowExitConfirm(false)} />
+              <X size={24} color="#999" onPress={() => setShowExitConfirm(false)} accessibilityLabel={t('common.close')} />
             </View>
-            <Text style={styles.modalTitle}>Want to leave the chat?</Text>
-            <Text style={styles.modalMessage}>All entered data will not be saved</Text>
+            <Text style={[styles.modalTitle, { textAlign: isRTL ? 'right' : 'left' }]}>{t('supportChat.exitConfirm.title')}</Text>
+            <Text style={[styles.modalMessage, { textAlign: isRTL ? 'right' : 'left' }]}>{t('supportChat.exitConfirm.message')}</Text>
             <TouchableOpacity 
               style={styles.modalOptionButton}
               onPress={() => {
                 setShowExitConfirm(false);
                 router.back();
               }}
+              accessibilityLabel={t('supportChat.exitConfirm.leave')}
             >
-              <Text style={styles.modalOptionText}>I want to leave</Text>
+              <Text style={styles.modalOptionText}>{t('supportChat.exitConfirm.leave')}</Text>
             </TouchableOpacity>
             <TouchableOpacity 
               style={[styles.modalOptionButton, styles.modalPrimaryButton]}
               onPress={() => setShowExitConfirm(false)}
+              accessibilityLabel={t('supportChat.exitConfirm.continue')}
             >
-              <Text style={styles.modalPrimaryText}>I want to continue</Text>
+              <Text style={styles.modalPrimaryText}>{t('supportChat.exitConfirm.continue')}</Text>
             </TouchableOpacity>
           </View>
         </View>

@@ -8,7 +8,7 @@ import {
   Platform
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { ChevronRight, MessageSquare, Phone, HelpCircle } from 'lucide-react-native';
+import { ChevronLeft, ChevronRight, MessageSquare, Phone, HelpCircle } from 'lucide-react-native';
 import * as Haptics from 'expo-haptics';
 import { useRouter } from 'expo-router';
 import { ROUTES } from '../../constants/routes';
@@ -58,8 +58,9 @@ export default function HelpSupportScreen() {
         <TouchableOpacity 
           style={styles.backButton} 
           onPress={() => router.back()}
+          hitSlop={{ top: 15, right: 15, bottom: 15, left: 15 }}
         >
-          <ChevronRight color="#007AFF" size={24} style={styles.backIcon} />
+          <ChevronLeft color="#007AFF" size={24} />
         </TouchableOpacity>
         <Text style={styles.headerTitle}>Help & Support</Text>
         <View style={styles.rightPlaceholder} />
@@ -108,10 +109,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#FFFFFF',
   },
   backButton: {
-    padding: 8,
-  },
-  backIcon: {
-    transform: [{ scaleX: -1 }],
+    padding: 5,
   },
   headerTitle: {
     fontSize: 18,

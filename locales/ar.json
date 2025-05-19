@@ -1,52 +1,441 @@
 {
-  "welcome_to_remit": "مرحباً بكم في ريميت",
+  "welcome_to_remit": "مرحبا بكم في التحويل",
   "enter_phone_subtitle": "أدخل رقم هاتفك للبدء",
   "enter_phone_number": "أدخل رقم الهاتف",
-  "continue": "متابعة",
-  "already_member": "هل أنت عضو بالفعل؟",
+  "continue_button": "يكمل",
+  "already_member": "بالفعل عضو؟",
   "login_here": "تسجيل الدخول هنا",
   "phone_error_start": "يجب أن يبدأ رقم الهاتف بـ 0 أو 5",
-  "phone_error_invalid": "الرجاء إدخال رقم هاتف صحيح",
-  "phone_error_format": "تنسيق رقم الهاتف غير صحيح",
-  "hello": "مرحباً",
-  "welcome_back": "مرحباً بعودتك",
-  "login_subtitle": "قم بتسجيل الدخول للمتابعة",
-  "email": "البريد الإلكتروني",
+  "phone_error_invalid": "الرجاء إدخال رقم هاتف صالح",
+  "phone_error_format": "تنسيق رقم هاتف غير صالح",
+  "hello": "مرحبًا",
+  "hello_name": "Hello, {{name}}",
+  "welcome_back": "مرحبًا بعودتك",
+  "login_subtitle": "تسجيل الدخول للمتابعة",
+  "email": "بريد إلكتروني",
   "password": "كلمة المرور",
   "login": "تسجيل الدخول",
   "login_error_fields": "يرجى ملء جميع الحقول",
-  "enable_biometric_login": "تمكين تسجيل الدخول باستخدام {{biometricType}}",
+  "enable_biometric_login": "Enable {{biometricType}} login",
   "no_account": "ليس لديك حساب؟",
-  "register": "تسجيل",
-  "settings": "الإعدادات",
-  "appearance": "المظهر",
-  "dark_mode": "الوضع الداكن",
-  "notifications": "الإشعارات",
-  "push_notifications": "إشعارات الدفع",
-  "security": "الأمان",
+  "register": "يسجل",
+  "settings": "إعدادات",
+  "appearance": "مظهر",
+  "dark_mode": "الوضع المظلم",
+  "notifications": "إشعارات",
+  "push_notifications": "دفع الإخطارات",
+  "security_title": "حماية",
   "biometric_authentication": "المصادقة البيومترية",
   "change_password": "تغيير كلمة المرور",
-  "payment": "الدفع",
+  "payment": "قسط",
   "payment_methods": "طرق الدفع",
   "currencies": "العملات",
-  "support": "الدعم",
+  "support": "يدعم",
   "help_center": "مركز المساعدة",
   "contact_us": "اتصل بنا",
-  "language": "اللغة",
-  "total_balance": "الرصيد الإجمالي",
-  "this_week": "هذا الأسبوع",
-  "send_money": "إرسال الأموال",
+  "language": "لغة",
+  "total_balance": "التوازن الكلي",
+  "this_week": "هذا الاسبوع",
+  "percentage_change": "{{percentage}}% this week",
+  "send_money": "أرسل المال",
+  "send": "يرسل",
   "request": "طلب",
-  "top_up": "شحن الرصيد",
+  "exchange": "تبادل",
+  "top_up": "أعلى",
   "recent_transactions": "المعاملات الأخيرة",
   "exchange_rates": "أسعار الصرف",
-  "see_all": "عرض الكل",
+  "see_all": "انظر كل شيء",
   "my_wallet": "محفظتي",
-  "transactions": "المعاملات",
-  "profile": "الملف الشخصي",
-  "edit_profile": "تعديل الملف الشخصي",
-  "countries": "البلدان",
-  "transfers": "التحويلات",
-  "sent": "تم الإرسال",
-  "logout": "تسجيل الخروج"
+  "dashboard": {
+    "cards": "بطاقات الدفع",
+    "wallet_transactions": "المعاملات",
+    "wallet_balance": "توازن",
+    "add_new_card": "أضف بطاقة جديدة"
+  },
+  "transactions_label": "المعاملات",
+  "profile_tab": "حساب تعريفي",
+  "edit_profile": "تحرير الملف الشخصي",
+  "logout": "تسجيل الخروج",
+  "cancel": "يلغي",
+  "done": "منتهي",
+  "security": {
+    "section_title": "الأمن والتفضيلات",
+    "preferences": "تفضيلات النظام",
+    "faceID": "معرف الوجه",
+    "faceIDDescription": "استخدم معرف الوجه لفتح حسابك",
+    "changePassword": "تغيير كلمة المرور",
+    "securityQuestions": "أسئلة أمنية"
+  },
+  "profile": {
+    "fullName": "الاسم الكامل",
+    "email": "بريد إلكتروني",
+    "emailAddress": "{{email}}",
+    "myAccount": "حسابي",
+    "documents": "وثائق",
+    "securityAndPreferences": "الأمن والتفضيلات",
+    "notificationSettings": "إعدادات الإخطار",
+    "helpSupport": "المساعدة والدعم",
+    "about": "حول التطبيق",
+    "accountId": "معرف الحساب",
+    "memberSince": "عضو منذ ذلك الحين",
+    "transactionCount": "المعاملات",
+    "accountIdValue": "{{accountId}}",
+    "memberSinceValue": "{{memberSince}}",
+    "transactionCountValue": "{{transactionCount}}",
+    "language": "لغة",
+    "darkMode": "الوضع المظلم",
+    "logoutConfirmation": "هل أنت متأكد أنك تريد تسجيل الخروج؟"
+  },
+  "common": {
+    "copied": "نسخ إلى الحافظة",
+    "copied_title": "نسخ",
+    "darkModeDescription": "استخدم السمة المظلمة للتطبيق",
+    "copy": "ينسخ",
+    "back": "خلف",
+    "close": "يغلق",
+    "continue": "يكمل",
+    "cancel": "يلغي",
+    "save": "يحفظ",
+    "delete": "يمسح",
+    "edit": "يحرر",
+    "settings": "إعدادات",
+    "search": "يبحث",
+    "done": "منتهي",
+    "visa": "فيزا",
+    "mastercard": "ماستر كارد",
+    "endingIn": "تنتهي في",
+    "expires": "تنتهي"
+  },
+  "countries": {
+    "Mexico": "المكسيك",
+    "India": "الهند",
+    "Colombia": "كولومبيا",
+    "Philippines": "فيلبيني"
+  },
+  "language_settings": {
+    "preferred_languages": "اللغات المفضلة",
+    "all_languages": "كل اللغات",
+    "changing_language": "تغيير اللغة ...",
+    "language_change_error": "كان هناك خطأ في تغيير اللغة. من فضلك حاول مرة أخرى.",
+    "restart_required": "إعادة التشغيل المطلوب",
+    "restart_message_rtl": "يتطلب التبديل بين لغات RTL و LTR إعادة التشغيل. هل تريد المتابعة؟",
+    "restart_message_ltr": "يتطلب التبديل بين لغات LTR و RTL من إعادة التشغيل. هل تريد المتابعة؟",
+    "save_preferences": "حفظ التفضيلات",
+    "language_saved": "تفضيلات اللغة المحفوظة بنجاح."
+  },
+  "error": "خطأ",
+  "ok": "نعم",
+  "tabs": {
+    "home": "بيت",
+    "g": "ز",
+    "profile": "حساب تعريفي"
+  },
+  "myAccount": {
+    "title": "حسابي",
+    "accountOnName": "حساب على الاسم",
+    "userName": "جون سميث",
+    "accountNumber": "رقم الحساب",
+    "branch": "فرع",
+    "bank": "بنك",
+    "ibanNumber": "رقم IBAN",
+    "swiftCode": "رمز السرعة",
+    "yourContactInformation": "معلومات الاتصال الخاصة بك",
+    "emailAddress": "عنوان البريد الإلكتروني",
+    "homeAddress": "عنوان المنزل",
+    "mailingAddress": "العنوان البريدي",
+    "phone": "هاتف",
+    "editEmail": "تحرير عنوان البريد الإلكتروني",
+    "editHomeAddress": "تحرير عنوان المنزل",
+    "editMailingAddress": "تحرير العنوان البريدي",
+    "editPhone": "تحرير رقم الهاتف",
+    "requestAccountClosure": "طلب إغلاق الحساب",
+    "informationCopied": "المعلومات التي تم نسخها إلى الحافظة"
+  },
+  "sendMoney": {
+    "availableBalance": "التوازن المتاح",
+    "title": "أرسل المال",
+    "to": "ل",
+    "amount": "كمية",
+    "transferType": "نوع النقل",
+    "immediateTransfer": "النقل الفوري",
+    "scheduledTransfer": "النقل المجدول",
+    "scheduledDate": "التاريخ المقرر",
+    "scheduledTime": "الوقت المقرر",
+    "details": {
+      "title": "تفاصيل النقل",
+      "transferSummary": "ملخص النقل",
+      "to": "ل",
+      "amount": "كمية",
+      "when": "متى",
+      "account": "حساب",
+      "paymentMethod": "طريقة الدفع",
+      "bankAccount": "حساب مصرفي",
+      "creditDebitCard": "بطاقة الائتمان/الخصم",
+      "selectBank": "حدد بنك",
+      "selectCard": "حدد بطاقة",
+      "addNewCard": "+ إضافة بطاقة جديدة",
+      "feeBreakdown": "انهيار الرسوم",
+      "transferAmount": "مبلغ التحويل",
+      "transferFee": "رسوم التحويل",
+      "total": "المجموع",
+      "continue": "يكمل",
+      "scheduleInfo": "من المقرر",
+      "immediateInfo": "النقل الفوري"
+    }
+  },
+  "transactions": {
+    "title": "المعاملات",
+    "allTransactions": "كل الحركات المالية",
+    "search": "معاملات البحث",
+    "searchPlaceholder": "البحث بالاسم أو الوصف",
+    "filter": "فلتر",
+    "filterTitle": "تصفية المعاملات",
+    "apply": "يتقدم",
+    "clear": "مسح كل شيء",
+    "close": "يغلق",
+    "reset": "إعادة ضبط",
+    "dateRange": "نطاق التاريخ",
+    "from": "من",
+    "to": "ل",
+    "startDate": "تاريخ البدء",
+    "endDate": "تاريخ الانتهاء",
+    "amountRange": "نطاق المبلغ",
+    "min": "دقيقة",
+    "max": "الأعلى",
+    "transactionType": "نوع المعاملة",
+    "all": "الجميع",
+    "sent": "مرسل",
+    "received": "تلقى",
+    "exchanged": "تبادل",
+    "noResults": "لم يتم العثور على معاملات",
+    "noTransactionsFound": "لم يتم العثور على معاملات.",
+    "adjustSearchOrFilter": "حاول ضبط معايير البحث أو التصفية.",
+    "status": {
+      "pending": "قيد الانتظار",
+      "completed": "مكتمل",
+      "failed": "فشل"
+    },
+    "descriptions": {
+      "payment": "دفع مقابل الخدمات",
+      "gift": "هدية عيد ميلاد",
+      "exchange": "Exchange from {{from}} to {{to}}",
+      "dinner": "دفع العشاء",
+      "rent": "دفع الإيجار",
+      "utilities": "دفع المرافق"
+    },
+    "filters": {
+      "transactionType": "نوع المعاملة",
+      "dateRange": "نطاق التاريخ",
+      "amountRangeUSD": "نطاق المبلغ (USD)",
+      "startDate": "تاريخ البدء",
+      "endDate": "تاريخ الانتهاء",
+      "minAmount": "مبلغ دقيقة",
+      "maxAmount": "كمية كحد أقصى",
+      "clearFilters": "مرشحات واضحة",
+      "applyFilters": "تطبيق المرشحات",
+      "types": {
+        "all": "الجميع",
+        "sent": "مرسل",
+        "received": "تلقى",
+        "exchanged": "تبادل"
+      }
+    }
+  },
+  "moneyTransfer": {
+    "details": {
+      "title": "تفاصيل النقل",
+      "transferSummary": "ملخص النقل",
+      "to": "ل",
+      "amount": "كمية",
+      "when": "متى",
+      "account": "حساب",
+      "paymentMethod": "طريقة الدفع",
+      "bankAccount": "حساب مصرفي",
+      "creditDebitCard": "بطاقة الائتمان/الخصم",
+      "selectBank": "حدد بنك",
+      "selectCard": "حدد بطاقة",
+      "addNewCard": "+ إضافة بطاقة جديدة",
+      "feeBreakdown": "انهيار الرسوم",
+      "transferAmount": "مبلغ التحويل",
+      "transferFee": "رسوم التحويل",
+      "total": "المجموع",
+      "continue": "يكمل",
+      "immediateTransfer": "النقل الفوري",
+      "scheduledTransfer": "من المقرر عقده في 25 مايو 2025"
+    }
+  },
+  "privacy": {
+    "title": "سياسة الخصوصية",
+    "lastUpdated": "{{date}}",
+    "lastUpdatedPrefix": "آخر تحديث",
+    "securityIcon": "أيقونة درع الأمن",
+    "sections": {
+      "introduction": {
+        "title": "مقدمة",
+        "paragraph1": "يلتزم Remit Global (\"نحن\" ، \"\" لدينا \"أو\" نحن \") لحماية خصوصيتك. تشرح سياسة الخصوصية هذه كيفية جمع المعلومات الخاصة بك واستخدامها ونستخدمها وحمايتها عند استخدام تطبيقنا أو موقع الويب الخاص بالهاتف المحمول (بشكل جماعي ، \"الخدمات\").",
+        "paragraph2": "يرجى قراءة سياسة الخصوصية هذه بعناية. من خلال الوصول إلى خدماتنا أو استخدامها ، فإنك تقر بأنك قد قرأت وفهمت وتوافق على الالتزام بجميع شروط سياسة الخصوصية هذه."
+      },
+      "informationCollected": {
+        "title": "المعلومات التي نجمعها",
+        "personalInfoTitle": "معلومات شخصية",
+        "personalInfoContent": "يجوز لنا جمع معلومات التعريف الشخصية ، مثل اسمك وعنوان بريدك الإلكتروني ورقم الهاتف وتاريخ الميلاد ورقم الضمان الاجتماعي والتعريف الصادر عن الحكومة عند التسجيل للحصول على حساب أو استخدام خدماتنا.",
+        "financialInfoTitle": "المعلومات المالية",
+        "financialInfoContent": "لتوفير خدماتنا المصرفية وتحويل الأموال ، نقوم بجمع التفاصيل المصرفية وأرقام الحسابات وسجل المعاملات ومعلومات الدفع.",
+        "deviceInfoTitle": "معلومات الجهاز",
+        "deviceInfoContent": "عند الوصول إلى خدماتنا ، نقوم تلقائيًا بجمع معلومات الجهاز مثل معرف الجهاز المحمول والطراز والمصنع ونظام التشغيل وعنوان IP وسلوك التصفح."
+      },
+      "informationUsage": {
+        "title": "كيف نستخدم معلوماتك",
+        "intro": "نستخدم المعلومات التي نجمعها",
+        "bulletPoints": {
+          "improve": "توفير وصيانة وتحسين خدماتنا",
+          "process": "معاملات المعالجة وإرسال المعلومات ذات الصلة",
+          "verify": "تحقق من هويتك ومنع الاحتيال",
+          "personalize": "تخصيص تجربتك",
+          "communicate": "التواصل معك حول خدماتنا",
+          "comply": "الامتثال للالتزامات القانونية"
+        }
+      },
+      "informationSharing": {
+        "title": "تبادل المعلومات",
+        "intro": "قد نشارك معلوماتك مع",
+        "bulletPoints": {
+          "providers": "مقدمي الخدمات الذين يؤدون الخدمات نيابة عنا",
+          "financial": "المؤسسات المالية لإكمال المعاملات",
+          "legal": "السلطات القانونية عند الاقتضاء بموجب القانون",
+          "partners": "شركاء الأعمال بموافقتك"
+        }
+      },
+      "dataSecurity": {
+        "title": "أمان البيانات",
+        "content": "نحن ننفذ التدابير الأمنية المناسبة لحماية معلوماتك الشخصية من الوصول غير المصرح به أو التغيير أو الكشف أو الدمار. ومع ذلك ، لا توجد طريقة للإرسال عبر الإنترنت أو التخزين الإلكتروني آمنة بنسبة 100 ٪ ، لذلك لا يمكننا ضمان الأمان المطلق."
+      },
+      "yourRights": {
+        "title": "حقوقك",
+        "intro": "بناءً على موقعك ، قد يكون لديك حقوق معينة فيما يتعلق بمعلوماتك الشخصية ، بما في ذلك الحق في",
+        "bulletPoints": {
+          "access": "الوصول إلى معلوماتك الشخصية",
+          "correct": "تصحيح المعلومات غير الدقيقة",
+          "delete": "احذف معلوماتك الشخصية",
+          "object": "اعترض على معالجة معلوماتك",
+          "withdraw": "سحب الموافقة"
+        }
+      },
+      "contactUs": {
+        "title": "اتصل بنا",
+        "intro": "إذا كانت لديك أي أسئلة حول سياسة الخصوصية هذه ، فيرجى الاتصال بنا على",
+        "email": "privacy@globalremit.com",
+        "phone": "1-800-Global-Remit"
+      }
+    }
+  },
+  "supportChat": {
+    "title": "الدردشة العالمية",
+    "today": "اليوم",
+    "typePlaceholder": "اكتب رسالتك",
+    "send": "يرسل",
+    "attach": "نعلق",
+    "messageSent": "رسالة مرسلة",
+    "messageSentDesc": "تم إرسال رسالتك إلى فريق الدعم لدينا.",
+    "quickReplies": {
+      "accountQuestions": "أسئلة الحساب",
+      "creditCards": "بطاقات الائتمان",
+      "appIssues": "مشكلات التطبيق",
+      "moneyTransfers": "نقل المال",
+      "accountAccess": "الوصول إلى الحساب",
+      "openAccount": "حساب مفتوح"
+    },
+    "exitConfirm": {
+      "title": "تريد مغادرة الدردشة؟",
+      "message": "لن يتم حفظ جميع البيانات التي تم إدخالها",
+      "leave": "اريد المغادرة",
+      "continue": "اريد الاستمرار"
+    }
+  },
+  "pin": {
+    "title": "إعداد أمن المعاملات",
+    "setPinSubtitle": "قم بإعداد دبوس مكون من 6 أرقام (اختياري)",
+    "enterPinPlaceholder": "أدخل دبوس من 6 أرقام",
+    "confirmPinPlaceholder": "تأكيد دبوس",
+    "save": "يحفظ",
+    "saving": "توفير...",
+    "useBiometrics": "Use {{biometricType}}",
+    "errorRequireOneMethod": "يرجى إعداد طريقة مصادقة واحدة على الأقل",
+    "errorPinLength": "يجب أن يكون PIN 6 أرقام",
+    "errorPinMismatch": "دبابيس لا تتطابق",
+    "errorPinOnlyNumbers": "يجب أن يحتوي PIN على أرقام فقط",
+    "errorSavingSettings": "فشل في حفظ الإعدادات"
+  },
+  "accountClosure": {
+    "title": "إغلاق الحساب",
+    "mainQuestion": "كيف يمكننا مساعدتك في إغلاق حسابك؟",
+    "processingRequest": "نقوم حاليًا بمعالجة طلبك ونود أن نفهم السبب.",
+    "nextStepInfo": "إذا كنت ترغب في إغلاق حسابك ، فإن الخطوة التالية هي الاتصال بنا.",
+    "bankingIssueNote": "إذا كان إغلاق الحساب بسبب مشكلة مصرفية ، فقد نتمكن من المساعدة في حلها دون إغلاق حسابك.",
+    "getMoreInfo": "احصل على مزيد من المعلومات حول إغلاق الحساب",
+    "proceedAwareness": "للمضي قدمًا في إغلاق الحساب ، يرجى العلم بما:",
+    "points": {
+      "recurringPayments": "سيتم إلغاء جميع المدفوعات المتكررة والتحويلات التلقائية",
+      "remainingBalance": "يجب نقل أي رصيد متبقي إلى حساب آخر",
+      "destroyCards": "ستحتاج إلى تدمير أي بطاقات مرتبطة",
+      "processDuration": "قد تستغرق العملية ما يصل إلى 30 يومًا"
+    },
+    "requestClosure": "طلب إغلاق الحساب",
+    "alert": {
+      "title": "استلام طلب الإغلاق",
+      "message": "تم تقديم طلب إغلاق حسابك. والخطوة التالية هي الاتصال بخدمة العملاء لدينا."
+    }
+  },
+  "editHomeAddress": {
+    "title": "عنوان المنزل",
+    "description": "تحديث عنوانك السكني",
+    "fields": {
+      "street": "عنوان الشارع",
+      "city": "مدينة",
+      "zipCode": "الرمز البريدي"
+    },
+    "buttons": {
+      "update": "تحديث",
+      "verify": "يؤكد"
+    },
+    "otp": {
+      "sentTitle": "أرسلت OTP",
+      "sentMessage": "تم إرسال رمز التحقق إلى عنوان بريدك الإلكتروني",
+      "enterCode": "أدخل رمز التحقق الذي تم إرساله إلى بريدك الإلكتروني",
+      "placeholder": "رمز مكون من 6 أرقام",
+      "invalidTitle": "OTP غير صالح",
+      "invalidMessage": "الرجاء إدخال الرمز المكون من 6 أرقام المرسلة إلى بريدك الإلكتروني"
+    },
+    "update": {
+      "successTitle": "عنوان محدث",
+      "successMessage": "تم تحديث عنوان منزلك بنجاح"
+    },
+    "privacyConfirmation": "أؤكد أن التفاصيل المقدمة دقيقة وأوافق على الشروط القانونية والخصوصية."
+  },
+  "editMailingAddress": {
+    "title": "العنوان البريدي",
+    "description": "قم بتحديث عنوانك البريدي حيث ترغب في تلقي مستندات مهمة",
+    "fields": {
+      "street": "عنوان الشارع",
+      "city": "مدينة",
+      "zipCode": "الرمز البريدي"
+    },
+    "buttons": {
+      "update": "تحديث",
+      "verify": "يؤكد"
+    },
+    "otp": {
+      "sentTitle": "أرسلت OTP",
+      "sentMessage": "تم إرسال رمز التحقق إلى عنوان بريدك الإلكتروني",
+      "enterCode": "أدخل رمز التحقق الذي تم إرساله إلى بريدك الإلكتروني",
+      "placeholder": "رمز مكون من 6 أرقام",
+      "invalidTitle": "OTP غير صالح",
+      "invalidMessage": "الرجاء إدخال الرمز المكون من 6 أرقام المرسلة إلى بريدك الإلكتروني"
+    },
+    "update": {
+      "successTitle": "عنوان محدث",
+      "successMessage": "تم تحديث عنوانك البريدي بنجاح"
+    },
+    "privacyConfirmation": "أؤكد أن التفاصيل المقدمة دقيقة وأوافق على الشروط القانونية والخصوصية."
+  }
 }

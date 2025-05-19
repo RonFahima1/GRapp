@@ -12,15 +12,17 @@ import { Copy, ChevronLeft, ChevronRight } from 'lucide-react-native';
 import * as Haptics from 'expo-haptics';
 import * as Clipboard from 'expo-clipboard';
 import { useRouter } from 'expo-router';
+import { useTranslate } from '../context/TranslationContext';
 
 const MyAccountScreen = () => {
   const router = useRouter();
+  const { t, isRTL } = useTranslate();
 
   // Handle copy to clipboard
   const copyToClipboard = async (text: string) => {
     Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
     await Clipboard.setStringAsync(text);
-    Alert.alert('Copied', 'Information copied to clipboard');
+    Alert.alert(t('common.copied_title'), t('myAccount.informationCopied'));
   };
 
   // Navigate to edit screens
@@ -47,35 +49,37 @@ const MyAccountScreen = () => {
   return (
     <SafeAreaView style={styles.container} edges={['top']}>
       {/* Header with title and back button */}
-      <View style={styles.header}>
-        <Text style={styles.headerTitle}>My Account</Text>
+      <View style={[styles.header, { flexDirection: isRTL ? 'row-reverse' : 'row' }]}>
         <TouchableOpacity 
-          style={styles.backButton} 
+          style={[styles.backButton, { left: isRTL ? undefined : 20, right: isRTL ? 20 : undefined }]} 
           onPress={() => router.back()}
           hitSlop={{ top: 15, right: 15, bottom: 15, left: 15 }}
+          accessibilityLabel={t('common.back')}
         >
           <ChevronLeft color="#007AFF" size={24} />
         </TouchableOpacity>
+        <Text style={styles.headerTitle}>{t('myAccount.title')}</Text>
       </View>
 
       <ScrollView style={styles.contentContainer}>
         {/* Account Name */}
         <View style={styles.section}>
-          <Text style={styles.sectionLabel}>Account on Name</Text>
-          <Text style={styles.nameValue}>John Smith</Text>
+          <Text style={[styles.sectionLabel, { textAlign: isRTL ? 'right' : 'left' }]}>{t('myAccount.accountOnName')}</Text>
+          <Text style={[styles.nameValue, { textAlign: isRTL ? 'right' : 'left' }]}>{t('myAccount.userName')}</Text>
         </View>
 
         {/* Account Details Section */}
         <View style={styles.detailsSection}>
-          <View style={styles.detailsHeader}>
-            <Text style={styles.detailsLabel}>Account Number</Text>
-            <Text style={styles.detailsLabel}>Branch</Text>
-            <Text style={styles.detailsLabel}>Bank</Text>
+          <View style={[styles.detailsHeader, { flexDirection: isRTL ? 'row-reverse' : 'row' }]}>
+            <Text style={styles.detailsLabel}>{t('myAccount.accountNumber')}</Text>
+            <Text style={styles.detailsLabel}>{t('myAccount.branch')}</Text>
+            <Text style={styles.detailsLabel}>{t('myAccount.bank')}</Text>
           </View>
-          <View style={styles.detailsRow}>
+          <View style={[styles.detailsRow, { flexDirection: isRTL ? 'row-reverse' : 'row' }]}>
             <TouchableOpacity 
-              style={styles.copyButton} 
+              style={[styles.copyButton, { left: isRTL ? 0 : undefined, right: isRTL ? undefined : 0 }]} 
               onPress={() => copyToClipboard("25365625")}
+              accessibilityLabel={t('common.copy')}
             >
               <Copy color="#CCCCCC" size={18} />
             </TouchableOpacity>
@@ -88,15 +92,16 @@ const MyAccountScreen = () => {
         {/* IBAN Section */}
         <View style={styles.itemSection}>
           <TouchableOpacity 
-            style={styles.accountItem}
+            style={[styles.accountItem, { flexDirection: isRTL ? 'row-reverse' : 'row' }]}
             onPress={() => copyToClipboard("IL40010998000002536565")}
+            accessibilityLabel={t('common.copy') + ' ' + t('myAccount.ibanNumber')}
           >
-            <View style={styles.copyIcon}>
+            <View style={[styles.copyIcon, { marginRight: isRTL ? 0 : 10, marginLeft: isRTL ? 10 : 0 }]}>
               <Copy color="#CCCCCC" size={18} />
             </View>
             <View style={styles.accountItemContent}>
-              <Text style={styles.itemLabel}>IBAN Number</Text>
-              <Text style={styles.itemValue}>IL40010998000002536565</Text>
+              <Text style={[styles.itemLabel, { textAlign: isRTL ? 'right' : 'left' }]}>{t('myAccount.ibanNumber')}</Text>
+              <Text style={[styles.itemValue, { textAlign: isRTL ? 'right' : 'left' }]}>IL40010998000002536565</Text>
             </View>
           </TouchableOpacity>
         </View>
@@ -104,77 +109,82 @@ const MyAccountScreen = () => {
         {/* SWIFT Code Section */}
         <View style={styles.itemSection}>
           <TouchableOpacity 
-            style={styles.accountItem}
+            style={[styles.accountItem, { flexDirection: isRTL ? 'row-reverse' : 'row' }]}
             onPress={() => copyToClipboard("LUMILITXXX")}
+            accessibilityLabel={t('common.copy') + ' ' + t('myAccount.swiftCode')}
           >
-            <View style={styles.copyIcon}>
+            <View style={[styles.copyIcon, { marginRight: isRTL ? 0 : 10, marginLeft: isRTL ? 10 : 0 }]}>
               <Copy color="#CCCCCC" size={18} />
             </View>
             <View style={styles.accountItemContent}>
-              <Text style={styles.itemLabel}>SWIFT Code</Text>
-              <Text style={styles.itemValue}>LUMILITXXX</Text>
+              <Text style={[styles.itemLabel, { textAlign: isRTL ? 'right' : 'left' }]}>{t('myAccount.swiftCode')}</Text>
+              <Text style={[styles.itemValue, { textAlign: isRTL ? 'right' : 'left' }]}>LUMILITXXX</Text>
             </View>
           </TouchableOpacity>
         </View>
 
         {/* Communication Ways Section Header */}
         <View style={styles.sectionTitleContainer}>
-          <Text style={styles.sectionTitle}>Ways of Communication</Text>
+          <Text style={[styles.sectionTitle, { textAlign: isRTL ? 'right' : 'left' }]}>{t('myAccount.yourContactInformation')}</Text>
         </View>
 
         {/* Email Address */}
         <View style={styles.contactSection}>
           <TouchableOpacity 
-            style={styles.contactItem}
+            style={[styles.contactItem, { flexDirection: isRTL ? 'row-reverse' : 'row' }]}
             onPress={navigateToEditEmail}
+            accessibilityLabel={t('myAccount.editEmail')}
           >
             <View style={styles.contactItemContent}>
-              <Text style={styles.contactItemLabel}>Email Address</Text>
-              <Text style={styles.contactItemValue}>john.smith@example.com</Text>
+              <Text style={[styles.contactItemLabel, { textAlign: isRTL ? 'right' : 'left' }]}>{t('myAccount.emailAddress')}</Text>
+              <Text style={[styles.contactItemValue, { textAlign: isRTL ? 'right' : 'left' }]}>john.smith@example.com</Text>
             </View>
-            <ChevronRight color="#CCCCCC" size={18} />
+            {isRTL ? <ChevronLeft color="#CCCCCC" size={18} /> : <ChevronRight color="#CCCCCC" size={18} />}
           </TouchableOpacity>
         </View>
 
         {/* Home Address */}
         <View style={styles.contactSection}>
           <TouchableOpacity 
-            style={styles.contactItem}
+            style={[styles.contactItem, { flexDirection: isRTL ? 'row-reverse' : 'row' }]}
             onPress={navigateToEditHomeAddress}
+            accessibilityLabel={t('myAccount.editHomeAddress')}
           >
             <View style={styles.contactItemContent}>
-              <Text style={styles.contactItemLabel}>Home Address</Text>
-              <Text style={styles.contactItemValue}>123 Main St., Springfield, 12345</Text>
+              <Text style={[styles.contactItemLabel, { textAlign: isRTL ? 'right' : 'left' }]}>{t('myAccount.homeAddress')}</Text>
+              <Text style={[styles.contactItemValue, { textAlign: isRTL ? 'right' : 'left' }]}>123 Main St, Apt 4B</Text>
             </View>
-            <ChevronRight color="#CCCCCC" size={18} />
+            {isRTL ? <ChevronLeft color="#CCCCCC" size={18} /> : <ChevronRight color="#CCCCCC" size={18} />}
           </TouchableOpacity>
         </View>
 
         {/* Mailing Address */}
         <View style={styles.contactSection}>
           <TouchableOpacity 
-            style={styles.contactItem}
+            style={[styles.contactItem, { flexDirection: isRTL ? 'row-reverse' : 'row' }]}
             onPress={navigateToEditMailingAddress}
+            accessibilityLabel={t('myAccount.editMailingAddress')}
           >
             <View style={styles.contactItemContent}>
-              <Text style={styles.contactItemLabel}>Mailing Address</Text>
-              <Text style={styles.contactItemValue}>123 Main St., Springfield, 12345</Text>
+              <Text style={[styles.contactItemLabel, { textAlign: isRTL ? 'right' : 'left' }]}>{t('myAccount.mailingAddress')}</Text>
+              <Text style={[styles.contactItemValue, { textAlign: isRTL ? 'right' : 'left' }]}>123 Main St., Springfield, 12345</Text>
             </View>
-            <ChevronRight color="#CCCCCC" size={18} />
+            {isRTL ? <ChevronLeft color="#CCCCCC" size={18} /> : <ChevronRight color="#CCCCCC" size={18} />}
           </TouchableOpacity>
         </View>
 
         {/* Phone Number */}
         <View style={styles.contactSection}>
           <TouchableOpacity 
-            style={styles.contactItem}
+            style={[styles.contactItem, { flexDirection: isRTL ? 'row-reverse' : 'row' }]}
             onPress={navigateToEditPhone}
+            accessibilityLabel={t('myAccount.editPhone')}
           >
             <View style={styles.contactItemContent}>
-              <Text style={styles.contactItemLabel}>Phone</Text>
-              <Text style={styles.contactItemValue}>555-123-4567</Text>
+              <Text style={[styles.contactItemLabel, { textAlign: isRTL ? 'right' : 'left' }]}>{t('myAccount.phone')}</Text>
+              <Text style={[styles.contactItemValue, { textAlign: isRTL ? 'right' : 'left' }]}>555-123-4567</Text>
             </View>
-            <ChevronRight color="#CCCCCC" size={18} />
+            {isRTL ? <ChevronLeft color="#CCCCCC" size={18} /> : <ChevronRight color="#CCCCCC" size={18} />}
           </TouchableOpacity>
         </View>
 
@@ -182,8 +192,9 @@ const MyAccountScreen = () => {
         <TouchableOpacity 
           style={styles.closeAccountButton}
           onPress={navigateToAccountClosure}
+          accessibilityLabel={t('myAccount.requestAccountClosure')}
         >
-          <Text style={styles.closeAccountText}>Request Account Closure</Text>
+          <Text style={styles.closeAccountText}>{t('myAccount.requestAccountClosure')}</Text>
         </TouchableOpacity>
 
         {/* Bottom padding */}
@@ -199,7 +210,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#F8F8F8',
   },
   header: {
-    flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
     paddingHorizontal: 20,
@@ -218,7 +228,6 @@ const styles = StyleSheet.create({
   },
   backButton: {
     position: 'absolute',
-    right: 20,
     padding: 5,
   },
   contentContainer: {
